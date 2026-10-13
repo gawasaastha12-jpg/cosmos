@@ -1,53 +1,53 @@
 id,work,author,year,section or page,status,evidence
-nak_ashwini,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.116,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_bharani,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.1,verified,https://archive.org/details/TaittiriyaBrahmana
+nak_ashwini,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.116,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_bharani,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.1,probable,https://archive.org/details/TaittiriyaBrahmana
 nak_krittika,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,"Kanda 2, Brahmana 1 (Krittika eastern marker)",verified,https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm
-nak_rohini,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),verified,https://www.sacred-texts.com/hin/yv/
-nak_mrigashira,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.4,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_ardra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 2.33,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_punarvasu,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.89,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_pushya,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),verified,https://www.sacred-texts.com/hin/yv/
-nak_ashlesha,Atharvaveda,Atharvan & Angiras,c. 1000 BCE,"Kanda 19, Hymn 7 (Nakshatra hymn)",verified,https://www.sacred-texts.com/hin/av/
-nak_magha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.15,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_purva_phalguni,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_uttara_phalguni,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 5.82,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_hasta,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 3.62,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_chitra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.32,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_svati,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_vishakha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.1,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_anuradha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.85,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_jyeshtha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_mula,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),verified,https://www.sacred-texts.com/hin/yv/
-nak_purva_ashadha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.49,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_uttara_ashadha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_abhijit,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-nak_shravana,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.154,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_dhanishta,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,verified,https://archive.org/details/TaittiriyaBrahmana
-nak_shatabhisha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.86,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_purva_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.65,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_uttara_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.34,verified,https://www.sacred-texts.com/hin/rigveda/
-nak_revati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 6.54,verified,https://www.sacred-texts.com/hin/rigveda/
-ind_surya,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.50,verified,https://www.sacred-texts.com/hin/rigveda/
+nak_rohini,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),probable,https://www.sacred-texts.com/hin/yv/
+nak_mrigashira,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.4,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_ardra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 2.33,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_punarvasu,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.89,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_pushya,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),probable,https://www.sacred-texts.com/hin/yv/
+nak_ashlesha,Atharvaveda,Atharvan & Angiras,c. 1000 BCE,"Kanda 19, Hymn 7 (Nakshatra hymn)",probable,https://www.sacred-texts.com/hin/av/
+nak_magha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.15,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_purva_phalguni,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_uttara_phalguni,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 5.82,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_hasta,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 3.62,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_chitra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.32,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_svati,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_vishakha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.1,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_anuradha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.85,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_jyeshtha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_mula,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,Kanda 4.4.10 (Nakshatra Sukta),probable,https://www.sacred-texts.com/hin/yv/
+nak_purva_ashadha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.49,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_uttara_ashadha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_abhijit,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+nak_shravana,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.154,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_dhanishta,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,Kanda 3.1.2,probable,https://archive.org/details/TaittiriyaBrahmana
+nak_shatabhisha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.86,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_purva_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 10.65,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_uttara_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 7.34,probable,https://www.sacred-texts.com/hin/rigveda/
+nak_revati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 6.54,probable,https://www.sacred-texts.com/hin/rigveda/
+ind_surya,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 1.50,probable,https://www.sacred-texts.com/hin/rigveda/
 ind_chandra,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,"Kanda 2, Brahmana 1 (Krittika eastern marker)",verified,https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm
-ind_mangala,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_budha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_brihaspati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 4.50,verified,https://www.sacred-texts.com/hin/rigveda/
-ind_shukra,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_shani,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_rahu,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_ketu,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),verified,https://archive.org/details/brihatsamhitaofv00varauoft
+ind_mangala,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_budha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_brihaspati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta 4.50,probable,https://www.sacred-texts.com/hin/rigveda/
+ind_shukra,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_shani,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_rahu,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_ketu,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),probable,https://archive.org/details/brihatsamhitaofv00varauoft
 ind_kratu,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,"Kanda 2, Brahmana 1 (Krittika eastern marker)",verified,https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm
-ind_pulaha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),verified,https://archive.org/details/translationofsur00burg
-ind_pulastya,Shrimad Bhagavatam (Bhagavata Purana),Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Canto 6, Chapter 6",verified,https://vedabase.io/en/library/sb/6/6/
-ind_atri,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta Mandala,verified,https://www.sacred-texts.com/hin/rigveda/
-ind_angiras,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta Mandala,verified,https://www.sacred-texts.com/hin/rigveda/
+ind_pulaha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya (Nakshatra coordinates),probable,https://archive.org/details/translationofsur00burg
+ind_pulastya,Shrimad Bhagavatam (Bhagavata Purana),Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Canto 6, Chapter 6",probable,https://vedabase.io/en/library/sb/6/6/
+ind_atri,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta Mandala,probable,https://www.sacred-texts.com/hin/rigveda/
+ind_angiras,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Sukta Mandala,probable,https://www.sacred-texts.com/hin/rigveda/
 ind_vashistha,Valmiki Ramayana,Valmiki,c. 500-200 BCE,Bala Kanda 57-60,verified,https://www.valmikiramayan.net/utf8/baala/sarga57/bala_57_frame.htm
 ind_marichi,Classical Sanskrit Astronomical Canon,Traditional Jyotisha school,Antiquity,Jyotisha Vedanga,unverified,
-ind_agastya,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),verified,https://archive.org/details/brihatsamhitaofv00varauoft
+ind_agastya,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),probable,https://archive.org/details/brihatsamhitaofv00varauoft
 ind_arundhati,Classical Sanskrit Astronomical Canon,Traditional Jyotisha school,Antiquity,Jyotisha Vedanga,unverified,
-ind_dhruva_lore,Shrimad Bhagavatam (Bhagavata Purana),Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Canto 6, Chapter 6",verified,https://vedabase.io/en/library/sb/6/6/
+ind_dhruva_lore,Shrimad Bhagavatam (Bhagavata Purana),Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Canto 6, Chapter 6",probable,https://vedabase.io/en/library/sb/6/6/
 ind_trishanku_lore,Valmiki Ramayana,Valmiki,c. 500-200 BCE,Bala Kanda 57-60,verified,https://www.valmikiramayan.net/utf8/baala/sarga57/bala_57_frame.htm
-ind_mrigavyadha_lore,The Orion: Researches into the Antiquity of the Vedas,Bal Gangadhar Tilak,1893,Chapter 3 (Mrigashira & Orion),verified,https://archive.org/details/orionresearchesi00tila
+ind_mrigavyadha_lore,The Orion: Researches into the Antiquity of the Vedas,Bal Gangadhar Tilak,1893,Chapter 3 (Mrigashira & Orion),probable,https://archive.org/details/orionresearchesi00tila
 gr_orion,Phaenomena,Aratus of Soli,c. 275 BCE,Lines 1-450,verified,http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205
 gr_scorpius,De Astronomica (Poeticon Astronomicon),Gaius Julius Hyginus,c. 20 BCE,Book II (Constellations),verified,https://topostext.org/work/806
 gr_callisto,Fasti / Metamorphoses,Publius Ovidius Naso,c. 8 CE,Metamorphoses II / Fasti V,verified,http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054
@@ -67,36 +67,36 @@ gr_virgo,Phaenomena,Aratus of Soli,c. 275 BCE,Lines 1-450,verified,http://www.pe
 gr_auriga,De Astronomica (Poeticon Astronomicon),Gaius Julius Hyginus,c. 20 BCE,Book II (Constellations),verified,https://topostext.org/work/806
 gr_sagittarius,De Astronomica (Poeticon Astronomicon),Gaius Julius Hyginus,c. 20 BCE,Book II (Constellations),verified,https://topostext.org/work/806
 gr_canis_major,Fasti / Metamorphoses,Publius Ovidius Naso,c. 8 CE,Metamorphoses II / Fasti V,verified,http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054
-gr_crux,Almagest (Syntaxis Mathematica),Claudius Ptolemy,c. 150 CE,Books VII-VIII (Centaurus & Crux stars),verified,https://archive.org/details/ptolemysalmagest00ptol
-poly_hokulea,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,verified,https://www.hokulea.com/
-poly_te_punga,The Astronomical Knowledge of the Maori,Elsdon Best,1924,Dominion Museum Monograph No. 3,verified,https://archive.org/details/astronomicalknow00bestrich
-poly_maui_hook,Polynesian Mythology,Sir George Grey,1854,Maui Legends,verified,https://www.sacred-texts.com/pac/grey/
+gr_crux,Almagest (Syntaxis Mathematica),Claudius Ptolemy,c. 150 CE,Books VII-VIII (Centaurus & Crux stars),probable,https://archive.org/details/ptolemysalmagest00ptol
+poly_hokulea,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,probable,https://www.hokulea.com/
+poly_te_punga,The Astronomical Knowledge of the Maori,Elsdon Best,1924,Dominion Museum Monograph No. 3,probable,https://archive.org/details/astronomicalknow00bestrich
+poly_maui_hook,Polynesian Mythology,Sir George Grey,1854,Maui Legends,probable,https://www.sacred-texts.com/pac/grey/
 poly_matariki,Matariki: The Star of the Year,Rangi Matamua,2017,Pleiades Tradition in Aotearoa,probable,ISBN 978-1775503255
-poly_humu,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,verified,https://www.hokulea.com/
-poly_hanaiakamalama,Hawaiian Mythology,Martha Beckwith,1940,Chapter 9,verified,https://www.sacred-texts.com/pac/hm/
+poly_humu,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,probable,https://www.hokulea.com/
+poly_hanaiakamalama,Hawaiian Mythology,Martha Beckwith,1940,Chapter 9,probable,https://www.sacred-texts.com/pac/hm/
 poly_ka_lupe,Traditional Polynesian Star Lore,Polynesian Navigators,Oral Tradition,Wayfinding chant,unverified,
 poly_tamarereti,Traditional Polynesian Star Lore,Polynesian Navigators,Oral Tradition,Wayfinding chant,unverified,
-poly_nahiku,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,verified,https://www.hokulea.com/
+poly_nahiku,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,probable,https://www.hokulea.com/
 poly_aa_sirius,Traditional Polynesian Star Lore,Polynesian Navigators,Oral Tradition,Wayfinding chant,unverified,
 poly_manaiakalani,Traditional Polynesian Star Lore,Polynesian Navigators,Oral Tradition,Wayfinding chant,unverified,
-poly_kaluakau,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,verified,https://www.hokulea.com/
-ind_emu,Australian Aboriginal Astronomy / Bridging the Gap,Duane Hamacher & Ray Norris,2011,Aboriginal Astronomical Traditions,verified,https://arxiv.org/abs/1105.1814
-ind_seven_sisters,Songlines: Tracking the Seven Sisters,National Museum of Australia,2017,Seven Sisters Exhibition,verified,https://www.nma.gov.au/exhibitions/songlines
-ind_djulpan,Emu Dreaming: An Introduction to Australian Aboriginal Astronomy,Ray Norris & Cilla Norris,2009,Kamilaroi & Euahlayi Dark Emu,verified,https://arxiv.org/abs/0906.0155
+poly_kaluakau,Polynesian Voyaging Society Wayfinding Archive,Nainoa Thompson & PVS navigators,1980 / 1995,Hawaiian Star Lines Curriculum,probable,https://www.hokulea.com/
+ind_emu,Australian Aboriginal Astronomy / Bridging the Gap,Duane Hamacher & Ray Norris,2011,Aboriginal Astronomical Traditions,probable,https://arxiv.org/abs/1105.1814
+ind_seven_sisters,Songlines: Tracking the Seven Sisters,National Museum of Australia,2017,Seven Sisters Exhibition,probable,https://www.nma.gov.au/exhibitions/songlines
+ind_djulpan,Emu Dreaming: An Introduction to Australian Aboriginal Astronomy,Ray Norris & Cilla Norris,2009,Kamilaroi & Euahlayi Dark Emu,probable,https://arxiv.org/abs/0906.0155
 ind_tagai,Aboriginal Oral Starlore Records,First Nations Custodians,Oral Tradition,Local Dreaming,unverified,
-ind_boorong_purra,Some Account of the Manners and Astronomical Notions of the Boorong,William Edward Stanbridge,1857,Transactions of the Philosophical Institute of Victoria,verified,https://archive.org/details/transactionsofph02phil
+ind_boorong_purra,Some Account of the Manners and Astronomical Notions of the Boorong,William Edward Stanbridge,1857,Transactions of the Philosophical Institute of Victoria,probable,https://archive.org/details/transactionsofph02phil
 ind_wardaman_yagrin,Dark Sparklers: Yidumduma's Wardaman Aboriginal Astronomy,Bill Yidumduma Harney & Hugh Cairns,2003,Wardaman Sky Map,probable,ISBN 978-0975109403
 ind_bunjil,Aboriginal Oral Starlore Records,First Nations Custodians,Oral Tradition,Local Dreaming,unverified,
 ind_waiyungari,Aboriginal Oral Starlore Records,First Nations Custodians,Oral Tradition,Local Dreaming,unverified,
-ind_marpean,Australian Aboriginal Astronomy / Bridging the Gap,Duane Hamacher & Ray Norris,2011,Aboriginal Astronomical Traditions,verified,https://arxiv.org/abs/1105.1814
-ind_neilloan,Some Account of the Manners and Astronomical Notions of the Boorong,William Edward Stanbridge,1857,Transactions of the Philosophical Institute of Victoria,verified,https://archive.org/details/transactionsofph02phil
+ind_marpean,Australian Aboriginal Astronomy / Bridging the Gap,Duane Hamacher & Ray Norris,2011,Aboriginal Astronomical Traditions,probable,https://arxiv.org/abs/1105.1814
+ind_neilloan,Some Account of the Manners and Astronomical Notions of the Boorong,William Edward Stanbridge,1857,Transactions of the Philosophical Institute of Victoria,probable,https://archive.org/details/transactionsofph02phil
 ind_kulkun,Aboriginal Oral Starlore Records,First Nations Custodians,Oral Tradition,Local Dreaming,unverified,
 ind_yowie,Aboriginal Oral Starlore Records,First Nations Custodians,Oral Tradition,Local Dreaming,unverified,
 ea_qixi,Records of the Grand Historian (Shiji),Sima Qian,c. 91 BCE,Book 27 (Tianguanshu / Treatise on Celestial Officials),verified,https://ctext.org/shiji/tian-guan-shu
 ea_beidou,Records of the Grand Historian (Shiji),Sima Qian,c. 91 BCE,Book 27 (Tianguanshu / Treatise on Celestial Officials),verified,https://ctext.org/shiji/tian-guan-shu
 ea_azure_dragon,East Asian Celestial Records,Bureau of Astronomy,Historical dynasty,Dynastic astronomy,unverified,
 ea_shen,Records of the Grand Historian (Shiji),Sima Qian,c. 91 BCE,Book 27 (Tianguanshu / Treatise on Celestial Officials),verified,https://ctext.org/shiji/tian-guan-shu
-ea_subaru,The Pillow Book (Makura no Soshi),Sei Shonagon,c. 1000 CE,Section 254 (On Stars / Subaru),verified,https://archive.org/details/pillowbookofseis00seis
+ea_subaru,The Pillow Book (Makura no Soshi),Sei Shonagon,c. 1000 CE,Section 254 (On Stars / Subaru),probable,https://archive.org/details/pillowbookofseis00seis
 ea_tianlang,Book of Jin (Jin Shu),Fang Xuanling et al.,648 CE,Chapters 11-13 (Tianwenzhi / Astronomical Treatises),verified,https://ctext.org/wiki.pl?if=gb&chapter=358045
 ea_xuanwu,Records of the Grand Historian (Shiji),Sima Qian,c. 91 BCE,Book 27 (Tianguanshu / Treatise on Celestial Officials),verified,https://ctext.org/shiji/tian-guan-shu
 ea_cheonsang,East Asian Celestial Records,Bureau of Astronomy,Historical dynasty,Dynastic astronomy,unverified,
@@ -104,20 +104,20 @@ ea_white_tiger,Huainanzi,Liu An (compiler),c. 139 BCE,Chapter 3 (Tianwenxun / Ce
 ea_vermilion_bird,Records of the Grand Historian (Shiji),Sima Qian,c. 91 BCE,Book 27 (Tianguanshu / Treatise on Celestial Officials),verified,https://ctext.org/shiji/tian-guan-shu
 ea_tanabata,East Asian Celestial Records,Bureau of Astronomy,Historical dynasty,Dynastic astronomy,unverified,
 ea_polar_palace,Book of Jin (Jin Shu),Fang Xuanling et al.,648 CE,Chapters 11-13 (Tianwenzhi / Astronomical Treatises),verified,https://ctext.org/wiki.pl?if=gb&chapter=358045
-ar_alsufi,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,Bodleian Library MS. Marsh 144,verified,https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/
+ar_alsufi,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,Bodleian Library MS. Marsh 144,probable,https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/
 ar_altair,Arabische Sternnamen in Europa,Paul Kunitzsch,1959,Monograph on Arabic loan-star names,probable,ISBN 978-3447005494
 ar_betelgeuse,A Dictionary of Modern Star Names,Paul Kunitzsch & Tim Smart,2006,Arabic Indigenous and Ptolemaic Names,probable,ISBN 978-0933346406
-ar_aldebaran,The Chronology of Ancient Nations (Athar al-Baqiya),Abu Rayhan al-Biruni,1000 CE,Chapter on Mansions of the Moon (Anwa),verified,https://archive.org/details/chronologyofanci00birmrich
-ar_thurayya,Mu'allaqa,Imru' al-Qais,c. 540 CE,Seven Golden Odes,verified,https://archive.org/details/sevenpoemoft00johnrich
+ar_aldebaran,The Chronology of Ancient Nations (Athar al-Baqiya),Abu Rayhan al-Biruni,1000 CE,Chapter on Mansions of the Moon (Anwa),probable,https://archive.org/details/chronologyofanci00birmrich
+ar_thurayya,Mu'allaqa,Imru' al-Qais,c. 540 CE,Seven Golden Odes,probable,https://archive.org/details/sevenpoemoft00johnrich
 ar_fomalhaut,Classical Arabic Anwa Lore,Traditional Arab Astronomers,Medieval period,Anwa treatises,unverified,
-ar_deneb,Zij-i Sultani,Ulugh Beg,1437 CE,Star Catalogue,verified,https://archive.org/details/ulughbegscatalo00knobgoog
-ar_rigel,Kitab al-Zij (Opus Astronomicum),Al-Battani (Albatenius),c. 900 CE,Astronomical Tables,verified,https://archive.org/details/albattanialbaten00alba
+ar_deneb,Zij-i Sultani,Ulugh Beg,1437 CE,Star Catalogue,probable,https://archive.org/details/ulughbegscatalo00knobgoog
+ar_rigel,Kitab al-Zij (Opus Astronomicum),Al-Battani (Albatenius),c. 900 CE,Astronomical Tables,probable,https://archive.org/details/albattanialbaten00alba
 ar_suhayl,Classical Arabic Anwa Lore,Traditional Arab Astronomers,Medieval period,Anwa treatises,unverified,
 ar_alcor_test,Classical Arabic Anwa Lore,Traditional Arab Astronomers,Medieval period,Anwa treatises,unverified,
 ar_alphecca,Classical Arabic Anwa Lore,Traditional Arab Astronomers,Medieval period,Anwa treatises,unverified,
-ar_mizar,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,Bodleian Library MS. Marsh 144,verified,https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/
+ar_mizar,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,Bodleian Library MS. Marsh 144,probable,https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/
 am_yacana,At the Crossroads of the Earth and Sky: An Andean Cosmology,Gary Urton,1981,Chapter 4 (Yacana & Dark Cloud Constellations),probable,ISBN 978-0292703490
-am_maya_hearth,Popol Vuh: The Sacred Book of the Maya,K'iche' Maya (translated by Dennis Tedlock),c. 1550 CE (translated 1985),Part One (Cosmic Hearth & Creation),verified,https://www.sacred-texts.com/nam/maya/pv/
+am_maya_hearth,Popol Vuh: The Sacred Book of the Maya,K'iche' Maya (translated by Dennis Tedlock),c. 1550 CE (translated 1985),Part One (Cosmic Hearth & Creation),probable,https://www.sacred-texts.com/nam/maya/pv/
 am_navajo_dilyehe,Sharing the Skies: Navajo and Western Astronomy,Nancy C. Maryboy & David Begay,2010,Navajo Star Patterns (Dilyehe),probable,ISBN 978-1886609204
 am_navajo_nahookos,Indigenous Starlore Records,Indigenous Storytellers,Oral Tradition,Sky lore narrative,unverified,
 am_lakota_race,Indigenous Starlore Records,Indigenous Storytellers,Oral Tradition,Sky lore narrative,unverified,
@@ -127,8 +127,8 @@ am_ojibwe_fisher,Indigenous Starlore Records,Indigenous Storytellers,Oral Tradit
 am_inca_atoq,At the Crossroads of the Earth and Sky: An Andean Cosmology,Gary Urton,1981,Chapter 4 (Yacana & Dark Cloud Constellations),probable,ISBN 978-0292703490
 am_inca_machacuay,Indigenous Starlore Records,Indigenous Storytellers,Oral Tradition,Sky lore narrative,unverified,
 am_pawnee_morning_star,Indigenous Starlore Records,Indigenous Storytellers,Oral Tradition,Sky lore narrative,unverified,
-am_cherokee_dog,Myths of the Cherokee,James Mooney,1900,19th Annual Report of the Bureau of American Ethnology,verified,https://www.sacred-texts.com/nam/cher/motc/
-no_frigg,Teutonic Mythology (Deutsche Mythologie),Jacob Grimm,1835,Chapter 22 (Constellations and Stars),verified,https://archive.org/details/teutonicmytholo02grim
+am_cherokee_dog,Myths of the Cherokee,James Mooney,1900,19th Annual Report of the Bureau of American Ethnology,probable,https://www.sacred-texts.com/nam/cher/motc/
+no_frigg,Teutonic Mythology (Deutsche Mythologie),Jacob Grimm,1835,Chapter 22 (Constellations and Stars),probable,https://archive.org/details/teutonicmytholo02grim
 no_karlavagnen,Dictionary of Northern Mythology,Rudolf Simek,1993,"Entries on Karlavagnen, Bifrost, Frigg",probable,ISBN 978-0859915137
 no_bifrost,Prose Edda (Gylfaginning),Snorri Sturluson,c. 1220 CE,Chapter 13 (Bifrost) & Chapter 18,verified,https://www.sacred-texts.com/neu/pre/pre04.htm
 no_celtic_castle,The Mabinogion,Lady Charlotte Guest (translator),1849,Math fab Mathonwy (Caer Arianrhod),verified,https://www.sacred-texts.com/neu/celt/mab/mab21.htm
@@ -136,31 +136,31 @@ no_fenrir,"Norse Mythology: A Guide to the Gods, Heroes, Rituals, and Beliefs",J
 no_king_arthur,Traditional Nordic/Celtic Folklore,Old Norse/Celtic Tradition,Medieval period,Folklore narrative,unverified,
 no_tiwaz,Traditional Nordic/Celtic Folklore,Old Norse/Celtic Tradition,Medieval period,Folklore narrative,unverified,
 no_llew,Traditional Nordic/Celtic Folklore,Old Norse/Celtic Tradition,Medieval period,Folklore narrative,unverified,
-no_thor_fishing,Poetic Edda,Anonymous Old Norse Poets,c. 1000-1200 CE,Voluspa / Hymiskvida,verified,https://www.sacred-texts.com/neu/poe/
+no_thor_fishing,Poetic Edda,Anonymous Old Norse Poets,c. 1000-1200 CE,Voluspa / Hymiskvida,probable,https://www.sacred-texts.com/neu/poe/
 no_gwydion,The Mabinogion,Lady Charlotte Guest (translator),1849,Math fab Mathonwy (Caer Arianrhod),verified,https://www.sacred-texts.com/neu/celt/mab/mab21.htm
-no_heimdall,Poetic Edda,Anonymous Old Norse Poets,c. 1000-1200 CE,Voluspa / Hymiskvida,verified,https://www.sacred-texts.com/neu/poe/
+no_heimdall,Poetic Edda,Anonymous Old Norse Poets,c. 1000-1200 CE,Voluspa / Hymiskvida,probable,https://www.sacred-texts.com/neu/poe/
 no_brisingamen,Traditional Nordic/Celtic Folklore,Old Norse/Celtic Tradition,Medieval period,Folklore narrative,unverified,
-af_sopdet,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / R.O. Faulkner,c. 2400 BCE (transl. 2005),Utterances 442 & 466 (Sah and Sopdet),verified,https://archive.org/details/ancientegyptianp0000jame
-af_backbone,Specimens of Bushman Folklore,Wilhelm H.I. Bleek & Lucy C. Lloyd,1911,The Milky Way and Canopus Narratives,verified,https://www.sacred-texts.com/afr/sbf/
+af_sopdet,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / R.O. Faulkner,c. 2400 BCE (transl. 2005),Utterances 442 & 466 (Sah and Sopdet),probable,https://archive.org/details/ancientegyptianp0000jame
+af_backbone,Specimens of Bushman Folklore,Wilhelm H.I. Bleek & Lucy C. Lloyd,1911,The Milky Way and Canopus Narratives,probable,https://www.sacred-texts.com/afr/sbf/
 af_borana,Namoratunga: First Archeoastronomical Evidence / Gada,B.M. Lynch & L.H. Robbins; Asmarom Legesse,1978 / 1973,Science 200:766-768; Gada Ch. 7,verified,https://doi.org/10.1126/science.200.4343.766
 af_saharan_hunter,African Traditional Astronomical Lore,African Cultural Custodians,Traditional,Oral star narrative,unverified,
 af_sotho_spade,African Traditional Astronomical Lore,African Cultural Custodians,Traditional,Oral star narrative,unverified,
 af_san_ostrich,African Traditional Astronomical Lore,African Cultural Custodians,Traditional,Oral star narrative,unverified,
-af_egypt_sah,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / R.O. Faulkner,c. 2400 BCE (transl. 2005),Utterances 442 & 466 (Sah and Sopdet),verified,https://archive.org/details/ancientegyptianp0000jame
+af_egypt_sah,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / R.O. Faulkner,c. 2400 BCE (transl. 2005),Utterances 442 & 466 (Sah and Sopdet),probable,https://archive.org/details/ancientegyptianp0000jame
 af_yoruba_orunmila,African Traditional Astronomical Lore,African Cultural Custodians,Traditional,Oral star narrative,unverified,
-af_denderah_zodiac,Le zodiaque d'Osiris / Dendera Circular Zodiac,Sylvie Cauville / Muse du Louvre,1997 / c. 50 BCE,Hathor Temple Ceiling Reliefs,verified,https://collections.louvre.fr/en/ark:/53355/cl010010996
+af_denderah_zodiac,Le zodiaque d'Osiris / Dendera Circular Zodiac,Sylvie Cauville / Muse du Louvre,1997 / c. 50 BCE,Hathor Temple Ceiling Reliefs,probable,https://collections.louvre.fr/en/ark:/53355/cl010010996
 af_dogon_sigui,Conversations with Ogotemmli,Marcel Griaule,1948,Dogon Cosmology & Digitaria,probable,ISBN 978-0195198218
 af_maasai_kileken,African Traditional Astronomical Lore,African Cultural Custodians,Traditional,Oral star narrative,unverified,
 af_khoisan_dawn,The Khoisan Peoples of South Africa,Isaac Schapera,1930,Astronomy and Calendar,probable,ISBN 978-0415329866
-mes_twins,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
-mes_bull,Epic of Gilgamesh,Sin-leqi-unninni (compiler),c. 1200 BCE,Tablet VI (The Bull of Heaven / Taurus),verified,https://archive.org/details/epicofgilgamesh00sand
-mes_scorpion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
+mes_twins,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
+mes_bull,Epic of Gilgamesh,Sin-leqi-unninni (compiler),c. 1200 BCE,Tablet VI (The Bull of Heaven / Taurus),probable,https://archive.org/details/epicofgilgamesh00sand
+mes_scorpion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
 mes_eagle,Babylonian Astronomical Diaries,Chaldean Astronomical Scribes,1st Millennium BCE,Astrolabe B / Star lists,unverified,
-mes_lion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
+mes_lion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
 mes_wagon,"The Heavenly Writing: Divination, Horoscopy, and Astronomy in Babylonian Culture",Francesca Rochberg,2004,Babylonian Constellations and Divination,probable,ISBN 978-0521835381
 mes_goat_fish,"Gods, Demons and Symbols of Ancient Mesopotamia",Jeremy Black & Anthony Green,1992,Entries on Capricorn / Goat-Fish and Scorpio,probable,ISBN 978-0292707948
-mes_swallow,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
-mes_enlil_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
+mes_swallow,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
+mes_enlil_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
 mes_ea_way,Babylonian Astronomical Diaries,Chaldean Astronomical Scribes,1st Millennium BCE,Astrolabe B / Star lists,unverified,
-mes_anu_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",verified,https://www.jstor.org/stable/41668266
-mes_ishtar_star,Enuma Anu Enlil (Astrological Tablet Series),Babylonian Royal Scribes,c. 1600-1000 BCE,Tablet 63 (Venus Tablet of Ammisaduqa),verified,https://cdli.mpiwg-berlin.mpg.de/
+mes_anu_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree,c. 1000 BCE (ed. 1989),"Tablet I (Three Paths of Enlil, Anu, Ea)",probable,https://www.jstor.org/stable/41668266
+mes_ishtar_star,Enuma Anu Enlil (Astrological Tablet Series),Babylonian Royal Scribes,c. 1600-1000 BCE,Tablet 63 (Venus Tablet of Ammisaduqa),probable,https://cdli.mpiwg-berlin.mpg.de/

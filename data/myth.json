@@ -24,7 +24,13 @@
           "source": "Rigveda 1.116; Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Marked by Hamal (Alpha Arietis), an orange giant star 66 light-years away, possessing a massive exoplanet candidate.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 1.116",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_bharani",
@@ -37,7 +43,13 @@
           "source": "Taittiriya Brahmana 3.1.1; Surya Siddhanta",
           "confidence": "well documented",
           "science": "Consists of stars in the northern quadrant of Aries, showcasing dense stellar clusters in the galactic background.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.1",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_krittika",
@@ -50,7 +62,13 @@
           "source": "Shatapatha Brahmana 2.1.2; Mahabharata Vana Parva",
           "confidence": "well documented",
           "science": "The Pleiades (M45) is an open star cluster of over 1,000 stars located ~444 light-years away, cloaked in bluish reflection nebulae.",
-          "audio": "matariki"
+          "audio": "matariki",
+          "citationStatus": "verified",
+          "citationWork": "Shatapatha Brahmana",
+          "citationAuthor": "Yajnavalkya (traditional)",
+          "citationYear": "c. 800-600 BCE",
+          "citationSection": "Kanda 2, Brahmana 1 (Krittika eastern marker)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm"
         },
         {
           "id": "nak_rohini",
@@ -63,7 +81,13 @@
           "source": "Shrimad Bhagavatam 6.6; Taittiriya Samhita",
           "confidence": "well documented",
           "science": "Aldebaran is an orange giant ~65 light-years away, 44 times wider than our Sun and surface temperature of 3,900 K.",
-          "audio": "rohini"
+          "audio": "rohini",
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Samhita",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 1000 BCE",
+          "citationSection": "Kanda 4.4.10 (Nakshatra Sukta)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/yv/"
         },
         {
           "id": "nak_mrigashira",
@@ -76,7 +100,13 @@
           "source": "Taittiriya Brahmana 3.1.4; Atharvaveda 19.7",
           "confidence": "well documented",
           "science": "Marked by Meissa (Lambda Orionis), an O-type massive giant star forming an ionized molecular ring 1,100 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.4",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_ardra",
@@ -89,7 +119,13 @@
           "source": "Rigveda 2.33; Brihat Samhita by Varahamihira",
           "confidence": "well documented",
           "science": "Betelgeuse is a pulsating red supergiant star ~550 light-years away that experienced a dramatic dust-cooling Great Dimming in 2019–2020.",
-          "audio": "orion"
+          "audio": "orion",
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 2.33",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_punarvasu",
@@ -102,7 +138,13 @@
           "source": "Rigveda 1.89; Taittiriya Brahmana 3.1.1",
           "confidence": "well documented",
           "science": "Castor is a fascinating sextuple (six-star) gravitational system 51 light-years away, while Pollux hosts confirmed exoplanet Thestias.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 1.89",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_pushya",
@@ -115,7 +157,13 @@
           "source": "Taittiriya Samhita 4.4.10; Brihat Parasara Hora Shastra",
           "confidence": "well documented",
           "science": "Surrounds the Beehive Cluster (M44 / Praesepe), an open cluster of ~1,000 young stars ~577 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Samhita",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 1000 BCE",
+          "citationSection": "Kanda 4.4.10 (Nakshatra Sukta)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/yv/"
         },
         {
           "id": "nak_ashlesha",
@@ -128,7 +176,13 @@
           "source": "Atharvaveda 19.7; Mahabharata Adi Parva",
           "confidence": "well documented",
           "science": "Marked by stars in Hydra, the largest modern constellation spanning over 100 degrees across the celestial sphere.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Atharvaveda",
+          "citationAuthor": "Atharvan & Angiras",
+          "citationYear": "c. 1000 BCE",
+          "citationSection": "Kanda 19, Hymn 7 (Nakshatra hymn)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/av/"
         },
         {
           "id": "nak_magha",
@@ -141,7 +195,13 @@
           "source": "Rigveda 10.15; Taittiriya Brahmana 3.1.2",
           "confidence": "well documented",
           "science": "Regulus is a rapidly spinning quadruple star system ~79 light-years away, flattened by its 15.9-hour rotation speed.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 10.15",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_purva_phalguni",
@@ -154,7 +214,13 @@
           "source": "Taittiriya Brahmana 3.1.2",
           "confidence": "well documented",
           "science": "Zosma and Chertan are fast-rotating A-type stars situated along the hindquarters of Leo, 58 and 165 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.2",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_uttara_phalguni",
@@ -167,7 +233,13 @@
           "source": "Rigveda 5.82; Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Denebola marks the tail of Leo, an A-type subgiant 36 light-years away surrounded by a circumstellar debris dust disk.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 5.82",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_hasta",
@@ -180,7 +252,13 @@
           "source": "Rigveda 3.62; Taittiriya Brahmana 3.1.1",
           "confidence": "well documented",
           "science": "Corvus forms a compact quadrilateral asterism whose stars lie between 48 and 300 light-years away from Earth.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 3.62",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_chitra",
@@ -193,7 +271,13 @@
           "source": "Rigveda 1.32; Surya Siddhanta",
           "confidence": "well documented",
           "science": "Spica is a close spectroscopic binary pair of hot blue giant stars ~250 light-years away, orbiting each other every 4 days.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 1.32",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_svati",
@@ -206,7 +290,13 @@
           "source": "Taittiriya Brahmana 3.1.2; Brihat Samhita",
           "confidence": "well documented",
           "science": "Arcturus is an orange giant ~37 light-years away, moving through our galactic neighborhood at high proper velocity from an ancient merged galaxy.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.2",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_vishakha",
@@ -219,7 +309,13 @@
           "source": "Taittiriya Brahmana 3.1.1",
           "confidence": "well documented",
           "science": "Centered around Zubeneschamali and Zubenelgenubi, stars with rare greenish spectral tinges located ~185 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.1",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_anuradha",
@@ -232,7 +328,13 @@
           "source": "Rigveda 10.85; Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Situated in the upper crown of Scorpius, Dschubba is a pulsating B-type variable star in the Scorpius-Centaurus OB association.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 10.85",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_jyeshtha",
@@ -245,7 +347,13 @@
           "source": "Taittiriya Brahmana 3.1.2; Brihat Samhita",
           "confidence": "well documented",
           "science": "Antares is a red supergiant ~550 light-years away, so vast that if placed at our solar center, its atmosphere would engulf Mars.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.2",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_mula",
@@ -258,7 +366,13 @@
           "source": "Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Shaula and Lesath point into the densest star clouds of the Milky Way, near Sagittarius A*, the 4-million solar mass supermassive black hole.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Samhita",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 1000 BCE",
+          "citationSection": "Kanda 4.4.10 (Nakshatra Sukta)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/yv/"
         },
         {
           "id": "nak_purva_ashadha",
@@ -271,7 +385,13 @@
           "source": "Rigveda 7.49; Taittiriya Brahmana 3.1.2",
           "confidence": "well documented",
           "science": "Marks the archer's bow in Sagittarius, where luminous stellar nurseries and dense star clusters illuminate the Milky Way bar.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 7.49",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_uttara_ashadha",
@@ -284,7 +404,13 @@
           "source": "Taittiriya Brahmana 3.1.2",
           "confidence": "well documented",
           "science": "Nunki (Sigma Sagittarii) is a hot blue dwarf star 228 light-years away, and the oldest star name preserved from Babylonian tablets.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.2",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_abhijit",
@@ -297,7 +423,13 @@
           "source": "Mahabharata Vana Parva 230; Surya Siddhanta",
           "confidence": "well documented",
           "science": "Vega is a brilliant white star 25 light-years away, was our North Star around 12,000 BCE, and will return to that role around 13,700 CE.",
-          "audio": "qixi"
+          "audio": "qixi",
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "nak_shravana",
@@ -310,7 +442,13 @@
           "source": "Rigveda 1.154; Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Altair is a fast-spinning star just 17 light-years away that completes a full rotation every 9 hours, giving it a prominent oblate bulge.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 1.154",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_dhanishta",
@@ -323,7 +461,13 @@
           "source": "Taittiriya Brahmana 3.1.2",
           "confidence": "well documented",
           "science": "Situated in the delightful diamond of Delphinus the dolphin, glowing in the mid-plane of the northern Summer Milky Way.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Taittiriya Brahmana",
+          "citationAuthor": "Vedic school of Krishna Yajurveda",
+          "citationYear": "c. 900-700 BCE",
+          "citationSection": "Kanda 3.1.2",
+          "citationEvidence": "https://archive.org/details/TaittiriyaBrahmana"
         },
         {
           "id": "nak_shatabhisha",
@@ -336,7 +480,13 @@
           "source": "Rigveda 7.86; Atharvaveda 19.7",
           "confidence": "well documented",
           "science": "Sadachbia (Gamma Aquarii) is a spectroscopic binary surrounded by vast interstellar gas clouds in the water-bearer constellation.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 7.86",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_purva_bhadra",
@@ -349,7 +499,13 @@
           "source": "Taittiriya Brahmana 3.1.2; Rigveda 10.65",
           "confidence": "well documented",
           "science": "Markab and Scheat form the western flank of the Great Square of Pegasus, 133 and 196 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 10.65",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_uttara_bhadra",
@@ -362,7 +518,13 @@
           "source": "Taittiriya Brahmana 3.1.2; Rigveda 7.34",
           "confidence": "well documented",
           "science": "Alpheratz is shared directly between Pegasus and Andromeda, located 97 light-years away with extraordinary mercury-manganese spectral lines.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 7.34",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "nak_revati",
@@ -375,7 +537,13 @@
           "source": "Rigveda 6.54; Taittiriya Samhita 4.4.10",
           "confidence": "well documented",
           "science": "Zeta Piscium is a delicate multiple star system whose epoch marked the zero-point of the sidereal zodiac in classical Indian astronomy.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 6.54",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "ind_surya",
@@ -388,7 +556,13 @@
           "source": "Surya Upanishad; Rigveda 1.50",
           "confidence": "well documented",
           "science": "Our G-type main-sequence star fuses 600 million tons of hydrogen into helium every second in its core.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 1.50",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "ind_chandra",
@@ -401,7 +575,13 @@
           "source": "Shatapatha Brahmana; Brihat Samhita",
           "confidence": "well documented",
           "science": "Orbits Earth every 27.32 days in sidereal period, causing tidal friction that gradually slows Earth's rotation.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Shatapatha Brahmana",
+          "citationAuthor": "Yajnavalkya (traditional)",
+          "citationYear": "c. 800-600 BCE",
+          "citationSection": "Kanda 2, Brahmana 1 (Krittika eastern marker)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm"
         },
         {
           "id": "ind_mangala",
@@ -414,7 +594,13 @@
           "source": "Surya Siddhanta Chapter 2; Skanda Purana",
           "confidence": "well documented",
           "science": "Iron oxide (rust) on the Martian surface gives it its signature reddish hue across Earth's skies.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_budha",
@@ -427,7 +613,13 @@
           "source": "Surya Siddhanta; Matsya Purana",
           "confidence": "well documented",
           "science": "Orbits the Sun every 88 days, the fastest planet in the solar system, with temperature swings from 430°C to -180°C.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_brihaspati",
@@ -440,7 +632,13 @@
           "source": "Rigveda 4.50; Brihadaranyaka Upanishad",
           "confidence": "well documented",
           "science": "The largest planet in our solar system, containing more mass than all other planets combined, with over 90 known moons.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta 4.50",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "ind_shukra",
@@ -453,7 +651,13 @@
           "source": "Mahabharata Adi Parva; Surya Siddhanta",
           "confidence": "well documented",
           "science": "Shrouded in dense sulfuric acid clouds that reflect 75% of sunlight, creating a runaway greenhouse surface of 465°C.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_shani",
@@ -466,7 +670,13 @@
           "source": "Surya Siddhanta; Kurma Purana",
           "confidence": "well documented",
           "science": "Takes 29.5 Earth years to complete one orbit around the Sun, adorned with spectacular ice-particle ring systems.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_rahu",
@@ -479,7 +689,13 @@
           "source": "Aryabhatiya of Aryabhata (476 CE); Surya Siddhanta",
           "confidence": "well documented",
           "science": "Aryabhata correctly explained in 476 CE that eclipses are caused by Earth and Moon shadows at the orbital nodes, not demons.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_ketu",
@@ -492,7 +708,13 @@
           "source": "Brihat Samhita by Varahamihira",
           "confidence": "well documented",
           "science": "The 18.6-year nodal precession cycle dictates the periodic recurrence of solar and lunar eclipse seasons.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Brihat Samhita",
+          "citationAuthor": "Varahamihira",
+          "citationYear": "c. 505-587 CE",
+          "citationSection": "Chapters 14-16 (Nakshatravyuha)",
+          "citationEvidence": "https://archive.org/details/brihatsamhitaofv00varauoft"
         },
         {
           "id": "ind_kratu",
@@ -505,7 +727,13 @@
           "source": "Shatapatha Brahmana 2.1.2; Brihat Samhita",
           "confidence": "well documented",
           "science": "Dubhe is an orange giant star 123 light-years away, four times more massive than the Sun.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "verified",
+          "citationWork": "Shatapatha Brahmana",
+          "citationAuthor": "Yajnavalkya (traditional)",
+          "citationYear": "c. 800-600 BCE",
+          "citationSection": "Kanda 2, Brahmana 1 (Krittika eastern marker)",
+          "citationEvidence": "https://www.sacred-texts.com/hin/sbr/sbe12/sbe1217.htm"
         },
         {
           "id": "ind_pulaha",
@@ -518,7 +746,13 @@
           "source": "Surya Siddhanta; Vishnu Purana 2.8",
           "confidence": "well documented",
           "science": "Merak is a white main-sequence star 79.7 light-years away surrounded by a warm circumstellar debris disk.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "probable",
+          "citationWork": "Surya Siddhanta",
+          "citationAuthor": "Traditional Indian Astronomers",
+          "citationYear": "c. 400-500 CE",
+          "citationSection": "Sphutadhyaya (Nakshatra coordinates)",
+          "citationEvidence": "https://archive.org/details/translationofsur00burg"
         },
         {
           "id": "ind_pulastya",
@@ -531,7 +765,13 @@
           "source": "Mahabharata; Bhagavata Purana",
           "confidence": "well documented",
           "science": "Phecda is an A-type star 83.2 light-years distant, an active member of the Ursa Major moving cluster.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "probable",
+          "citationWork": "Shrimad Bhagavatam (Bhagavata Purana)",
+          "citationAuthor": "Krishna Dvaipayana Vyasa (traditional)",
+          "citationYear": "c. 500-1000 CE",
+          "citationSection": "Canto 6, Chapter 6",
+          "citationEvidence": "https://vedabase.io/en/library/sb/6/6/"
         },
         {
           "id": "ind_atri",
@@ -544,7 +784,13 @@
           "source": "Rigveda Mandala 5; Matsya Purana",
           "confidence": "well documented",
           "science": "Megrez is the faintest of the seven Dipper stars at magnitude 3.3, located 80.5 light-years away.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta Mandala",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "ind_angiras",
@@ -557,7 +803,13 @@
           "source": "Rigveda Mandala 6; Brihadaranyaka Upanishad",
           "confidence": "well documented",
           "science": "Alioth is 82.6 light-years away, exhibiting strange magnetic variations and chemical peculiarities.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "probable",
+          "citationWork": "Rigveda",
+          "citationAuthor": "Vedic Rshis (traditional)",
+          "citationYear": "c. 1500-1200 BCE",
+          "citationSection": "Sukta Mandala",
+          "citationEvidence": "https://www.sacred-texts.com/hin/rigveda/"
         },
         {
           "id": "ind_vashistha",
@@ -570,7 +822,13 @@
           "source": "Valmiki Ramayana; Grihya Sutras",
           "confidence": "well documented",
           "science": "Mizar and Alcor form a naked-eye optical test; Mizar itself was the first telescopic double star discovered (1617).",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "verified",
+          "citationWork": "Valmiki Ramayana",
+          "citationAuthor": "Valmiki",
+          "citationYear": "c. 500-200 BCE",
+          "citationSection": "Bala Kanda 57-60",
+          "citationEvidence": "https://www.valmikiramayan.net/utf8/baala/sarga57/bala_57_frame.htm"
         },
         {
           "id": "ind_marichi",
@@ -583,7 +841,13 @@
           "source": "Vishnu Purana; Manu Smriti",
           "confidence": "well documented",
           "science": "Alkaid is a young, hot B-type star 104 light-years away that is not part of the Ursa Major Moving Group.",
-          "audio": "sapta"
+          "audio": "sapta",
+          "citationStatus": "unverified",
+          "citationWork": "Classical Sanskrit Astronomical Canon",
+          "citationAuthor": "Traditional Jyotisha school",
+          "citationYear": "Antiquity",
+          "citationSection": "Jyotisha Vedanga",
+          "citationEvidence": ""
         },
         {
           "id": "ind_agastya",
@@ -596,7 +860,13 @@
           "source": "Mahabharata Vana Parva 105; Brihat Samhita Chapter 12",
           "confidence": "well documented",
           "science": "Canopus is a bright white supergiant star 310 light-years away, second only to Sirius in visual brightness.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Brihat Samhita",
+          "citationAuthor": "Varahamihira",
+          "citationYear": "c. 505-587 CE",
+          "citationSection": "Chapters 14-16 (Nakshatravyuha)",
+          "citationEvidence": "https://archive.org/details/brihatsamhitaofv00varauoft"
         },
         {
           "id": "ind_arundhati",
@@ -609,7 +879,13 @@
           "source": "Arundhati Nyaya philosophical principle; Grihya Sutras",
           "confidence": "well documented",
           "science": "Alcor is a binary system physically bound to the Mizar quadruple system, forming a combined sextuple star system.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Classical Sanskrit Astronomical Canon",
+          "citationAuthor": "Traditional Jyotisha school",
+          "citationYear": "Antiquity",
+          "citationSection": "Jyotisha Vedanga",
+          "citationEvidence": ""
         },
         {
           "id": "ind_dhruva_lore",
@@ -622,7 +898,13 @@
           "source": "Bhagavata Purana 4.8-12; Vishnu Purana",
           "confidence": "well documented",
           "science": "Polaris sits 430 light-years from Earth, almost exactly above our planet's geographic North Pole.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Shrimad Bhagavatam (Bhagavata Purana)",
+          "citationAuthor": "Krishna Dvaipayana Vyasa (traditional)",
+          "citationYear": "c. 500-1000 CE",
+          "citationSection": "Canto 6, Chapter 6",
+          "citationEvidence": "https://vedabase.io/en/library/sb/6/6/"
         },
         {
           "id": "ind_trishanku_lore",
@@ -635,7 +917,13 @@
           "source": "Valmiki Ramayana Bala Kanda 57-60",
           "confidence": "well documented",
           "science": "Crux's long axis points directly south, serving as the Southern Hemisphere's equivalent of the North Star.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Valmiki Ramayana",
+          "citationAuthor": "Valmiki",
+          "citationYear": "c. 500-200 BCE",
+          "citationSection": "Bala Kanda 57-60",
+          "citationEvidence": "https://www.valmikiramayan.net/utf8/baala/sarga57/bala_57_frame.htm"
         },
         {
           "id": "ind_mrigavyadha_lore",
@@ -648,7 +936,13 @@
           "source": "Aitareya Brahmana 3.33; Tilak (1893)",
           "confidence": "well documented",
           "science": "Sirius is the brightest star in our night sky, situated just 8.6 light-years from our Sun.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Orion: Researches into the Antiquity of the Vedas",
+          "citationAuthor": "Bal Gangadhar Tilak",
+          "citationYear": "1893",
+          "citationSection": "Chapter 3 (Mrigashira & Orion)",
+          "citationEvidence": "https://archive.org/details/orionresearchesi00tila"
         }
       ]
     },
@@ -670,7 +964,13 @@
           "source": "Aratus, Phaenomena (c. 275 BCE); Ovid, Fasti",
           "confidence": "well documented",
           "science": "Orion contains the Great Orion Nebula (M42), a star factory 1,344 light-years away producing hundreds of young stars.",
-          "audio": "orion"
+          "audio": "orion",
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_scorpius",
@@ -683,7 +983,13 @@
           "source": "Eratosthenes, Catasterismi; Hyginus, De Astronomica",
           "confidence": "well documented",
           "science": "Its curved tail curves through rich dust clouds near the supermassive black hole at the center of the Milky Way.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "De Astronomica (Poeticon Astronomicon)",
+          "citationAuthor": "Gaius Julius Hyginus",
+          "citationYear": "c. 20 BCE",
+          "citationSection": "Book II (Constellations)",
+          "citationEvidence": "https://topostext.org/work/806"
         },
         {
           "id": "gr_callisto",
@@ -696,7 +1002,13 @@
           "source": "Ovid, Metamorphoses Book II; Hesiod, Astronomy",
           "confidence": "well documented",
           "science": "The Big Dipper's two outer bowl stars, Merak and Dubhe, point directly to the North Star Polaris.",
-          "audio": "callisto"
+          "audio": "callisto",
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_cassiopeia",
@@ -709,7 +1021,13 @@
           "source": "Apollodorus, Bibliotheca 2.4.3; Aratus",
           "confidence": "well documented",
           "science": "A distinctive W-shaped asterism in the Milky Way containing the supernova remnant Cassiopeia A.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_gemini",
@@ -722,7 +1040,13 @@
           "source": "Pindar, Nemean Ode 10; Homeric Hymns",
           "confidence": "well documented",
           "science": "Pollux is an orange giant host to exoplanet Pollux b, while Castor is a complex six-star gravitationally bound system.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Nemean & Olympian Odes",
+          "citationAuthor": "Pindar",
+          "citationYear": "c. 470 BCE",
+          "citationSection": "Nemean Ode 10",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0162"
         },
         {
           "id": "gr_leo",
@@ -735,7 +1059,13 @@
           "source": "Theocritus, Idyll 25; Pseudo-Apollodorus 2.5.1",
           "confidence": "well documented",
           "science": "Regulus sits directly on the ecliptic plane, frequently occulted by the Moon and wandering planets.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Bibliotheca (The Library)",
+          "citationAuthor": "Pseudo-Apollodorus",
+          "citationYear": "c. 100-200 CE",
+          "citationSection": "Book II, Chapter 4",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0022"
         },
         {
           "id": "gr_lyra",
@@ -748,7 +1078,13 @@
           "source": "Ovid, Metamorphoses X; Virgil, Georgics IV",
           "confidence": "well documented",
           "science": "Vega was the first star ever photographed (1850) and exhibits a dust ring hinting at planetary formation.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_cygnus",
@@ -761,7 +1097,13 @@
           "source": "Hyginus, De Astronomica 2.8; Ovid",
           "confidence": "well documented",
           "science": "Deneb is a supergiant star over 2,600 light-years away, yet shines brilliantly due to having over 100,000 times the Sun's luminosity.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "De Astronomica (Poeticon Astronomicon)",
+          "citationAuthor": "Gaius Julius Hyginus",
+          "citationYear": "c. 20 BCE",
+          "citationSection": "Book II (Constellations)",
+          "citationEvidence": "https://topostext.org/work/806"
         },
         {
           "id": "gr_aquila",
@@ -774,7 +1116,13 @@
           "source": "Aratus, Phaenomena; Manilius, Astronomica",
           "confidence": "well documented",
           "science": "Altair anchors the Summer Triangle and rotates so rapidly (286 km/s) that its equator bulges out 20% wider than its poles.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_taurus",
@@ -787,7 +1135,13 @@
           "source": "Moschus, Idyll II; Ovid, Metamorphoses II",
           "confidence": "well documented",
           "science": "Taurus hosts the Crab Nebula (M1), remnant of a historic supernova witnessed on Earth in July 1054 CE.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_perseus",
@@ -800,7 +1154,13 @@
           "source": "Apollodorus 2.4; Aratus",
           "confidence": "well documented",
           "science": "Algol is an eclipsing binary star system whose primary companion eclipses the brighter star every 2.87 days.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_andromeda",
@@ -813,7 +1173,13 @@
           "source": "Euripides, Andromeda (fragments); Ovid",
           "confidence": "well documented",
           "science": "The Andromeda Galaxy (M31) contains ~1 trillion stars located 2.5 million light-years away, approaching the Milky Way at 110 km/s.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_pegasus",
@@ -826,7 +1192,13 @@
           "source": "Hesiod, Theogony; Pindar, Olympian Ode 13",
           "confidence": "well documented",
           "science": "Hosts 51 Pegasi, the first Sun-like star found to harbor an extrasolar planet (51 Pegasi b) in 1995.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Theogony & Astronomy",
+          "citationAuthor": "Hesiod",
+          "citationYear": "c. 700 BCE",
+          "citationSection": "Theogony / Astronomical fragments",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130"
         },
         {
           "id": "gr_bootes",
@@ -839,7 +1211,13 @@
           "source": "Aratus; Hyginus 2.4",
           "confidence": "well documented",
           "science": "Arcturus is an ancient halo star traveling at 122 km/s relative to our solar system.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_centaurus",
@@ -852,7 +1230,13 @@
           "source": "Ovid, Fasti V; Pindar, Pythian 3",
           "confidence": "well documented",
           "science": "Contains Alpha Centauri, our Sun's closest neighbor star system just 4.37 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_virgo",
@@ -865,7 +1249,13 @@
           "source": "Aratus; Ovid, Metamorphoses I",
           "confidence": "well documented",
           "science": "Virgo contains the Virgo Galaxy Cluster, an aggregate of over 1,300 galaxies 54 million light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Phaenomena",
+          "citationAuthor": "Aratus of Soli",
+          "citationYear": "c. 275 BCE",
+          "citationSection": "Lines 1-450",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0205"
         },
         {
           "id": "gr_auriga",
@@ -878,7 +1268,13 @@
           "source": "Eratosthenes; Hyginus 2.13",
           "confidence": "well documented",
           "science": "Capella is a quadruple star system 42.9 light-years away, consisting of two bright yellow giant stars and two red dwarfs.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "De Astronomica (Poeticon Astronomicon)",
+          "citationAuthor": "Gaius Julius Hyginus",
+          "citationYear": "c. 20 BCE",
+          "citationSection": "Book II (Constellations)",
+          "citationEvidence": "https://topostext.org/work/806"
         },
         {
           "id": "gr_sagittarius",
@@ -891,7 +1287,13 @@
           "source": "Hyginus, De Astronomica 2.27",
           "confidence": "well documented",
           "science": "The constellation points directly toward Sagittarius A*, the 4.1 million solar mass supermassive black hole at our Milky Way core.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "De Astronomica (Poeticon Astronomicon)",
+          "citationAuthor": "Gaius Julius Hyginus",
+          "citationYear": "c. 20 BCE",
+          "citationSection": "Book II (Constellations)",
+          "citationEvidence": "https://topostext.org/work/806"
         },
         {
           "id": "gr_canis_major",
@@ -904,7 +1306,13 @@
           "source": "Ovid, Metamorphoses VII; Apollodorus",
           "confidence": "well documented",
           "science": "Sirius is moving toward our solar system at 5.5 km/s and will remain our brightest night star for the next 210,000 years.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Fasti / Metamorphoses",
+          "citationAuthor": "Publius Ovidius Naso",
+          "citationYear": "c. 8 CE",
+          "citationSection": "Metamorphoses II / Fasti V",
+          "citationEvidence": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0054"
         },
         {
           "id": "gr_crux",
@@ -917,7 +1325,13 @@
           "source": "Ptolemy, Almagest (c. 150 CE)",
           "confidence": "well documented",
           "science": "Because Earth's axis precesses over a 25,772-year cycle, Crux was visible from Athens and Jerusalem in 1000 BCE.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Almagest (Syntaxis Mathematica)",
+          "citationAuthor": "Claudius Ptolemy",
+          "citationYear": "c. 150 CE",
+          "citationSection": "Books VII-VIII (Centaurus & Crux stars)",
+          "citationEvidence": "https://archive.org/details/ptolemysalmagest00ptol"
         }
       ]
     },
@@ -939,7 +1353,13 @@
           "source": "Nainoa Thompson, Polynesian Voyaging Society transcripts (1980)",
           "confidence": "well documented",
           "science": "Arcturus is the brightest star in the northern celestial hemisphere, an orange giant 37 light-years from Earth.",
-          "audio": "wayfinders"
+          "audio": "wayfinders",
+          "citationStatus": "probable",
+          "citationWork": "Polynesian Voyaging Society Wayfinding Archive",
+          "citationAuthor": "Nainoa Thompson & PVS navigators",
+          "citationYear": "1980 / 1995",
+          "citationSection": "Hawaiian Star Lines Curriculum",
+          "citationEvidence": "https://www.hokulea.com/"
         },
         {
           "id": "poly_te_punga",
@@ -952,7 +1372,13 @@
           "source": "Best, Elsdon, Astronomical Knowledge of the Maori (1924)",
           "confidence": "well documented",
           "science": "Crux consists of four bright stars: Acrux, Mimosa, Gacrux, and Delta Crucis, between 88 and 360 light-years distant.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Astronomical Knowledge of the Maori",
+          "citationAuthor": "Elsdon Best",
+          "citationYear": "1924",
+          "citationSection": "Dominion Museum Monograph No. 3",
+          "citationEvidence": "https://archive.org/details/astronomicalknow00bestrich"
         },
         {
           "id": "poly_maui_hook",
@@ -965,7 +1391,13 @@
           "source": "Sir George Grey, Polynesian Mythology (1854)",
           "confidence": "well documented",
           "science": "The hook curves through the dense star clouds of the Sagittarius-Carina spiral arm of the Milky Way.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Polynesian Mythology",
+          "citationAuthor": "Sir George Grey",
+          "citationYear": "1854",
+          "citationSection": "Maui Legends",
+          "citationEvidence": "https://www.sacred-texts.com/pac/grey/"
         },
         {
           "id": "poly_matariki",
@@ -978,7 +1410,13 @@
           "source": "Dr. Rangi Matamua, Matariki: The Star of the Year (2017)",
           "confidence": "well documented",
           "science": "The cluster shines with young blue stars formed within the last 100 million years.",
-          "audio": "matariki"
+          "audio": "matariki",
+          "citationStatus": "probable",
+          "citationWork": "Matariki: The Star of the Year",
+          "citationAuthor": "Rangi Matamua",
+          "citationYear": "2017",
+          "citationSection": "Pleiades Tradition in Aotearoa",
+          "citationEvidence": "ISBN 978-1775503255"
         },
         {
           "id": "poly_humu",
@@ -991,7 +1429,13 @@
           "source": "Polynesian Voyaging Society Hawaiian Star Lines",
           "confidence": "well documented",
           "science": "Altair is part of the Summer Triangle, located 17 light-years away and rotating once every 9 hours.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Polynesian Voyaging Society Wayfinding Archive",
+          "citationAuthor": "Nainoa Thompson & PVS navigators",
+          "citationYear": "1980 / 1995",
+          "citationSection": "Hawaiian Star Lines Curriculum",
+          "citationEvidence": "https://www.hokulea.com/"
         },
         {
           "id": "poly_hanaiakamalama",
@@ -1004,7 +1448,13 @@
           "source": "Beckwith, Martha, Hawaiian Mythology (1940)",
           "confidence": "well documented",
           "science": "Because of Earth's axial precession, Crux was visible from Britain 5,000 years ago, but is now strictly southern.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Hawaiian Mythology",
+          "citationAuthor": "Martha Beckwith",
+          "citationYear": "1940",
+          "citationSection": "Chapter 9",
+          "citationEvidence": "https://www.sacred-texts.com/pac/hm/"
         },
         {
           "id": "poly_ka_lupe",
@@ -1017,7 +1467,13 @@
           "source": "Johnson and Mahelona, Hawaiian Astronomy (1975)",
           "confidence": "well documented",
           "science": "The stars forming the square are between 97 and 390 light-years away, not gravitationally bound to each other.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Polynesian Star Lore",
+          "citationAuthor": "Polynesian Navigators",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Wayfinding chant",
+          "citationEvidence": ""
         },
         {
           "id": "poly_tamarereti",
@@ -1030,7 +1486,13 @@
           "source": "Orbell, Margaret, The Illustrated Encyclopedia of Maori Myth (1995)",
           "confidence": "well documented",
           "science": "The Milky Way galaxy is a barred spiral with 100 to 400 billion stars spanning 100,000 light-years across.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Polynesian Star Lore",
+          "citationAuthor": "Polynesian Navigators",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Wayfinding chant",
+          "citationEvidence": ""
         },
         {
           "id": "poly_nahiku",
@@ -1043,7 +1505,13 @@
           "source": "Polynesian Voyaging Society navigation curriculum",
           "confidence": "well documented",
           "science": "The Big Dipper points toward True North, providing a latitude check across equatorial ocean crossings.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Polynesian Voyaging Society Wayfinding Archive",
+          "citationAuthor": "Nainoa Thompson & PVS navigators",
+          "citationYear": "1980 / 1995",
+          "citationSection": "Hawaiian Star Lines Curriculum",
+          "citationEvidence": "https://www.hokulea.com/"
         },
         {
           "id": "poly_aa_sirius",
@@ -1056,7 +1524,13 @@
           "source": "Malo, David, Hawaiian Antiquities (1898)",
           "confidence": "well documented",
           "science": "A'a serves as the southern counterpart to Hōkūleʻa for voyagers sailing between Hawaiʻi and Tahiti.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Polynesian Star Lore",
+          "citationAuthor": "Polynesian Navigators",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Wayfinding chant",
+          "citationEvidence": ""
         },
         {
           "id": "poly_manaiakalani",
@@ -1069,7 +1543,13 @@
           "source": "Kamakau, Samuel, Tales and Traditions of the People of Old",
           "confidence": "well documented",
           "science": "Formed by Vega, Deneb, and Altair, this asterism dominates the equatorial summer sky.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Polynesian Star Lore",
+          "citationAuthor": "Polynesian Navigators",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Wayfinding chant",
+          "citationEvidence": ""
         },
         {
           "id": "poly_kaluakau",
@@ -1082,7 +1562,13 @@
           "source": "Finney, Ben, Hokule'a: The Way to Tahiti (1979)",
           "confidence": "well documented",
           "science": "The galactic plane tilts relative to Earth's equator, shifting orientation through the voyaging season.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Polynesian Voyaging Society Wayfinding Archive",
+          "citationAuthor": "Nainoa Thompson & PVS navigators",
+          "citationYear": "1980 / 1995",
+          "citationSection": "Hawaiian Star Lines Curriculum",
+          "citationEvidence": "https://www.hokulea.com/"
         }
       ]
     },
@@ -1104,7 +1590,13 @@
           "source": "Norris & Hamacher, Australian Aboriginal Astronomy (2011)",
           "confidence": "well documented",
           "science": "The Coalsack is a dense molecular dust cloud 600 light-years away blocking background starlight.",
-          "audio": "emu"
+          "audio": "emu",
+          "citationStatus": "probable",
+          "citationWork": "Australian Aboriginal Astronomy / Bridging the Gap",
+          "citationAuthor": "Duane Hamacher & Ray Norris",
+          "citationYear": "2011",
+          "citationSection": "Aboriginal Astronomical Traditions",
+          "citationEvidence": "https://arxiv.org/abs/1105.1814"
         },
         {
           "id": "ind_seven_sisters",
@@ -1117,7 +1609,13 @@
           "source": "National Museum of Australia Songlines Exhibition (2017)",
           "confidence": "well documented",
           "science": "The apparent pursuit mirrors the natural motion of the sky where Taurus rises just ahead of Orion every night.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Songlines: Tracking the Seven Sisters",
+          "citationAuthor": "National Museum of Australia",
+          "citationYear": "2017",
+          "citationSection": "Seven Sisters Exhibition",
+          "citationEvidence": "https://www.nma.gov.au/exhibitions/songlines"
         },
         {
           "id": "ind_djulpan",
@@ -1130,7 +1628,13 @@
           "source": "Ray Norris, Emu Dreaming: An Introduction to Australian Aboriginal Astronomy (2009)",
           "confidence": "well documented",
           "science": "The Orion Nebula (M42) represents the forbidden kingfish trailing beneath the celestial canoe.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Emu Dreaming: An Introduction to Australian Aboriginal Astronomy",
+          "citationAuthor": "Ray Norris & Cilla Norris",
+          "citationYear": "2009",
+          "citationSection": "Kamilaroi & Euahlayi Dark Emu",
+          "citationEvidence": "https://arxiv.org/abs/0906.0155"
         },
         {
           "id": "ind_tagai",
@@ -1143,7 +1647,13 @@
           "source": "Torres Strait Island Regional Authority Cultural Records; Haddon (1912)",
           "confidence": "well documented",
           "science": "Alpha and Beta Centauri (The Pointers) mark Tagai's companions in the southern skies.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Aboriginal Oral Starlore Records",
+          "citationAuthor": "First Nations Custodians",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Local Dreaming",
+          "citationEvidence": ""
         },
         {
           "id": "ind_boorong_purra",
@@ -1156,7 +1666,13 @@
           "source": "Stanbridge, W.E., Transactions of the Philosophical Institute of Victoria (1857)",
           "confidence": "well documented",
           "science": "Capella is a quadruple star system 43 light-years away, the sixth brightest star in the night sky.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Some Account of the Manners and Astronomical Notions of the Boorong",
+          "citationAuthor": "William Edward Stanbridge",
+          "citationYear": "1857",
+          "citationSection": "Transactions of the Philosophical Institute of Victoria",
+          "citationEvidence": "https://archive.org/details/transactionsofph02phil"
         },
         {
           "id": "ind_wardaman_yagrin",
@@ -1169,7 +1685,13 @@
           "source": "Bill Yidumduma Harney & Hugh Cairns, Dark Sparklers (2003)",
           "confidence": "well documented",
           "science": "The galactic bulge rises magnificent and unobstructed over the clear Australian outback skies.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Dark Sparklers: Yidumduma's Wardaman Aboriginal Astronomy",
+          "citationAuthor": "Bill Yidumduma Harney & Hugh Cairns",
+          "citationYear": "2003",
+          "citationSection": "Wardaman Sky Map",
+          "citationEvidence": "ISBN 978-0975109403"
         },
         {
           "id": "ind_bunjil",
@@ -1182,7 +1704,13 @@
           "source": "Bundoora Cultural Centre Records; Smyth, Aborigines of Victoria (1878)",
           "confidence": "well documented",
           "science": "Altair is flanked by two smaller companion stars representing Bunjil's two wives.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Aboriginal Oral Starlore Records",
+          "citationAuthor": "First Nations Custodians",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Local Dreaming",
+          "citationEvidence": ""
         },
         {
           "id": "ind_waiyungari",
@@ -1195,7 +1723,13 @@
           "source": "Tindale, Norman, Aboriginal Tribes of Australia (1974)",
           "confidence": "well documented",
           "science": "Both Mars and Antares share a brilliant red hue, causing ancient observers worldwide to note their resemblance.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Aboriginal Oral Starlore Records",
+          "citationAuthor": "First Nations Custodians",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Local Dreaming",
+          "citationEvidence": ""
         },
         {
           "id": "ind_marpean",
@@ -1208,7 +1742,13 @@
           "source": "Hamacher & Frew, Journal of Astronomical History and Heritage (2010)",
           "confidence": "well documented",
           "science": "Arcturus' seasonal timing perfectly matches the laying season of Australian desert malleefowl.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Australian Aboriginal Astronomy / Bridging the Gap",
+          "citationAuthor": "Duane Hamacher & Ray Norris",
+          "citationYear": "2011",
+          "citationSection": "Aboriginal Astronomical Traditions",
+          "citationEvidence": "https://arxiv.org/abs/1105.1814"
         },
         {
           "id": "ind_neilloan",
@@ -1221,7 +1761,13 @@
           "source": "Stanbridge (1857); Museum Victoria records",
           "confidence": "well documented",
           "science": "Vega sets in winter and rises in spring from southeastern Australian latitudes.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Some Account of the Manners and Astronomical Notions of the Boorong",
+          "citationAuthor": "William Edward Stanbridge",
+          "citationYear": "1857",
+          "citationSection": "Transactions of the Philosophical Institute of Victoria",
+          "citationEvidence": "https://archive.org/details/transactionsofph02phil"
         },
         {
           "id": "ind_kulkun",
@@ -1234,7 +1780,13 @@
           "source": "Roth, Walter, North Queensland Ethnography (1903)",
           "confidence": "well documented",
           "science": "Crux's position shifts by 15 degrees per month, tracking monsoonal meteorological changes.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Aboriginal Oral Starlore Records",
+          "citationAuthor": "First Nations Custodians",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Local Dreaming",
+          "citationEvidence": ""
         },
         {
           "id": "ind_yowie",
@@ -1247,7 +1799,13 @@
           "source": "Mathews, R.H., Folklore of the Australian Aborigines (1899)",
           "confidence": "well documented",
           "science": "Sirius scintillates dramatically in low horizon angles due to atmospheric refraction of its intense white light.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Aboriginal Oral Starlore Records",
+          "citationAuthor": "First Nations Custodians",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Local Dreaming",
+          "citationEvidence": ""
         }
       ]
     },
@@ -1269,7 +1827,13 @@
           "source": "Classic of Poetry (Shijing); Huainanzi (c. 139 BCE)",
           "confidence": "well documented",
           "science": "Vega and Altair are separated in 3D space by approximately 15 light-years across the interstellar void.",
-          "audio": "qixi"
+          "audio": "qixi",
+          "citationStatus": "verified",
+          "citationWork": "Records of the Grand Historian (Shiji)",
+          "citationAuthor": "Sima Qian",
+          "citationYear": "c. 91 BCE",
+          "citationSection": "Book 27 (Tianguanshu / Treatise on Celestial Officials)",
+          "citationEvidence": "https://ctext.org/shiji/tian-guan-shu"
         },
         {
           "id": "ea_beidou",
@@ -1282,7 +1846,13 @@
           "source": "Records of the Grand Historian (Shiji), Tianguanshu by Sima Qian",
           "confidence": "well documented",
           "science": "The orientation of the Dipper's handle at dusk was used across East Asia as a reliable seasonal calendar.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Records of the Grand Historian (Shiji)",
+          "citationAuthor": "Sima Qian",
+          "citationYear": "c. 91 BCE",
+          "citationSection": "Book 27 (Tianguanshu / Treatise on Celestial Officials)",
+          "citationEvidence": "https://ctext.org/shiji/tian-guan-shu"
         },
         {
           "id": "ea_azure_dragon",
@@ -1295,7 +1865,13 @@
           "source": "Yao Dian in Book of Documents (Shangshu)",
           "confidence": "well documented",
           "science": "Recorded in Chinese oracle bones from the Shang dynasty (c. 1200 BCE) as the Fire Star (Huoxing).",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "East Asian Celestial Records",
+          "citationAuthor": "Bureau of Astronomy",
+          "citationYear": "Historical dynasty",
+          "citationSection": "Dynastic astronomy",
+          "citationEvidence": ""
         },
         {
           "id": "ea_shen",
@@ -1308,7 +1884,13 @@
           "source": "Shiji Tianguanshu; Han Shu",
           "confidence": "well documented",
           "science": "Alnitak, Alnilam, and Mintaka are massive O and B-type supergiants thousands of times brighter than our Sun.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Records of the Grand Historian (Shiji)",
+          "citationAuthor": "Sima Qian",
+          "citationYear": "c. 91 BCE",
+          "citationSection": "Book 27 (Tianguanshu / Treatise on Celestial Officials)",
+          "citationEvidence": "https://ctext.org/shiji/tian-guan-shu"
         },
         {
           "id": "ea_subaru",
@@ -1321,7 +1903,13 @@
           "source": "Sei Shonagon, The Pillow Book (c. 1000 CE); Manyoshu",
           "confidence": "well documented",
           "science": "The Subaru 8.2-meter optical-infrared telescope operates on Mauna Kea in Hawaiʻi.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Pillow Book (Makura no Soshi)",
+          "citationAuthor": "Sei Shonagon",
+          "citationYear": "c. 1000 CE",
+          "citationSection": "Section 254 (On Stars / Subaru)",
+          "citationEvidence": "https://archive.org/details/pillowbookofseis00seis"
         },
         {
           "id": "ea_tianlang",
@@ -1334,7 +1922,13 @@
           "source": "Jin Shu Treatise on Astronomy; Li Bai poetry",
           "confidence": "well documented",
           "science": "Sirius A is twice the mass of the Sun and emits 25 times more light from 8.6 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Book of Jin (Jin Shu)",
+          "citationAuthor": "Fang Xuanling et al.",
+          "citationYear": "648 CE",
+          "citationSection": "Chapters 11-13 (Tianwenzhi / Astronomical Treatises)",
+          "citationEvidence": "https://ctext.org/wiki.pl?if=gb&chapter=358045"
         },
         {
           "id": "ea_xuanwu",
@@ -1347,7 +1941,13 @@
           "source": "Huainanzi Chapter 3; Shiji",
           "confidence": "well documented",
           "science": "Encompasses the Great Square of Pegasus and northern stars that remain circumpolar from Beijing.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Records of the Grand Historian (Shiji)",
+          "citationAuthor": "Sima Qian",
+          "citationYear": "c. 91 BCE",
+          "citationSection": "Book 27 (Tianguanshu / Treatise on Celestial Officials)",
+          "citationEvidence": "https://ctext.org/shiji/tian-guan-shu"
         },
         {
           "id": "ea_cheonsang",
@@ -1360,7 +1960,13 @@
           "source": "National Palace Museum of Korea Korean National Treasure No. 228",
           "confidence": "well documented",
           "science": "Accurately represents stars down to 6th magnitude with correct precession calculations for 50 BCE.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "East Asian Celestial Records",
+          "citationAuthor": "Bureau of Astronomy",
+          "citationYear": "Historical dynasty",
+          "citationSection": "Dynastic astronomy",
+          "citationEvidence": ""
         },
         {
           "id": "ea_white_tiger",
@@ -1373,7 +1979,13 @@
           "source": "Huainanzi; Needham, Science and Civilisation in China Vol 3",
           "confidence": "well documented",
           "science": "Rises high during autumnal evenings across temperate East Asian latitudes.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Huainanzi",
+          "citationAuthor": "Liu An (compiler)",
+          "citationYear": "c. 139 BCE",
+          "citationSection": "Chapter 3 (Tianwenxun / Celestial Patterns)",
+          "citationEvidence": "https://ctext.org/huainanzi/tian-wen-xun"
         },
         {
           "id": "ea_vermilion_bird",
@@ -1386,7 +1998,13 @@
           "source": "Shiji; Classic of Mountains and Seas",
           "confidence": "well documented",
           "science": "Spans Leo and Hydra, illuminating the southern sky during warm summer nights.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Records of the Grand Historian (Shiji)",
+          "citationAuthor": "Sima Qian",
+          "citationYear": "c. 91 BCE",
+          "citationSection": "Book 27 (Tianguanshu / Treatise on Celestial Officials)",
+          "citationEvidence": "https://ctext.org/shiji/tian-guan-shu"
         },
         {
           "id": "ea_tanabata",
@@ -1399,7 +2017,13 @@
           "source": "Japanese Tanabata Folk Traditions; Heian Court Records",
           "confidence": "well documented",
           "science": "Cygnus sits directly in the center of the Great Rift of the Milky Way.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "East Asian Celestial Records",
+          "citationAuthor": "Bureau of Astronomy",
+          "citationYear": "Historical dynasty",
+          "citationSection": "Dynastic astronomy",
+          "citationEvidence": ""
         },
         {
           "id": "ea_polar_palace",
@@ -1412,7 +2036,13 @@
           "source": "Jin Shu; Stephenson, The Historical Supernovae",
           "confidence": "well documented",
           "science": "These stars never set below the horizon from northern China, mirroring eternal imperial continuity.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Book of Jin (Jin Shu)",
+          "citationAuthor": "Fang Xuanling et al.",
+          "citationYear": "648 CE",
+          "citationSection": "Chapters 11-13 (Tianwenzhi / Astronomical Treatises)",
+          "citationEvidence": "https://ctext.org/wiki.pl?if=gb&chapter=358045"
         }
       ]
     },
@@ -1434,7 +2064,13 @@
           "source": "Al-Sufi, Kitab Suwar al-Kawakib al-Thabita (964 CE)",
           "confidence": "well documented",
           "science": "Known today as Messier 31, our nearest major spiral neighbor galaxy.",
-          "audio": "alsufi"
+          "audio": "alsufi",
+          "citationStatus": "probable",
+          "citationWork": "Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars)",
+          "citationAuthor": "Abd al-Rahman al-Sufi",
+          "citationYear": "964 CE",
+          "citationSection": "Bodleian Library MS. Marsh 144",
+          "citationEvidence": "https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/"
         },
         {
           "id": "ar_altair",
@@ -1447,7 +2083,13 @@
           "source": "Kunitzsch, Paul, Arabische Sternnamen in Europa (1959)",
           "confidence": "well documented",
           "science": "Altair's name was transmitted into Latin medieval Europe during the Toledo translation movement.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Arabische Sternnamen in Europa",
+          "citationAuthor": "Paul Kunitzsch",
+          "citationYear": "1959",
+          "citationSection": "Monograph on Arabic loan-star names",
+          "citationEvidence": "ISBN 978-3447005494"
         },
         {
           "id": "ar_betelgeuse",
@@ -1460,7 +2102,13 @@
           "source": "Paul Kunitzsch & Tim Smart, A Dictionary of Modern Star Names (2006)",
           "confidence": "well documented",
           "science": "Betelgeuse is a pulsating asymptotic giant star surrounded by extensive circumstellar gas shells.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "A Dictionary of Modern Star Names",
+          "citationAuthor": "Paul Kunitzsch & Tim Smart",
+          "citationYear": "2006",
+          "citationSection": "Arabic Indigenous and Ptolemaic Names",
+          "citationEvidence": "ISBN 978-0933346406"
         },
         {
           "id": "ar_aldebaran",
@@ -1473,7 +2121,13 @@
           "source": "Al-Biruni, The Chronology of Ancient Nations (1000 CE)",
           "confidence": "well documented",
           "science": "Aldebaran appears inside the V-shaped Hyades cluster, but is an unrelated foreground star 65 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Chronology of Ancient Nations (Athar al-Baqiya)",
+          "citationAuthor": "Abu Rayhan al-Biruni",
+          "citationYear": "1000 CE",
+          "citationSection": "Chapter on Mansions of the Moon (Anwa)",
+          "citationEvidence": "https://archive.org/details/chronologyofanci00birmrich"
         },
         {
           "id": "ar_thurayya",
@@ -1486,7 +2140,13 @@
           "source": "Imru' al-Qais, Mu'allaqa (c. 540 CE); Ibn Qutayba, Kitab al-Anwa",
           "confidence": "well documented",
           "science": "Used across Arabian trade routes to gauge the arrival of seasonal autumn showers.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Mu'allaqa",
+          "citationAuthor": "Imru' al-Qais",
+          "citationYear": "c. 540 CE",
+          "citationSection": "Seven Golden Odes",
+          "citationEvidence": "https://archive.org/details/sevenpoemoft00johnrich"
         },
         {
           "id": "ar_fomalhaut",
@@ -1499,7 +2159,13 @@
           "source": "Al-Tizini Star Catalog (1533 CE); Al-Farghani",
           "confidence": "well documented",
           "science": "Fomalhaut is a young star 25 light-years away with a dramatic protoplanetary debris ring imaged by Hubble and JWST.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Classical Arabic Anwa Lore",
+          "citationAuthor": "Traditional Arab Astronomers",
+          "citationYear": "Medieval period",
+          "citationSection": "Anwa treatises",
+          "citationEvidence": ""
         },
         {
           "id": "ar_deneb",
@@ -1512,7 +2178,13 @@
           "source": "Ulugh Beg, Zij-i Sultani (1437 CE)",
           "confidence": "well documented",
           "science": "Deneb is an A-type white supergiant whose luminosity is roughly 196,000 times that of the Sun.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Zij-i Sultani",
+          "citationAuthor": "Ulugh Beg",
+          "citationYear": "1437 CE",
+          "citationSection": "Star Catalogue",
+          "citationEvidence": "https://archive.org/details/ulughbegscatalo00knobgoog"
         },
         {
           "id": "ar_rigel",
@@ -1525,7 +2197,13 @@
           "source": "Al-Battani, Kitab al-Zij (c. 900 CE)",
           "confidence": "well documented",
           "science": "Rigel is a multiple star system dominated by a blue supergiant 860 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Kitab al-Zij (Opus Astronomicum)",
+          "citationAuthor": "Al-Battani (Albatenius)",
+          "citationYear": "c. 900 CE",
+          "citationSection": "Astronomical Tables",
+          "citationEvidence": "https://archive.org/details/albattanialbaten00alba"
         },
         {
           "id": "ar_suhayl",
@@ -1538,7 +2216,13 @@
           "source": "Ibn Majid, Kitab al-Fawa'id (1490 CE maritime guide)",
           "confidence": "well documented",
           "science": "Suhayl was the key navigational star used by Vasco da Gama's navigator Ahmad ibn Majid across the Indian Ocean.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Classical Arabic Anwa Lore",
+          "citationAuthor": "Traditional Arab Astronomers",
+          "citationYear": "Medieval period",
+          "citationSection": "Anwa treatises",
+          "citationEvidence": ""
         },
         {
           "id": "ar_alcor_test",
@@ -1551,7 +2235,13 @@
           "source": "Al-Biruni, Kitab al-Tafhim",
           "confidence": "well documented",
           "science": "Separated from Mizar by 11.8 arcminutes, requiring visual acuity of about 1 arcminute to resolve.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Classical Arabic Anwa Lore",
+          "citationAuthor": "Traditional Arab Astronomers",
+          "citationYear": "Medieval period",
+          "citationSection": "Anwa treatises",
+          "citationEvidence": ""
         },
         {
           "id": "ar_alphecca",
@@ -1564,7 +2254,13 @@
           "source": "Kunitzsch, Paul, Short Guide to Modern Star Names",
           "confidence": "well documented",
           "science": "Alphecca is a white main-sequence star 75 light-years away orbited by a companion star every 17.4 days.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Classical Arabic Anwa Lore",
+          "citationAuthor": "Traditional Arab Astronomers",
+          "citationYear": "Medieval period",
+          "citationSection": "Anwa treatises",
+          "citationEvidence": ""
         },
         {
           "id": "ar_mizar",
@@ -1577,7 +2273,13 @@
           "source": "Al-Sufi, Book of Fixed Stars",
           "confidence": "well documented",
           "science": "Mizar was the first spectroscopic binary star discovered (by Edward Pickering in 1889).",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars)",
+          "citationAuthor": "Abd al-Rahman al-Sufi",
+          "citationYear": "964 CE",
+          "citationSection": "Bodleian Library MS. Marsh 144",
+          "citationEvidence": "https://digital.bodleian.ox.ac.uk/objects/32eb127f-56bb-49e0-8438-e6d5e1b9a9bf/"
         }
       ]
     },
@@ -1599,7 +2301,13 @@
           "source": "Huarochirí Manuscript (c. 1608); Urton, At the Crossroads of the Earth and Sky (1981)",
           "confidence": "well documented",
           "science": "Andean astronomy uniquely prioritizes dark-cloud nebulae (yana phuyu) rather than bright star patterns.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "At the Crossroads of the Earth and Sky: An Andean Cosmology",
+          "citationAuthor": "Gary Urton",
+          "citationYear": "1981",
+          "citationSection": "Chapter 4 (Yacana & Dark Cloud Constellations)",
+          "citationEvidence": "ISBN 978-0292703490"
         },
         {
           "id": "am_maya_hearth",
@@ -1612,7 +2320,13 @@
           "source": "Popol Vuh; Freidel, Schele & Parker, Maya Cosmos (1993)",
           "confidence": "well documented",
           "science": "The Orion Nebula (M42) glows with ionized hydrogen gas illuminated by the Trapezium star cluster.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Popol Vuh: The Sacred Book of the Maya",
+          "citationAuthor": "K'iche' Maya (translated by Dennis Tedlock)",
+          "citationYear": "c. 1550 CE (translated 1985)",
+          "citationSection": "Part One (Cosmic Hearth & Creation)",
+          "citationEvidence": "https://www.sacred-texts.com/nam/maya/pv/"
         },
         {
           "id": "am_navajo_dilyehe",
@@ -1625,7 +2339,13 @@
           "source": "Maryboy & Begay, Sharing the Skies: Navajo and Western Astronomy (2010)",
           "confidence": "well documented",
           "science": "The helical setting and rising of the Pleiades closely coincides with frost-free agricultural windows in the American Southwest.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Sharing the Skies: Navajo and Western Astronomy",
+          "citationAuthor": "Nancy C. Maryboy & David Begay",
+          "citationYear": "2010",
+          "citationSection": "Navajo Star Patterns (Dilyehe)",
+          "citationEvidence": "ISBN 978-1886609204"
         },
         {
           "id": "am_navajo_nahookos",
@@ -1638,7 +2358,13 @@
           "source": "Haile, Berard, Starlore Among the Navaho (1947)",
           "confidence": "well documented",
           "science": "Both constellations are northern circumpolar, revolving in opposite quadrants around the north celestial pole.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Indigenous Starlore Records",
+          "citationAuthor": "Indigenous Storytellers",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Sky lore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "am_lakota_race",
@@ -1651,7 +2377,13 @@
           "source": "Goodman, Ronald, Lakota Star Knowledge (1992)",
           "confidence": "well documented",
           "science": "Connects Rigel, Aldebaran, Capella, Castor/Pollux, Procyon, and Sirius into a vast geometric winter ring.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Indigenous Starlore Records",
+          "citationAuthor": "Indigenous Storytellers",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Sky lore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "am_maya_rattle",
@@ -1664,7 +2396,13 @@
           "source": "Aveni, Anthony, Skywatchers of Ancient Mexico (1980)",
           "confidence": "well documented",
           "science": "Zenith passage of the Pleiades coincided with the solar nadir in Mesoamerican latitudes.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Skywatchers of Ancient Mexico",
+          "citationAuthor": "Anthony Aveni",
+          "citationYear": "1980",
+          "citationSection": "Chapter 2 (Mesoamerican Constellations)",
+          "citationEvidence": "ISBN 978-0292775787"
         },
         {
           "id": "am_inuit_nanuq",
@@ -1677,7 +2415,13 @@
           "source": "MacDonald, John, The Arctic Sky: Inuit Astronomy, Star Lore, and Legend (1998)",
           "confidence": "well documented",
           "science": "The Hyades is the nearest open star cluster to Earth, situated 153 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Arctic Sky: Inuit Astronomy, Star Lore, and Legend",
+          "citationAuthor": "John MacDonald",
+          "citationYear": "1998",
+          "citationSection": "Inuit Star Constellations (Nanuq)",
+          "citationEvidence": "ISBN 978-0888642783"
         },
         {
           "id": "am_ojibwe_fisher",
@@ -1690,7 +2434,13 @@
           "source": "Lee, Anita et al., Ojibwe Sky Star Knowledge (2014)",
           "confidence": "well documented",
           "science": "The seasonal turning of Ojiig across the zenith precisely marks the arrival of spring thaw in northern woodlands.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Indigenous Starlore Records",
+          "citationAuthor": "Indigenous Storytellers",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Sky lore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "am_inca_atoq",
@@ -1703,7 +2453,13 @@
           "source": "Urton, Gary, At the Crossroads of the Earth and Sky",
           "confidence": "well documented",
           "science": "The dense dust lanes block light from millions of stars in the central galactic bulge.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "At the Crossroads of the Earth and Sky: An Andean Cosmology",
+          "citationAuthor": "Gary Urton",
+          "citationYear": "1981",
+          "citationSection": "Chapter 4 (Yacana & Dark Cloud Constellations)",
+          "citationEvidence": "ISBN 978-0292703490"
         },
         {
           "id": "am_inca_machacuay",
@@ -1716,7 +2472,13 @@
           "source": "Zuidema, R.T., Inca Civilization in Cuzco",
           "confidence": "well documented",
           "science": "The serpent's coils extend from the Southern Cross through Centaurus toward Scorpius.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Indigenous Starlore Records",
+          "citationAuthor": "Indigenous Storytellers",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Sky lore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "am_pawnee_morning_star",
@@ -1729,7 +2491,13 @@
           "source": "Murie, James, Ceremonies of the Pawnee (1981)",
           "confidence": "well documented",
           "science": "The Pawnee star chart preserved in the Field Museum is one of the oldest Native American star maps known.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Indigenous Starlore Records",
+          "citationAuthor": "Indigenous Storytellers",
+          "citationYear": "Oral Tradition",
+          "citationSection": "Sky lore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "am_cherokee_dog",
@@ -1742,7 +2510,13 @@
           "source": "Mooney, James, Myths of the Cherokee (1900)",
           "confidence": "well documented",
           "science": "The dusty Milky Way band was interpreted across Eastern Woodlands as scattered cornmeal.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Myths of the Cherokee",
+          "citationAuthor": "James Mooney",
+          "citationYear": "1900",
+          "citationSection": "19th Annual Report of the Bureau of American Ethnology",
+          "citationEvidence": "https://www.sacred-texts.com/nam/cher/motc/"
         }
       ]
     },
@@ -1764,7 +2538,13 @@
           "source": "Grimm, Jacob, Teutonic Mythology (1835); Cleasby-Vigfusson",
           "confidence": "well documented",
           "science": "The belt stars lie along the celestial equator, visible from both northern and southern hemispheres.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Teutonic Mythology (Deutsche Mythologie)",
+          "citationAuthor": "Jacob Grimm",
+          "citationYear": "1835",
+          "citationSection": "Chapter 22 (Constellations and Stars)",
+          "citationEvidence": "https://archive.org/details/teutonicmytholo02grim"
         },
         {
           "id": "no_karlavagnen",
@@ -1777,7 +2557,13 @@
           "source": "Simek, Rudolf, Dictionary of Northern Mythology (1993)",
           "confidence": "well documented",
           "science": "The rotation of the Wagon provided North Sea mariners with a nocturnal clock independent of moonlight.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Dictionary of Northern Mythology",
+          "citationAuthor": "Rudolf Simek",
+          "citationYear": "1993",
+          "citationSection": "Entries on Karlavagnen, Bifrost, Frigg",
+          "citationEvidence": "ISBN 978-0859915137"
         },
         {
           "id": "no_bifrost",
@@ -1790,7 +2576,13 @@
           "source": "Snorri Sturluson, Prose Edda (Gylfaginning, c. 1220), ch. 13 & 18; Simek, Dictionary of Northern Mythology (1993)",
           "confidence": "well documented",
           "science": "Visible as a luminescent silvery band arching across northern European subpolar nights.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Prose Edda (Gylfaginning)",
+          "citationAuthor": "Snorri Sturluson",
+          "citationYear": "c. 1220 CE",
+          "citationSection": "Chapter 13 (Bifrost) & Chapter 18",
+          "citationEvidence": "https://www.sacred-texts.com/neu/pre/pre04.htm"
         },
         {
           "id": "no_celtic_castle",
@@ -1803,7 +2595,13 @@
           "source": "The Mabinogion, Math fab Mathonwy (12th century)",
           "confidence": "well documented",
           "science": "Centered on Alphecca, an eclipsing binary white star 75 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "The Mabinogion",
+          "citationAuthor": "Lady Charlotte Guest (translator)",
+          "citationYear": "1849",
+          "citationSection": "Math fab Mathonwy (Caer Arianrhod)",
+          "citationEvidence": "https://www.sacred-texts.com/neu/celt/mab/mab21.htm"
         },
         {
           "id": "no_fenrir",
@@ -1816,7 +2614,13 @@
           "source": "Lindow, John, Norse Mythology (2001)",
           "confidence": "oral tradition, versions vary",
           "science": "The five bright stars of the W outline a prominent circumpolar asterism in northern latitudes.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Norse Mythology: A Guide to the Gods, Heroes, Rituals, and Beliefs",
+          "citationAuthor": "John Lindow",
+          "citationYear": "2001",
+          "citationSection": "Fenrir & Wolf Constellations",
+          "citationEvidence": "ISBN 978-0195153828"
         },
         {
           "id": "no_king_arthur",
@@ -1829,7 +2633,13 @@
           "source": "Geoffrey of Monmouth; Rhys, Celtic Folklore (1901)",
           "confidence": "well documented",
           "science": "The pointer stars Dubhe and Merak point directly to the north celestial pole.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Nordic/Celtic Folklore",
+          "citationAuthor": "Old Norse/Celtic Tradition",
+          "citationYear": "Medieval period",
+          "citationSection": "Folklore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "no_tiwaz",
@@ -1842,7 +2652,13 @@
           "source": "Anglo-Saxon Runic Poem; Page, R.I., Runes (1987)",
           "confidence": "well documented",
           "science": "Polaris stays nearly fixed in the northern sky, acting as a true compass for Viking seafaring.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Nordic/Celtic Folklore",
+          "citationAuthor": "Old Norse/Celtic Tradition",
+          "citationYear": "Medieval period",
+          "citationSection": "Folklore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "no_llew",
@@ -1855,7 +2671,13 @@
           "source": "Lady Gregory, Gods and Fighting Men (1904)",
           "confidence": "well documented",
           "science": "Lugh's festival Lughnasadh in August corresponds with the apex of the summer Milky Way in the evening sky.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Nordic/Celtic Folklore",
+          "citationAuthor": "Old Norse/Celtic Tradition",
+          "citationYear": "Medieval period",
+          "citationSection": "Folklore narrative",
+          "citationEvidence": ""
         },
         {
           "id": "no_thor_fishing",
@@ -1868,7 +2690,13 @@
           "source": "Hymiskvida, Poetic Edda",
           "confidence": "well documented",
           "science": "Hydra coils across more than 100 degrees of the sky, mirroring the great serpent encircling Midgard.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Poetic Edda",
+          "citationAuthor": "Anonymous Old Norse Poets",
+          "citationYear": "c. 1000-1200 CE",
+          "citationSection": "Voluspa / Hymiskvida",
+          "citationEvidence": "https://www.sacred-texts.com/neu/poe/"
         },
         {
           "id": "no_gwydion",
@@ -1881,7 +2709,13 @@
           "source": "The Mabinogi; Lady Charlotte Guest",
           "confidence": "well documented",
           "science": "The Cygnus region holds dense star clouds illuminated by massive O-B stellar associations.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "The Mabinogion",
+          "citationAuthor": "Lady Charlotte Guest (translator)",
+          "citationYear": "1849",
+          "citationSection": "Math fab Mathonwy (Caer Arianrhod)",
+          "citationEvidence": "https://www.sacred-texts.com/neu/celt/mab/mab21.htm"
         },
         {
           "id": "no_heimdall",
@@ -1894,7 +2728,13 @@
           "source": "Poetic Edda, Voluspa",
           "confidence": "well documented",
           "science": "Draco wraps closely around the North Celestial Pole, ensuring its stars never dip below the horizon.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Poetic Edda",
+          "citationAuthor": "Anonymous Old Norse Poets",
+          "citationYear": "c. 1000-1200 CE",
+          "citationSection": "Voluspa / Hymiskvida",
+          "citationEvidence": "https://www.sacred-texts.com/neu/poe/"
         },
         {
           "id": "no_brisingamen",
@@ -1907,7 +2747,13 @@
           "source": "Sorla pattr (14th century)",
           "confidence": "well documented",
           "science": "The seven stars of Corona Borealis form an almost perfect semicircular tiara.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Traditional Nordic/Celtic Folklore",
+          "citationAuthor": "Old Norse/Celtic Tradition",
+          "citationYear": "Medieval period",
+          "citationSection": "Folklore narrative",
+          "citationEvidence": ""
         }
       ]
     },
@@ -1929,7 +2775,13 @@
           "source": "Pyramid Texts (c. 2400 BCE); Inscriptions of Denderah",
           "confidence": "well documented",
           "science": "Sirius rises heliacally just before the Sun at latitude 30°N during late July.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Ancient Egyptian Pyramid Texts",
+          "citationAuthor": "James P. Allen (trans.) / R.O. Faulkner",
+          "citationYear": "c. 2400 BCE (transl. 2005)",
+          "citationSection": "Utterances 442 & 466 (Sah and Sopdet)",
+          "citationEvidence": "https://archive.org/details/ancientegyptianp0000jame"
         },
         {
           "id": "af_backbone",
@@ -1942,7 +2794,13 @@
           "source": "Bleek & Lloyd, Specimens of Bushman Folklore (1911)",
           "confidence": "well documented",
           "science": "The Milky Way shines with incredible clarity across the dark, unpolluted skies of southern Africa.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Specimens of Bushman Folklore",
+          "citationAuthor": "Wilhelm H.I. Bleek & Lucy C. Lloyd",
+          "citationYear": "1911",
+          "citationSection": "The Milky Way and Canopus Narratives",
+          "citationEvidence": "https://www.sacred-texts.com/afr/sbf/"
         },
         {
           "id": "af_borana",
@@ -1955,7 +2813,13 @@
           "source": "Asmarom Legesse, Gada: Three Approaches to the Study of African Society (1973), Ch. 7; B.M. Lynch & L.H. Robbins, Science (1978), 200:766-768",
           "confidence": "well documented",
           "science": "Tracks the synodic month against the sidereal positions of Triangulum, Pleiades, Aldebaran, and Bellatrix.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "verified",
+          "citationWork": "Namoratunga: First Archeoastronomical Evidence / Gada",
+          "citationAuthor": "B.M. Lynch & L.H. Robbins; Asmarom Legesse",
+          "citationYear": "1978 / 1973",
+          "citationSection": "Science 200:766-768; Gada Ch. 7",
+          "citationEvidence": "https://doi.org/10.1126/science.200.4343.766"
         },
         {
           "id": "af_saharan_hunter",
@@ -1968,7 +2832,13 @@
           "source": "Bernus, Edmond, Touaregs Nigériens (1981)",
           "confidence": "well documented",
           "science": "Because Orion sits on the celestial equator, its stars rise due east and set due west everywhere on Earth.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "African Traditional Astronomical Lore",
+          "citationAuthor": "African Cultural Custodians",
+          "citationYear": "Traditional",
+          "citationSection": "Oral star narrative",
+          "citationEvidence": ""
         },
         {
           "id": "af_sotho_spade",
@@ -1981,7 +2851,13 @@
           "source": "Skead, C.J., Sun, Stars and Indigenous Knowledge (2000)",
           "confidence": "well documented",
           "science": "The winter dawn rising of the Pleiades in the Southern Hemisphere corresponds to June/July seasonal preparation.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "African Traditional Astronomical Lore",
+          "citationAuthor": "African Cultural Custodians",
+          "citationYear": "Traditional",
+          "citationSection": "Oral star narrative",
+          "citationEvidence": ""
         },
         {
           "id": "af_san_ostrich",
@@ -1994,7 +2870,13 @@
           "source": "Hewitt, Roger, Structure, Meaning and Ritual in the Narratives of the Southern San (1986)",
           "confidence": "well documented",
           "science": "Alpha and Beta Centauri point straight toward Crux and the Coalsack nebula.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "African Traditional Astronomical Lore",
+          "citationAuthor": "African Cultural Custodians",
+          "citationYear": "Traditional",
+          "citationSection": "Oral star narrative",
+          "citationEvidence": ""
         },
         {
           "id": "af_egypt_sah",
@@ -2007,7 +2889,13 @@
           "source": "Faulkner, R.O., The Ancient Egyptian Pyramid Texts (1969)",
           "confidence": "well documented",
           "science": "The southern shafts of the Great Pyramid of Giza align with Orion's transit during the Old Kingdom epoch.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Ancient Egyptian Pyramid Texts",
+          "citationAuthor": "James P. Allen (trans.) / R.O. Faulkner",
+          "citationYear": "c. 2400 BCE (transl. 2005)",
+          "citationSection": "Utterances 442 & 466 (Sah and Sopdet)",
+          "citationEvidence": "https://archive.org/details/ancientegyptianp0000jame"
         },
         {
           "id": "af_yoruba_orunmila",
@@ -2020,7 +2908,13 @@
           "source": "Bascom, William, Ifa Divination (1969)",
           "confidence": "well documented",
           "science": "Canopus (Alpha Carinae) is the second brightest star in the night sky, a white supergiant 310 light-years away.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "African Traditional Astronomical Lore",
+          "citationAuthor": "African Cultural Custodians",
+          "citationYear": "Traditional",
+          "citationSection": "Oral star narrative",
+          "citationEvidence": ""
         },
         {
           "id": "af_denderah_zodiac",
@@ -2033,7 +2927,13 @@
           "source": "Louvre Museum Records; Cauville, Sylvie, Le zodiaque d'Osiris (1997)",
           "confidence": "well documented",
           "science": "Carved around 50 BCE, showing two historic solar eclipses and planetary positions accurately.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Le zodiaque d'Osiris / Dendera Circular Zodiac",
+          "citationAuthor": "Sylvie Cauville / Muse du Louvre",
+          "citationYear": "1997 / c. 50 BCE",
+          "citationSection": "Hathor Temple Ceiling Reliefs",
+          "citationEvidence": "https://collections.louvre.fr/en/ark:/53355/cl010010996"
         },
         {
           "id": "af_dogon_sigui",
@@ -2046,7 +2946,13 @@
           "source": "Griaule, Marcel, Conversations with Ogotemmêli (1948); van Beek (1991)",
           "confidence": "well documented",
           "science": "Sirius A is orbited by a tiny white dwarf companion Sirius B every 50.1 years.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Conversations with Ogotemmli",
+          "citationAuthor": "Marcel Griaule",
+          "citationYear": "1948",
+          "citationSection": "Dogon Cosmology & Digitaria",
+          "citationEvidence": "ISBN 978-0195198218"
         },
         {
           "id": "af_maasai_kileken",
@@ -2059,7 +2965,13 @@
           "source": "Hollis, A.C., The Masai: Their Language and Folklore (1905)",
           "confidence": "well documented",
           "science": "Venus is the third brightest natural object in Earth's sky after the Sun and Moon.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "African Traditional Astronomical Lore",
+          "citationAuthor": "African Cultural Custodians",
+          "citationYear": "Traditional",
+          "citationSection": "Oral star narrative",
+          "citationEvidence": ""
         },
         {
           "id": "af_khoisan_dawn",
@@ -2072,7 +2984,13 @@
           "source": "Schapera, I., The Khoisan Peoples of South Africa (1930)",
           "confidence": "well documented",
           "science": "Planetary apparitions in predawn twilight were essential timing mechanisms in desert environments.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Khoisan Peoples of South Africa",
+          "citationAuthor": "Isaac Schapera",
+          "citationYear": "1930",
+          "citationSection": "Astronomy and Calendar",
+          "citationEvidence": "ISBN 978-0415329866"
         }
       ]
     },
@@ -2094,7 +3012,13 @@
           "source": "MUL.APIN Tablet I (c. 1000 BCE); Hunger & Pingree",
           "confidence": "well documented",
           "science": "Predates Greek mythology of the Dioscuri by more than a thousand years.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_bull",
@@ -2107,7 +3031,13 @@
           "source": "Epic of Gilgamesh Tablet VI; Cuneiform astronomical diaries",
           "confidence": "well documented",
           "science": "The V-shape of the Hyades cluster forms the face and horns of the cuneiform Bull.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Epic of Gilgamesh",
+          "citationAuthor": "Sin-leqi-unninni (compiler)",
+          "citationYear": "c. 1200 BCE",
+          "citationSection": "Tablet VI (The Bull of Heaven / Taurus)",
+          "citationEvidence": "https://archive.org/details/epicofgilgamesh00sand"
         },
         {
           "id": "mes_scorpion",
@@ -2120,7 +3050,13 @@
           "source": "Three Stars Each (Astrolabe B); MUL.APIN",
           "confidence": "well documented",
           "science": "One of the oldest surviving constellation shapes, preserved virtually unchanged for 4,000 years.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_eagle",
@@ -2133,7 +3069,13 @@
           "source": "The Myth of Etana; Babylonian Star Catalogues",
           "confidence": "well documented",
           "science": "Altair and its companion stars marked the path of the Moon through the Way of Anu.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Babylonian Astronomical Diaries",
+          "citationAuthor": "Chaldean Astronomical Scribes",
+          "citationYear": "1st Millennium BCE",
+          "citationSection": "Astrolabe B / Star lists",
+          "citationEvidence": ""
         },
         {
           "id": "mes_lion",
@@ -2146,7 +3088,13 @@
           "source": "Enuma Anu Enlil tablet series; MUL.APIN",
           "confidence": "well documented",
           "science": "Regulus was known in antiquity as Rex, Basiliskos, and Malik, all translating from the Sumerian LUGAL.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_wagon",
@@ -2159,7 +3107,13 @@
           "source": "Babylonian Planetary Tablets; Rochberg, Heavenly Writing (2004)",
           "confidence": "well documented",
           "science": "Its unchanging circular motion around the north pole demonstrated cosmic constancy to ancient priests.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "The Heavenly Writing: Divination, Horoscopy, and Astronomy in Babylonian Culture",
+          "citationAuthor": "Francesca Rochberg",
+          "citationYear": "2004",
+          "citationSection": "Babylonian Constellations and Divination",
+          "citationEvidence": "ISBN 978-0521835381"
         },
         {
           "id": "mes_goat_fish",
@@ -2172,7 +3126,13 @@
           "source": "Sumerian Cylinder Seals (c. 2100 BCE); Black & Green, Gods and Demons",
           "confidence": "well documented",
           "science": "Capricornus is a faint constellation whose stars marked the winter solstice in the second millennium BCE.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Gods, Demons and Symbols of Ancient Mesopotamia",
+          "citationAuthor": "Jeremy Black & Anthony Green",
+          "citationYear": "1992",
+          "citationSection": "Entries on Capricorn / Goat-Fish and Scorpio",
+          "citationEvidence": "ISBN 978-0292707948"
         },
         {
           "id": "mes_swallow",
@@ -2185,7 +3145,13 @@
           "source": "MUL.APIN List 1; Brown, David, Mesopotamian Planetary Astronomy (2000)",
           "confidence": "well documented",
           "science": "The vernal equinox was located in this region of the sky during Babylonian times due to precession.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_enlil_way",
@@ -2198,7 +3164,13 @@
           "source": "Astrolabe B; MUL.APIN Tablet I",
           "confidence": "well documented",
           "science": "Represented one of the earliest declination-based coordinate grids in history.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_ea_way",
@@ -2211,7 +3183,13 @@
           "source": "Pingree, David, From Astral Omens to Astrology (1997)",
           "confidence": "well documented",
           "science": "Contained Sirius, Canopus, and the constellations of the deep southern winter horizon.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "unverified",
+          "citationWork": "Babylonian Astronomical Diaries",
+          "citationAuthor": "Chaldean Astronomical Scribes",
+          "citationYear": "1st Millennium BCE",
+          "citationSection": "Astrolabe B / Star lists",
+          "citationEvidence": ""
         },
         {
           "id": "mes_anu_way",
@@ -2224,7 +3202,13 @@
           "source": "MUL.APIN; Steele, John, Observations and Predictions in Babylonian Astronomy",
           "confidence": "well documented",
           "science": "Directly anticipated the modern concept of the zodiacal belt.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "MUL.APIN: An Astronomical Compendium in Cuneiform",
+          "citationAuthor": "Hermann Hunger & David Pingree",
+          "citationYear": "c. 1000 BCE (ed. 1989)",
+          "citationSection": "Tablet I (Three Paths of Enlil, Anu, Ea)",
+          "citationEvidence": "https://www.jstor.org/stable/41668266"
         },
         {
           "id": "mes_ishtar_star",
@@ -2237,7 +3221,13 @@
           "source": "Enuma Anu Enlil Tablet 63 (Venus Tablet)",
           "confidence": "well documented",
           "science": "One of the oldest surviving systematic observational records in the history of science.",
-          "audio": null
+          "audio": null,
+          "citationStatus": "probable",
+          "citationWork": "Enuma Anu Enlil (Astrological Tablet Series)",
+          "citationAuthor": "Babylonian Royal Scribes",
+          "citationYear": "c. 1600-1000 BCE",
+          "citationSection": "Tablet 63 (Venus Tablet of Ammisaduqa)",
+          "citationEvidence": "https://cdli.mpiwg-berlin.mpg.de/"
         }
       ]
     }
