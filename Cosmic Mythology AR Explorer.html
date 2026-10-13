@@ -203,11 +203,59 @@ dialog .btn{display:block;margin-top:8px;width:100%}
 <div class="gl pan"><h3>Lock-on</h3><div class="ro" id="ro"></div><p class="cap" style="margin-top:14px">Distances and spectral types are rounded catalogue values, good for exploring rather than citing.</p></div>
 </div></main>
 
-<main id="myth" class="pg fx"><h2>Myth and culture</h2>
-<div class="tabs" id="mt"></div><p class='cap' id='mi' style='margin:-6px 0 14px;max-width:72ch'></p>
-<div class="myth"><div id="ml"></div>
-<div><div class="gl pan"><canvas class="c2" id="mm" style="height:min(46vh,380px)"></canvas></div><div class="gl story" id="ms" style="margin-top:14px"></div></div>
-<div class="gl pan"><h3>Avatar</h3><div class="stage"><div class="av"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="gly" id="gl"></div></div></div><p class="cap">Placeholder figure. Swap in a glTF character for each story.</p></div></div></main>
+<main id="myth" class="pg fx">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+  <h2>Myth and culture</h2>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" id="btn-compare-myth" style="font-size:13px;background:rgba(240,179,106,.15);border-color:var(--myth);color:#ffe2b0">✦ Compare Traditions for Constellation</button>
+    <button class="btn" id="btn-visible-myth" style="font-size:13px">🌌 Visible Tonight</button>
+  </div>
+</div>
+
+<!-- Search & Filter Bar -->
+<div class="gl pan" style="padding:12px 16px;margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+  <input id="myth-sq" placeholder="Search 160+ celestial stories, gods, stars, and legends..." style="flex:1;min-width:240px;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);font:inherit" aria-label="Search stories">
+  <select id="myth-reg-filter" style="padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(10,14,32,.9);color:var(--ink);font:inherit" aria-label="Filter by Region">
+    <option value="all">All Global Regions</option>
+    <option value="South Asia">South Asia</option>
+    <option value="Mediterranean">Mediterranean</option>
+    <option value="Oceania">Oceania</option>
+    <option value="East Asia">East Asia</option>
+    <option value="Middle East">Middle East</option>
+    <option value="Americas">Americas</option>
+    <option value="Northern Europe">Northern Europe</option>
+    <option value="Africa">Africa</option>
+  </select>
+  <select id="myth-con-filter" style="padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(10,14,32,.9);color:var(--ink);font:inherit" aria-label="Filter by Constellation">
+    <option value="all">All Constellations</option>
+  </select>
+</div>
+
+<div class="tabs" id="mt"></div>
+<div style="display:flex;align-items:center;gap:10px;margin:-6px 0 8px;flex-wrap:wrap">
+  <p class='cap' id='mi' style='max-width:72ch;margin:0'></p>
+  <span id="m-rev-badge" class="hud-pill" style="display:none;font-size:11px;color:#ffb347;border-color:rgba(255,179,71,.4)">⚠️ Review Pending</span>
+</div>
+<p class='cap' id='mu' style='margin:0 0 14px;color:var(--sci);font-size:12px'></p>
+
+<div class="myth">
+  <div id="ml"></div>
+  <div>
+    <div class="gl pan"><canvas class="c2" id="mm" style="height:min(46vh,380px)"></canvas></div>
+    <div class="gl story" id="ms" style="margin-top:14px"></div>
+  </div>
+  <div class="gl pan">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <h3>Avatar</h3>
+      <span id="av-arch" class="cap" style="color:var(--myth);font-weight:500">Celestial Figure</span>
+    </div>
+    <div class="stage" style="position:relative;height:260px;perspective:none">
+      <canvas id="av-cv" style="width:100%;height:100%;display:block;border-radius:14px;background:radial-gradient(circle at center,rgba(28,18,36,.6),rgba(4,6,13,.8));cursor:grab;touch-action:none" aria-label="3D Interactive Celestial Avatar"></canvas>
+    </div>
+    <p class="cap" id="av-cap" style="margin-top:6px">Interactive 3D celestial avatar · Drag to rotate</p>
+  </div>
+</div>
+</main>
 
 <main id="play" class="pg fx">
 <!-- Mission Control Game HUD -->
@@ -401,21 +449,463 @@ const PL=[['#b9b3a8',.24],['#e8c28a',.62],['#6aa3ff',1],['#ff7a5c',1.88],['#e0b2
 function drawOrb(t){const c=$('#orb'),x=c.getContext('2d'),w=c.width,h=c.height,cx=w/2,cy=h/2,sp=+$('#warp').value;x.clearRect(0,0,w,h);const k=h/260;
 x.fillStyle='#ffd27a';x.shadowColor='#ffb347';x.shadowBlur=20;x.beginPath();x.arc(cx,cy,7*k,0,7);x.fill();x.shadowBlur=0;
 PL.forEach(([col,per],i)=>{const r=(22+i*19)*k;x.strokeStyle='rgba(150,170,255,.18)';x.beginPath();x.ellipse(cx,cy,r*1.9,r,0,0,7);x.stroke();const a=t/1000*sp/per*1.2+i;x.fillStyle=col;x.beginPath();x.arc(cx+Math.cos(a)*r*1.9,cy+Math.sin(a)*r,(3+(i>3?2:0))*k,0,7);x.fill()})}
-/* ---------- myth page ---------- */
-let cat='nak',cur=0,t0=0;
-$('#mt').innerHTML=Object.entries(MY).map(([k,v])=>`<button class="btn" data-c="${k}">${v[0]}</button>`).join('');
-$('#mt').onclick=e=>{const b=e.target.closest('[data-c]');if(b){cat=b.dataset.c;cur=0;renderMyth()}};
-$('#ml').onclick=e=>{const b=e.target.closest('[data-i]');if(b){cur=+b.dataset.i;renderMyth()}};
-function renderMyth(){$$('#mt .btn').forEach(b=>b.classList.toggle('on',b.dataset.c===cat));const L=MY[cat][1];
-$('#ml').innerHTML=L.map((m,i)=>`<button class="item ${i===cur?'on':''}" data-i="${i}"><b>${m[0]}</b><small>${m[1]}</small></button>`).join('');
-$('#ms').innerHTML=`<h3>${L[cur][0]}</h3><p style="margin-top:8px">${L[cur][4]}</p><p class='cap' style='margin-top:12px'>Constellation: ${L[cur][3]} · Best seen: ${CI[L[cur][3]][0]}</p>`;$('#gl').textContent=L[cur][2];$('#mi').textContent=INTRO[cat]||'';t0=performance.now()}
-function drawMyth(t){const c=$('#mm'),x=c.getContext('2d'),w=c.width,h=c.height,k=w/(c.clientWidth||w);x.clearRect(0,0,w,h);const con=MY[cat][1][cur][3],E=edges(con),names=[...new Set(E.flat())],r0=ST[names[0]].ra,cs=Math.cos(names.reduce((a,n)=>a+ST[n].dec,0)/names.length*Math.PI/180),X=n=>-(((ST[n].ra-r0+12)%24+24)%24-12)*15*cs,Y=n=>ST[n].dec,xs=names.map(X),ys=names.map(Y),mn=Math.min(...xs),mx=Math.max(...xs),my=Math.min(...ys),mY=Math.max(...ys),sc=Math.min((w*.62)/((mx-mn)||1),(h*.56)/((mY-my)||1)),P=n=>[w/2+(X(n)-(mn+mx)/2)*sc,h/2+10*k-(Y(n)-(my+mY)/2)*sc];
-const g=x.createRadialGradient(w/2,h/2,0,w/2,h/2,w/1.5);g.addColorStop(0,'rgba(240,179,106,.18)');g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,w,h);
-for(let i=0;i<70;i++){x.fillStyle=`rgba(255,235,200,${.15+.25*Math.abs(Math.sin(t/900+i))})`;x.fillRect((i*97.3)%w,(i*53.7)%h,1.5*k,1.5*k)}
-const prog=Math.min(1,(t-t0)/2200)*E.length;x.lineWidth=2*k;x.strokeStyle='rgba(240,179,106,.85)';x.shadowColor='#f0b36a';x.shadowBlur=12;x.lineCap='round';
-E.forEach(([a,b],i)=>{const f=Math.max(0,Math.min(1,prog-i));if(!f)return;const A=P(a),B=P(b);x.beginPath();x.moveTo(...A);x.lineTo(A[0]+(B[0]-A[0])*f,A[1]+(B[1]-A[1])*f);x.stroke()});x.shadowBlur=0;
-x.font=`${12*k}px Space Grotesk,sans-serif`;names.forEach((n,i)=>{const p=P(n),dx=p[0]-w/2,dy=p[1]-h/2,l=Math.hypot(dx,dy)||1;x.fillStyle='#fff3d6';x.beginPath();x.arc(p[0],p[1],(3+Math.sin(t/300+i*2))*k,0,7);x.fill();x.fillStyle='rgba(255,230,190,.78)';x.textAlign=dx>=0?'left':'right';x.fillText(n,p[0]+dx/l*14*k,p[1]+dy/l*14*k+4*k)});
-x.textAlign='left';x.fillStyle='rgba(255,230,190,.85)';x.font=`italic ${24*k}px Georgia,serif`;x.fillText(con,16*k,34*k)}
+/* ---------- myth page (TASK B ENHANCED) ---------- */
+let cat = 'nak', cur = 0, t0 = 0;
+let mythSearchQ = '', mythRegFilter = 'all', mythConFilter = 'all', mythVisibleOnly = false;
+let mythJsonData = null;
+
+// Populate constellation filter dropdown
+const conSel = $('#myth-con-filter');
+if (conSel) {
+  Object.keys(CON).sort().forEach(k => {
+    const opt = document.createElement('option');
+    opt.value = k;
+    opt.textContent = k;
+    conSel.appendChild(opt);
+  });
+}
+
+// 3D Avatar System
+const avCv = $('#av-cv');
+let avR = null, avS = null, avC = null, avG = new THREE.Group(), avDrag = null, avRot = {x:.2, y:0}, avTargetRot = {x:.2, y:0};
+function initAvatar() {
+  if (avR || !avCv) return;
+  avR = new THREE.WebGLRenderer({canvas:avCv, antialias:true, alpha:true});
+  avR.setPixelRatio(Math.min(devicePixelRatio, 2));
+  avS = new THREE.Scene();
+  avC = new THREE.PerspectiveCamera(45, 1, .1, 100);
+  avC.position.z = 4.6;
+  avS.add(avG);
+  const resizeAv = () => {
+    const r = avCv.getBoundingClientRect();
+    if (r.width && r.height) {
+      avR.setSize(r.width, r.height, false);
+      avC.aspect = r.width / r.height;
+      avC.updateProjectionMatrix();
+    }
+  };
+  resizeAv();
+  avCv.addEventListener('pointerdown', e => {
+    avDrag = {x: e.clientX, y: e.clientY};
+    avCv.setPointerCapture(e.pointerId);
+    avCv.style.cursor = 'grabbing';
+  });
+  avCv.addEventListener('pointermove', e => {
+    if (!avDrag) return;
+    avTargetRot.y += (e.clientX - avDrag.x) * .016;
+    avTargetRot.x = Math.max(-1.1, Math.min(1.1, avTargetRot.x + (e.clientY - avDrag.y) * .016));
+    avDrag = {x: e.clientX, y: e.clientY};
+  });
+  ['pointerup','pointercancel'].forEach(t => avCv.addEventListener(t, () => { avDrag = null; avCv.style.cursor = 'grab'; }));
+}
+
+function getArchetype(con, title) {
+  const t = (String(title) + ' ' + String(con)).toLowerCase();
+  if (t.includes('canoe') || t.includes('punga') || t.includes('anchor') || t.includes('boat') || t.includes('navigat') || t.includes('wayfind') || t.includes('trishanku') || t.includes('djulpan'))
+    return {id:'vessel', name:'Celestial Vessel · Anchor'};
+  if (t.includes('swan') || t.includes('eagle') || t.includes('emu') || t.includes('bird') || t.includes('winged') || con==='Cygnus' || con==='Aquila' || con==='Pegasus')
+    return {id:'avian', name:'Celestial Avian'};
+  if (t.includes('bear') || t.includes('lion') || t.includes('bull') || t.includes('wolf') || t.includes('dog') || t.includes('beast') || t.includes('dragon') || t.includes('rattlesnake') || t.includes('turtle') || con==='Leo' || con==='Taurus' || con==='Canis Major' || con==='Scorpius' || con==='Ursa Major')
+    return {id:'beast', name:'Celestial Beast'};
+  if (t.includes('hunter') || t.includes('hero') || t.includes('bow') || t.includes('archer') || t.includes('fishhook') || t.includes('chiron') || con==='Orion' || con==='Perseus' || con==='Centaurus' || con==='Sagittarius')
+    return {id:'hunter', name:'Celestial Hunter · Warrior'};
+  if (t.includes('weaver') || t.includes('distaff') || t.includes('lyre') || t.includes('queen') || t.includes('harp') || t.includes('sisters') || con==='Lyra' || con==='Cassiopeia' || con==='Andromeda' || con==='Virgo')
+    return {id:'weaver', name:'Celestial Weaver · Lyre'};
+  if (t.includes('sage') || t.includes('sufi') || t.includes('aryabhata') || t.includes('book') || t.includes('calendar') || t.includes('beidou'))
+    return {id:'scholar', name:'Celestial Astrolabe'};
+  return {id:'deity', name:'Celestial Deity'};
+}
+
+function buildAvatar(archId) {
+  while(avG.children.length) avG.remove(avG.children[0]);
+  const lMat = new THREE.LineBasicMaterial({color:0xf0b36a, transparent:true, opacity:.85, blending:THREE.AdditiveBlending});
+  const pMat = new THREE.PointsMaterial({size:7, sizeAttenuation:false, map:sprite, color:0xffecd0, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false});
+  const gMat = new THREE.MeshBasicMaterial({color:0xf0b36a, wireframe:true, transparent:true, opacity:.3, blending:THREE.AdditiveBlending});
+  const cMat = new THREE.MeshBasicMaterial({color:0xffcf8a, transparent:true, opacity:.9});
+
+  const mkPts = coords => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(coords, 3));
+    return new THREE.Points(geo, pMat);
+  };
+  const mkLines = pairs => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pairs, 3));
+    return new THREE.LineSegments(geo, lMat);
+  };
+
+  if (archId === 'hunter') {
+    const j = [[0,1.3,0],[-.45,.9,0],[.45,.9,0],[0,.55,0],[-.3,-.4,0],[.3,-.4,0],[-.4,-1.3,0],[.4,-1.3,0],[.8,.8,0],[.9,1.4,0],[.9,.2,0]];
+    const edg = [[0,1],[0,2],[1,3],[2,3],[3,4],[3,5],[4,6],[5,7],[2,8],[8,9],[8,10]];
+    const pts = [], lines = [];
+    j.forEach(p => pts.push(...p));
+    edg.forEach(([a,b]) => lines.push(...j[a], ...j[b]));
+    avG.add(mkPts(pts)); avG.add(mkLines(lines));
+    const bowCurve = [];
+    for(let i=0; i<=16; i++) {
+      const a = -Math.PI/2 + (Math.PI*i/16);
+      bowCurve.push(new THREE.Vector3(.9+Math.cos(a)*.35, .8+Math.sin(a)*.75, 0));
+    }
+    avG.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(bowCurve), lMat));
+    avG.add(mkLines([.2,.8,0, 1.4,.8,0, 1.4,.8,0, 1.25,.88,0, 1.4,.8,0, 1.25,.72,0]));
+    const halo = new THREE.Mesh(new THREE.TorusGeometry(.24,.02,8,24), cMat);
+    halo.position.set(0,1.3,0); halo.rotation.x = Math.PI/2;
+    avG.add(halo);
+  } else if (archId === 'beast') {
+    const j = [[-1.1,.2,0],[-.7,.5,0],[-.1,.6,0],[.5,.55,0],[1.0,.9,0],[1.3,1.1,0],[-.9,-.7,.3],[-.9,-.7,-.3],[.4,-.7,.35],[.4,-.7,-.35],[-1.4,.6,0]];
+    const edg = [[0,1],[1,2],[2,3],[3,4],[4,5],[1,6],[1,7],[3,8],[3,9],[0,10],[1,3]];
+    const pts = [], lines = [];
+    j.forEach(p => pts.push(...p));
+    edg.forEach(([a,b]) => lines.push(...j[a], ...j[b]));
+    avG.add(mkPts(pts)); avG.add(mkLines(lines));
+    const r1 = new THREE.Mesh(new THREE.TorusGeometry(.55,.02,8,24), gMat);
+    r1.position.set(-.2,.55,0); r1.rotation.y = Math.PI/2;
+    avG.add(r1);
+  } else if (archId === 'avian') {
+    const j = [[0,1.2,0],[0,.7,0],[0,-.8,0],[0,-1.3,0],[-.6,.9,.2],[-1.3,.95,.1],[-1.8,.7,-.1],[-1.4,.4,-.1],[.6,.9,.2],[1.3,.95,.1],[1.8,.7,-.1],[1.4,.4,-.1]];
+    const edg = [[0,1],[1,2],[2,3],[1,4],[4,5],[5,6],[6,7],[7,1],[1,8],[8,9],[9,10],[10,11],[11,1]];
+    const pts = [], lines = [];
+    j.forEach(p => pts.push(...p));
+    edg.forEach(([a,b]) => lines.push(...j[a], ...j[b]));
+    avG.add(mkPts(pts)); avG.add(mkLines(lines));
+    const halo = new THREE.Mesh(new THREE.RingGeometry(.9,1.1,32), gMat);
+    halo.rotation.x = Math.PI/3; avG.add(halo);
+  } else if (archId === 'vessel') {
+    const j = [[-.9,-.6,.4],[0,-.7,.5],[.9,-.5,.4],[-.9,-.6,-.4],[0,-.7,-.4],[.9,-.5,-.4],[0,1.2,0],[0,-.6,0]];
+    const edg = [[0,1],[1,2],[3,4],[4,5],[0,3],[1,4],[2,5],[7,6],[6,0],[6,2],[6,3],[6,5]];
+    const pts = [], lines = [];
+    j.forEach(p => pts.push(...p));
+    edg.forEach(([a,b]) => lines.push(...j[a], ...j[b]));
+    avG.add(mkPts(pts)); avG.add(mkLines(lines));
+    const arc = [];
+    for(let i=0; i<=16; i++) {
+      const a = Math.PI*(.2 + .6*i/16);
+      arc.push(new THREE.Vector3(Math.cos(a)*.85, -1.0 - Math.sin(a)*.4, 0));
+    }
+    avG.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(arc), lMat));
+  } else if (archId === 'weaver') {
+    const lines = [-.8,1.1,0,-.7,-1.1,0, .8,1.1,0,.7,-1.1,0, -.8,1.1,0,.8,1.1,0, -.7,-1.1,0,.7,-1.1,0];
+    const pts = [-.8,1.1,0, .8,1.1,0, -.7,-1.1,0, .7,-1.1,0];
+    for(let i=1; i<=5; i++) {
+      const x = -.6 + i*(1.2/6);
+      lines.push(x,1.05,0, x,-1.05,0);
+      pts.push(x, Math.sin(i)*.4, 0);
+    }
+    avG.add(mkPts(pts)); avG.add(mkLines(lines));
+    avG.add(new THREE.Mesh(new THREE.OctahedronGeometry(.4,0), gMat));
+  } else if (archId === 'scholar') {
+    const r1 = new THREE.Mesh(new THREE.TorusGeometry(1.2,.025,8,36), gMat);
+    const r2 = new THREE.Mesh(new THREE.TorusGeometry(1.0,.025,8,36), gMat);
+    r2.rotation.x = Math.PI/3;
+    const r3 = new THREE.Mesh(new THREE.TorusGeometry(.8,.025,8,36), gMat);
+    r3.rotation.y = Math.PI/3;
+    avG.add(r1); avG.add(r2); avG.add(r3);
+    avG.add(new THREE.Mesh(new THREE.SphereGeometry(.28,16,16), cMat));
+  } else {
+    const o1 = new THREE.Mesh(new THREE.IcosahedronGeometry(.75,0), gMat);
+    const o2 = new THREE.Mesh(new THREE.OctahedronGeometry(.95,0), gMat);
+    o2.rotation.y = Math.PI/4;
+    avG.add(o1); avG.add(o2);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(1.25,.03,8,36), lMat);
+    ring.rotation.x = Math.PI/2.5; avG.add(ring);
+    avG.add(new THREE.Mesh(new THREE.OctahedronGeometry(.26,0), cMat));
+  }
+}
+
+function updateAvatar(con, title) {
+  initAvatar();
+  const arch = getArchetype(con, title);
+  if ($('#av-arch')) $('#av-arch').textContent = arch.name;
+  buildAvatar(arch.id);
+}
+
+// Fetch data/myth.json on load
+fetch('data/myth.json').then(r => r.json()).then(data => {
+  if (data && data.traditions) {
+    mythJsonData = data;
+    // Map into runtime MY structure while retaining all rich metadata
+    Object.entries(data.traditions).forEach(([k, t]) => {
+      MY[k] = [t.name, t.stories.map(s => [
+        s.title, s.subtitle, s.glyph, s.constellationKey, s.story, s
+      ])];
+      INTRO[k] = t.intro;
+    });
+    renderTraditionTabs();
+    renderMyth();
+  }
+}).catch(err => {
+  console.warn('data/myth.json local fetch error (fallback to inline)', err);
+  renderTraditionTabs();
+  renderMyth();
+});
+
+function renderTraditionTabs() {
+  const tEl = $('#mt');
+  if (!tEl) return;
+  tEl.innerHTML = Object.entries(MY).map(([k, v]) => `<button class="btn" data-c="${k}">${v[0]}</button>`).join('');
+}
+renderTraditionTabs();
+
+$('#mt').onclick = e => {
+  const b = e.target.closest('[data-c]');
+  if (b) { cat = b.dataset.c; cur = 0; renderMyth(); }
+};
+
+$('#ml').onclick = e => {
+  const b = e.target.closest('[data-i]');
+  if (b) { cur = +b.dataset.i; renderMyth(); }
+};
+
+// Search & Filter event bindings
+if ($('#myth-sq')) {
+  $('#myth-sq').oninput = e => { mythSearchQ = e.target.value.toLowerCase().trim(); cur = 0; renderMyth(); };
+}
+if ($('#myth-reg-filter')) {
+  $('#myth-reg-filter').onchange = e => { mythRegFilter = e.target.value; cur = 0; renderMyth(); };
+}
+if ($('#myth-con-filter')) {
+  $('#myth-con-filter').onchange = e => { mythConFilter = e.target.value; cur = 0; renderMyth(); };
+}
+if ($('#btn-visible-myth')) {
+  $('#btn-visible-myth').onclick = () => {
+    mythVisibleOnly = !mythVisibleOnly;
+    $('#btn-visible-myth').classList.toggle('on', mythVisibleOnly);
+    cur = 0;
+    renderMyth();
+  };
+}
+
+// Check if a constellation is currently visible tonight above horizon
+function isVisibleTonight(con) {
+  if (!CON[con] || !CG[con]) return true;
+  const [ra, dec] = cenOf(con);
+  const currentLST = lst() / 15;
+  const ha = ((currentLST - ra + 24) % 24) * 15;
+  const latRad = LAT * Math.PI / 180;
+  const decRad = dec * Math.PI / 180;
+  const haRad = ha * Math.PI / 180;
+  const alt = Math.asin(Math.sin(latRad) * Math.sin(decRad) + Math.cos(latRad) * Math.cos(decRad) * Math.cos(haRad)) * 180 / Math.PI;
+  return alt > 0;
+}
+
+function renderMyth() {
+  $$('#mt .btn').forEach(b => b.classList.toggle('on', b.dataset.c === cat));
+  const rawL = MY[cat] ? MY[cat][1] : [];
+  
+  // Filter stories based on Search query, Region, Constellation, and Visibility
+  const L = rawL.filter(m => {
+    const meta = m[5] || {};
+    const title = String(m[0]).toLowerCase();
+    const sub = String(m[1]).toLowerCase();
+    const con = String(m[3] || '');
+    const storyText = String(m[4]).toLowerCase();
+    const region = meta.region || '';
+
+    if (mythSearchQ && !title.includes(mythSearchQ) && !sub.includes(mythSearchQ) && !con.toLowerCase().includes(mythSearchQ) && !storyText.includes(mythSearchQ)) {
+      return false;
+    }
+    if (mythRegFilter !== 'all' && region !== mythRegFilter) return false;
+    if (mythConFilter !== 'all' && con !== mythConFilter) return false;
+    if (mythVisibleOnly && !isVisibleTonight(con)) return false;
+    return true;
+  });
+
+  if (cur >= L.length) cur = 0;
+
+  // Render Story List
+  const ml = $('#ml');
+  if (L.length === 0) {
+    ml.innerHTML = '<p class="cap" style="padding:14px">No stories match your current filters. Try resetting search or filters.</p>';
+    $('#ms').innerHTML = '<p class="cap" style="padding:14px">No story selected.</p>';
+    return;
+  }
+
+  ml.innerHTML = L.map((m, i) => `
+    <button class="item ${i === cur ? 'on' : ''}" data-i="${i}">
+      <b>${m[0]}</b>
+      <small>${m[1]}</small>
+    </button>
+  `).join('');
+
+  const m = L[cur];
+  const meta = m[5] || {};
+  const conName = m[3] || 'Constellation';
+  const ciData = CI[conName] || ['All year', 'Sky Figure', 'Ancient pattern'];
+
+  // Update Review Pending Badge and Community Use line
+  const revBadge = $('#m-rev-badge');
+  const tradMeta = mythJsonData && mythJsonData.traditions && mythJsonData.traditions[cat];
+  if (revBadge) {
+    const isPending = tradMeta && tradMeta.reviewStatus === 'pending community review';
+    revBadge.style.display = isPending ? 'inline-flex' : 'none';
+  }
+  if ($('#mu') && tradMeta && tradMeta.use) {
+    $('#mu').textContent = 'Community Sky Use: ' + tradMeta.use;
+  }
+
+  // Render Story Detail with clearly separated science block and citation
+  $('#ms').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+      <h3>${m[0]}</h3>
+      <span style="font-size:13px;color:var(--mut)">${meta.region || 'World Tradition'} · <b style="color:#ffe2b0">${conName}</b></span>
+    </div>
+    <p style="margin-top:10px;font-size:16px;line-height:1.6">${m[4]}</p>
+    
+    <!-- Clearly separated science block per Task B ethics -->
+    <div class="gl card" style="margin-top:14px;padding:12px 16px;border-left:3px solid var(--sci);background:rgba(93,224,208,.06)">
+      <small style="color:var(--sci);font-weight:600;text-transform:uppercase;letter-spacing:.05em">🔭 Astrophysical Reality</small>
+      <p style="margin-top:4px;font-size:14px;color:var(--ink)">${meta.science || 'Stellar positions and distance values correspond to Hipparcos and Gaia catalogs.'}</p>
+    </div>
+
+    <!-- Source citation & confidence -->
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:var(--mut)">
+      <span><b>Source:</b> ${meta.source || 'Ancient sky lore tradition'}</span>
+      <span class="hud-pill" style="font-size:11px">${meta.confidence || 'well documented'}</span>
+    </div>
+
+    <!-- Related stories row -->
+    <div style="margin-top:18px">
+      <h4 style="font-size:13px;color:#ffe2b0;margin-bottom:8px">✦ Related stories in ${conName}:</h4>
+      <div id="m-related" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px"></div>
+    </div>
+  `;
+
+  // Populate Related Stories
+  const relBox = $('#m-related');
+  if (relBox) {
+    const allStories = Object.values(MY).flatMap(v => v[1]);
+    const related = allStories.filter(x => x[3] === conName && x[0] !== m[0]).slice(0, 6);
+    if (related.length > 0) {
+      relBox.innerHTML = related.map(r => `
+        <button class="btn" data-rel-trad="${r[5]?r[5].tradKey||'nak':'nak'}" data-rel-title="${r[0]}" style="font-size:12px;white-space:nowrap;padding:6px 12px">
+          ${r[2]} ${r[0]}
+        </button>
+      `).join('');
+    } else {
+      relBox.innerHTML = '<span style="font-size:12px;color:var(--mut)">No other tales recorded in this constellation yet.</span>';
+    }
+  }
+
+  $('#mi').textContent = INTRO[cat] || '';
+  updateAvatar(conName, m[0]);
+  t0 = performance.now();
+}
+
+// Compare Traditions for Constellation Modal
+if ($('#btn-compare-myth')) {
+  $('#btn-compare-myth').onclick = () => {
+    const d = $('#dlg');
+    const allCons = Object.keys(CON).sort();
+    let selC = 'Orion';
+
+    function renderCompareModal() {
+      const allStories = Object.entries(MY).flatMap(([k, v]) => v[1].map(s => ({ trad: v[0], s })));
+      const matching = allStories.filter(it => it.s[3] === selC);
+
+      d.innerHTML = `
+        <div class="modal-header">
+          <h3>✦ Compare Cultural Sky Lore</h3>
+          <select id="cmp-con-sel" style="padding:6px 10px;border-radius:8px;background:rgba(10,14,32,.9);color:#ffe2b0;font:inherit">
+            ${allCons.map(c => `<option value="${c}" ${c===selC?'selected':''}>${c}</option>`).join('')}
+          </select>
+        </div>
+        <p style="font-size:13px;color:var(--mut)">Compare how different world civilizations viewed the stars of <b>${selC}</b> side by side.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;max-height:60vh;overflow-y:auto;margin:16px 0">
+          ${matching.length === 0 ? '<p class="cap">No stories registered for this constellation yet.</p>' : matching.map(it => `
+            <div class="gl card" style="padding:14px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="color:#ffe2b0;font-size:15px">${it.s[2]} ${it.s[0]}</b>
+                <span class="hud-pill" style="font-size:11px">${it.trad}</span>
+              </div>
+              <p style="font-size:14px;color:var(--ink);margin:8px 0;line-height:1.5">${it.s[4]}</p>
+              ${it.s[5] ? `<small style="font-size:12px;color:var(--mut)">Source: ${it.s[5].source}</small>` : ''}
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn" data-x style="width:100%">Close</button>
+      `;
+
+      $('#cmp-con-sel').onchange = e => {
+        selC = e.target.value;
+        renderCompareModal();
+      };
+    }
+
+    renderCompareModal();
+    d.showModal();
+  };
+}
+
+// Draw Myth Constellation on Canvas
+function drawMyth(t) {
+  const c = $('#mm');
+  if (!c) return;
+  const x = c.getContext('2d'), w = c.width, h = c.height, k = w / (c.clientWidth || w);
+  x.clearRect(0, 0, w, h);
+  
+  const rawL = MY[cat] ? MY[cat][1] : [];
+  if (!rawL[cur]) return;
+  const curStory = rawL[cur];
+  const con = curStory[3];
+  if (!CON[con]) return;
+
+  const E = edges(con);
+  const names = [...new Set(E.flat())];
+  const r0 = ST[names[0]].ra;
+  const cs = Math.cos(names.reduce((a, n) => a + ST[n].dec, 0) / names.length * Math.PI / 180);
+  const X = n => -(((ST[n].ra - r0 + 12) % 24 + 24) % 24 - 12) * 15 * cs;
+  const Y = n => ST[n].dec;
+  const xs = names.map(X), ys = names.map(Y);
+  const mn = Math.min(...xs), mx = Math.max(...xs), my = Math.min(...ys), mY = Math.max(...ys);
+  const sc = Math.min((w * .62) / ((mx - mn) || 1), (h * .56) / ((mY - my) || 1));
+  const P = n => [w / 2 + (X(n) - (mn + mx) / 2) * sc, h / 2 + 10 * k - (Y(n) - (my + mY) / 2) * sc];
+
+  const g = x.createRadialGradient(w/2, h/2, 0, w/2, h/2, w/1.5);
+  g.addColorStop(0, 'rgba(240,179,106,.18)');
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  x.fillStyle = g;
+  x.fillRect(0, 0, w, h);
+
+  for (let i = 0; i < 70; i++) {
+    x.fillStyle = `rgba(255,235,200,${.15+.25*Math.abs(Math.sin(t/900+i))})`;
+    x.fillRect((i * 97.3) % w, (i * 53.7) % h, 1.5 * k, 1.5 * k);
+  }
+
+  const prog = Math.min(1, (t - t0) / 2200) * E.length;
+  x.lineWidth = 2 * k;
+  x.strokeStyle = 'rgba(240,179,106,.85)';
+  x.shadowColor = '#f0b36a';
+  x.shadowBlur = 12;
+  x.lineCap = 'round';
+
+  E.forEach(([a, b], i) => {
+    const f = Math.max(0, Math.min(1, prog - i));
+    if (!f) return;
+    const A = P(a), B = P(b);
+    x.beginPath();
+    x.moveTo(...A);
+    x.lineTo(A[0] + (B[0] - A[0]) * f, A[1] + (B[1] - A[1]) * f);
+    x.stroke();
+  });
+  x.shadowBlur = 0;
+
+  x.font = `${12*k}px Space Grotesk,sans-serif`;
+  names.forEach((n, i) => {
+    const p = P(n), dx = p[0] - w/2, dy = p[1] - h/2, l = Math.hypot(dx, dy) || 1;
+    x.fillStyle = '#fff3d6';
+    x.beginPath();
+    x.arc(p[0], p[1], (3 + Math.sin(t/300 + i*2)) * k, 0, 7);
+    x.fill();
+    x.fillStyle = 'rgba(255,230,190,.78)';
+    x.textAlign = dx >= 0 ? 'left' : 'right';
+    x.fillText(n, p[0] + dx/l * 14 * k, p[1] + dy/l * 14 * k + 4 * k);
+  });
+  x.textAlign = 'left';
+  x.fillStyle = 'rgba(255,230,190,.85)';
+  x.font = `italic ${24*k}px Georgia,serif`;
+  x.fillText(con, 16 * k, 34 * k);
+}
+
 const NEWS=[['This month','Oct 2026','Saturn at opposition with razor-thin rings','Saturn reached opposition on 4 October, so it rises at sunset and stays up all night. Its rings are tilted almost edge-on this year, which makes them look unusually narrow. Vesta peaks on 13 October and the Orionid meteors around 22 October.','Opposition is the best time to observe an outer planet, because it is closest and fully lit. Timings come from European observatories, so check your local almanac.'],['Survey','2026','Rubin Observatory starts its 10-year survey','The Vera C. Rubin Observatory has officially begun the Legacy Survey of Space and Time, a decade of repeated imaging of the southern sky.','It will catch change night after night: exploding stars, moving asteroids and variable stars, building a movie of the sky.'],['Early universe','2026','Euclid reports the most ancient quasar yet','ESA’s Euclid telescope has been credited with the most ancient quasar known, a black hole feeding on gas in the young universe.','Distant quasars show how fast the first black holes grew.'],['Black holes','2026','A mid-sized black hole tears apart a star','Astronomers report a star ripped apart by an intermediate-mass black hole, a size class between stellar black holes and the giants in galaxy centres.','These are rare to catch and help explain how supermassive black holes grew.'],['Exoplanets','2026','The faintest planet ever imaged from the ground','A newly reported planet is the faintest ever imaged directly from Earth.','Direct images let astronomers study a planet’s light instead of inferring it.'],['Solar system','2026','Interstellar comet 3I/ATLAS might predate the Sun','New analysis suggests the interstellar visitor 3I/ATLAS could be older than our Sun.','It would be a sample of material from before the solar system formed.'],['Mission','2026','Roman telescope nears readiness','A final look at the primary mirror of NASA’s Roman Space Telescope was reported this autumn, and Euclid has produced a preview of the galactic-centre views Roman is built for.','Roman will survey huge areas of sky for dark energy and exoplanets.'],['ISRO','Jan 2024','Aditya-L1 reaches its post at L1','India’s Aditya-L1 settled into orbit around the Sun-Earth L1 point, about 1.5 million km from Earth, where it watches the Sun without eclipses.','It studies flares, the corona and the solar wind that drive space weather.'],['Stars','2019–20','Betelgeuse’s Great Dimming','Betelgeuse faded to roughly a third of its usual brightness. Studies point to cooled gas thrown from its surface forming a dust cloud that blocked part of its light.','It showed that a star can change dramatically without exploding.'],['Black holes','2019 and 2022','First images of black holes','The Event Horizon Telescope imaged M87* in 2019 and the Milky Way’s Sagittarius A* in 2022.','Both shadows matched predictions from general relativity.'],['Exoplanets','1995','The first planet around a Sun-like star','51 Pegasi b, a hot Jupiter, was found orbiting 51 Pegasi. Its discoverers shared the 2019 Nobel Prize in Physics.','It opened the era of exoplanet science, now past 6,000 confirmed worlds.'],['Gravity','2017','Two neutron stars collide','GW170817 was detected in gravitational waves and seen in light across the spectrum.','It helped show that such mergers forge heavy elements such as gold.'],['Gaia','2022','Gaia maps about 1.8 billion stars','Gaia’s third data release gave positions and motions for around 1.8 billion stars.','It is the most detailed map of our galaxy so far, and the Milky Way holds hundreds of billions more.']];$('#sci').insertAdjacentHTML('beforeend',`<h2 style='margin-top:36px'>Sky news and discoveries</h2><p class='cap'>A snapshot written in October 2026. The 2026 items are short summaries of published headlines, so check the source before citing them.</p><div class='news'>${NEWS.map(n=>`<div class='gl nc'><small>${n[0]} · ${n[1]}</small><h3>${n[2]}</h3><p>${n[3]}</p><p style='margin-top:6px'>${n[4]}</p></div>`).join('')}</div>`);
 /* ---------- journeys ---------- */
 
