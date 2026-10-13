@@ -378,7 +378,7 @@ ta:['தமிழ்','ta-IN',['மேலே பாருங்கள். வா
 /* ---------- routing ---------- */
 let page='home';
 function go(n){page=n;$$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
-document.body.classList.toggle('warm',n==='myth');$('#player').style.display=n==='home'?'flex':'none';scrollTo(0,0);if(n!=='home')stopV();fit();location.hash=n}
+document.body.classList.toggle('warm',n==='myth');$('#player').style.display=n==='home'?'flex':'none';scrollTo(0,0);if(n!=='home')stopV();fit();location.hash=n;if(n==='play'&&typeof checkOnboarding==='function')setTimeout(checkOnboarding,300);}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(b.dataset.go)});
 /* ---------- voice & dual-path audio engine (Task C) ---------- */
 let vTok = 0;
@@ -3165,7 +3165,7 @@ $('#btn-settings').onclick = () => {
 
 // Onboarding modal on first run
 function checkOnboarding() {
-  if (SAVE.onboarded) return;
+  if (SAVE.onboarded || page !== 'play') return;
   const d = $('#dlg');
   d.innerHTML = `
     <div class="modal-header">
@@ -3195,7 +3195,7 @@ function checkOnboarding() {
 // Initial game startup
 updateHUD();
 renderTrail();
-setTimeout(checkOnboarding, 600);
+if (page === 'play') setTimeout(checkOnboarding, 600);
 
 let XP=0,doneQ=new Set();
 function renderQ(){$('#qs').innerHTML=QZ.map((q,i)=>(QF!=='All'&&qcat(q[0])!==QF)?'':`<button class="q gl ${doneQ.has(i)?'done':''}" data-q="${i}"><h3>${q[0]}</h3><small>${qcat(q[0])} · ${doneQ.has(i)?'Completed':'+'+q[1]+' XP'}</small></button>`).join('');
