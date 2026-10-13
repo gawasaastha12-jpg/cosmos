@@ -47,10 +47,10 @@ const NEWS_DATA = [
   },
   {
     id: 'news-06-3i-atlas',
-    url: null,
-    source: 'International Astronomical Union (Unverified)',
-    date: '2026-09-01',
-    title: 'Interstellar Object 3I/ATLAS Claim'
+    url: 'https://science.nasa.gov/solar-system/comets/3i-atlas/',
+    source: 'NASA Science',
+    date: '2025-07-01',
+    title: 'Interstellar Comet 3I/ATLAS (C/2025 N1)'
   },
   {
     id: 'news-07-roman',
