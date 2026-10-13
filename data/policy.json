@@ -1,0 +1,5 @@
+{
+  "excludePendingCommunityReview": true,
+  "hideUnverified": true,
+  "note": "When excludePendingCommunityReview is true, stories from traditions marked 'pending community review' (such as Indigenous Australian, Polynesian, and Indigenous Americas oral lore) are omitted from the default public build."
+}

@@ -1,4 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cosmic Mythology AR Explorer</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -214,6 +215,16 @@ dialog .btn{display:block;margin-top:8px;width:100%}
 <section class="ch"><div><h1><span class='w' style='--i:0'>Every</span> <span class='w' style='--i:1'>sky,</span><br><span class='w' style='--i:2'>anywhere.</span></h1><p class="sub">Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling, in any weather, at any hour.</p><p class="hint" style="color:var(--mut)">Sweep your cursor through the stars. Scroll to zoom out.</p></div></section>
 <section class="ch r"><div class="gl card"><h2>Clouds and city glow can't reach this sky.</h2><p>Over 80% of people live under light-polluted skies. The Explorer places real constellations around you using your device's GPS and gyroscope, so a ceiling at noon works as well as a hilltop at midnight.</p></div></section>
 <section class="ch"><div class="gl card"><h2>Your sky, right now.</h2><p id="loc">Reading your position and local sidereal time…</p><div class="row"><button class='btn cta' style='--d:0' data-go='sci'><i class='ic-sci'></i>Open the science</button><button class='btn cta' style='--d:1' data-go='myth'><span class='ic-snd'><b></b><b></b><b></b></span>Hear the stories</button><button class='btn cta' style='--d:2' data-go='play'><span class='ic-go'>✦</span>Start a journey</button></div></div></section><section class='ch' id='gs'><div class='gtop'><div class='gl pan' id='gp'><h3>The sky sphere</h3><p class='cap'>Drag the chart to turn it and tap a constellation for its story. Switch to the 3D globe for a spinning view.</p><div class='tabs' style='margin-top:12px'><button class='btn on' data-view='plan'>Star chart</button><button class='btn' data-view='globe'>3D globe</button></div><div class='tabs'><button class='btn' data-pole='n'>North sky</button><button class='btn on' data-pole='s'>South sky</button><button class='btn' data-tonight='1'>Set to tonight</button></div><div id='cl'></div></div><div class='gl pan' id='ci'><h3>Choose a constellation</h3><p class='cap'>Twenty-one constellations are drawn from real sky coordinates. Tap one to read its story.</p></div></div><div class='gstage'><div id='dz' style='display:none' aria-label='Drag to rotate the globe'></div><canvas id='pl' aria-label='Star chart planisphere'></canvas></div></section><div id='lbs'></div>
+
+<footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
+  <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
+  <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <a href="about.html" style="color:var(--ink);text-decoration:none;font-weight:500">About &amp; Sources</a>
+    <a href="privacy.html" style="color:var(--ink);text-decoration:none;font-weight:500">Privacy Policy</a>
+    <a href="?all=1" style="color:var(--sci);text-decoration:none;font-size:12px" title="Developer mode: view all raw unreviewed and unverified records">Dev Mode (?all=1)</a>
+  </div>
+</footer>
+
 </main>
 
 <div id="player" class="gl"><button class="play" id="hp" aria-label="Play intro story">▶</button><div><div class="bars" id="hb"></div><div class="cap" id="hc"><span class="hud-pill" style="font-size:10px;color:#ffb347;border-color:rgba(255,179,71,.4);margin-right:6px">Preview voice</span>Play the intro story</div></div></div>
@@ -278,6 +289,14 @@ dialog .btn{display:block;margin-top:8px;width:100%}
     <p class="cap" id="av-cap" style="margin-top:6px">Interactive 3D celestial avatar · Drag to rotate</p>
   </div>
 </div>
+<footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
+  <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
+  <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <a href="about.html" style="color:var(--ink);text-decoration:none;font-weight:500">About &amp; Sources</a>
+    <a href="privacy.html" style="color:var(--ink);text-decoration:none;font-weight:500">Privacy Policy</a>
+    <a href="?all=1" style="color:var(--sci);text-decoration:none;font-size:12px" title="Developer mode: view all raw unreviewed and unverified records">Dev Mode (?all=1)</a>
+  </div>
+</footer>
 </main>
 
 <main id="play" class="pg fx">
@@ -1635,6 +1654,20 @@ function updateAvatar(con, title) {
   buildAvatar(arch.id);
 }
 
+const UNVERIFIED_STORIES = new Set(["ind_marichi", "ind_arundhati", "poly_ka_lupe", "poly_tamarereti", "poly_aa_sirius", "poly_manaiakalani", "ind_tagai", "ind_bunjil", "ind_waiyungari", "ind_kulkun", "ind_yowie", "ea_azure_dragon", "ea_cheonsang", "ea_tanabata", "ar_fomalhaut", "ar_suhayl", "ar_alcor_test", "ar_alphecca", "am_navajo_nahookos", "am_lakota_race", "am_ojibwe_fisher", "am_inca_machacuay", "am_pawnee_morning_star", "no_king_arthur", "no_tiwaz", "no_llew", "no_brisingamen", "af_saharan_hunter", "af_sotho_spade", "af_san_ostrich", "af_yoruba_orunmila", "af_maasai_kileken", "mes_eagle", "mes_ea_way"]);
+const urlParams = new URLSearchParams(window.location.search);
+
+// Item 4: Public mode is the default (verified and probable stories only). Pass ?all=1 for developer use.
+let isPublicBuild = urlParams.get('all') !== '1';
+
+// Load policy config from data/policy.json
+let policyConfig = { excludePendingCommunityReview: true, hideUnverified: true };
+fetch('data/policy.json').then(r => r.json()).then(cfg => {
+  policyConfig = Object.assign(policyConfig, cfg);
+  renderTraditionTabs();
+  renderMyth();
+}).catch(() => {});
+
 // Fetch data/myth.json on load
 fetch('data/myth.json').then(r => r.json()).then(data => {
   if (data && data.traditions) {
@@ -1658,7 +1691,19 @@ fetch('data/myth.json').then(r => r.json()).then(data => {
 function renderTraditionTabs() {
   const tEl = $('#mt');
   if (!tEl) return;
-  tEl.innerHTML = Object.entries(MY).map(([k, v]) => `<button class="btn" data-c="${k}">${v[0]}</button>`).join('');
+  const entries = Object.entries(MY).filter(([k]) => {
+    if (isPublicBuild && policyConfig.excludePendingCommunityReview) {
+      const tradMeta = mythJsonData && mythJsonData.traditions && mythJsonData.traditions[k];
+      if (tradMeta && tradMeta.reviewStatus === 'pending community review') {
+        return false;
+      }
+    }
+    return true;
+  });
+  tEl.innerHTML = entries.map(([k, v]) => `<button class="btn" data-c="${k}">${v[0]}</button>`).join('');
+  if (!entries.find(([k]) => k === cat) && entries.length > 0) {
+    cat = entries[0][0];
+  }
 }
 renderTraditionTabs();
 
@@ -1691,16 +1736,14 @@ if ($('#btn-visible-myth')) {
   };
 }
 
-const UNVERIFIED_STORIES = new Set(["ind_marichi", "ind_arundhati", "poly_ka_lupe", "poly_tamarereti", "poly_aa_sirius", "poly_manaiakalani", "ind_tagai", "ind_bunjil", "ind_waiyungari", "ind_kulkun", "ind_yowie", "ea_azure_dragon", "ea_cheonsang", "ea_tanabata", "ar_fomalhaut", "ar_suhayl", "ar_alcor_test", "ar_alphecca", "am_navajo_nahookos", "am_lakota_race", "am_ojibwe_fisher", "am_inca_machacuay", "am_pawnee_morning_star", "no_king_arthur", "no_tiwaz", "no_llew", "no_brisingamen", "af_saharan_hunter", "af_sotho_spade", "af_san_ostrich", "af_yoruba_orunmila", "af_maasai_kileken", "mes_eagle", "mes_ea_way"]);
-const urlParams = new URLSearchParams(window.location.search);
-let isPublicBuild = urlParams.get('public') === '1' || urlParams.get('build') === 'public' || window.PUBLIC_BUILD === true;
+
 
 function updatePublicBtn() {
   const btn = $('#btn-public-toggle');
   const txt = $('#public-state-txt');
   if (btn && txt) {
     btn.classList.toggle('on', isPublicBuild);
-    txt.textContent = isPublicBuild ? 'ON (Verified Only)' : 'OFF';
+    txt.textContent = isPublicBuild ? 'ON (Default)' : 'OFF (?all=1)';
   }
 }
 
@@ -1708,6 +1751,7 @@ if ($('#btn-public-toggle')) {
   $('#btn-public-toggle').onclick = () => {
     isPublicBuild = !isPublicBuild;
     updatePublicBtn();
+    renderTraditionTabs();
     cur = 0;
     renderMyth();
   };
@@ -2022,7 +2066,7 @@ const NEWS = [
     source: 'NASA Science',
     ageUrl: 'https://doi.org/10.1038/s41550-026-02921-7',
     ageSource: 'Nature Astronomy (Edinburgh study)',
-    summary: 'Discovered on 1 July 2025 by ATLAS, 3I/ATLAS entered our solar system at an incoming speed of about 58 km/s. Spectroscopic analysis suggests it is possibly 7 to 12 billion years old, exact age uncertain, preserving pristine material from an ancient star system.',
+    summary: 'Discovered on 1 July 2025 by ATLAS, 3I/ATLAS entered our solar system at an incoming speed of about 58 km/s; studies suggest it may be 7 to 12 billion years old, exact age uncertain.',
     why: 'Likely formed around an old, low-metallicity star, per the University of Edinburgh release.'
   },
   {
@@ -2129,6 +2173,15 @@ $('#sci').insertAdjacentHTML('beforeend', `
       </div>
     `).join('')}
   </div>
+
+<footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
+  <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
+  <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <a href="about.html" style="color:var(--ink);text-decoration:none;font-weight:500">About &amp; Sources</a>
+    <a href="privacy.html" style="color:var(--ink);text-decoration:none;font-weight:500">Privacy Policy</a>
+    <a href="?all=1" style="color:var(--sci);text-decoration:none;font-size:12px" title="Developer mode: view all raw unreviewed and unverified records">Dev Mode (?all=1)</a>
+  </div>
+</footer>
 `);
 /* ---------- journeys ---------- */
 window.addEventListener('hashchange', () => { if (location.hash === '#play' && typeof checkOnboarding === 'function') setTimeout(checkOnboarding, 300); });

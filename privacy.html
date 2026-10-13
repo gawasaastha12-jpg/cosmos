@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy Policy · Cosmic Mythology AR Explorer</title>
+  <meta name="description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #04060d;
+      --ink: #e9ecf8;
+      --mut: #8d97bd;
+      --a: #7b8cff;
+      --g: rgba(14,19,42,.65);
+      --bd: rgba(150,168,255,.2);
+      --sci: #5de0d0;
+      --myth: #f0b36a;
+      --disp: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Space Grotesk', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font: 16px/1.65 var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      min-height: 100vh;
+      padding: 32px 20px 80px;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--bd);
+    }
+    .nav-brand {
+      font-family: var(--disp);
+      font-size: 26px;
+      color: #ffe2b0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-links a {
+      color: var(--mut);
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 18px;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--a); }
+    .gl {
+      background: var(--g);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--bd);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: var(--disp);
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    h2 {
+      font-family: var(--disp);
+      font-size: 26px;
+      font-weight: 500;
+      margin: 20px 0 10px;
+      color: #ffe2b0;
+    }
+    p { margin-bottom: 14px; color: #ccd2e8; }
+    ul { margin: 8px 0 16px 24px; color: #ccd2e8; }
+    li { margin-bottom: 8px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      border: 1px solid rgba(93,224,208,.3);
+      color: var(--sci);
+      background: rgba(93,224,208,.08);
+      margin-bottom: 14px;
+    }
+    .callout {
+      background: rgba(111,227,154,.08);
+      border: 1px solid rgba(111,227,154,.3);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: #c9f5d7;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--mut);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav-bar">
+      <a href="index.html" class="nav-brand">✦ Cosmic AR</a>
+      <nav class="nav-links">
+        <a href="index.html">← Return to Explorer</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html" style="color:var(--ink);font-weight:600">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <span class="badge">Privacy First &middot; Zero Telemetry</span>
+      <h1>Privacy Policy</h1>
+      <p style="font-size:18px;color:var(--mut);margin-bottom:28px">The Cosmic Mythology AR Explorer is engineered as a zero-tracking, client-side only static application.</p>
+
+      <section class="gl">
+        <h2>1. Geolocation &amp; Horizon Computing</h2>
+        <div class="callout">
+          <b>Summary:</b> Your location coordinates are processed strictly inside your device's browser and are <b>never transmitted to any remote server or stored</b>.
+        </div>
+        <p>When you permit location access in your browser:</p>
+        <ul>
+          <li>The application reads your latitude and longitude solely to calculate your local sidereal time (LST) and orient the celestial sphere and planisphere to match the actual night sky visible above your horizon.</li>
+          <li>No location coordinates, IP addresses, or device identifiers are sent over the network. The app functions completely without internet after initial page load.</li>
+          <li>If you deny location permission, the application falls back gracefully to a default observer latitude (45&deg;N) with zero degradation of any constellation, myth, or scientific feature.</li>
+        </ul>
+      </section>
+
+      <section class="gl">
+        <h2>2. On-Device Progress Storage (localStorage)</h2>
+        <div class="callout">
+          <b>Summary:</b> Gameplay state, cards, stars, and achievements are stored <b>only on your local device</b>.
+        </div>
+        <ul>
+          <li>All constellation trail progression, earned stars, unlocked collectible cards, daily streak, lives, and audio playback settings are persisted directly in standard browser <code>localStorage</code> under the key <code>cosmic_save_v2</code>.</li>
+          <li>No accounts, authentication, or passwords are required.</li>
+          <li>We operate no backend database and cannot view, access, or sell any of your gameplay activity.</li>
+          <li>You can reset or erase your stored progress at any time by clicking <b>"Reset Saved Progress"</b> in the Mission Settings dialog or by clearing site cookies and storage in your browser preferences.</li>
+        </ul>
+      </section>
+
+      <section class="gl">
+        <h2>3. Third-Party Analytics, Cookies &amp; Ads</h2>
+        <ul>
+          <li><b>No Analytics:</b> We do not use Google Analytics, Meta Pixel, or any behavioral telemetry tracking tools.</li>
+          <li><b>No Cookies:</b> The application sets zero HTTP cookies.</li>
+          <li><b>No Advertising:</b> The application contains zero advertising networks, promotional trackers, or monetized data brokers.</li>
+          <li><b>External Links:</b> Outbound source links on sky news cards and citation audits open directly to verified academic and governmental repositories (NASA, ESA, ESO, Perseus, Sacred Texts). Those third-party websites operate under their own privacy policies.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Cosmic Mythology AR Explorer · <a href="index.html" style="color:var(--a);text-decoration:none">Back to Sky</a> · <a href="about.html" style="color:var(--a);text-decoration:none">About &amp; Sources</a></p>
+    </footer>
+  </div>
+</body>
+</html>
