@@ -5,11 +5,11 @@
     "lang": "en",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.157Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.234Z"
   },
   "story-01-orion.hi.mp3": {
     "storyId": "story-01-orion",
@@ -17,11 +17,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.160Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.236Z"
   },
   "story-01-orion.mr.mp3": {
     "storyId": "story-01-orion",
@@ -29,11 +29,11 @@
     "lang": "mr",
     "duration": 28.65,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "b12a6fefb77e9df50948959bacc1f35bf8ef5577023d446cd7230671e2cb6122",
-    "updatedAt": "2026-10-13T10:52:20.163Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.237Z"
   },
   "story-01-orion.ta.mp3": {
     "storyId": "story-01-orion",
@@ -41,11 +41,11 @@
     "lang": "ta",
     "duration": 27.75,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "7e3deb15040bfc2c3b858c3b61c3f24329b7a820ed8b0703f83752dbb59aba07",
-    "updatedAt": "2026-10-13T10:52:20.165Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.238Z"
   },
   "story-02-saptarshi.en.mp3": {
     "storyId": "story-02-saptarshi",
@@ -53,11 +53,11 @@
     "lang": "en",
     "duration": 35.2,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "f8ee4d6e2c7bba241602964ca78c91c09ffa2652df8fd3fff80c7d78d6e2c29e",
-    "updatedAt": "2026-10-13T10:52:20.168Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.240Z"
   },
   "story-02-saptarshi.hi.mp3": {
     "storyId": "story-02-saptarshi",
@@ -65,11 +65,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.171Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.241Z"
   },
   "story-02-saptarshi.mr.mp3": {
     "storyId": "story-02-saptarshi",
@@ -77,11 +77,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.173Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.242Z"
   },
   "story-02-saptarshi.ta.mp3": {
     "storyId": "story-02-saptarshi",
@@ -89,11 +89,11 @@
     "lang": "ta",
     "duration": 25.95,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "37a9bfc7a72da4cd6968d3af0a92adf87991de0ce305cb095f4a7f31a3bed878",
-    "updatedAt": "2026-10-13T10:52:20.175Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.243Z"
   },
   "story-03-antares.en.mp3": {
     "storyId": "story-03-antares",
@@ -101,11 +101,11 @@
     "lang": "en",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.177Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.244Z"
   },
   "story-03-antares.hi.mp3": {
     "storyId": "story-03-antares",
@@ -113,11 +113,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.180Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.245Z"
   },
   "story-03-antares.mr.mp3": {
     "storyId": "story-03-antares",
@@ -125,11 +125,11 @@
     "lang": "mr",
     "duration": 26.4,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "db2704fbd5f0107f6c92aae8c0f8479d3c7fdb72fd3663f51c2c5327edf7dde6",
-    "updatedAt": "2026-10-13T10:52:20.184Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.246Z"
   },
   "story-03-antares.ta.mp3": {
     "storyId": "story-03-antares",
@@ -137,11 +137,11 @@
     "lang": "ta",
     "duration": 25.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "e15fb5e4fae4cf4c086163beae3bbf0407e59cd09b0d58b9b9986e462bca093b",
-    "updatedAt": "2026-10-13T10:52:20.186Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.248Z"
   },
   "story-04-rohini.en.mp3": {
     "storyId": "story-04-rohini",
@@ -149,11 +149,11 @@
     "lang": "en",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.188Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.249Z"
   },
   "story-04-rohini.hi.mp3": {
     "storyId": "story-04-rohini",
@@ -161,11 +161,11 @@
     "lang": "hi",
     "duration": 34.9,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "e8ebed289e615cbca74fdd7556f49be84d8259069f378878f40d4fc10600825c",
-    "updatedAt": "2026-10-13T10:52:20.191Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.251Z"
   },
   "story-04-rohini.mr.mp3": {
     "storyId": "story-04-rohini",
@@ -173,11 +173,11 @@
     "lang": "mr",
     "duration": 30.9,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "147f9894a458e6728e7d42f32cc25bea38eb3bf5f8b9620cfa62aeca72d0f580",
-    "updatedAt": "2026-10-13T10:52:20.193Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.252Z"
   },
   "story-04-rohini.ta.mp3": {
     "storyId": "story-04-rohini",
@@ -185,11 +185,11 @@
     "lang": "ta",
     "duration": 23.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "8e740b930380de84acc194b889a56b2a612b52748b038167f9ec7cbb7d3a98b8",
-    "updatedAt": "2026-10-13T10:52:20.195Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.253Z"
   },
   "story-05-krittika.en.mp3": {
     "storyId": "story-05-krittika",
@@ -197,11 +197,11 @@
     "lang": "en",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.198Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.254Z"
   },
   "story-05-krittika.hi.mp3": {
     "storyId": "story-05-krittika",
@@ -209,11 +209,11 @@
     "lang": "hi",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.201Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.255Z"
   },
   "story-05-krittika.mr.mp3": {
     "storyId": "story-05-krittika",
@@ -221,11 +221,11 @@
     "lang": "mr",
     "duration": 30.9,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "147f9894a458e6728e7d42f32cc25bea38eb3bf5f8b9620cfa62aeca72d0f580",
-    "updatedAt": "2026-10-13T10:52:20.203Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.256Z"
   },
   "story-05-krittika.ta.mp3": {
     "storyId": "story-05-krittika",
@@ -233,11 +233,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.204Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.257Z"
   },
   "story-06-dhruva.en.mp3": {
     "storyId": "story-06-dhruva",
@@ -245,11 +245,11 @@
     "lang": "en",
     "duration": 35.2,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "f8ee4d6e2c7bba241602964ca78c91c09ffa2652df8fd3fff80c7d78d6e2c29e",
-    "updatedAt": "2026-10-13T10:52:20.206Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.258Z"
   },
   "story-06-dhruva.hi.mp3": {
     "storyId": "story-06-dhruva",
@@ -257,11 +257,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.209Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.259Z"
   },
   "story-06-dhruva.mr.mp3": {
     "storyId": "story-06-dhruva",
@@ -269,11 +269,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.211Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.260Z"
   },
   "story-06-dhruva.ta.mp3": {
     "storyId": "story-06-dhruva",
@@ -281,11 +281,11 @@
     "lang": "ta",
     "duration": 25.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "e15fb5e4fae4cf4c086163beae3bbf0407e59cd09b0d58b9b9986e462bca093b",
-    "updatedAt": "2026-10-13T10:52:20.213Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.261Z"
   },
   "story-07-trishanku.en.mp3": {
     "storyId": "story-07-trishanku",
@@ -293,11 +293,11 @@
     "lang": "en",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.216Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.262Z"
   },
   "story-07-trishanku.hi.mp3": {
     "storyId": "story-07-trishanku",
@@ -305,11 +305,11 @@
     "lang": "hi",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.218Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.263Z"
   },
   "story-07-trishanku.mr.mp3": {
     "storyId": "story-07-trishanku",
@@ -317,11 +317,11 @@
     "lang": "mr",
     "duration": 29.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a926df77126749b7eff7cb98e103762d59dd275ccf185107eff403dca910651b",
-    "updatedAt": "2026-10-13T10:52:20.220Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.263Z"
   },
   "story-07-trishanku.ta.mp3": {
     "storyId": "story-07-trishanku",
@@ -329,11 +329,11 @@
     "lang": "ta",
     "duration": 25.05,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a5ab9e6f8b54a14388a6d0a529c1470592481ef9ee5a97772dbd057a63ee68c1",
-    "updatedAt": "2026-10-13T10:52:20.221Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.264Z"
   },
   "story-08-sirius.en.mp3": {
     "storyId": "story-08-sirius",
@@ -341,11 +341,11 @@
     "lang": "en",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.223Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.266Z"
   },
   "story-08-sirius.hi.mp3": {
     "storyId": "story-08-sirius",
@@ -353,11 +353,11 @@
     "lang": "hi",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.225Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.268Z"
   },
   "story-08-sirius.mr.mp3": {
     "storyId": "story-08-sirius",
@@ -365,11 +365,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.227Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.269Z"
   },
   "story-08-sirius.ta.mp3": {
     "storyId": "story-08-sirius",
@@ -377,11 +377,11 @@
     "lang": "ta",
     "duration": 26.85,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "b43a398e03b501628a18c7a058d4e0bdf53f98d63f4160269fcfb8235f29be79",
-    "updatedAt": "2026-10-13T10:52:20.229Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.270Z"
   },
   "story-09-vega.en.mp3": {
     "storyId": "story-09-vega",
@@ -389,11 +389,11 @@
     "lang": "en",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.232Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.271Z"
   },
   "story-09-vega.hi.mp3": {
     "storyId": "story-09-vega",
@@ -401,11 +401,11 @@
     "lang": "hi",
     "duration": 33.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "43fdd7f7230589e927e7723f5bbd8eeb4899cdd6070a435ae9b09d1db27b9437",
-    "updatedAt": "2026-10-13T10:52:20.234Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.273Z"
   },
   "story-09-vega.mr.mp3": {
     "storyId": "story-09-vega",
@@ -413,11 +413,11 @@
     "lang": "mr",
     "duration": 28.2,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "77a815a7f147e41228d1df4bada0d0cb818b4047096cf8526a103f1b29cf5a08",
-    "updatedAt": "2026-10-13T10:52:20.236Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.274Z"
   },
   "story-09-vega.ta.mp3": {
     "storyId": "story-09-vega",
@@ -425,11 +425,11 @@
     "lang": "ta",
     "duration": 25.95,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "37a9bfc7a72da4cd6968d3af0a92adf87991de0ce305cb095f4a7f31a3bed878",
-    "updatedAt": "2026-10-13T10:52:20.237Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.275Z"
   },
   "story-10-altair.en.mp3": {
     "storyId": "story-10-altair",
@@ -437,11 +437,11 @@
     "lang": "en",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.240Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.276Z"
   },
   "story-10-altair.hi.mp3": {
     "storyId": "story-10-altair",
@@ -449,11 +449,11 @@
     "lang": "hi",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.242Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.277Z"
   },
   "story-10-altair.mr.mp3": {
     "storyId": "story-10-altair",
@@ -461,11 +461,11 @@
     "lang": "mr",
     "duration": 34.45,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "ee7dd2415e26475cfa7cd166a758e09840491ce1fe66873bdc891475145dd278",
-    "updatedAt": "2026-10-13T10:52:20.243Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.278Z"
   },
   "story-10-altair.ta.mp3": {
     "storyId": "story-10-altair",
@@ -473,11 +473,11 @@
     "lang": "ta",
     "duration": 26.4,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "db2704fbd5f0107f6c92aae8c0f8479d3c7fdb72fd3663f51c2c5327edf7dde6",
-    "updatedAt": "2026-10-13T10:52:20.245Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.279Z"
   },
   "story-11-regulus.en.mp3": {
     "storyId": "story-11-regulus",
@@ -485,11 +485,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.247Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.280Z"
   },
   "story-11-regulus.hi.mp3": {
     "storyId": "story-11-regulus",
@@ -497,11 +497,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.250Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.281Z"
   },
   "story-11-regulus.mr.mp3": {
     "storyId": "story-11-regulus",
@@ -509,11 +509,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.252Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.283Z"
   },
   "story-11-regulus.ta.mp3": {
     "storyId": "story-11-regulus",
@@ -521,11 +521,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.253Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.284Z"
   },
   "story-12-spica.en.mp3": {
     "storyId": "story-12-spica",
@@ -533,11 +533,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.255Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.285Z"
   },
   "story-12-spica.hi.mp3": {
     "storyId": "story-12-spica",
@@ -545,11 +545,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.257Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.286Z"
   },
   "story-12-spica.mr.mp3": {
     "storyId": "story-12-spica",
@@ -557,11 +557,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.259Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.287Z"
   },
   "story-12-spica.ta.mp3": {
     "storyId": "story-12-spica",
@@ -569,11 +569,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.261Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.287Z"
   },
   "story-13-arcturus.en.mp3": {
     "storyId": "story-13-arcturus",
@@ -581,11 +581,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.265Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.288Z"
   },
   "story-13-arcturus.hi.mp3": {
     "storyId": "story-13-arcturus",
@@ -593,11 +593,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.269Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.289Z"
   },
   "story-13-arcturus.mr.mp3": {
     "storyId": "story-13-arcturus",
@@ -605,11 +605,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.271Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.290Z"
   },
   "story-13-arcturus.ta.mp3": {
     "storyId": "story-13-arcturus",
@@ -617,11 +617,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.272Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.291Z"
   },
   "story-14-cassiopeia.en.mp3": {
     "storyId": "story-14-cassiopeia",
@@ -629,11 +629,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.274Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.292Z"
   },
   "story-14-cassiopeia.hi.mp3": {
     "storyId": "story-14-cassiopeia",
@@ -641,11 +641,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.276Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.293Z"
   },
   "story-14-cassiopeia.mr.mp3": {
     "storyId": "story-14-cassiopeia",
@@ -653,11 +653,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.278Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.293Z"
   },
   "story-14-cassiopeia.ta.mp3": {
     "storyId": "story-14-cassiopeia",
@@ -665,11 +665,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.280Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.294Z"
   },
   "story-15-gemini.en.mp3": {
     "storyId": "story-15-gemini",
@@ -677,11 +677,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.282Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.295Z"
   },
   "story-15-gemini.hi.mp3": {
     "storyId": "story-15-gemini",
@@ -689,11 +689,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.284Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.296Z"
   },
   "story-15-gemini.mr.mp3": {
     "storyId": "story-15-gemini",
@@ -701,11 +701,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.286Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.297Z"
   },
   "story-15-gemini.ta.mp3": {
     "storyId": "story-15-gemini",
@@ -713,11 +713,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.288Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.298Z"
   },
   "story-16-sagittarius.en.mp3": {
     "storyId": "story-16-sagittarius",
@@ -725,11 +725,11 @@
     "lang": "en",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.289Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.299Z"
   },
   "story-16-sagittarius.hi.mp3": {
     "storyId": "story-16-sagittarius",
@@ -737,11 +737,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.292Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.300Z"
   },
   "story-16-sagittarius.mr.mp3": {
     "storyId": "story-16-sagittarius",
@@ -749,11 +749,11 @@
     "lang": "mr",
     "duration": 30.45,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "11ef8d0e6883209007f13c63057a5f7352725c1c1977ba4e4917bab53fc7aed4",
-    "updatedAt": "2026-10-13T10:52:20.293Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.301Z"
   },
   "story-16-sagittarius.ta.mp3": {
     "storyId": "story-16-sagittarius",
@@ -761,11 +761,11 @@
     "lang": "ta",
     "duration": 25.05,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a5ab9e6f8b54a14388a6d0a529c1470592481ef9ee5a97772dbd057a63ee68c1",
-    "updatedAt": "2026-10-13T10:52:20.295Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.302Z"
   },
   "story-17-centaurus.en.mp3": {
     "storyId": "story-17-centaurus",
@@ -773,11 +773,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.298Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.303Z"
   },
   "story-17-centaurus.hi.mp3": {
     "storyId": "story-17-centaurus",
@@ -785,11 +785,11 @@
     "lang": "hi",
     "duration": 36.5,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "95677420ab57d0a02260721e188dcf37271486c6e067a06c2b407ca210a3882a",
-    "updatedAt": "2026-10-13T10:52:20.300Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.304Z"
   },
   "story-17-centaurus.mr.mp3": {
     "storyId": "story-17-centaurus",
@@ -797,11 +797,11 @@
     "lang": "mr",
     "duration": 30.45,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "11ef8d0e6883209007f13c63057a5f7352725c1c1977ba4e4917bab53fc7aed4",
-    "updatedAt": "2026-10-13T10:52:20.302Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.305Z"
   },
   "story-17-centaurus.ta.mp3": {
     "storyId": "story-17-centaurus",
@@ -809,11 +809,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.304Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.306Z"
   },
   "story-18-cygnus.en.mp3": {
     "storyId": "story-18-cygnus",
@@ -821,11 +821,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.306Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.307Z"
   },
   "story-18-cygnus.hi.mp3": {
     "storyId": "story-18-cygnus",
@@ -833,11 +833,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.308Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.308Z"
   },
   "story-18-cygnus.mr.mp3": {
     "storyId": "story-18-cygnus",
@@ -845,11 +845,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.310Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.309Z"
   },
   "story-18-cygnus.ta.mp3": {
     "storyId": "story-18-cygnus",
@@ -857,11 +857,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.311Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.309Z"
   },
   "story-19-pegasus.en.mp3": {
     "storyId": "story-19-pegasus",
@@ -869,11 +869,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.313Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.310Z"
   },
   "story-19-pegasus.hi.mp3": {
     "storyId": "story-19-pegasus",
@@ -881,11 +881,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.316Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.311Z"
   },
   "story-19-pegasus.mr.mp3": {
     "storyId": "story-19-pegasus",
@@ -893,11 +893,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.318Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.312Z"
   },
   "story-19-pegasus.ta.mp3": {
     "storyId": "story-19-pegasus",
@@ -905,11 +905,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.319Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.313Z"
   },
   "story-20-andromeda.en.mp3": {
     "storyId": "story-20-andromeda",
@@ -917,11 +917,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.321Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.314Z"
   },
   "story-20-andromeda.hi.mp3": {
     "storyId": "story-20-andromeda",
@@ -929,11 +929,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.323Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.315Z"
   },
   "story-20-andromeda.mr.mp3": {
     "storyId": "story-20-andromeda",
@@ -941,11 +941,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.326Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.316Z"
   },
   "story-20-andromeda.ta.mp3": {
     "storyId": "story-20-andromeda",
@@ -953,11 +953,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.328Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.317Z"
   },
   "story-21-perseus.en.mp3": {
     "storyId": "story-21-perseus",
@@ -965,11 +965,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.330Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.318Z"
   },
   "story-21-perseus.hi.mp3": {
     "storyId": "story-21-perseus",
@@ -977,11 +977,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.332Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.319Z"
   },
   "story-21-perseus.mr.mp3": {
     "storyId": "story-21-perseus",
@@ -989,11 +989,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.334Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.320Z"
   },
   "story-21-perseus.ta.mp3": {
     "storyId": "story-21-perseus",
@@ -1001,11 +1001,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.336Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.321Z"
   },
   "story-22-capella.en.mp3": {
     "storyId": "story-22-capella",
@@ -1013,11 +1013,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.338Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.322Z"
   },
   "story-22-capella.hi.mp3": {
     "storyId": "story-22-capella",
@@ -1025,11 +1025,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.340Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.323Z"
   },
   "story-22-capella.mr.mp3": {
     "storyId": "story-22-capella",
@@ -1037,11 +1037,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.342Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.324Z"
   },
   "story-22-capella.ta.mp3": {
     "storyId": "story-22-capella",
@@ -1049,11 +1049,11 @@
     "lang": "ta",
     "duration": 25.05,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a5ab9e6f8b54a14388a6d0a529c1470592481ef9ee5a97772dbd057a63ee68c1",
-    "updatedAt": "2026-10-13T10:52:20.345Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.325Z"
   },
   "story-23-ashwini.en.mp3": {
     "storyId": "story-23-ashwini",
@@ -1061,11 +1061,11 @@
     "lang": "en",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.347Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.326Z"
   },
   "story-23-ashwini.hi.mp3": {
     "storyId": "story-23-ashwini",
@@ -1073,11 +1073,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.350Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.326Z"
   },
   "story-23-ashwini.mr.mp3": {
     "storyId": "story-23-ashwini",
@@ -1085,11 +1085,11 @@
     "lang": "mr",
     "duration": 30.45,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "11ef8d0e6883209007f13c63057a5f7352725c1c1977ba4e4917bab53fc7aed4",
-    "updatedAt": "2026-10-13T10:52:20.352Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.327Z"
   },
   "story-23-ashwini.ta.mp3": {
     "storyId": "story-23-ashwini",
@@ -1097,11 +1097,11 @@
     "lang": "ta",
     "duration": 25.05,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a5ab9e6f8b54a14388a6d0a529c1470592481ef9ee5a97772dbd057a63ee68c1",
-    "updatedAt": "2026-10-13T10:52:20.353Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.328Z"
   },
   "story-24-bharani.en.mp3": {
     "storyId": "story-24-bharani",
@@ -1109,11 +1109,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.356Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.329Z"
   },
   "story-24-bharani.hi.mp3": {
     "storyId": "story-24-bharani",
@@ -1121,11 +1121,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.358Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.330Z"
   },
   "story-24-bharani.mr.mp3": {
     "storyId": "story-24-bharani",
@@ -1133,11 +1133,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.360Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.331Z"
   },
   "story-24-bharani.ta.mp3": {
     "storyId": "story-24-bharani",
@@ -1145,11 +1145,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.363Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.332Z"
   },
   "story-25-pushya.en.mp3": {
     "storyId": "story-25-pushya",
@@ -1157,11 +1157,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.366Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.333Z"
   },
   "story-25-pushya.hi.mp3": {
     "storyId": "story-25-pushya",
@@ -1169,11 +1169,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.369Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.334Z"
   },
   "story-25-pushya.mr.mp3": {
     "storyId": "story-25-pushya",
@@ -1181,11 +1181,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.372Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.335Z"
   },
   "story-25-pushya.ta.mp3": {
     "storyId": "story-25-pushya",
@@ -1193,11 +1193,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.374Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.336Z"
   },
   "story-26-ashlesha.en.mp3": {
     "storyId": "story-26-ashlesha",
@@ -1205,11 +1205,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.376Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.337Z"
   },
   "story-26-ashlesha.hi.mp3": {
     "storyId": "story-26-ashlesha",
@@ -1217,11 +1217,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.378Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.338Z"
   },
   "story-26-ashlesha.mr.mp3": {
     "storyId": "story-26-ashlesha",
@@ -1229,11 +1229,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.380Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.339Z"
   },
   "story-26-ashlesha.ta.mp3": {
     "storyId": "story-26-ashlesha",
@@ -1241,11 +1241,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.382Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.339Z"
   },
   "story-27-magha.en.mp3": {
     "storyId": "story-27-magha",
@@ -1253,11 +1253,11 @@
     "lang": "en",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.385Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.340Z"
   },
   "story-27-magha.hi.mp3": {
     "storyId": "story-27-magha",
@@ -1265,11 +1265,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.387Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.342Z"
   },
   "story-27-magha.mr.mp3": {
     "storyId": "story-27-magha",
@@ -1277,11 +1277,11 @@
     "lang": "mr",
     "duration": 30.45,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "11ef8d0e6883209007f13c63057a5f7352725c1c1977ba4e4917bab53fc7aed4",
-    "updatedAt": "2026-10-13T10:52:20.389Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.342Z"
   },
   "story-27-magha.ta.mp3": {
     "storyId": "story-27-magha",
@@ -1289,11 +1289,11 @@
     "lang": "ta",
     "duration": 25.05,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "a5ab9e6f8b54a14388a6d0a529c1470592481ef9ee5a97772dbd057a63ee68c1",
-    "updatedAt": "2026-10-13T10:52:20.390Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.343Z"
   },
   "story-28-purvaphalguni.en.mp3": {
     "storyId": "story-28-purvaphalguni",
@@ -1301,11 +1301,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.393Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.344Z"
   },
   "story-28-purvaphalguni.hi.mp3": {
     "storyId": "story-28-purvaphalguni",
@@ -1313,11 +1313,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.395Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.345Z"
   },
   "story-28-purvaphalguni.mr.mp3": {
     "storyId": "story-28-purvaphalguni",
@@ -1325,11 +1325,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.397Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.346Z"
   },
   "story-28-purvaphalguni.ta.mp3": {
     "storyId": "story-28-purvaphalguni",
@@ -1337,11 +1337,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.399Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.347Z"
   },
   "story-29-uttaraphalguni.en.mp3": {
     "storyId": "story-29-uttaraphalguni",
@@ -1349,11 +1349,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.401Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.348Z"
   },
   "story-29-uttaraphalguni.hi.mp3": {
     "storyId": "story-29-uttaraphalguni",
@@ -1361,11 +1361,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.403Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.349Z"
   },
   "story-29-uttaraphalguni.mr.mp3": {
     "storyId": "story-29-uttaraphalguni",
@@ -1373,11 +1373,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.405Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.350Z"
   },
   "story-29-uttaraphalguni.ta.mp3": {
     "storyId": "story-29-uttaraphalguni",
@@ -1385,11 +1385,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.406Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.351Z"
   },
   "story-30-hasta.en.mp3": {
     "storyId": "story-30-hasta",
@@ -1397,11 +1397,11 @@
     "lang": "en",
     "duration": 35.25,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "18a951aa32e0827d07a223b48c3091804d58a15f27c3fe4276bf1b89c8047496",
-    "updatedAt": "2026-10-13T10:52:20.408Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.352Z"
   },
   "story-30-hasta.hi.mp3": {
     "storyId": "story-30-hasta",
@@ -1409,11 +1409,11 @@
     "lang": "hi",
     "duration": 36.1,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "9203e2e3183cb233df00313774129b4d30561731b42037985c8bf3b2bc85735b",
-    "updatedAt": "2026-10-13T10:52:20.410Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.353Z"
   },
   "story-30-hasta.mr.mp3": {
     "storyId": "story-30-hasta",
@@ -1421,11 +1421,11 @@
     "lang": "mr",
     "duration": 30,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "581f2019fa287a0dddcef837536a7bac1e0890babc972091f1ecd5e4da7a610b",
-    "updatedAt": "2026-10-13T10:52:20.413Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.354Z"
   },
   "story-30-hasta.ta.mp3": {
     "storyId": "story-30-hasta",
@@ -1433,11 +1433,11 @@
     "lang": "ta",
     "duration": 24.6,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5e7e9a37e1b4ef219e17fde9b4c0cec66216d0668e9b25101c6cb64d4f7efa18",
-    "updatedAt": "2026-10-13T10:52:20.414Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.355Z"
   },
   "story-31-vishakha.en.mp3": {
     "storyId": "story-31-vishakha",
@@ -1445,11 +1445,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.417Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.356Z"
   },
   "story-31-vishakha.hi.mp3": {
     "storyId": "story-31-vishakha",
@@ -1457,11 +1457,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.419Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.357Z"
   },
   "story-31-vishakha.mr.mp3": {
     "storyId": "story-31-vishakha",
@@ -1469,11 +1469,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.421Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.358Z"
   },
   "story-31-vishakha.ta.mp3": {
     "storyId": "story-31-vishakha",
@@ -1481,11 +1481,11 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.422Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.359Z"
   },
   "story-32-anuradha.en.mp3": {
     "storyId": "story-32-anuradha",
@@ -1493,11 +1493,11 @@
     "lang": "en",
     "duration": 34.8,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": false,
     "checksum": "5cf47779e53d293b0ccadca5e403e521c1ff246d2883022ab773fe96db99c73a",
-    "updatedAt": "2026-10-13T10:52:20.425Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.359Z"
   },
   "story-32-anuradha.hi.mp3": {
     "storyId": "story-32-anuradha",
@@ -1505,11 +1505,11 @@
     "lang": "hi",
     "duration": 35.7,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "42432a642a586575dc5441b9716641b6c66efa740c9d99409d91e7b732ba3bec",
-    "updatedAt": "2026-10-13T10:52:20.427Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.360Z"
   },
   "story-32-anuradha.mr.mp3": {
     "storyId": "story-32-anuradha",
@@ -1517,11 +1517,11 @@
     "lang": "mr",
     "duration": 29.55,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "6635b76b9cc68c107c177d6cf8d77196a76d1c414020507ca08a65786661c778",
-    "updatedAt": "2026-10-13T10:52:20.429Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.361Z"
   },
   "story-32-anuradha.ta.mp3": {
     "storyId": "story-32-anuradha",
@@ -1529,10 +1529,10 @@
     "lang": "ta",
     "duration": 24.15,
     "sentencesCount": 5,
-    "voice": "Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)",
+    "voice": "Offline Synthesizer (Compliant MPEG-1 L3)",
+    "placeholder": true,
     "needsNativeReview": true,
     "checksum": "5f6cac7e115474c4899750ecc401252e680385dccedc6d1776ffc61fcf16544f",
-    "updatedAt": "2026-10-13T10:52:20.431Z",
-    "placeholder": true
+    "updatedAt": "2026-10-13T12:20:50.362Z"
   }
 }
