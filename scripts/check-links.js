@@ -49,6 +49,8 @@ const NEWS_DATA = [
     id: 'news-06-3i-atlas',
     url: 'https://science.nasa.gov/solar-system/comets/3i-atlas/',
     source: 'NASA Science',
+    ageUrl: 'https://doi.org/10.1038/s41550-026-02921-7',
+    ageSource: 'Nature Astronomy (Edinburgh study)',
     date: '2025-07-01',
     title: 'Interstellar Comet 3I/ATLAS (C/2025 N1)'
   },
@@ -110,8 +112,8 @@ function fetchStatus(targetUrl) {
       const req = client.get(targetUrl, {
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0' }
       }, (res) => {
-        // Follow redirects
-        if ([301, 302, 307, 308].includes(res.statusCode) && res.headers.location) {
+        // Follow redirects (including 303 See Other from DOIs)
+        if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
           let redirectUrl = res.headers.location;
           if (redirectUrl.startsWith('/')) {
             const u = new URL(targetUrl);
@@ -157,6 +159,20 @@ async function run() {
       console.log(`❌ [FAILED: ${res.status || res.error}] "${item.title}"`);
       console.log(`   URL: ${item.url}\n`);
       failCount++;
+    }
+
+    if (item.ageUrl) {
+      const ageRes = await fetchStatus(item.ageUrl);
+      if (ageRes.status === 200) {
+        console.log(`✅ [200 OK] "${item.title}" (Age Paper)`);
+        console.log(`   Source: ${item.ageSource}`);
+        console.log(`   URL: ${item.ageUrl}\n`);
+        passCount++;
+      } else {
+        console.log(`❌ [FAILED: ${ageRes.status || ageRes.error}] "${item.title}" (Age Paper)`);
+        console.log(`   URL: ${item.ageUrl}\n`);
+        failCount++;
+      }
     }
   }
 

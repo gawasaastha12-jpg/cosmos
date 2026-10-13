@@ -2,7 +2,7 @@
  * generate-fallbacks.js
  * 
  * Automatically generates and synchronizes the embedded fallback datasets
- * in Cosmic Mythology AR Explorer.html directly from data/myth.json and data/audio-stories.json.
+ * in index.html directly from data/myth.json and data/audio-stories.json.
  * 
  * Ensures single source of truth without manual duplication.
  */
@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const HTML_PATH = path.join(__dirname, '..', 'Cosmic Mythology AR Explorer.html');
+const HTML_PATH = path.join(__dirname, '..', 'index.html');
 const MYTH_PATH = path.join(__dirname, '..', 'data', 'myth.json');
 const AUDIO_PATH = path.join(__dirname, '..', 'data', 'audio-stories.json');
 
@@ -77,7 +77,7 @@ const INTRO = ${JSON.stringify(introFallback)};
   }
 
   fs.writeFileSync(HTML_PATH, html, 'utf-8');
-  console.log('Successfully synchronized embedded fallback data in Cosmic Mythology AR Explorer.html from data/*.json!');
+  console.log('Successfully synchronized embedded fallback data in index.html from data/*.json!');
 }
 
 run();

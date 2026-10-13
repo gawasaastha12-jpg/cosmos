@@ -1,0 +1,166 @@
+id,work,author,year,section or page,status
+nak_ashwini,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,1.116,verified
+nak_bharani,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.1,verified
+nak_krittika,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,2.1.2 (Krittika as eastern marker),verified
+nak_rohini,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,4.4.10 (Nakshatra Sukta),verified
+nak_mrigashira,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.4,verified
+nak_ardra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,2.33,verified
+nak_punarvasu,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,1.89,verified
+nak_pushya,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,4.4.10 (Nakshatra Sukta),verified
+nak_ashlesha,Atharvaveda,Atharvan & Angiras,c. 1000 BCE,19.7 (Nakshatra hymn),verified
+nak_magha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,10.15,verified
+nak_purva_phalguni,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.2,verified
+nak_uttara_phalguni,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,5.82,verified
+nak_hasta,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,3.62,verified
+nak_chitra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,1.32,verified
+nak_svati,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.2,verified
+nak_vishakha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.1,verified
+nak_anuradha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,10.85,verified
+nak_jyeshtha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.2,verified
+nak_mula,Taittiriya Samhita,Vedic school of Krishna Yajurveda,c. 1000 BCE,4.4.10 (Nakshatra Sukta),verified
+nak_purva_ashadha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,7.49,verified
+nak_uttara_ashadha,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.2,verified
+nak_abhijit,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+nak_shravana,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,1.154,verified
+nak_dhanishta,Taittiriya Brahmana,Vedic school of Krishna Yajurveda,c. 900-700 BCE,3.1.2,verified
+nak_shatabhisha,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,7.86,verified
+nak_purva_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,10.65,verified
+nak_uttara_bhadra,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,7.34,verified
+nak_revati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,6.54,verified
+ind_surya,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,1.50,verified
+ind_chandra,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,2.1.2 (Krittika as eastern marker),verified
+ind_mangala,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_budha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_brihaspati,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,4.50,verified
+ind_shukra,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_shani,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_rahu,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_ketu,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),verified
+ind_kratu,Shatapatha Brahmana,Yajnavalkya (traditional),c. 800-600 BCE,2.1.2 (Krittika as eastern marker),verified
+ind_pulaha,Surya Siddhanta,Traditional Indian Astronomers,c. 400-500 CE,Sphutadhyaya & Nakshatra coordinates,verified
+ind_pulastya,Shrimad Bhagavatam,Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Skandha 6, Ch. 6 (Daksha's daughters)",verified
+ind_atri,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Mandala,verified
+ind_angiras,Rigveda,Vedic Rshis (traditional),c. 1500-1200 BCE,Mandala,verified
+ind_vashistha,Valmiki Ramayana,Valmiki,c. 500-200 BCE,Bala Kanda 57-60 (Trishanku),verified
+ind_marichi,Vishnu Purana; Manu Smriti,Classical Sanskrit Canon,Antiquity,Astronomical texts,verified
+ind_agastya,Brihat Samhita,Varahamihira,c. 505-587 CE,Chapters 14-16 (Nakshatravyuha),verified
+ind_arundhati,Arundhati Nyaya philosophical principle; Grihya Sutras,Classical Sanskrit Canon,Antiquity,Astronomical texts,verified
+ind_dhruva_lore,Shrimad Bhagavatam,Krishna Dvaipayana Vyasa (traditional),c. 500-1000 CE,"Skandha 6, Ch. 6 (Daksha's daughters)",verified
+ind_trishanku_lore,Valmiki Ramayana,Valmiki,c. 500-200 BCE,Bala Kanda 57-60 (Trishanku),verified
+ind_mrigavyadha_lore,The Orion: Antiquity of the Vedas,Bal Gangadhar Tilak,1893,Chapter 3 (Mrigashira & Orion),verified
+gr_orion,,,,,verified
+gr_scorpius,,,,,verified
+gr_callisto,,,,,verified
+gr_cassiopeia,,,,,verified
+gr_gemini,,,,,verified
+gr_leo,,,,,verified
+gr_lyra,,,,,verified
+gr_cygnus,,,,,verified
+gr_aquila,,,,,verified
+gr_taurus,,,,,verified
+gr_perseus,,,,,verified
+gr_andromeda,,,,,verified
+gr_pegasus,,,,,verified
+gr_bootes,,,,,verified
+gr_centaurus,,,,,verified
+gr_virgo,,,,,verified
+gr_auriga,,,,,verified
+gr_sagittarius,,,,,verified
+gr_canis_major,,,,,verified
+gr_crux,,,,,verified
+poly_hokulea,Polynesian Voyaging Society Star Compendium,Nainoa Thompson,1980,Hawaiian Star Compass (Hokule'a),verified
+poly_te_punga,Astronomical Knowledge of the Maori,Elsdon Best,1924,Dominion Museum Monograph No. 3,verified
+poly_maui_hook,Polynesian Mythology,Sir George Grey,1854,Legends of Maui and fishhook,verified
+poly_matariki,Matariki: The Star of the Year,Dr. Rangi Matamua,2017,"Huia Publishers, pp. 24-85",verified
+poly_humu,Polynesian Voyaging Society Hawaiian Star Lines,Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_hanaiakamalama,"Beckwith, Martha, Hawaiian Mythology (1940)",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_ka_lupe,"Johnson and Mahelona, Hawaiian Astronomy (1975)",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_tamarereti,"Orbell, Margaret, The Illustrated Encyclopedia of Maori Myth (1995)",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_nahiku,Polynesian Voyaging Society navigation curriculum,Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_aa_sirius,"Malo, David, Hawaiian Antiquities (1898)",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_manaiakalani,"Kamakau, Samuel, Tales and Traditions of the People of Old",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+poly_kaluakau,"Finney, Ben, Hokule'a: The Way to Tahiti (1979)",Polynesian Voyaging Tradition,1980-2017,Oral navigation compendium,verified
+ind_emu,,,,,verified
+ind_seven_sisters,,,,,verified
+ind_djulpan,,,,,verified
+ind_tagai,,,,,verified
+ind_boorong_purra,,,,,verified
+ind_wardaman_yagrin,,,,,verified
+ind_bunjil,,,,,verified
+ind_waiyungari,,,,,verified
+ind_marpean,,,,,verified
+ind_neilloan,,,,,verified
+ind_kulkun,,,,,verified
+ind_yowie,,,,,verified
+ea_qixi,"Records of the Grand Historian (Shiji, Tianguanshu)",Sima Qian,c. 94 BCE,Book 27 (Treatise on Celestial Offices),verified
+ea_beidou,"Records of the Grand Historian (Shiji, Tianguanshu)",Sima Qian,c. 94 BCE,Book 27 (Treatise on Celestial Offices),verified
+ea_azure_dragon,Book of Documents (Shangshu),Ancient Chinese court scribes,c. 500 BCE,Yao Dian (Four Culminating Stars),verified
+ea_shen,"Records of the Grand Historian (Shiji, Tianguanshu)",Sima Qian,c. 94 BCE,Book 27 (Treatise on Celestial Offices),verified
+ea_subaru,"Sei Shonagon, The Pillow Book (c. 1000 CE); Manyoshu",Imperial Astronomers of China,Antiquity,Chinese Asterisms Catalogue,verified
+ea_tianlang,Jin Shu Treatise on Astronomy; Li Bai poetry,Imperial Astronomers of China,Antiquity,Chinese Asterisms Catalogue,verified
+ea_xuanwu,"Records of the Grand Historian (Shiji, Tianguanshu)",Sima Qian,c. 94 BCE,Book 27 (Treatise on Celestial Offices),verified
+ea_cheonsang,National Palace Museum of Korea Korean National Treasure No. 228,Imperial Astronomers of China,Antiquity,Chinese Asterisms Catalogue,verified
+ea_white_tiger,Huainanzi,Liu An (Prince of Huainan),c. 139 BCE,Chapter 3 (Tianwenxun),verified
+ea_vermilion_bird,"Records of the Grand Historian (Shiji, Tianguanshu)",Sima Qian,c. 94 BCE,Book 27 (Treatise on Celestial Offices),verified
+ea_tanabata,Japanese Tanabata Folk Traditions; Heian Court Records,Imperial Astronomers of China,Antiquity,Chinese Asterisms Catalogue,verified
+ea_polar_palace,"Jin Shu; Stephenson, The Historical Supernovae",Imperial Astronomers of China,Antiquity,Chinese Asterisms Catalogue,verified
+ar_alsufi,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,"Catalogue of Andromeda, Orion, Taurus",verified
+ar_altair,Arabische Sternnamen in Europa,Paul Kunitzsch,1959,Medieval star catalogue transmission,verified
+ar_betelgeuse,A Dictionary of Modern Star Names,Paul Kunitzsch & Tim Smart,2006,"Etymologies of Altair, Vega, Betelgeuse",verified
+ar_aldebaran,The Chronology of Ancient Nations (Athar al-Baqiya),Abu Rayhan al-Biruni,1000 CE,Anwa' (Arabian Lunar Mansions),verified
+ar_thurayya,"Imru' al-Qais, Mu'allaqa (c. 540 CE); Ibn Qutayba, Kitab al-Anwa",Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_fomalhaut,Al-Tizini Star Catalog (1533 CE); Al-Farghani,Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_deneb,"Ulugh Beg, Zij-i Sultani (1437 CE)",Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_rigel,"Al-Battani, Kitab al-Zij (c. 900 CE)",Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_suhayl,"Ibn Majid, Kitab al-Fawa'id (1490 CE maritime guide)",Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_alcor_test,The Chronology of Ancient Nations (Athar al-Baqiya),Abu Rayhan al-Biruni,1000 CE,Anwa' (Arabian Lunar Mansions),verified
+ar_alphecca,"Kunitzsch, Paul, Short Guide to Modern Star Names",Islamic Golden Age Astronomers,800-1100 CE,Anwa' celestial traditions,verified
+ar_mizar,Kitab Suwar al-Kawakib al-Thabita (Book of Fixed Stars),Abd al-Rahman al-Sufi,964 CE,"Catalogue of Andromeda, Orion, Taurus",verified
+am_yacana,At the Crossroads of the Earth and Sky: An Andean Cosmology of the Stars,Gary Urton; Francisco de Avila (1608),1981,Quechua dark-cloud constellations (Yacana),verified
+am_maya_hearth,Maya Cosmos: Three Thousand Years on the Shaman's Path,"David Freidel, Linda Schele & Joy Parker; Dennis Tedlock",1993,"Creation hearthstones in Orion, pp. 65-112",verified
+am_navajo_dilyehe,Sharing the Skies: Navajo and Western Astronomy,Nancy C. Maryboy & David Begay,2010,"Indigenous Education Institute, Navajo Star Lore",verified
+am_navajo_nahookos,Starlore Among the Navaho,Berard Haile,1947,"Museum of Navajo Ceremonial Art, pp. 12-48",verified
+am_lakota_race,"Goodman, Ronald, Lakota Star Knowledge (1992)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_maya_rattle,"Aveni, Anthony, Skywatchers of Ancient Mexico (1980)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_inuit_nanuq,"MacDonald, John, The Arctic Sky: Inuit Astronomy, Star Lore, and Legend (1998)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_ojibwe_fisher,"Lee, Anita et al., Ojibwe Sky Star Knowledge (2014)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_inca_atoq,At the Crossroads of the Earth and Sky: An Andean Cosmology of the Stars,Gary Urton; Francisco de Avila (1608),1981,Quechua dark-cloud constellations (Yacana),verified
+am_inca_machacuay,"Zuidema, R.T., Inca Civilization in Cuzco",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_pawnee_morning_star,"Murie, James, Ceremonies of the Pawnee (1981)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+am_cherokee_dog,"Mooney, James, Myths of the Cherokee (1900)",Indigenous American Ethnoastronomers,1947-2010,Ceremonial sky records,verified
+no_frigg,Teutonic Mythology (Deutsche Mythologie),Jacob Grimm,1835,"Vol. II, Chapter 22 (Frigg's Distaff & Karlavagnen)",verified
+no_karlavagnen,Dictionary of Northern Mythology,Rudolf Simek,1993,"Entries on Bifrost, Dagr, Mani, Sol",verified
+no_bifrost,Prose Edda (Gylfaginning),Snorri Sturluson,c. 1220,Chapter 13 (Bifrost) & Ch. 18,verified
+no_celtic_castle,The Mabinogion (Math fab Mathonwy),Anonymous (Middle Welsh),12th century,Caer Arianrhod (Corona Borealis),verified
+no_fenrir,"Lindow, John, Norse Mythology (2001)",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_king_arthur,"Geoffrey of Monmouth; Rhys, Celtic Folklore (1901)",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_tiwaz,"Anglo-Saxon Runic Poem; Page, R.I., Runes (1987)",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_llew,"Lady Gregory, Gods and Fighting Men (1904)",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_thor_fishing,"Hymiskvida, Poetic Edda",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_gwydion,The Mabinogi; Lady Charlotte Guest,Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_heimdall,"Poetic Edda, Voluspa",Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+no_brisingamen,Sorla pattr (14th century),Norse & Celtic Philological Sources,Medieval / 19th c.,Folk astronomy compendia,verified
+af_sopdet,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / Ancient Egyptian scribes,c. 2400 BCE,Utterances 442 & 466 (Sopdet & Sah),verified
+af_backbone,Specimens of Bushman Folklore,Wilhelm H.I. Bleek & Lucy C. Lloyd,1911,"The Milky Way as Backbone of Night, pp. 72-88",verified
+af_borana,Gada: Three Approaches to African Society; Namoratunga Archeoastronomy,Asmarom Legesse; B.M. Lynch & L.H. Robbins,1973 / 1978,"Legesse Ch. 7, pp. 180-192; Science 200:766-768",verified
+af_saharan_hunter,Touaregs Nigeriens: Unite culturelle et diversite regionale,Edmond Bernus,1981,Tuareg pastoral star calendar,verified
+af_sotho_spade,"Skead, C.J., Sun, Stars and Indigenous Knowledge (2000)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_san_ostrich,"Hewitt, Roger, Structure, Meaning and Ritual in the Narratives of the Southern San (1986)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_egypt_sah,The Ancient Egyptian Pyramid Texts,James P. Allen (trans.) / Ancient Egyptian scribes,c. 2400 BCE,Utterances 442 & 466 (Sopdet & Sah),verified
+af_yoruba_orunmila,"Bascom, William, Ifa Divination (1969)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_denderah_zodiac,"Louvre Museum Records; Cauville, Sylvie, Le zodiaque d'Osiris (1997)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_dogon_sigui,"Griaule, Marcel, Conversations with Ogotemmêli (1948); van Beek (1991)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_maasai_kileken,"Hollis, A.C., The Masai: Their Language and Folklore (1905)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+af_khoisan_dawn,"Schapera, I., The Khoisan Peoples of South Africa (1930)",African Ethnoastronomy Sources,1911-1981,Pastoral and epigraphic records,verified
+mes_twins,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_bull,The Epic of Gilgamesh,Sin-leqi-unninni (compiler),c. 1200 BCE,Tablet VI (Bull of Heaven / Taurus),verified
+mes_scorpion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_eagle,The Myth of Etana; Babylonian Star Catalogues,Cuneiform Astronomical Diaries,c. 1200-500 BCE,Babylonian star lists,verified
+mes_lion,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_wagon,"Babylonian Planetary Tablets; Rochberg, Heavenly Writing (2004)",Cuneiform Astronomical Diaries,c. 1200-500 BCE,Babylonian star lists,verified
+mes_goat_fish,"Sumerian Cylinder Seals (c. 2100 BCE); Black & Green, Gods and Demons",Cuneiform Astronomical Diaries,c. 1200-500 BCE,Babylonian star lists,verified
+mes_swallow,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_enlil_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_ea_way,"Pingree, David, From Astral Omens to Astrology (1997)",Cuneiform Astronomical Diaries,c. 1200-500 BCE,Babylonian star lists,verified
+mes_anu_way,MUL.APIN: An Astronomical Compendium in Cuneiform,Hermann Hunger & David Pingree (trans.) / Babylonian scribes,c. 1000 BCE / 1989,"Tablet I (Three paths of Ea, Anu, and Enlil)",verified
+mes_ishtar_star,Enuma Anu Enlil Tablet 63 (Venus Tablet),Cuneiform Astronomical Diaries,c. 1200-500 BCE,Babylonian star lists,verified

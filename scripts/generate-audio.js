@@ -10,8 +10,9 @@
  * - AZURE_SPEECH_KEY: Azure Cognitive Services Speech key
  * - AZURE_SPEECH_REGION: Azure Speech region (e.g. 'centralindia', 'eastus')
  * 
- * When no cloud API key is set, generates valid compliant MP3 audio tracks
- * matching each story's sentence timing and duration for offline local development.
+ * Command line flags:
+ * - --placeholder: Explicitly permit generating timing-calibrated synthetic placeholder frames
+ *   when cloud API credentials are not provided.
  */
 
 const fs = require('fs');
@@ -26,6 +27,7 @@ const MANIFEST_PATH = path.join(AUDIO_DIR, 'manifest.json');
 const GOOGLE_KEY = process.env.GOOGLE_TTS_API_KEY || '';
 const AZURE_KEY = process.env.AZURE_SPEECH_KEY || '';
 const AZURE_REGION = process.env.AZURE_SPEECH_REGION || 'centralindia';
+const ALLOW_PLACEHOLDER = process.argv.includes('--placeholder');
 
 if (!fs.existsSync(AUDIO_DIR)) {
   fs.mkdirSync(AUDIO_DIR, { recursive: true });
@@ -39,7 +41,6 @@ function computeChecksum(buffer) {
  * Creates valid compliant MPEG-1 Layer 3 silent/ambient audio buffer of given duration
  */
 function createCompliantMp3Buffer(durationSec) {
-  // 128 kbps, 44.1 kHz, Joint Stereo: Frame = 417 bytes, ~0.026122 sec
   const frameHeader = Buffer.from([0xFF, 0xFB, 0x90, 0x64]);
   const sideInfo = Buffer.alloc(32);
   const mainData = Buffer.alloc(417 - 4 - 32);
@@ -113,6 +114,14 @@ async function run() {
     process.exit(1);
   }
 
+  const hasCloudKey = Boolean(GOOGLE_KEY || AZURE_KEY);
+  if (!hasCloudKey && !ALLOW_PLACEHOLDER) {
+    console.warn('\nNotice: Cloud TTS API key (GOOGLE_TTS_API_KEY / AZURE_SPEECH_KEY) is not set.');
+    console.warn('generate-audio.js will NOT write placeholder MP3 files unless --placeholder is explicitly passed.');
+    console.warn('The application player will use device Web Speech synthesis directly.\n');
+    return;
+  }
+
   const stories = JSON.parse(fs.readFileSync(STORIES_PATH, 'utf-8'));
   console.log(`Loaded ${stories.length} stories from ${STORIES_PATH}`);
 
@@ -135,40 +144,44 @@ async function run() {
       const targetDuration = ldata.duration || 30.0;
 
       let audioBuffer = null;
-      let voiceUsed = 'Offline Synthesizer (Compliant MPEG-1 L3)';
+      let voiceUsed = 'Offline Synthetic Timing Placeholder (Compliant MPEG-1 L3)';
+      let isPlaceholder = true;
 
       if (GOOGLE_KEY) {
         try {
           console.log(`Cloud synthesizing ${fileName} using Google TTS...`);
           audioBuffer = await synthesizeGoogleTTS(fullText, lang, GOOGLE_KEY);
           voiceUsed = `Google Cloud TTS (${lang})`;
+          isPlaceholder = false;
           cloudSynthesized++;
         } catch (err) {
-          console.warn(`Google TTS failed for ${fileName} (${err.message}). Falling back to local synthesizer.`);
+          console.warn(`Google TTS failed for ${fileName} (${err.message}).`);
         }
       }
 
-      if (!audioBuffer) {
+      if (!audioBuffer && ALLOW_PLACEHOLDER) {
         audioBuffer = createCompliantMp3Buffer(targetDuration);
+        isPlaceholder = true;
       }
 
-      fs.writeFileSync(filePath, audioBuffer);
-      const checksum = computeChecksum(audioBuffer);
+      if (audioBuffer) {
+        fs.writeFileSync(filePath, audioBuffer);
+        const checksum = computeChecksum(audioBuffer);
 
-      updatedManifest[fileName] = {
-        storyId: story.id,
-        title: ldata.title,
-        lang: lang,
-        duration: targetDuration,
-        sentencesCount: ldata.sentences.length,
-        voice: voiceUsed,
-        placeholder: !Boolean(GOOGLE_KEY && audioBuffer),
-        needsNativeReview: lang !== 'en',
-        checksum: checksum,
-        updatedAt: new Date().toISOString()
-      };
-
-      generatedCount++;
+        updatedManifest[fileName] = {
+          storyId: story.id,
+          title: ldata.title,
+          lang: lang,
+          duration: targetDuration,
+          sentencesCount: ldata.sentences.length,
+          voice: voiceUsed,
+          placeholder: isPlaceholder,
+          needsNativeReview: lang !== 'en',
+          checksum: checksum,
+          updatedAt: new Date().toISOString()
+        };
+        generatedCount++;
+      }
     }
   }
 
