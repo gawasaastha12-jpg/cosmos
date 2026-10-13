@@ -102,6 +102,88 @@ dialog .btn{display:block;margin-top:8px;width:100%}
 .ic-go{display:inline-block;animation:twinkle 1.8s ease-in-out infinite}@keyframes twinkle{50%{transform:scale(1.4) rotate(25deg);opacity:.7}}
 .cta:hover .ic-go{animation-duration:.6s}
 @media(prefers-reduced-motion:reduce){.w,.sub,.hint,.ch .card,.ch .card h2,.ch .card p,.ch .row .cta{opacity:1!important;transform:none!important;filter:none!important;translate:none!important;animation:none!important;transition:none!important}.ch .card::after,.ic-sci,.ic-snd b,.ic-go{animation:none!important}}
+
+/* ========== TASK A: GAME-STYLE JOURNEYS UI ========== */
+.game-hud{position:sticky;top:0;z-index:22;margin:-12px -12px 20px;padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-radius:18px;background:rgba(10,14,32,.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+.hud-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hud-rank{font-family:var(--disp);font-size:20px;font-weight:600;color:#ffe2b0;display:flex;align-items:center;gap:6px}
+.hud-xp-box{min-width:140px;display:flex;flex-direction:column;gap:3px}
+.hud-xp-bar{height:7px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.hud-xp-fill{height:100%;width:0;background:linear-gradient(90deg,var(--a),#5de0d0);transition:width .5s ease}
+.hud-xp-txt{font-size:11px;color:var(--mut);font-family:ui-monospace,monospace}
+.hud-stats{display:flex;align-items:center;gap:12px}
+.hud-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid var(--bd);font-size:13px;font-weight:500}
+.hud-pill.hearts{color:#ff7a8a;border-color:rgba(255,122,138,.3)}
+.hud-pill.streak{color:#ffb347;border-color:rgba(255,179,71,.3)}
+.hud-pill.stars{color:#ffe2b0;border-color:rgba(255,226,176,.3)}
+.hud-actions{display:flex;align-items:center;gap:6px}
+.hud-btn{all:unset;cursor:pointer;padding:6px 12px;border-radius:99px;border:1px solid var(--bd);background:rgba(255,255,255,.04);font-size:13px;display:inline-flex;align-items:center;gap:5px;transition:.2s}
+.hud-btn:hover{background:rgba(255,255,255,.1);border-color:var(--a)}
+
+.daily-banner{padding:14px 18px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(123,140,255,.12),rgba(93,224,208,.08));border-color:rgba(123,140,255,.3)}
+.daily-banner h4{font-size:16px;margin-bottom:2px;color:#fff}
+.daily-banner p{font-size:13px;color:var(--mut)}
+
+.trail-section{position:relative;margin:28px 0;padding:24px 16px;border-radius:24px;background:rgba(8,12,28,.4);border:1px solid rgba(150,168,255,.12);overflow:hidden}
+.trail-ch-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.07)}
+.trail-ch-title h3{font-size:24px;color:#ffe2b0}
+.trail-ch-title span{font-size:13px;color:var(--mut)}
+.trail-map{display:flex;flex-direction:column;align-items:center;gap:24px;position:relative;padding:10px 0}
+.trail-node-row{display:flex;justify-content:center;align-items:center;position:relative;width:100%}
+.node-btn{all:unset;cursor:pointer;width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:rgba(18,24,52,.85);border:2px solid var(--bd);box-shadow:0 0 16px rgba(0,0,0,.5);transition:transform .25s,border-color .25s,box-shadow .25s}
+.node-btn:hover:not(.locked){transform:scale(1.12);border-color:var(--a);box-shadow:0 0 24px rgba(123,140,255,.45)}
+.node-btn.current{border-color:#5de0d0;box-shadow:0 0 28px rgba(93,224,208,.6);animation:nodePulse 2s infinite}
+@keyframes nodePulse{0%,100%{box-shadow:0 0 16px rgba(93,224,208,.4)}50%{box-shadow:0 0 32px rgba(93,224,208,.85)}}
+.node-btn.completed{border-color:#f0b36a;background:rgba(40,30,20,.85);box-shadow:0 0 18px rgba(240,179,106,.35)}
+.node-btn.locked{opacity:.45;cursor:not-allowed;border-color:rgba(255,255,255,.15)}
+.node-btn.boss{width:72px;height:72px;border-radius:18px;border-color:#ff7a8a;background:rgba(45,15,25,.85)}
+.node-btn.boss.completed{border-color:#ffe2b0;background:rgba(50,38,18,.9)}
+.node-stars{position:absolute;bottom:-9px;display:flex;gap:2px;font-size:10px;color:#ffe2b0}
+.node-lbl{position:absolute;left:calc(100% + 14px);white-space:nowrap;font-size:13px;font-weight:500;color:var(--ink);pointer-events:none;background:rgba(4,6,15,.7);padding:3px 9px;border-radius:8px;border:1px solid rgba(255,255,255,.08)}
+@media(max-width:700px){.node-lbl{display:none}}
+.trail-connector{width:3px;height:24px;background:linear-gradient(180deg,rgba(150,168,255,.3),rgba(150,168,255,.1));border-radius:2px}
+
+/* Level dialogs & Mini games UI */
+.game-modal{width:min(580px,calc(100% - 24px));max-height:85vh;overflow-y:auto;padding:24px;border-radius:22px;background:rgba(8,12,30,.96);border:1px solid var(--bd);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.85)}
+.game-modal h3{font-size:24px;margin-bottom:6px;color:#ffe2b0}
+.game-modal p{color:var(--mut);font-size:14px;line-height:1.5}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:10px}
+.modal-lives{color:#ff7a8a;font-size:15px}
+
+/* Connect the Stars */
+.star-canvas-box{position:relative;width:100%;height:270px;margin:14px 0;background:radial-gradient(circle at center,#0d163a 0%,#040713 100%);border-radius:16px;border:1px solid var(--bd);overflow:hidden;touch-action:none}
+.star-canvas-box svg{position:absolute;inset:0;width:100%;height:100%}
+.connect-hint{font-size:12px;color:var(--mut);text-align:center;margin-top:4px}
+
+/* Order It */
+.order-list{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+.order-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--bd);font-size:14px}
+.order-btn-box{display:flex;gap:4px}
+.order-arr{all:unset;cursor:pointer;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,.08);color:var(--ink);font-size:12px}
+.order-arr:hover{background:var(--a);color:#000}
+
+/* Match Pairs */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}
+.match-card{all:unset;cursor:pointer;padding:12px 10px;border-radius:12px;border:1px solid var(--bd);background:rgba(255,255,255,.04);text-align:center;font-size:13px;transition:.2s}
+.match-card:hover{border-color:var(--a);background:rgba(123,140,255,.1)}
+.match-card.sel{border-color:#5de0d0;background:rgba(93,224,208,.16);color:#fff}
+.match-card.matched{border-color:#6fe39a;background:rgba(111,227,154,.15);color:#6fe39a;pointer-events:none}
+
+/* Collection Book & Achievements */
+.book-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin:14px 0}
+.card-item{padding:12px;border-radius:14px;border:1px solid var(--bd);background:rgba(255,255,255,.04);text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .25s,border-color .25s}
+.card-item.unlocked{border-color:#f0b36a;background:rgba(240,179,106,.08);cursor:pointer}
+.card-item.unlocked:hover{transform:translateY(-4px);border-color:#ffe2b0}
+.card-item.locked{opacity:.4;filter:grayscale(1)}
+.card-thumb{width:70px;height:50px;color:#ffe2b0}
+.achieve-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
+.achieve-item{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--bd)}
+.achieve-item.done{border-color:#6fe39a;background:rgba(111,227,154,.08)}
+.achieve-icon{font-size:26px;flex:none}
+.toast-box{position:fixed;bottom:24px;right:24px;z-index:99;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast-msg{padding:12px 18px;border-radius:14px;background:rgba(10,16,36,.94);border:1px solid var(--a);color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.6);font-size:14px;display:flex;align-items:center;gap:8px;animation:slideToast .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes slideToast{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
 </style></head><body>
 <canvas id="cv"></canvas>
 <nav class="gl" aria-label="Sections"><button data-go="home" class="on">Cosmic Canvas</button><button data-go="sci">Scientific view</button><button data-go="myth">Myth &amp; culture</button><button data-go="play">Journeys</button></nav>
@@ -127,11 +209,75 @@ dialog .btn{display:block;margin-top:8px;width:100%}
 <div><div class="gl pan"><canvas class="c2" id="mm" style="height:min(46vh,380px)"></canvas></div><div class="gl story" id="ms" style="margin-top:14px"></div></div>
 <div class="gl pan"><h3>Avatar</h3><div class="stage"><div class="av"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="gly" id="gl"></div></div></div><p class="cap">Placeholder figure. Swap in a glTF character for each story.</p></div></div></main>
 
-<main id="play" class="pg fx"><h2>Journeys</h2>
-<div class="gl pan" style="max-width:520px"><b id="lv">Level 1 · 0 XP</b><div class="xp"><i id="xb"></i></div></div>
-<div class='tabs' id='qf' style='margin-top:14px'></div><div class='quests' id='qs' style='margin-top:6px'></div><h3 style='font-size:30px;margin-bottom:8px'>Mini-games</h3><div class='hub' style='margin-bottom:26px'><div class='gl pan' id='g1'></div><div class='gl pan' id='g2'></div></div><h3 style='font-size:30px;margin-bottom:4px'>Field missions</h3><p class='cap'>Real observing tasks to try under any sky. Tap one when you have done it.</p><div class='quests' id='fm'></div>
-<div class="hub"><div class="gl pan"><h3>Audio storytelling</h3><div class="tabs" id="tg"></div><div class="tabs" id="lg"></div><div class="row" style="align-items:center;margin:0"><button class="play" id="ap" aria-label="Play story">▶</button><div class="bars" id="ab"></div></div><p class="story" id="ac" style="padding:12px 0 0;min-height:120px"></p></div>
-<div class="gl pan"><h3>Why regional languages</h3><p style="color:var(--mut)">Sky stories were told aloud, in the language of the people who told them. Pick a language, press play, and your device narrates a short sample. Voices depend on what your device has installed.</p></div></div></main>
+<main id="play" class="pg fx">
+<!-- Mission Control Game HUD -->
+<header class="gl game-hud" role="region" aria-label="Game Status HUD">
+  <div class="hud-left">
+    <div class="hud-rank"><span id="g-rank-ico">✦</span> <span id="g-rank-title">Cadet</span> · <span id="lv">Level 1</span></div>
+    <div class="hud-xp-box">
+      <div class="hud-xp-bar"><div class="hud-xp-fill" id="xb"></div></div>
+      <span class="hud-xp-txt" id="g-xp-cnt">0 / 100 XP</span>
+    </div>
+  </div>
+  <div class="hud-stats">
+    <div class="hud-pill stars" title="Total Stars Earned">⭐ <b id="g-stars">0</b></div>
+    <div class="hud-pill streak" title="Daily Stargazer Streak">🔥 <b id="g-streak">1</b>d</div>
+    <div class="hud-pill hearts" title="Lives Remaining">❤️ <b id="g-lives">3</b></div>
+  </div>
+  <div class="hud-actions">
+    <button class="hud-btn" id="btn-book" title="Constellation Collection Book">📖 Book (<b id="g-book-cnt">0/21</b>)</button>
+    <button class="hud-btn" id="btn-achieve" title="Achievements">🏆 <b id="g-ach-cnt">0/22</b></button>
+    <button class="hud-btn" id="btn-settings" title="Audio and Gameplay Settings">⚙️</button>
+  </div>
+</header>
+
+<!-- Daily Quest Banner -->
+<div class="gl card daily-banner" id="daily-quest-banner">
+  <div>
+    <h4>✦ Daily Celestial Quest</h4>
+    <p id="daily-quest-desc">Observe the skies: complete 3 trail nodes today for +100 bonus XP &amp; 3 stars.</p>
+  </div>
+  <button class="btn" id="btn-daily-claim" style="font-size:13px">Progress 0/3</button>
+</div>
+
+<!-- World Map Constellation Trail -->
+<h2>Constellation Trail</h2>
+<p class="sub" style="margin-top:6px;margin-bottom:20px">Journey through 5 celestial chapters. Complete nodes to unlock collectible constellation cards.</p>
+
+<div id="trail-container"></div>
+
+<!-- Original Quests & Mini Games Accordion (preserved for accessibility) -->
+<details class="gl pan" style="margin-top:28px">
+  <summary style="cursor:pointer;font-weight:600;padding:6px;color:#ffe2b0">Browse Full Quest Catalog &amp; Field Missions (Table View)</summary>
+  <div class='tabs' id='qf' style='margin-top:14px'></div>
+  <div class='quests' id='qs' style='margin-top:6px'></div>
+  <h3 style='font-size:24px;margin:20px 0 8px'>Quick Mini-games</h3>
+  <div class='hub' style='margin-bottom:20px'><div class='gl pan' id='g1'></div><div class='gl pan' id='g2'></div></div>
+  <h3 style='font-size:24px;margin-bottom:4px'>Field missions checklist</h3>
+  <p class='cap'>Real observing tasks to try under any sky. Tap one when you have done it.</p>
+  <div class='quests' id='fm'></div>
+</details>
+
+<!-- Audio storytelling section (preserved) -->
+<h3 style='font-size:28px;margin:32px 0 12px'>Audio storytelling</h3>
+<div class="hub">
+  <div class="gl pan">
+    <div class="tabs" id="tg"></div>
+    <div class="tabs" id="lg"></div>
+    <div class="row" style="align-items:center;margin:0">
+      <button class="play" id="ap" aria-label="Play story">▶</button>
+      <div class="bars" id="ab"></div>
+    </div>
+    <p class="story" id="ac" style="padding:12px 0 0;min-height:120px"></p>
+  </div>
+  <div class="gl pan">
+    <h3>Why regional languages</h3>
+    <p style="color:var(--mut)">Sky stories were told aloud, in the language of the people who told them. Pick a language, press play, and your device narrates a short sample. Voices depend on what your device has installed.</p>
+  </div>
+</div>
+</main>
+<div class="toast-box" id="toasts" aria-live="polite"></div>
+
 <dialog id="dlg"></dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -272,6 +418,1097 @@ x.font=`${12*k}px Space Grotesk,sans-serif`;names.forEach((n,i)=>{const p=P(n),d
 x.textAlign='left';x.fillStyle='rgba(255,230,190,.85)';x.font=`italic ${24*k}px Georgia,serif`;x.fillText(con,16*k,34*k)}
 const NEWS=[['This month','Oct 2026','Saturn at opposition with razor-thin rings','Saturn reached opposition on 4 October, so it rises at sunset and stays up all night. Its rings are tilted almost edge-on this year, which makes them look unusually narrow. Vesta peaks on 13 October and the Orionid meteors around 22 October.','Opposition is the best time to observe an outer planet, because it is closest and fully lit. Timings come from European observatories, so check your local almanac.'],['Survey','2026','Rubin Observatory starts its 10-year survey','The Vera C. Rubin Observatory has officially begun the Legacy Survey of Space and Time, a decade of repeated imaging of the southern sky.','It will catch change night after night: exploding stars, moving asteroids and variable stars, building a movie of the sky.'],['Early universe','2026','Euclid reports the most ancient quasar yet','ESA’s Euclid telescope has been credited with the most ancient quasar known, a black hole feeding on gas in the young universe.','Distant quasars show how fast the first black holes grew.'],['Black holes','2026','A mid-sized black hole tears apart a star','Astronomers report a star ripped apart by an intermediate-mass black hole, a size class between stellar black holes and the giants in galaxy centres.','These are rare to catch and help explain how supermassive black holes grew.'],['Exoplanets','2026','The faintest planet ever imaged from the ground','A newly reported planet is the faintest ever imaged directly from Earth.','Direct images let astronomers study a planet’s light instead of inferring it.'],['Solar system','2026','Interstellar comet 3I/ATLAS might predate the Sun','New analysis suggests the interstellar visitor 3I/ATLAS could be older than our Sun.','It would be a sample of material from before the solar system formed.'],['Mission','2026','Roman telescope nears readiness','A final look at the primary mirror of NASA’s Roman Space Telescope was reported this autumn, and Euclid has produced a preview of the galactic-centre views Roman is built for.','Roman will survey huge areas of sky for dark energy and exoplanets.'],['ISRO','Jan 2024','Aditya-L1 reaches its post at L1','India’s Aditya-L1 settled into orbit around the Sun-Earth L1 point, about 1.5 million km from Earth, where it watches the Sun without eclipses.','It studies flares, the corona and the solar wind that drive space weather.'],['Stars','2019–20','Betelgeuse’s Great Dimming','Betelgeuse faded to roughly a third of its usual brightness. Studies point to cooled gas thrown from its surface forming a dust cloud that blocked part of its light.','It showed that a star can change dramatically without exploding.'],['Black holes','2019 and 2022','First images of black holes','The Event Horizon Telescope imaged M87* in 2019 and the Milky Way’s Sagittarius A* in 2022.','Both shadows matched predictions from general relativity.'],['Exoplanets','1995','The first planet around a Sun-like star','51 Pegasi b, a hot Jupiter, was found orbiting 51 Pegasi. Its discoverers shared the 2019 Nobel Prize in Physics.','It opened the era of exoplanet science, now past 6,000 confirmed worlds.'],['Gravity','2017','Two neutron stars collide','GW170817 was detected in gravitational waves and seen in light across the spectrum.','It helped show that such mergers forge heavy elements such as gold.'],['Gaia','2022','Gaia maps about 1.8 billion stars','Gaia’s third data release gave positions and motions for around 1.8 billion stars.','It is the most detailed map of our galaxy so far, and the Milky Way holds hundreds of billions more.']];$('#sci').insertAdjacentHTML('beforeend',`<h2 style='margin-top:36px'>Sky news and discoveries</h2><p class='cap'>A snapshot written in October 2026. The 2026 items are short summaries of published headlines, so check the source before citing them.</p><div class='news'>${NEWS.map(n=>`<div class='gl nc'><small>${n[0]} · ${n[1]}</small><h3>${n[2]}</h3><p>${n[3]}</p><p style='margin-top:6px'>${n[4]}</p></div>`).join('')}</div>`);
 /* ---------- journeys ---------- */
+
+/* ========== TASK A: GAME SYSTEM & PERSISTENCE ========== */
+const SAVE_KEY = 'cosmos_save_v1';
+let SAVE = {
+  v: 1,
+  xp: 0,
+  stars: 0,
+  streak: 1,
+  lastDay: new Date().toISOString().slice(0,10),
+  lives: 3,
+  done: {},
+  cards: [],
+  achievements: {},
+  dailyDone: 0,
+  dailyClaimed: false,
+  settings: { sound: false, lang: 'en', reducedMotion: false },
+  onboarded: false
+};
+
+// Load saved data
+try {
+  const loaded = localStorage.getItem(SAVE_KEY);
+  if (loaded) {
+    const parsed = JSON.parse(loaded);
+    if (parsed && parsed.v === 1) {
+      SAVE = Object.assign(SAVE, parsed);
+      // Daily streak check
+      const today = new Date().toISOString().slice(0,10);
+      if (SAVE.lastDay !== today) {
+        const prev = new Date();
+        prev.setDate(prev.getDate() - 1);
+        const yest = prev.toISOString().slice(0,10);
+        if (SAVE.lastDay === yest) {
+          SAVE.streak = (SAVE.streak || 1) + 1;
+        } else {
+          SAVE.streak = 1;
+        }
+        SAVE.lastDay = today;
+        SAVE.dailyDone = 0;
+        SAVE.dailyClaimed = false;
+        SAVE.lives = 3;
+      }
+    }
+  }
+} catch (e) { console.warn('Storage unavailable', e); }
+
+function saveGame() {
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify(SAVE)); } catch(e){}
+  updateHUD();
+  checkAchievements();
+}
+
+// Web Audio synthesizer
+let actx = null;
+function playSfx(type) {
+  if (!SAVE.settings.sound) return;
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === 'suspended') actx.resume();
+    const now = actx.currentTime;
+    const osc = actx.createOscillator(), g = actx.createGain();
+    osc.connect(g); g.connect(actx.destination);
+    if (type === 'correct') {
+      osc.frequency.setValueAtTime(523.25, now);
+      osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.08);
+      osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.16);
+      g.gain.setValueAtTime(0.14, now);
+      g.gain.exponentialRampToValueAtTime(0.001, now + 0.32);
+      osc.start(now); osc.stop(now + 0.32);
+    } else if (type === 'wrong') {
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(170, now);
+      osc.frequency.exponentialRampToValueAtTime(110, now + 0.22);
+      g.gain.setValueAtTime(0.18, now);
+      g.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+      osc.start(now); osc.stop(now + 0.28);
+    } else if (type === 'fanfare') {
+      [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => {
+        const o = actx.createOscillator(), gn = actx.createGain();
+        o.connect(gn); gn.connect(actx.destination);
+        o.frequency.value = f;
+        gn.gain.setValueAtTime(0.12, now + i * 0.09);
+        gn.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.35);
+        o.start(now + i * 0.09); o.stop(now + i * 0.09 + 0.35);
+      });
+    }
+  } catch(e){}
+}
+
+function triggerHaptic(pat) {
+  if ('vibrate' in navigator) {
+    try { navigator.vibrate(pat); } catch(e){}
+  }
+}
+
+function showToast(icon, title, msg) {
+  const t = document.createElement('div');
+  t.className = 'toast-msg';
+  t.innerHTML = `<span style="font-size:20px">${icon}</span> <div><b>${title}</b><div style="font-size:12px;color:var(--mut)">${msg}</div></div>`;
+  const box = $('#toasts');
+  if (box) {
+    box.appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .4s'; setTimeout(() => t.remove(), 400); }, 3800);
+  }
+}
+
+// Ranks
+const RANKS = [
+  [0, 'Cadet', '✦'],
+  [100, 'Stargazer', '🔭'],
+  [250, 'Navigator', '🧭'],
+  [450, 'Astronomer', '🌌'],
+  [700, 'Star Keeper', '🌟'],
+  [1200, 'Cosmic Scholar', '👑']
+];
+
+function getRank(xp) {
+  let r = RANKS[0];
+  for (let i = 0; i < RANKS.length; i++) {
+    if (xp >= RANKS[i][0]) r = RANKS[i];
+  }
+  return r;
+}
+
+function updateHUD() {
+  const xp = SAVE.xp || 0;
+  const rank = getRank(xp);
+  const lvl = 1 + Math.floor(xp / 100);
+  const curLvlXp = xp % 100;
+  
+  if ($('#g-rank-ico')) $('#g-rank-ico').textContent = rank[2];
+  if ($('#g-rank-title')) $('#g-rank-title').textContent = rank[1];
+  if ($('#lv')) $('#lv').textContent = `Level ${lvl}`;
+  if ($('#xb')) $('#xb').style.width = curLvlXp + '%';
+  if ($('#g-xp-cnt')) $('#g-xp-cnt').textContent = `${curLvlXp} / 100 XP (Total ${xp})`;
+  if ($('#g-stars')) $('#g-stars').textContent = SAVE.stars || 0;
+  if ($('#g-streak')) $('#g-streak').textContent = SAVE.streak || 1;
+  if ($('#g-lives')) $('#g-lives').textContent = SAVE.lives;
+  if ($('#g-book-cnt')) $('#g-book-cnt').textContent = `${(SAVE.cards || []).length}/21`;
+  
+  const achCount = Object.keys(SAVE.achievements || {}).length;
+  if ($('#g-ach-cnt')) $('#g-ach-cnt').textContent = `${achCount}/22`;
+
+  // Daily quest banner
+  const dCnt = Math.min(3, SAVE.dailyDone || 0);
+  const dBtn = $('#btn-daily-claim');
+  if (dBtn) {
+    if (SAVE.dailyClaimed) {
+      dBtn.textContent = 'Claimed ✓';
+      dBtn.classList.add('done');
+      dBtn.disabled = true;
+    } else if (dCnt >= 3) {
+      dBtn.textContent = 'Claim +100 XP ⭐';
+      dBtn.classList.remove('done');
+      dBtn.disabled = false;
+      dBtn.onclick = () => {
+        SAVE.dailyClaimed = true;
+        SAVE.xp += 100;
+        SAVE.stars += 3;
+        playSfx('fanfare');
+        showToast('⭐', 'Daily Quest Complete!', '+100 XP and 3 Stars awarded!');
+        saveGame();
+      };
+    } else {
+      dBtn.textContent = `Progress ${dCnt}/3`;
+      dBtn.disabled = true;
+    }
+  }
+}
+
+// Achievements list
+const ACHIEVEMENTS = [
+  { id: 'first_light', name: 'First Light', desc: 'Complete your first constellation trail node.', icon: '🌟', check: s => Object.keys(s.done).length >= 1 },
+  { id: 'stargazer', name: 'Stargazer', desc: 'Reach 100 Total XP.', icon: '🔭', check: s => s.xp >= 100 },
+  { id: 'navigator', name: 'Navigator', desc: 'Reach 250 Total XP.', icon: '🧭', check: s => s.xp >= 250 },
+  { id: 'astronomer', name: 'Astronomer', desc: 'Reach 450 Total XP.', icon: '🌌', check: s => s.xp >= 450 },
+  { id: 'star_keeper', name: 'Star Keeper', desc: 'Reach 700 Total XP.', icon: '✨', check: s => s.xp >= 700 },
+  { id: 'cosmic_scholar', name: 'Cosmic Scholar', desc: 'Reach 1200 Total XP.', icon: '👑', check: s => s.xp >= 1200 },
+  { id: 'perfect_run', name: 'Flawless Observation', desc: 'Clear a level with all 3 hearts remaining.', icon: '❤️', check: s => s.flawlessRun },
+  { id: 'streak_3', name: 'Celestial Habit', desc: 'Achieve a 3-day stargazing streak.', icon: '🔥', check: s => s.streak >= 3 },
+  { id: 'streak_7', name: 'Seven-Day Alignment', desc: 'Achieve a 7-day stargazing streak.', icon: '⚡', check: s => s.streak >= 7 },
+  { id: 'boss_slayer', name: 'Chapter Champion', desc: 'Conquer your first Chapter Boss trial.', icon: '🏆', check: s => s.bossWins >= 1 },
+  { id: 'cartographer_5', name: 'Stellar Archivist', desc: 'Unlock 5 constellation cards in the Book.', icon: '📖', check: s => s.cards.length >= 5 },
+  { id: 'cartographer_all', name: 'Master Cartographer', desc: 'Collect all 21 celestial cards.', icon: '🎴', check: s => s.cards.length >= 21 },
+  { id: 'draw_orion', name: 'Hunter of the Stars', desc: 'Connect all edges of Orion.', icon: '🏹', check: s => s.cards.includes('Orion') },
+  { id: 'draw_crux', name: 'Southern Cross Finder', desc: 'Connect all edges of Crux.', icon: '⚓', check: s => s.cards.includes('Crux') },
+  { id: 'order_master', name: 'Chronologer', desc: 'Complete an Order It sequence perfectly.', icon: '⏳', check: s => s.orderDone >= 1 },
+  { id: 'match_master', name: 'Pattern Seeker', desc: 'Complete a Match Pairs challenge.', icon: '🧩', check: s => s.matchDone >= 1 },
+  { id: 'listen_master', name: 'Keen Ear', desc: 'Complete an Audio Comprehension story.', icon: '👂', check: s => s.listenDone >= 1 },
+  { id: 'field_observer', name: 'Sky Gazer', desc: 'Check off 3 Real Field Missions.', icon: '📋', check: s => s.fieldDone >= 3 },
+  { id: 'speed_star', name: 'Fast Meteor', desc: 'Complete a trail node in under 12 seconds.', icon: '💫', check: s => s.speedRun },
+  { id: 'night_owl', name: 'Night Owl', desc: 'Explore the cosmos between 8 PM and 4 AM.', icon: '🦉', check: () => { const h = new Date().getHours(); return h >= 20 || h < 4; } },
+  { id: 'sound_on', name: 'Harmonic Cosmos', desc: 'Enable audio sound synthesizer in Settings.', icon: '🎵', check: s => s.settings.sound },
+  { id: 'level_10', name: 'Stardust Legend', desc: 'Reach Level 10.', icon: '⭐', check: s => Math.floor(s.xp / 100) >= 9 }
+];
+
+function checkAchievements() {
+  ACHIEVEMENTS.forEach(a => {
+    if (!SAVE.achievements[a.id] && a.check(SAVE)) {
+      SAVE.achievements[a.id] = new Date().toISOString();
+      playSfx('fanfare');
+      triggerHaptic([100, 50, 100]);
+      showToast(a.icon, 'Achievement Unlocked!', a.name + ': ' + a.desc);
+    }
+  });
+}
+
+/* 5 CHAPTERS OF CONSTELLATION TRAIL */
+const CHAPTERS = [
+  {
+    id: 'ch1',
+    title: 'Chapter 1: Constellations & Asterisms',
+    desc: 'Map ancient sky figures, trace glowing stars, and anchor the polar sky.',
+    nodes: [
+      { id: 'c1_1', name: 'The Pole Finder', type: 'quiz', qIdx: 0, desc: 'Find the Big Dipper in Ursa Major' },
+      { id: 'c1_2', name: 'Trace Crux', type: 'connect', con: 'Crux', desc: 'Connect the 4 stars of the Southern Cross' },
+      { id: 'c1_3', name: 'The Vain Queen', type: 'quiz', qIdx: 4, desc: 'Cassiopeia and her celestial throne' },
+      { id: 'c1_4', name: 'Trace Cassiopeia', type: 'connect', con: 'Cassiopeia', desc: 'Connect the zigzag W shape' },
+      { id: 'c1_5', name: 'Constellation Match', type: 'match', category: 'constellations', desc: 'Match stars to constellations' },
+      { id: 'c1_6', name: 'Trace Orion', type: 'connect', con: 'Orion', desc: 'Draw the great celestial Hunter' },
+      { id: 'c1_boss', name: 'Boss: Sky Hunter Trial', type: 'boss', ch: 1, desc: 'Three-stage mixed constellation trial' }
+    ]
+  },
+  {
+    id: 'ch2',
+    title: 'Chapter 2: Stars & Astrophysics',
+    desc: 'Explore spectral temperatures, stellar lifecycles, and cosmic distances.',
+    nodes: [
+      { id: 'c2_1', name: 'Red Giants', type: 'quiz', qIdx: 1, desc: 'Betelgeuse and Antares surface physics' },
+      { id: 'c2_2', name: 'Light Travel', type: 'quiz', qIdx: 3, desc: 'Understanding light-years and lookback time' },
+      { id: 'c2_3', name: 'Stellar Lifecycle', type: 'order', orderType: 'lifecycle', desc: 'Arrange star lifecycle from cloud to remnant' },
+      { id: 'c2_4', name: 'Star Colours & Heat', type: 'quiz', qIdx: 7, desc: 'OBAFGKM spectral classification' },
+      { id: 'c2_5', name: 'Cosmic Scale', type: 'order', orderType: 'distances', desc: 'Order cosmic objects by distance' },
+      { id: 'c2_6', name: 'Variable Stars', type: 'quiz', qIdx: 11, desc: 'Algol and eclipsing binaries' },
+      { id: 'c2_boss', name: 'Boss: Astrophysics Gauntlet', type: 'boss', ch: 2, desc: 'Three-stage physics and spectra trial' }
+    ]
+  },
+  {
+    id: 'ch3',
+    title: 'Chapter 3: World Sky Lore & Traditions',
+    desc: 'Nakshatras, Polynesian wayfinding, and Aboriginal Australian songlines.',
+    nodes: [
+      { id: 'c3_1', name: 'Navigator Anchor', type: 'quiz', qIdx: 2, desc: 'Te Punga and Polynesian wayfinding' },
+      { id: 'c3_2', name: 'Rohini & Taurus', type: 'quiz', qIdx: 6, desc: 'The Nakshatras and sacred star lore' },
+      { id: 'c3_3', name: 'Tradition Match', type: 'match', category: 'culture', desc: 'Pair mythologies with world cultures' },
+      { id: 'c3_4', name: 'Zenith Star Hōkūleʻa', type: 'quiz', qIdx: 8, desc: 'Arcturus and voyage to Hawaiʻi' },
+      { id: 'c3_5', name: 'Listen: The Saptarshi', type: 'listen', taleKey: 'sapta', desc: 'Audio tale of the Seven Sages' },
+      { id: 'c3_6', name: 'Listen: Emu in the Sky', type: 'listen', taleKey: 'emu', desc: 'Dark dust lanes in the Milky Way' },
+      { id: 'c3_boss', name: 'Boss: Myth Master Trial', type: 'boss', ch: 3, desc: 'Three-stage global mythology test' }
+    ]
+  },
+  {
+    id: 'ch4',
+    title: 'Chapter 4: Space Missions & Observatories',
+    desc: 'Spacecraft, lunar landings, and modern astronomy flagships.',
+    nodes: [
+      { id: 'c4_1', name: 'Aditya-L1 at Lagrange', type: 'quiz', qIdx: 15, desc: 'Solar observatory at Sun-Earth L1' },
+      { id: 'c4_2', name: 'Aryabhata Insights', type: 'quiz', qIdx: 32, desc: 'Ancient Earth rotation calculations' },
+      { id: 'c4_3', name: 'Chandrayaan-3', type: 'quiz', qIdx: 33, desc: 'Historic Moon south polar landing' },
+      { id: 'c4_4', name: 'Voyager Interstellar', type: 'quiz', qIdx: 34, desc: 'Farthest human artifact in the deep' },
+      { id: 'c4_5', name: 'Space Eras Order', type: 'order', orderType: 'missions', desc: 'Chronology of milestone missions' },
+      { id: 'c4_6', name: 'JWST Infrared Sight', type: 'quiz', qIdx: 35, desc: 'Piercing cosmic dust in infrared' },
+      { id: 'c4_boss', name: 'Boss: Space Exploration Odyssey', type: 'boss', ch: 4, desc: 'Mission command challenge' }
+    ]
+  },
+  {
+    id: 'ch5',
+    title: 'Chapter 5: Field Notes & Stargazing',
+    desc: 'Real observing missions: spot planets, meteors, and constellations.',
+    nodes: [
+      { id: 'c5_1', name: 'Find Polaris', type: 'field', fmIdx: 0, desc: 'Pointer stars of Ursa Major to North Star' },
+      { id: 'c5_2', name: 'Spot Orion Belt', type: 'field', fmIdx: 1, desc: 'Three winter stars in a row' },
+      { id: 'c5_3', name: 'Find the Pleiades', type: 'field', fmIdx: 2, desc: 'Krittika and Matariki cluster' },
+      { id: 'c5_4', name: 'Summer Triangle', type: 'field', fmIdx: 3, desc: 'Vega, Deneb, Altair tri-star marker' },
+      { id: 'c5_5', name: 'Planet vs Star', type: 'field', fmIdx: 4, desc: 'Observe twinkling vs steady planetary light' },
+      { id: 'c5_6', name: 'Compare Colours', type: 'field', fmIdx: 7, desc: 'Betelgeuse orange vs Rigel blue' },
+      { id: 'c5_boss', name: 'Grand Master Celestial Boss', type: 'boss', ch: 5, desc: 'Final comprehensive celestial mastery' }
+    ]
+  }
+];
+
+// Render the Trail
+function renderTrail() {
+  const container = $('#trail-container');
+  if (!container) return;
+  
+  let html = '';
+  let unlockedPrev = true;
+
+  CHAPTERS.forEach((ch, chIdx) => {
+    html += `<div class="trail-section">
+      <div class="trail-ch-title">
+        <h3>${ch.title}</h3>
+        <span>${ch.desc}</span>
+      </div>
+      <div class="trail-map">`;
+    
+    ch.nodes.forEach((node, nIdx) => {
+      const isDone = !!SAVE.done[node.id];
+      const stars = SAVE.done[node.id] || 0;
+      const isLocked = !unlockedPrev && !isDone;
+      const isCurrent = unlockedPrev && !isDone;
+      const isBoss = node.type === 'boss';
+
+      let cls = 'node-btn';
+      if (isBoss) cls += ' boss';
+      if (isDone) cls += ' completed';
+      else if (isCurrent) cls += ' current';
+      else if (isLocked) cls += ' locked';
+
+      let starIcons = '';
+      if (isDone) {
+        starIcons = `<div class="node-stars">${'⭐'.repeat(stars)}</div>`;
+      }
+
+      html += `<div class="trail-node-row">
+        <button class="${cls}" data-node-ch="${chIdx}" data-node-idx="${nIdx}" ${isLocked ? 'disabled' : ''} aria-label="${node.name}">
+          <span style="font-size:${isBoss?'24px':'18px'}">${isBoss ? '👑' : (isDone ? '✓' : (isLocked ? '🔒' : '✦'))}</span>
+          ${starIcons}
+          <span class="node-lbl">${node.name}</span>
+        </button>
+      </div>`;
+
+      if (nIdx < ch.nodes.length - 1) {
+        html += `<div class="trail-connector"></div>`;
+      }
+
+      unlockedPrev = isDone;
+    });
+
+    html += `</div></div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// Trail Click Delegation
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-node-ch]');
+  if (!btn) return;
+  const chIdx = +btn.dataset.nodeCh;
+  const nIdx = +btn.dataset.nodeIdx;
+  const node = CHAPTERS[chIdx].nodes[nIdx];
+  launchLevel(node);
+});
+
+/* LEVEL LAUNCHER & ENGINES */
+let activeNode = null;
+let levelStartTime = 0;
+
+function launchLevel(node) {
+  if (SAVE.lives <= 0) {
+    showGameOverModal(node);
+    return;
+  }
+  activeNode = node;
+  levelStartTime = Date.now();
+  
+  if (node.type === 'quiz') {
+    startQuizLevel(node);
+  } else if (node.type === 'connect') {
+    startConnectLevel(node);
+  } else if (node.type === 'order') {
+    startOrderLevel(node);
+  } else if (node.type === 'match') {
+    startMatchLevel(node);
+  } else if (node.type === 'listen') {
+    startListenLevel(node);
+  } else if (node.type === 'field') {
+    startFieldLevel(node);
+  } else if (node.type === 'boss') {
+    startBossLevel(node);
+  }
+}
+
+function handleWrongAnswer(msg) {
+  SAVE.lives = Math.max(0, SAVE.lives - 1);
+  playSfx('wrong');
+  triggerHaptic([100, 50, 100]);
+  updateHUD();
+  const d = $('#dlg');
+  if (d) {
+    d.classList.add('no');
+    setTimeout(() => d.classList.remove('no'), 500);
+  }
+  if (SAVE.lives <= 0) {
+    setTimeout(() => showGameOverModal(activeNode), 600);
+  }
+}
+
+function handleLevelSuccess(xpGain, cardUnlock) {
+  const duration = (Date.now() - levelStartTime) / 1000;
+  if (duration < 12) SAVE.speedRun = true;
+  if (SAVE.lives === 3) SAVE.flawlessRun = true;
+
+  const starsAwarded = SAVE.lives === 3 ? 3 : (SAVE.lives === 2 ? 2 : 1);
+  const prevStars = SAVE.done[activeNode.id] || 0;
+  if (starsAwarded > prevStars) {
+    SAVE.stars = (SAVE.stars || 0) + (starsAwarded - prevStars);
+  }
+  SAVE.done[activeNode.id] = Math.max(prevStars, starsAwarded);
+  SAVE.xp = (SAVE.xp || 0) + xpGain;
+  SAVE.dailyDone = (SAVE.dailyDone || 0) + 1;
+
+  if (cardUnlock && !SAVE.cards.includes(cardUnlock)) {
+    SAVE.cards.push(cardUnlock);
+    showToast('🎴', 'New Constellation Card!', `Unlocked ${cardUnlock} in your Collection Book!`);
+  }
+
+  playSfx('correct');
+  triggerHaptic([80]);
+  saveGame();
+  renderTrail();
+  showVictoryModal(xpGain, starsAwarded, cardUnlock);
+}
+
+// Victory & Summary Modal
+function showVictoryModal(xp, stars, card) {
+  const d = $('#dlg');
+  let cardHtml = '';
+  if (card && CI[card]) {
+    cardHtml = `<div class="gl card" style="margin:14px 0;padding:12px;text-align:center">
+      <div style="color:#ffe2b0">${miniSvg(card, 120, 80)}</div>
+      <h4 style="color:#ffe2b0;margin-top:6px">${card}</h4>
+      <p style="font-size:12px;color:var(--mut)">${CI[card][1]}</p>
+    </div>`;
+  }
+
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3 style="color:#6fe39a">✦ Level Cleared!</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <div style="text-align:center;font-size:32px;margin:12px 0">${'⭐'.repeat(stars)}</div>
+    <p style="text-align:center;font-size:16px;color:var(--ink)">Earned <b>+${xp} XP</b> · ${stars} Star${stars>1?'s':''}</p>
+    ${cardHtml}
+    <div style="margin-top:20px;display:flex;gap:8px">
+      <button class="btn" id="btn-next-trail" style="flex:1;background:var(--a);color:#000;font-weight:600">Continue Trail</button>
+      <button class="btn" data-x style="flex:1">Close</button>
+    </div>
+  `;
+  $('#btn-next-trail').onclick = () => d.close();
+  d.showModal();
+}
+
+// Game Over Modal
+function showGameOverModal(node) {
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3 style="color:#ff7a8a">Out of Hearts</h3>
+      <span class="modal-lives">💔 0 Lives</span>
+    </div>
+    <p style="margin:14px 0">You lost all three lives in this celestial trial. Take a breath and review the stars before trying again!</p>
+    <div style="margin-top:20px;display:flex;gap:8px">
+      <button class="btn" id="btn-retry-hearts" style="flex:1;background:var(--a);color:#000;font-weight:600">Restore Hearts &amp; Retry</button>
+      <button class="btn" data-x style="flex:1">Return</button>
+    </div>
+  `;
+  $('#btn-retry-hearts').onclick = () => {
+    SAVE.lives = 3;
+    saveGame();
+    d.close();
+    launchLevel(node);
+  };
+  d.showModal();
+}
+
+// Engine 1: Quiz Multiple Choice
+function startQuizLevel(node) {
+  const q = QZ[node.qIdx];
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>${node.name}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p style="font-size:16px;margin:12px 0;color:var(--ink)">${q[2]}</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin:14px 0">
+      ${q[3].map((opt, i) => `<button class="btn" data-qi="${i}" style="text-align:left;padding:12px 14px">${opt}</button>`).join('')}
+    </div>
+    <p class="cap" id="q-fb" style="min-height:20px;margin-top:8px"></p>
+    <button class="btn" data-x style="margin-top:12px;width:100%">Exit</button>
+  `;
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    const btn = ev.target.closest('[data-qi]');
+    if (!btn) return;
+    const ans = +btn.dataset.qi;
+    const isCorrect = ans === q[4];
+    btn.classList.add(isCorrect ? 'ok' : 'no');
+    
+    if (isCorrect) {
+      $('#q-fb').textContent = 'Correct! ' + q[5];
+      setTimeout(() => {
+        d.close();
+        handleLevelSuccess(q[1] || 40, null);
+      }, 700);
+    } else {
+      $('#q-fb').textContent = 'Not quite. ' + q[5];
+      handleWrongAnswer();
+    }
+  };
+  d.showModal();
+}
+
+// Engine 2: Connect the Stars (Constellation Drawing)
+function startConnectLevel(node) {
+  const con = node.con;
+  const rawEdges = edges(con);
+  const starNames = [...new Set(rawEdges.flat())];
+  const targetPairs = rawEdges.map(e => e.slice().sort().join('-'));
+  const userPairs = new Set();
+
+  const d = $('#dlg');
+  // SVG points calculation
+  const coords = {};
+  const ra0 = ST[starNames[0]].ra;
+  const avgDec = starNames.reduce((a, n) => a + ST[n].dec, 0) / starNames.length;
+  const cs = Math.cos(avgDec * Math.PI / 180);
+  const xs = starNames.map(n => -(((ST[n].ra - ra0 + 12) % 24 + 24) % 24 - 12) * 15 * cs);
+  const ys = starNames.map(n => ST[n].dec);
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  const minY = Math.min(...ys), maxY = Math.max(...ys);
+  const w = 340, h = 230;
+  const sc = Math.min((w - 60) / ((maxX - minX) || 1), (h - 60) / ((maxY - minY) || 1));
+
+  starNames.forEach(n => {
+    const x = w / 2 + (-(((ST[n].ra - ra0 + 12) % 24 + 24) % 24 - 12) * 15 * cs - (minX + maxX) / 2) * sc;
+    const y = h / 2 - (ST[n].dec - (minY + maxY) / 2) * sc;
+    coords[n] = { x, y };
+  });
+
+  let selStar = null;
+
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>Draw ${con}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p>Connect the stars to outline <b>${con}</b>. Tap two stars to draw an edge (${targetPairs.length} edges total).</p>
+    <div class="star-canvas-box" id="sc-box">
+      <svg id="sc-svg" viewBox="0 0 ${w} ${h}">
+        <g id="sc-lines"></g>
+        <g id="sc-nodes"></g>
+      </svg>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span id="sc-count" style="font-size:13px;color:var(--mut)">Connected: 0 / ${targetPairs.length}</span>
+      <button class="btn" id="sc-reset" style="font-size:12px;padding:6px 12px">Clear Lines</button>
+    </div>
+    <button class="btn" data-x style="margin-top:14px;width:100%">Exit</button>
+  `;
+
+  function renderConnectSvg() {
+    const linesG = $('#sc-lines');
+    const nodesG = $('#sc-nodes');
+    if (!linesG || !nodesG) return;
+
+    linesG.innerHTML = [...userPairs].map(pair => {
+      const [s1, s2] = pair.split('-');
+      return `<line x1="${coords[s1].x}" y1="${coords[s1].y}" x2="${coords[s2].x}" y2="${coords[s2].y}" stroke="#ffe2b0" stroke-width="2.5" stroke-linecap="round" />`;
+    }).join('');
+
+    nodesG.innerHTML = starNames.map(n => {
+      const isSel = selStar === n;
+      return `<g class="star-node" data-s="${n}" style="cursor:pointer">
+        <circle cx="${coords[n].x}" cy="${coords[n].y}" r="${isSel?8:5}" fill="${isSel?'#5de0d0':'#fff'}" stroke="${isSel?'#fff':'#ffe2b0'}" stroke-width="${isSel?2:1}" />
+        <text x="${coords[n].x+8}" y="${coords[n].y+4}" fill="rgba(255,255,255,.8)" font-size="10" font-family="sans-serif">${n}</text>
+      </g>`;
+    }).join('');
+
+    $('#sc-count').textContent = `Connected: ${userPairs.size} / ${targetPairs.length}`;
+  }
+
+  renderConnectSvg();
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    if (ev.target.closest('#sc-reset')) {
+      userPairs.clear();
+      selStar = null;
+      renderConnectSvg();
+      return;
+    }
+    const nodeEl = ev.target.closest('[data-s]');
+    if (!nodeEl) return;
+    const name = nodeEl.dataset.s;
+
+    if (!selStar) {
+      selStar = name;
+      playSfx('correct');
+      renderConnectSvg();
+    } else if (selStar === name) {
+      selStar = null;
+      renderConnectSvg();
+    } else {
+      const pair = [selStar, name].sort().join('-');
+      if (targetPairs.includes(pair)) {
+        userPairs.add(pair);
+        playSfx('correct');
+        triggerHaptic([60]);
+        selStar = null;
+        renderConnectSvg();
+
+        if (userPairs.size === targetPairs.length) {
+          setTimeout(() => {
+            d.close();
+            handleLevelSuccess(60, con);
+          }, 800);
+        }
+      } else {
+        handleWrongAnswer();
+        selStar = null;
+        renderConnectSvg();
+      }
+    }
+  };
+  d.showModal();
+}
+
+// Engine 3: Order It (Sequential sorting)
+function startOrderLevel(node) {
+  let items = [];
+  let correctOrder = [];
+
+  if (node.orderType === 'lifecycle') {
+    correctOrder = [
+      '1. Giant Molecular Cloud',
+      '2. Protostar',
+      '3. Main Sequence Star',
+      '4. Red Supergiant',
+      '5. Supernova Explosion',
+      '6. Neutron Star or Black Hole'
+    ];
+  } else if (node.orderType === 'distances') {
+    correctOrder = [
+      '1. Proxima Centauri (4.2 light-years)',
+      '2. Sirius (8.6 light-years)',
+      '3. Vega (25 light-years)',
+      '4. Betelgeuse (550 light-years)',
+      '5. Crab Nebula (6,500 light-years)',
+      '6. Andromeda Galaxy (2.5 million light-years)'
+    ];
+  } else {
+    correctOrder = [
+      '1. Aryabhata Astronomy (476 CE)',
+      '2. Al-Sufi Book of Fixed Stars (964 CE)',
+      '3. 51 Pegasi b Exoplanet (1995)',
+      '4. First Black Hole Image (2019)',
+      '5. Chandrayaan-3 Moon Landing (2023)',
+      '6. Aditya-L1 at Lagrange (2024)'
+    ];
+  }
+
+  items = correctOrder.slice().sort(() => Math.random() - 0.5);
+
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>${node.name}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p>Use the <b>▲</b> and <b>▼</b> arrows to arrange the items in correct chronological or cosmic order.</p>
+    <div class="order-list" id="order-box"></div>
+    <div style="display:flex;gap:8px;margin-top:16px">
+      <button class="btn" id="order-submit" style="flex:1;background:var(--a);color:#000;font-weight:600">Verify Order</button>
+      <button class="btn" data-x style="flex:1">Exit</button>
+    </div>
+  `;
+
+  function renderOrderList() {
+    $('#order-box').innerHTML = items.map((it, i) => `
+      <div class="order-item">
+        <span>${it.replace(/^\d+\.\s*/, '')}</span>
+        <div class="order-btn-box">
+          <button class="order-arr" data-dir="up" data-idx="${i}" ${i===0?'disabled':''}>▲</button>
+          <button class="order-arr" data-dir="dn" data-idx="${i}" ${i===items.length-1?'disabled':''}>▼</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  renderOrderList();
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    const arr = ev.target.closest('.order-arr');
+    if (arr) {
+      const idx = +arr.dataset.idx;
+      const dir = arr.dataset.dir;
+      const targetIdx = dir === 'up' ? idx - 1 : idx + 1;
+      const temp = items[idx];
+      items[idx] = items[targetIdx];
+      items[targetIdx] = temp;
+      renderOrderList();
+      return;
+    }
+
+    if (ev.target.closest('#order-submit')) {
+      const isCorrect = items.every((it, i) => it === correctOrder[i]);
+      if (isCorrect) {
+        SAVE.orderDone = (SAVE.orderDone || 0) + 1;
+        d.close();
+        handleLevelSuccess(50, null);
+      } else {
+        handleWrongAnswer();
+      }
+    }
+  };
+  d.showModal();
+}
+
+// Engine 4: Match Pairs
+function startMatchLevel(node) {
+  let pairs = [];
+  if (node.category === 'culture') {
+    pairs = [
+      ['Ardra', 'Nakshatras'],
+      ['Callisto the Bear', 'Greco-Roman'],
+      ['Te Punga', 'Polynesian'],
+      ['Emu in Sky', 'Indigenous lore']
+    ];
+  } else {
+    pairs = [
+      ['Betelgeuse', 'Orion'],
+      ['Antares', 'Scorpius'],
+      ['Vega', 'Lyra'],
+      ['Sirius', 'Canis Major']
+    ];
+  }
+
+  const cards = [];
+  pairs.forEach(([a, b], idx) => {
+    cards.push({ id: idx, text: a, side: 'A' });
+    cards.push({ id: idx, text: b, side: 'B' });
+  });
+  cards.sort(() => Math.random() - 0.5);
+
+  let selectedIdx = null;
+  const matchedIds = new Set();
+
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>${node.name}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p>Select two matching cards that belong together.</p>
+    <div class="match-grid" id="match-box"></div>
+    <button class="btn" data-x style="margin-top:14px;width:100%">Exit</button>
+  `;
+
+  function renderMatchCards() {
+    $('#match-box').innerHTML = cards.map((c, i) => {
+      const isMatched = matchedIds.has(c.id);
+      const isSel = selectedIdx === i;
+      let cls = 'match-card';
+      if (isMatched) cls += ' matched';
+      else if (isSel) cls += ' sel';
+      return `<button class="${cls}" data-mi="${i}" ${isMatched?'disabled':''}>${c.text}</button>`;
+    }).join('');
+  }
+
+  renderMatchCards();
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    const btn = ev.target.closest('[data-mi]');
+    if (!btn) return;
+    const idx = +btn.dataset.mi;
+    if (matchedIds.has(cards[idx].id)) return;
+
+    if (selectedIdx === null) {
+      selectedIdx = idx;
+      renderMatchCards();
+    } else if (selectedIdx === idx) {
+      selectedIdx = null;
+      renderMatchCards();
+    } else {
+      const card1 = cards[selectedIdx];
+      const card2 = cards[idx];
+      if (card1.id === card2.id && card1.side !== card2.side) {
+        matchedIds.add(card1.id);
+        selectedIdx = null;
+        playSfx('correct');
+        renderMatchCards();
+
+        if (matchedIds.size === pairs.length) {
+          SAVE.matchDone = (SAVE.matchDone || 0) + 1;
+          setTimeout(() => {
+            d.close();
+            handleLevelSuccess(45, null);
+          }, 700);
+        }
+      } else {
+        selectedIdx = null;
+        renderMatchCards();
+        handleWrongAnswer();
+      }
+    }
+  };
+  d.showModal();
+}
+
+// Engine 5: Listen & Answer
+function startListenLevel(node) {
+  const t = TALES[node.taleKey] || TALES.intro;
+  const taleLines = t[1].en;
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>${node.name}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p>Listen closely to this sky story, then answer the question below.</p>
+    <div class="gl card" style="padding:14px;margin:12px 0;display:flex;align-items:center;gap:12px">
+      <button class="play" id="dlg-audio-play" aria-label="Play narration">▶</button>
+      <div id="dlg-audio-caption" style="font-size:14px;color:#ffe2b0">${taleLines[0]}</div>
+    </div>
+    <p style="font-size:15px;margin:14px 0;color:var(--ink)">What celestial lesson or guardian is tied to this sky tale?</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn" data-li="0" style="text-align:left;padding:10px 14px">Fixed celestial anchor or seasonal guidepost</button>
+      <button class="btn" data-li="1" style="text-align:left;padding:10px 14px">Random optical illusion with no meaning</button>
+      <button class="btn" data-li="2" style="text-align:left;padding:10px 14px">An artificial satellite launched last year</button>
+    </div>
+    <button class="btn" data-x style="margin-top:14px;width:100%">Exit</button>
+  `;
+
+  $('#dlg-audio-play').onclick = () => {
+    narrate(taleLines, 'en-IN', $('#dlg-audio-caption'), $('#dlg-audio-play'), { querySelectorAll: () => [] });
+  };
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) { stopV(); return d.close(); }
+    const btn = ev.target.closest('[data-li]');
+    if (!btn) return;
+    const ans = +btn.dataset.li;
+    if (ans === 0) {
+      stopV();
+      SAVE.listenDone = (SAVE.listenDone || 0) + 1;
+      d.close();
+      handleLevelSuccess(50, null);
+    } else {
+      handleWrongAnswer();
+    }
+  };
+  d.showModal();
+}
+
+// Engine 6: Field Mission
+function startFieldLevel(node) {
+  const fm = FM[node.fmIdx];
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>Field Mission: ${fm[0]}</h3>
+      <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+    </div>
+    <p style="font-size:15px;color:#ffe2b0;margin:10px 0">${fm[1]}</p>
+    <p>Step outdoors, look through a window, or use your celestial planisphere to complete this observation.</p>
+    <textarea id="fm-notes" placeholder="Optional field notes (e.g. time, sky clarity, city location)..." style="width:100%;height:70px;margin:12px 0;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--bd);color:var(--ink);font:inherit"></textarea>
+    <div style="display:flex;gap:8px">
+      <button class="btn" id="fm-complete" style="flex:1;background:var(--a);color:#000;font-weight:600">I Observed This ✓</button>
+      <button class="btn" data-x style="flex:1">Cancel</button>
+    </div>
+  `;
+
+  $('#fm-complete').onclick = () => {
+    SAVE.fieldDone = (SAVE.fieldDone || 0) + 1;
+    d.close();
+    handleLevelSuccess(40, null);
+  };
+  d.showModal();
+}
+
+// Engine 7: Boss Challenge
+function startBossLevel(node) {
+  let stage = 1;
+  const d = $('#dlg');
+
+  function renderBossStage() {
+    if (stage === 1) {
+      d.innerHTML = `
+        <div class="modal-header">
+          <h3 style="color:#ff7a8a">Boss Trial: Stage 1 of 3</h3>
+          <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+        </div>
+        <p style="font-size:16px;margin:12px 0">Which spectral class is the hottest stellar category exceeding 30,000 K?</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" data-ba="0">M class</button>
+          <button class="btn" data-ba="1">G class</button>
+          <button class="btn" data-ba="2">O class</button>
+        </div>
+      `;
+    } else if (stage === 2) {
+      d.innerHTML = `
+        <div class="modal-header">
+          <h3 style="color:#ff7a8a">Boss Trial: Stage 2 of 3</h3>
+          <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+        </div>
+        <p style="font-size:16px;margin:12px 0">What powers a star like our Sun for billions of years?</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" data-ba="1">Hydrogen fusion into helium in its core</button>
+          <button class="btn" data-ba="0">Gravitational contraction only</button>
+          <button class="btn" data-ba="0">Chemical coal combustion</button>
+        </div>
+      `;
+    } else if (stage === 3) {
+      d.innerHTML = `
+        <div class="modal-header">
+          <h3 style="color:#ff7a8a">Boss Trial: Final Stage!</h3>
+          <span class="modal-lives">${'❤️'.repeat(SAVE.lives)}</span>
+        </div>
+        <p style="font-size:16px;margin:12px 0">Which constellation holds the pointer stars Dubhe and Merak that point directly to Polaris?</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" data-ba="0">Orion</button>
+          <button class="btn" data-ba="1">Ursa Major</button>
+          <button class="btn" data-ba="0">Crux</button>
+        </div>
+      `;
+    }
+  }
+
+  renderBossStage();
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    const btn = ev.target.closest('[data-ba]');
+    if (!btn) return;
+    const isOk = (stage === 1 && btn.dataset.ba === '2') || (stage === 2 && btn.dataset.ba === '1') || (stage === 3 && btn.dataset.ba === '1');
+    if (isOk) {
+      playSfx('correct');
+      stage++;
+      if (stage > 3) {
+        SAVE.bossWins = (SAVE.bossWins || 0) + 1;
+        d.close();
+        handleLevelSuccess(150, null);
+      } else {
+        renderBossStage();
+      }
+    } else {
+      handleWrongAnswer();
+    }
+  };
+  d.showModal();
+}
+
+/* COLLECTION BOOK & ACHIEVEMENTS MODALS */
+$('#btn-book').onclick = () => {
+  const d = $('#dlg');
+  const unlocked = new Set(SAVE.cards || []);
+  const allCons = Object.keys(CON);
+
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>📖 Constellation Collection Book</h3>
+      <span style="font-size:13px;color:#ffe2b0">${unlocked.size} / ${allCons.length} Discovered</span>
+    </div>
+    <p>Each constellation cleared in the trail unlocks its sacred collectible card.</p>
+    <div class="book-grid">
+      ${allCons.map(k => {
+        const isUn = unlocked.has(k);
+        return `
+          <div class="card-item ${isUn?'unlocked':'locked'}" data-ck="${k}">
+            <div class="card-thumb">${miniSvg(k, 80, 52)}</div>
+            <b style="font-size:12px;color:${isUn?'#ffe2b0':'var(--mut)'}">${k}</b>
+            <small style="font-size:10px;color:var(--mut)">${isUn?(CI[k]?CI[k][0]:'Unlocked'):'Locked 🔒'}</small>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    <button class="btn" data-x style="width:100%;margin-top:14px">Close</button>
+  `;
+
+  d.onclick = ev => {
+    if (ev.target.closest('[data-x]') || ev.target === d) return d.close();
+    const cEl = ev.target.closest('[data-ck]');
+    if (!cEl) return;
+    const k = cEl.dataset.ck;
+    if (!unlocked.has(k)) {
+      showToast('🔒', 'Card Locked', `Complete the ${k} node in the trail to unlock.`);
+      return;
+    }
+    const info = CI[k] || ['Winter', 'Constellation', 'Ancient pattern'];
+    d.innerHTML = `
+      <div class="modal-header">
+        <h3>🎴 ${k}</h3>
+        <span style="color:#ffe2b0">${info[0]}</span>
+      </div>
+      <div style="text-align:center;color:#ffe2b0;margin:16px 0">${miniSvg(k, 220, 140)}</div>
+      <p style="font-size:15px;margin-bottom:8px"><b>Cultural names:</b> ${info[1]}</p>
+      <p style="font-size:14px;color:var(--mut);line-height:1.6">${info[2]}</p>
+      <button class="btn" id="btn-back-book" style="width:100%;margin-top:18px">Back to Collection Book</button>
+    `;
+    $('#btn-back-book').onclick = () => $('#btn-book').click();
+  };
+  d.showModal();
+};
+
+$('#btn-achieve').onclick = () => {
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>🏆 Achievements</h3>
+      <span style="color:#ffe2b0">${Object.keys(SAVE.achievements).length} / ${ACHIEVEMENTS.length} Completed</span>
+    </div>
+    <div class="achieve-grid" style="max-height:60vh;overflow-y:auto">
+      ${ACHIEVEMENTS.map(a => {
+        const isDone = !!SAVE.achievements[a.id];
+        return `
+          <div class="achieve-item ${isDone?'done':''}">
+            <div class="achieve-icon">${a.icon}</div>
+            <div style="flex:1">
+              <b style="font-size:14px;color:${isDone?'#6fe39a':'var(--ink)'}">${a.name} ${isDone?'✓':''}</b>
+              <p style="font-size:12px;color:var(--mut);margin-top:2px">${a.desc}</p>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    <button class="btn" data-x style="width:100%;margin-top:14px">Close</button>
+  `;
+  d.showModal();
+};
+
+$('#btn-settings').onclick = () => {
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>⚙️ Mission Settings</h3>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;margin:16px 0">
+      <label style="display:flex;justify-content:space-between;align-items:center;font-size:14px;cursor:pointer">
+        <span>Sound Effects (Synthesizer Chimes)</span>
+        <input type="checkbox" id="set-sound" ${SAVE.settings.sound?'checked':''} style="width:18px;height:18px">
+      </label>
+      <label style="display:flex;justify-content:space-between;align-items:center;font-size:14px;cursor:pointer">
+        <span>Reduced Motion Mode</span>
+        <input type="checkbox" id="set-motion" ${SAVE.settings.reducedMotion?'checked':''} style="width:18px;height:18px">
+      </label>
+      <button class="btn" id="set-reset" style="color:#ff7a8a;border-color:rgba(255,122,138,.3);margin-top:10px">Reset Saved Progress</button>
+    </div>
+    <button class="btn" data-x style="width:100%">Save &amp; Close</button>
+  `;
+  $('#set-sound').onchange = e => { SAVE.settings.sound = e.target.checked; if (e.target.checked) playSfx('correct'); saveGame(); };
+  $('#set-motion').onchange = e => { SAVE.settings.reducedMotion = e.target.checked; saveGame(); };
+  $('#set-reset').onclick = () => {
+    if (confirm('Are you sure you want to reset all game levels and achievements?')) {
+      localStorage.removeItem(SAVE_KEY);
+      location.reload();
+    }
+  };
+  d.showModal();
+};
+
+// Onboarding modal on first run
+function checkOnboarding() {
+  if (SAVE.onboarded) return;
+  const d = $('#dlg');
+  d.innerHTML = `
+    <div class="modal-header">
+      <h3>✦ Welcome, Stargazer!</h3>
+      <span>Mission Briefing</span>
+    </div>
+    <div style="text-align:center;margin:18px 0">
+      <div style="font-size:48px;margin-bottom:8px">🌌</div>
+      <h4 style="font-size:18px;color:#ffe2b0">Explore the Constellation Trail</h4>
+      <p style="margin-top:8px">Journey across 5 celestial chapters. Draw constellations, sort astrophysical timelines, and master ancient sky lore.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.05);padding:12px;border-radius:12px;margin-bottom:18px;font-size:13px;color:var(--mut)">
+      ⭐ Earn 1 to 3 stars per node.<br>
+      ❤️ You have 3 lives per run — protect your hearts!<br>
+      🎴 Completed constellations unlock collectible cards.
+    </div>
+    <button class="btn" id="btn-start-journey" style="width:100%;background:var(--a);color:#000;font-weight:600">Begin Journey</button>
+  `;
+  $('#btn-start-journey').onclick = () => {
+    SAVE.onboarded = true;
+    saveGame();
+    d.close();
+  };
+  d.showModal();
+}
+
+// Initial game startup
+updateHUD();
+renderTrail();
+setTimeout(checkOnboarding, 600);
+
 let XP=0,doneQ=new Set();
 function renderQ(){$('#qs').innerHTML=QZ.map((q,i)=>(QF!=='All'&&qcat(q[0])!==QF)?'':`<button class="q gl ${doneQ.has(i)?'done':''}" data-q="${i}"><h3>${q[0]}</h3><small>${qcat(q[0])} · ${doneQ.has(i)?'Completed':'+'+q[1]+' XP'}</small></button>`).join('');
 const BG=[['Stargazer',100],['Navigator',250],['Astronomer',450],['Star Keeper',700],['Cosmic Scholar',1200]].filter(b=>XP>=b[1]).map(b=>b[0]);$('#lv').textContent=`Level ${1+Math.floor(XP/100)} · ${XP} XP`+(BG.length?' · Badge: '+BG[BG.length-1]:'');$('#xb').style.width=(XP%100)+'%'}
