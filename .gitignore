@@ -1,0 +1,10 @@
+# Audio binaries (exceeds 50 MB; generated via scripts/generate-audio.js)
+audio/*.mp3
+audio/*.wav
+audio/*.ogg
+audio/*.aac
+
+# Node / OS artifacts
+node_modules/
+.DS_Store
+Thumbs.db

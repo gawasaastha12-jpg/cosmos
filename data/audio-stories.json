@@ -1,0 +1,4482 @@
+[
+  {
+    "id": "story-01-orion",
+    "title": "Orion and the Celestial Deer",
+    "tradition": "Indian & Greek",
+    "constellation": "Orion",
+    "languages": {
+      "en": {
+        "title": "Orion and the Celestial Deer",
+        "audio": "audio/story-01-orion.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "High in the winter sky stands Orion, the celestial hunter known across the ancient world.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In Indian tradition, this shape is Mriga, the golden deer leaping across the stars.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "Its red shoulder is Betelgeuse, or Ardra, the teardrop of the storm god Rudra.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "Three bright stars in the centre form the hunter's belt, or the golden arrow of the cosmos.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "Behind Orion follows Sirius, the great hound tracking the celestial path across eternity.",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "hi": {
+        "title": "कालपुरुष और मृग",
+        "audio": "audio/story-01-orion.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "सर्दियों के आकाश में कालपुरुष, जिसे नक्षत्रों का महान शिकारी कहा जाता है, चमकता है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "भारतीय खगोल परंपरा में इसे मृग अर्थात् स्वर्णिम हिरण माना गया है।",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "इसका लाल कंधा आर्द्रा नक्षत्र है, जिसे रुद्र का आंसू और वर्षा का अग्रदूत कहा जाता है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "इसके बीच के तीन चमकीले तारे कालपुरुष की करधनी और व्याध का बाण बनाते हैं।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके पीछे व्याध तारा सिरियस अनंत आकाश में इसका पीछा करता है।",
+            "start": 28.8,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "मृग आणि कालपुरुष",
+        "audio": "audio/story-01-orion.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 28.65,
+        "sentences": [
+          {
+            "text": "हिवाळ्याच्या रात्री आकाशात कालपुरुष हा तेजस्वी शिकारी ठळकपणे दिसतो.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "भारतीय परंपरेत या तारकासमूहाला मृग म्हणजेच स्वर्गीय हरण मानले जाते.",
+            "start": 5.55,
+            "end": 11.25
+          },
+          {
+            "text": "त्याचा लाल खांदा म्हणजे आर्द्रा नक्षत्र, जो रुद्र देवाचा अश्रू मानला जातो.",
+            "start": 11.55,
+            "end": 18.15
+          },
+          {
+            "text": "मधले तीन तारे कालपुरुषाचा पट्टा आणि आकाशातील बाण दर्शवतात.",
+            "start": 18.45,
+            "end": 23.7
+          },
+          {
+            "text": "त्याच्या पाठीमागे व्याध तारा अवकाशात धावताना दिसतो.",
+            "start": 24.0,
+            "end": 28.35
+          }
+        ]
+      },
+      "ta": {
+        "title": "மிருகசீரிஷமும் வேடனும்",
+        "audio": "audio/story-01-orion.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 27.75,
+        "sentences": [
+          {
+            "text": "குளிர்கால வானில் ஒளிரும் ஓரியன், பண்டைய உலகின் புகழ்பெற்ற வேடனாகக் கருதப்படுகிறது.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "இந்திய மரபில் இது மிருகம் எனப்படும் விண்வெளி மானாகப் போற்றப்படுகிறது.",
+            "start": 5.55,
+            "end": 10.35
+          },
+          {
+            "text": "இதன் சிவப்புத் தோள்பட்டை திருவாதிரை நட்சத்திரமாகும், இது ருத்திரனின் கண்ணீர்த் துளியாகக் கூறப்படுகிறது.",
+            "start": 10.65,
+            "end": 16.35
+          },
+          {
+            "text": "நடுவில் உள்ள மூன்று விண்மீன்கள் வேடனின் கச்சையாகவும் வானம்பாய் அம்பாகவும் விளங்குகின்றன.",
+            "start": 16.65,
+            "end": 21.9
+          },
+          {
+            "text": "இதனைத் தொடர்ந்து வரும் சிரியஸ் விண்மீன் வேட்டை நாயாக வான்வழியில் பயணிக்கிறது.",
+            "start": 22.2,
+            "end": 27.45
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-02-saptarshi",
+    "title": "Saptarshi: The Seven Sages",
+    "tradition": "Vedic & Pan-Indian",
+    "constellation": "Ursa Major",
+    "languages": {
+      "en": {
+        "title": "Saptarshi: The Seven Sages",
+        "audio": "audio/story-02-saptarshi.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.2,
+        "sentences": [
+          {
+            "text": "Seven brilliant stars curve across the northern sky, known widely as the Big Dipper.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In ancient India, these are the Saptarshi, the seven revered sages of cosmic wisdom.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "They circle endlessly around Dhruva, the steadfast northern pole star.",
+            "start": 14.6,
+            "end": 20.3
+          },
+          {
+            "text": "Beside sage Vashistha shines his devoted companion Arundhati, locked in an eternal dance.",
+            "start": 20.6,
+            "end": 27.6
+          },
+          {
+            "text": "For thousands of years, travellers looked to these seven lights to guide their journeys.",
+            "start": 27.9,
+            "end": 34.9
+          }
+        ]
+      },
+      "hi": {
+        "title": "सप्तर्षि: सात दिव्य ऋषि",
+        "audio": "audio/story-02-saptarshi.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "उत्तरी आकाश में सात देदीप्यमान तारे मिलकर सप्तर्षि मंडल की रचना करते हैं।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "प्राचीन भारतीय परंपरा में ये सात परम तपस्वी ऋषि माने जाते हैं।",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "ये ऋषि ध्रुव तारे की निरंतर परिक्रमा करते हुए ब्रह्मांडीय ज्ञान का संचरण करते हैं।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "ऋषि वशिष्ठ के निकट उनकी धर्मपत्नी अरुंधती का तारा भी मंद आभा में चमकता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "हजारों वर्षों से पथिक और नाविक इन सात तारों से अपनी दिशा तय करते रहे हैं।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "सप्तर्षी: सात ऋषींचे मंडल",
+        "audio": "audio/story-02-saptarshi.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "उत्तर दिशेच्या आकाशात सात तेजस्वी तारे सप्तर्षींचे पवित्र मंडल बनवतात.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "भारतीय संस्कृतीत हे सात महर्षी ज्ञानाचे आणि मार्गदर्शनाचे प्रतीक मानले जातात.",
+            "start": 6.0,
+            "end": 12.15
+          },
+          {
+            "text": "हे तारे अढळ ध्रुव ताऱ्याभोवती अविरत प्रदक्षिणा घालत असतात.",
+            "start": 12.45,
+            "end": 17.7
+          },
+          {
+            "text": "वसिष्ठ ऋषींच्या शेजारी अरुंधतीचा लहान तारा एकात्मतेचे दर्शन घडवतो.",
+            "start": 18.0,
+            "end": 23.25
+          },
+          {
+            "text": "प्राचीन काळापासून प्रवासी आणि दर्यावर्दी या ताऱ्यांच्या आधारे दिशा ठरवत असत.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "சப்தரிஷி: ஏழு முனிவர்கள்",
+        "audio": "audio/story-02-saptarshi.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.95,
+        "sentences": [
+          {
+            "text": "வடக்கு வானில் ஏழு ஒளிமயமான விண்மீன்கள் சப்தரிஷி மண்டலமாக மிளிர்கின்றன.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "பண்டைய பாரத மரபில் இவர்கள் உலகிற்கு நல்வழி காட்டும் ஏழு பெரும் முனிவர்கள் ஆவர்.",
+            "start": 5.1,
+            "end": 11.25
+          },
+          {
+            "text": "இவர்கள் அசையாத துருவ நட்சத்திரத்தைச் சுற்றி வலம் வருகிறார்கள்.",
+            "start": 11.55,
+            "end": 15.9
+          },
+          {
+            "text": "வசிஷ்ட முனிவருக்கு அருகே அருந்ததி நட்சத்திரம் இணைந்து காட்சியளிக்கிறது.",
+            "start": 16.2,
+            "end": 20.55
+          },
+          {
+            "text": "ஆயிரக்கணக்கான ஆண்டுகளாகப் பயணிகள் இந்த ஏழு விண்மீன்களைக் கொண்டே திசையறிந்தனர்.",
+            "start": 20.85,
+            "end": 25.65
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-03-antares",
+    "title": "Jyeshtha and the Heart of the Scorpion",
+    "tradition": "Vedic & Greek",
+    "constellation": "Scorpius",
+    "languages": {
+      "en": {
+        "title": "Jyeshtha and the Heart of the Scorpion",
+        "audio": "audio/story-03-antares.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "Low on the summer horizon glows Scorpius, the celestial scorpion with a curving tail.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "At its beating heart lies Antares, a ruby supergiant star known in Sanskrit as Jyeshtha.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "Jyeshtha means the eldest sister, guarded by Indra, sovereign lord of the storm and heavens.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "Its fiery crimson brilliance challenges Mars, earning its Greek title meaning Rival of Ares.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "When Scorpius ascends in the east, Orion sinks beneath the western rim in ancient retreat.",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "hi": {
+        "title": "ज्येष्ठा और वृश्चिक का हृदय",
+        "audio": "audio/story-03-antares.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "ग्रीष्म ऋतु के क्षितिज पर वृश्चिक तारामंडल अपनी घूमी हुई पूंछ के साथ शोभायमान होता है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "इसके हृदय में ज्येष्ठा नक्षत्र स्थित है, जिसे लाल महादानव अंतारेस कहा जाता है।",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "ज्येष्ठा का अर्थ है सबसे बड़ी बहन, जिसके अधिष्ठाता देवराज इंद्र हैं।",
+            "start": 14.6,
+            "end": 21.2
+          },
+          {
+            "text": "इसकी लालिमा मंगल ग्रह से स्पर्धा करती है, जिससे यूनानी इसे 'अंतेरेस' कहते हैं।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "जब पूर्व में वृश्चिक का उदय होता है, तो पश्चिम में कालपुरुष अस्त हो जाता है।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "ज्येष्ठा आणि विंचवाचे हृदय",
+        "audio": "audio/story-03-antares.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 26.4,
+        "sentences": [
+          {
+            "text": "उन्हाळ्याच्या रात्री दक्षिण क्षितिजावर वृश्चिक तारकासमूह स्पष्टपणे दिसतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "त्याच्या मध्यभागी ज्येष्ठा नक्षत्र तांबूस रंगाने तळपताना दिसते.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "ज्येष्ठा म्हणजे ज्येष्ठ बहीण, ज्याचे अधिपती देवराज इंद्र मानले गेले आहेत.",
+            "start": 10.2,
+            "end": 16.35
+          },
+          {
+            "text": "या ताऱ्याची लाल चमक मंगळ ग्रहाशी स्पर्धा करते.",
+            "start": 16.65,
+            "end": 21.45
+          },
+          {
+            "text": "वृश्चिकाचा उदय होताच कालपुरुष पश्चिमेकडे अस्ताला जातो.",
+            "start": 21.75,
+            "end": 26.1
+          }
+        ]
+      },
+      "ta": {
+        "title": "கேட்டை: தேளின் இதயம்",
+        "audio": "audio/story-03-antares.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.5,
+        "sentences": [
+          {
+            "text": "கோடைக்கால வானில் தேள் வடிவ விருச்சிக ராசி மண்டலம் கம்பீரமாகத் திகழ்கிறது.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "அதன் இதயப் பகுதியில் கேட்டை நட்சத்திரம் செந்நிறப் பெருவிண்மீனாக ஒளிர்கிறது.",
+            "start": 5.55,
+            "end": 10.35
+          },
+          {
+            "text": "கேட்டை என்பது மூத்தவள் எனப் பொருள்படும், இதன் அதிபதி இந்திர தேவன் ஆவார்.",
+            "start": 10.65,
+            "end": 16.35
+          },
+          {
+            "text": "இதன் செவ்வொளி செவ்வாய் கிரகத்திற்கு இணையாகக் கண்சிமிட்டுகிறது.",
+            "start": 16.65,
+            "end": 20.55
+          },
+          {
+            "text": "விருச்சிகம் உதிக்கும் போது ஓரியன் வேடன் மேற்கில் மறைகின்றான்.",
+            "start": 20.85,
+            "end": 25.2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-04-rohini",
+    "title": "Rohini: The Beloved Red Star",
+    "tradition": "Indian Astronomy",
+    "constellation": "Taurus",
+    "languages": {
+      "en": {
+        "title": "Rohini: The Beloved Red Star",
+        "audio": "audio/story-04-rohini.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "In the constellation Taurus shines Aldebaran, the radiant red eye of the cosmic bull.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In Indian tradition, this is Rohini, the radiant red daughter of King Daksha.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "Soma, the gentle moon god, loved Rohini above all twenty-seven celestial sisters.",
+            "start": 14.6,
+            "end": 21.2
+          },
+          {
+            "text": "Because the Moon lingered longest near her dwelling, the seasonal cycles were born.",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "Rohini represents agriculture, fertility, and the flourishing of spring across the land.",
+            "start": 28.8,
+            "end": 35.4
+          }
+        ]
+      },
+      "hi": {
+        "title": "रोहिणी: चंद्र की प्रिय संगिनी",
+        "audio": "audio/story-04-rohini.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 34.9,
+        "sentences": [
+          {
+            "text": "वृषभ तारामंडल में रोहिणी नक्षत्र एक लाल आंख की तरह दमकता है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "भारतीय पौराणिक कथाओं में रोहिणी राजा दक्ष की अत्यंत रूपवती कन्या है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "चंद्रमा अपनी सभी सत्ताईस पत्नियों में रोहिणी को सर्वाधिक प्रेम करते थे।",
+            "start": 13.8,
+            "end": 20.4
+          },
+          {
+            "text": "चंद्रमा के रोहिणी के पास अधिक समय रुकने के कारण ही ऋतुओं और कलाओं का जन्म हुआ।",
+            "start": 20.7,
+            "end": 27.7
+          },
+          {
+            "text": "रोहिणी कृषि, उर्वरा शक्ति और वसंत के प्रस्फुटन का प्रतीक नक्षत्र है।",
+            "start": 28.0,
+            "end": 34.6
+          }
+        ]
+      },
+      "mr": {
+        "title": "रोहिणी: चंद्राची लाडकी राणी",
+        "audio": "audio/story-04-rohini.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.9,
+        "sentences": [
+          {
+            "text": "वृषभ राशीमध्ये रोहिणी नक्षत्र लाल रंगाच्या तेजस्वी प्रकाशाने चमकते.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "पुराणकथेनुसार रोहिणी ही राजा दक्षाची कन्या आणि चंद्राची अत्यंत लाडकी पत्नी होती.",
+            "start": 5.55,
+            "end": 12.15
+          },
+          {
+            "text": "चंद्र तिच्या सहवासात जास्त काळ रमत असे, ज्यामुळे इतर नक्षत्रांनी तक्रार केली.",
+            "start": 12.45,
+            "end": 19.05
+          },
+          {
+            "text": "यामुळे चंद्राला क्षय आणि वृद्धीचा शाप मिळून तिथींचे चक्र सुरू झाले.",
+            "start": 19.35,
+            "end": 25.5
+          },
+          {
+            "text": "रोहिणी समृद्धी, शेती आणि नवनिर्मितीचे प्रतीक मानली जाते.",
+            "start": 25.8,
+            "end": 30.6
+          }
+        ]
+      },
+      "ta": {
+        "title": "ரோகிணி: சந்திரனின் பிரியமானவள்",
+        "audio": "audio/story-04-rohini.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 23.7,
+        "sentences": [
+          {
+            "text": "ரிஷப ராசியில் ரோகிணி நட்சத்திரம் செவ்வொளி வீசி மிளிர்கிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "புராணங்களில் ரோகிணி தட்சனின் மகளாகவும் சந்திரனின் பேரன்பிற்குரிய மனைவியாகவும் கூறப்படுகிறாள்.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "இருபத்தேழு நட்சத்திர மனைவியரில் சந்திரன் ரோகிணியிடமே அதிக நேரம் தங்கினார்.",
+            "start": 9.75,
+            "end": 14.55
+          },
+          {
+            "text": "இதனால் சந்திரனுக்குத் தேய்பிறை வளர்பிறை சுழற்சி உண்டானது.",
+            "start": 14.85,
+            "end": 18.75
+          },
+          {
+            "text": "ரோகிணி விவசாயம் மற்றும் பூமித்தாயின் வளமையைக் குறிக்கும் விண்மீனாகும்.",
+            "start": 19.05,
+            "end": 23.4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-05-krittika",
+    "title": "Krittika: The Pleiades Flame",
+    "tradition": "Pan-Asian & Vedic",
+    "constellation": "Taurus",
+    "languages": {
+      "en": {
+        "title": "Krittika: The Pleiades Flame",
+        "audio": "audio/story-05-krittika.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "A delicate cluster of blue-white stars glimmers like cosmic diamonds in Taurus.",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "Known as Krittika in Sanskrit, these stars represent the razor flame of purification.",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "In legend, the six Krittika sisters nurtured Kartikeya, the golden commander of divine forces.",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "Across Polynesia they are Matariki, heralding the new harvest and remembrance of ancestors.",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "In Japan they are Subaru, representing unity and the coming together of people.",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "hi": {
+        "title": "कृत्तिका: अग्नि की ज्योति",
+        "audio": "audio/story-05-krittika.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "वृषभ के समीप नीले-सफेद तारों का गुच्छा हीरों की तरह जगमगाता है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "संस्कृत में इसे कृत्तिका नक्षत्र कहा जाता है, जिसके देवता साक्षात अग्निदेव हैं।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इन्हीं छह कृत्तिका माताओं ने देवसेनापति कार्तिकेय का पालन-पोषण किया था।",
+            "start": 14.2,
+            "end": 20.35
+          },
+          {
+            "text": "पॉलीनेशिया में इसे मातारिकी कहते हैं, जो नववर्ष और पूर्वजों की स्मृति का सूचक है।",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "जापान में इसी तारामंडल को सुबारू कहा जाता है, जिसका अर्थ है एकजुट होना।",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "mr": {
+        "title": "कृत्तिका: अग्नीची ज्वाला",
+        "audio": "audio/story-05-krittika.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.9,
+        "sentences": [
+          {
+            "text": "आकाशात लहान हिऱ्यांसारखा चमकणारा हा गुच्छ म्हणजे कृत्तिका नक्षत्र होय.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "अग्निदेव हे या नक्षत्राचे अधिपती असून ते तेज आणि शुद्धीकरणाचे प्रतीक आहे.",
+            "start": 6.0,
+            "end": 12.6
+          },
+          {
+            "text": "या सहा कृत्तिका मातांनी स्कंद म्हणजेच कार्तिकेयाचे संगोपन केले.",
+            "start": 12.9,
+            "end": 18.15
+          },
+          {
+            "text": "पॉलिनेशियन संस्कृतीत याला मातारिकी म्हणतात, जे नवीन वर्षाची चाहूल देते.",
+            "start": 18.45,
+            "end": 24.15
+          },
+          {
+            "text": "जपानमध्ये याला सुबारू असे नाव असून ते ऐक्याचे प्रतीक मानले जाते.",
+            "start": 24.45,
+            "end": 30.6
+          }
+        ]
+      },
+      "ta": {
+        "title": "கார்த்திகை: தீச்சுடர்",
+        "audio": "audio/story-05-krittika.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "ரிஷப மண்டலத்தில் வைரங்கள் போல மின்னும் விண்மீன் கூட்டம் கார்த்திகையாகும்.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "அக்னி பகவானின் வடிவாக விளங்கும் இந்நட்சத்திரம் தூய்மையின் அடையாளமாகும்.",
+            "start": 5.1,
+            "end": 9.45
+          },
+          {
+            "text": "கார்த்திகைப் பெண்கள் அறுவரே முருகப்பெருமானை பாலூட்டி வளர்த்த அன்னையர் ஆவர்.",
+            "start": 9.75,
+            "end": 14.55
+          },
+          {
+            "text": "பாலினேசியாவில் இது மாதாரிகி எனப்பட்டு புத்தாண்டு தொடக்கமாகக் கொண்டாடப்படுகிறது.",
+            "start": 14.85,
+            "end": 19.2
+          },
+          {
+            "text": "ஜப்பானில் இந்நட்சத்திரக் கூட்டம் சுபாரு என ஒற்றுமையின் சின்னமாய் அழைக்கப்படுகிறது.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-06-dhruva",
+    "title": "Dhruva: The Unshakable Pole Star",
+    "tradition": "Vedic & Puranic",
+    "constellation": "Ursa Minor",
+    "languages": {
+      "en": {
+        "title": "Dhruva: The Unshakable Pole Star",
+        "audio": "audio/story-06-dhruva.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.2,
+        "sentences": [
+          {
+            "text": "While the entire vault of heaven spins through the night, one star remains motionless.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "This is Polaris, known in ancient India as Prince Dhruva.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "As a young boy, Dhruva sought an eternal place untouched by worldly envy or sorrow.",
+            "start": 13.3,
+            "end": 20.3
+          },
+          {
+            "text": "Through supreme meditation, Lord Vishnu granted him the highest seat in the firmament.",
+            "start": 20.6,
+            "end": 27.6
+          },
+          {
+            "text": "Around him revolve all suns, planets, and sages, held by the invisible strings of duty.",
+            "start": 27.9,
+            "end": 34.9
+          }
+        ]
+      },
+      "hi": {
+        "title": "ध्रुव तारा: अचल निष्ठा",
+        "audio": "audio/story-06-dhruva.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "जब पूरा ब्रह्मांड रात भर घूमता है, तब उत्तर में एक तारा स्थिर रहता है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "इसे ध्रुव तारा कहा जाता है, जो भक्त बालक ध्रुव की स्मृति संजोए हुए है।",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "बालक ध्रुव ने घोर तपस्या करके भगवान विष्णु से ऐसा स्थान मांगा जो कभी न डोले।",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "प्रभु ने उन्हें उत्तरी ध्रुव पर सर्वोच्च और अचल आसन प्रदान किया।",
+            "start": 21.9,
+            "end": 28.5
+          },
+          {
+            "text": "समस्त ग्रह, नक्षत्र और सप्तर्षि इस अचल केंद्र की परिक्रमा करते हैं।",
+            "start": 28.8,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "ध्रुव तारा: अढळ भक्ती",
+        "audio": "audio/story-06-dhruva.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "संपूर्ण आकाश फिरत असताना उत्तरेकडील एक तारा नेहमी स्थिर राहतो.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "या ताऱ्याला ध्रुव तारा म्हणतात, जो बाळ ध्रुवाच्या अढळ तपश्चर्येचे फळ आहे.",
+            "start": 6.0,
+            "end": 12.6
+          },
+          {
+            "text": "ध्रुवाने बालवयात केलेल्या एकाग्र भक्तीने विष्णू भगवंतांना प्रसन्न केले.",
+            "start": 12.9,
+            "end": 18.15
+          },
+          {
+            "text": "देवाने त्याला विश्वातील सर्वोच्च आणि कधीही न ढळणारे स्थान दिले.",
+            "start": 18.45,
+            "end": 24.15
+          },
+          {
+            "text": "सगळे ग्रह आणि सप्तर्षी ध्रुवाभोवती अखंड प्रदक्षिणा घालतात.",
+            "start": 24.45,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "துருவ நட்சத்திரம்: அசையா பக்தி",
+        "audio": "audio/story-06-dhruva.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.5,
+        "sentences": [
+          {
+            "text": "வான்மண்டலம் முழுவதும் சுழலும் வேளையிலும், வடக்கில் ஒரு விண்மீன் அசையாமல் நிற்கிறது.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "இதுவே துருவ நட்சத்திரமாகும், சிறுவன் துருவனின் தவத்தால் உண்டானது.",
+            "start": 5.55,
+            "end": 9.9
+          },
+          {
+            "text": "இறைவனை நோக்கி தீவிர தவம் செய்த துருவனுக்கு மகாவிஷ்ணு அழியாத வரமளித்தார்.",
+            "start": 10.2,
+            "end": 15.45
+          },
+          {
+            "text": "அவனுக்கு வான்வெளியில் எக்காலத்தும் மாறாத உன்னத ஸ்தானம் அருளப்பட்டது.",
+            "start": 15.75,
+            "end": 20.1
+          },
+          {
+            "text": "அனைத்து கிரகங்களும் முனிவர்களும் இத்துருவ விண்மீனைச் சுற்றியே வலம் வருகின்றனர்.",
+            "start": 20.4,
+            "end": 25.2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-07-trishanku",
+    "title": "Trishanku and the Southern Cross",
+    "tradition": "Puranic Lore",
+    "constellation": "Crux",
+    "languages": {
+      "en": {
+        "title": "Trishanku and the Southern Cross",
+        "audio": "audio/story-07-trishanku.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "Near the southern horizon shines Crux, the four bright stars of the Southern Cross.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In Hindu myth, this constellation is tied to King Trishanku, who wished to enter heaven in bodily form.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "When the gods pushed him out of paradise, the sage Vishwamitra arrested his fall mid-sky.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "There Vishwamitra created a new southern realm, leaving Trishanku suspended upside down.",
+            "start": 21.9,
+            "end": 28.5
+          },
+          {
+            "text": "For seafaring voyagers across oceans, this cross points directly toward the southern celestial pole.",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "hi": {
+        "title": "त्रिशंकु और दक्षिणी क्रॉस",
+        "audio": "audio/story-07-trishanku.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "दक्षिणी क्षितिज पर क्रक्स तारामंडल के चार चमकीले तारे चमकते हैं।",
+            "start": 0.0,
+            "end": 6.15
+          },
+          {
+            "text": "भारतीय पुराणों में यह राजा त्रिशंकु की कथा से जुड़ा हुआ है।",
+            "start": 6.45,
+            "end": 13.05
+          },
+          {
+            "text": "जब स्वर्ग के देवताओं ने त्रिशंकु को नीचे गिराया, तब महर्षि विश्वामित्र ने उन्हें बीच में रोक दिया।",
+            "start": 13.35,
+            "end": 20.35
+          },
+          {
+            "text": "विश्वामित्र ने उनके लिए एक नया दक्षिणी ब्रह्मांड रच दिया, जहां त्रिशंकु उलटे लटके रहे।",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "सागर के नाविकों के लिए यह क्रॉस दक्षिण ध्रुव की दिशा बताने वाला अचूक दिशा-सूचक है।",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "mr": {
+        "title": "त्रिशंकू आणि सदर्न क्रॉस",
+        "audio": "audio/story-07-trishanku.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.1,
+        "sentences": [
+          {
+            "text": "दक्षिणेकडील आकाशात क्रक्स म्हणजेच सदर्न क्रॉसचे चार तेजस्वी तारे दिसतात.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "पुराणातील कथेनुसार राजा त्रिशंकू सदेह स्वर्गात जाऊ इच्छित होता.",
+            "start": 6.0,
+            "end": 11.25
+          },
+          {
+            "text": "देवांनी त्याला स्वर्गातून ढकलले असता विश्वामित्रांनी त्याला अंतराळातच थांबवले.",
+            "start": 11.55,
+            "end": 16.8
+          },
+          {
+            "text": "त्यांच्यासाठी एक नवी सृष्टी निर्माण केली गेली, जिथे त्रिशंकू अधांतरी राहिला.",
+            "start": 17.1,
+            "end": 23.25
+          },
+          {
+            "text": "सागरी प्रवासात हा तारकासमूह दक्षिण दिशा शोधण्यासाठी मार्गदर्शक ठरतो.",
+            "start": 23.55,
+            "end": 28.8
+          }
+        ]
+      },
+      "ta": {
+        "title": "திரிசங்குவும் தென் சிலுவையும்",
+        "audio": "audio/story-07-trishanku.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.05,
+        "sentences": [
+          {
+            "text": "தெற்குத் திசை வானில் சிலுவை வடிவில் நான்கு சுடர்விடும் விண்மீன்கள் மிளிர்கின்றன.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "புராணங்களில் இது திரிசங்கு மன்னனின் விசித்திரக் கதையுடன் தொடர்புடையது.",
+            "start": 5.55,
+            "end": 9.9
+          },
+          {
+            "text": "விசுவாமித்திர முனிவர் திரிசங்குவிற்காக விண்வெளியில் தனி உலகத்தை சிருஷ்டித்தார்.",
+            "start": 10.2,
+            "end": 14.55
+          },
+          {
+            "text": "சொர்க்கத்திற்கும் பூமிக்கும் இடையில் திரிசங்கு தலைகீழாக நின்ற இடமே இதுவாகும்.",
+            "start": 14.85,
+            "end": 19.65
+          },
+          {
+            "text": "கடலோடிகளுக்குத் தென்திசையைத் துல்லியமாகக் காட்டும் கலங்கரை விளக்கமாய் இது திகழ்கிறது.",
+            "start": 19.95,
+            "end": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-08-sirius",
+    "title": "Sirius: The Great Hunter's Dog",
+    "tradition": "Egyptian & Vedic",
+    "constellation": "Canis Major",
+    "languages": {
+      "en": {
+        "title": "Sirius: The Great Hunter's Dog",
+        "audio": "audio/story-08-sirius.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "Sirius blazes as the brightest star in Earth's night sky, radiant with diamond fire.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In the Rigveda, it is Mrigavyadha, the divine archer who protects the harmony of the sky.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "In ancient Egypt, it was Sopdet, the star goddess whose dawn rising heralded the Nile's life-giving floods.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "Only eight and a half light-years away, it dances in tandem with a tiny white dwarf companion.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "Whenever Sirius shines low on cold evenings, it twinkles with emerald, violet, and sapphire hues.",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "hi": {
+        "title": "मृगव्याध: आकाश का सबसे चमकीला तारा",
+        "audio": "audio/story-08-sirius.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "सिरियस अर्थात लुब्धक रात के आकाश का सबसे अधिक चमकने वाला तारा है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "ऋग्वेद में इसे मृगव्याध कहा गया है, जो आकाशीय हिरण का पीछा करने वाला शिकारी है।",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "प्राचीन मिस्र में इसे सोपडेट कहते थे, जिसके उदय से नील नदी में बाढ़ और नवजीवन आता था।",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "यह हमसे मात्र साढ़े आठ प्रकाश वर्ष दूर है और एक श्वेत वामन तारे के साथ परिक्रमा करता है।",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "शीत ऋतु में यह तारा नीले, हरे और सुनहरे रंगों में झिलमिलाता नजर आता है।",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "mr": {
+        "title": "व्याध तारा: गगनातील हिरा",
+        "audio": "audio/story-08-sirius.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "व्याध तारा हा संपूर्ण रात्रीच्या आकाशातील सर्वात तेजस्वी तारा आहे.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "वेदांमध्ये याला मृगव्याध म्हणजेच स्वर्गीय शिकारी म्हटले गेले आहे.",
+            "start": 6.0,
+            "end": 11.25
+          },
+          {
+            "text": "प्राचीन इजिप्तमध्ये या ताऱ्याच्या उदयावरून नाईल नदीच्या पुराचा काळ ठरवला जात असे.",
+            "start": 11.55,
+            "end": 18.15
+          },
+          {
+            "text": "हा तारा आपल्यापासून केवळ साडेआठ प्रकाशवर्षे अंतरावर स्थित आहे.",
+            "start": 18.45,
+            "end": 23.7
+          },
+          {
+            "text": "थंडीच्या दिवसांत हा तारा वेगवेगळ्या रंगांच्या छटांनी चमकताना दिसतो.",
+            "start": 24.0,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "மிருகவியாதன்: சிரியஸ் விண்மீன்",
+        "audio": "audio/story-08-sirius.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 26.85,
+        "sentences": [
+          {
+            "text": "இரவு வானிலேயே மிக அதிக ஒளிரும் விண்மீன் சிரியஸ் அல்லது லுப்தகன் ஆகும்.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "ரிக் வேதத்தில் இது மிருகவியாதன் என்ற வில்லாளியாக வர்ணிக்கப்படுகிறது.",
+            "start": 6.0,
+            "end": 10.35
+          },
+          {
+            "text": "பண்டைய எகிப்தில் இந்மீன் உதிக்கும் நாளே நைல் நதி வெள்ளப்பெருக்கின் தொடக்கமாக அமைந்தது.",
+            "start": 10.65,
+            "end": 16.35
+          },
+          {
+            "text": "பூமியிலிருந்து வெறும் எட்டரை ஒளி ஆண்டுகள் தூரத்தில் இது அமைந்துள்ளது.",
+            "start": 16.65,
+            "end": 21.45
+          },
+          {
+            "text": "குளிர்கால இரவுகளில் இது பல வண்ணங்களில் மின்னும் வைரம்போல் காட்சியளிக்கும்.",
+            "start": 21.75,
+            "end": 26.55
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-09-vega",
+    "title": "Vega and the Celestial Weaver",
+    "tradition": "East Asian & Vedic",
+    "constellation": "Lyra",
+    "languages": {
+      "en": {
+        "title": "Vega and the Celestial Weaver",
+        "audio": "audio/story-09-vega.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "In the northern summer sky, Vega blazes as a brilliant sapphire cornerstone of the Summer Triangle.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In Sanskrit it is Abhijit, the victorious star representing supreme spiritual mastery.",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "In Chinese legend, Vega is Zhinü, the heavenly weaving maiden who wove clouds and mist.",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "Separated by the Silver River of the Milky Way from her cowherd love Niulang, she wept.",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "On the seventh night of the seventh month, a flock of magpies bridges the stars so they may reunite.",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "hi": {
+        "title": "अभिजीत और बुनकर कन्या",
+        "audio": "audio/story-09-vega.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 33.5,
+        "sentences": [
+          {
+            "text": "उत्तरी आकाश में अभिजीत तारा नीलमणि की भांति दमकता है।",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "भारतीय ज्योतिष में यह अट्ठाईसवां विजयी नक्षत्र माना जाता था।",
+            "start": 6.0,
+            "end": 11.7
+          },
+          {
+            "text": "चीनी लोककथा में यह वीणा तारा झीनू नामक स्वर्गीय बुनकर कन्या है।",
+            "start": 12.0,
+            "end": 18.6
+          },
+          {
+            "text": "आकाशगंगा की चांदी जैसी नदी उसे उसके प्रेमी चरवाहे से अलग रखती है।",
+            "start": 18.9,
+            "end": 25.9
+          },
+          {
+            "text": "वर्ष में एक रात पंछी पुल बनाते हैं, जिससे दोनों प्रेमी मिल पाते हैं।",
+            "start": 26.2,
+            "end": 33.2
+          }
+        ]
+      },
+      "mr": {
+        "title": "अभिजित आणि विणकर मुलगी",
+        "audio": "audio/story-09-vega.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 28.2,
+        "sentences": [
+          {
+            "text": "उन्हाळ्याच्या रात्री उत्तरेकडे अभिजित तारा अतिशय तेजस्वीपणे चमकतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन भारतीय परंपरेत याला विजयी नक्षत्र मानले जात होते.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "चिनी दंतकथेत हा तारा ढग विणणाऱ्या स्वर्गीय कन्येचे प्रतीक आहे.",
+            "start": 10.65,
+            "end": 16.35
+          },
+          {
+            "text": "आकाशगंगेच्या रुंद प्रवाहामुळे ती आपल्या प्रियकरापासून दूर राहते.",
+            "start": 16.65,
+            "end": 21.45
+          },
+          {
+            "text": "वर्षातून एकदा पक्षी पंखांचा पूल तयार करतात आणि त्यांचे मिलन होते.",
+            "start": 21.75,
+            "end": 27.9
+          }
+        ]
+      },
+      "ta": {
+        "title": "அபிஜித்: நெசவு மங்கை",
+        "audio": "audio/story-09-vega.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.95,
+        "sentences": [
+          {
+            "text": "கோடைக்கால வானில் நீல நிறத்தில் சுடர்விடும் விண்மீன் அபிஜித் அல்லது வேகா ஆகும்.",
+            "start": 0.0,
+            "end": 5.7
+          },
+          {
+            "text": "இந்திய சோதிடத்தில் இது மாபெரும் வெற்றி தரும் உன்னத விண்மீனாகும்.",
+            "start": 6.0,
+            "end": 10.8
+          },
+          {
+            "text": "சீனத் தொன்மத்தில் இது மேகங்களை நெய்யும் தேவலோக நெசவு மங்கையாகக் கூறப்படுகிறது.",
+            "start": 11.1,
+            "end": 16.35
+          },
+          {
+            "text": "பால்வெளி எனும் வெள்ளி நதி அவளைத் தன் காதலனிடமிருந்து பிரிக்கிறது.",
+            "start": 16.65,
+            "end": 21.45
+          },
+          {
+            "text": "ஆண்டுக்கொருமுறை பறவைகள் பாலம் அமைத்து அவர்களை இணைக்கின்றன.",
+            "start": 21.75,
+            "end": 25.65
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-10-altair",
+    "title": "Altair: Shravana and the Cowherd",
+    "tradition": "Vedic & Chinese",
+    "constellation": "Aquila",
+    "languages": {
+      "en": {
+        "title": "Altair: Shravana and the Cowherd",
+        "audio": "audio/story-10-altair.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "Flanked by two attendant stars sits Altair, the soaring eagle of Aquila.",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "In the Vedic sky this is Shravana, the sacred ear that listens to the prayers of all living beings.",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "Presided over by Lord Vishnu, Shravana marks the dawn of sacred hearing and oral wisdom.",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "In the East Asian sky, Altair is Niulang, carrying his two young children across the Milky Way.",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "Spinning at tremendous velocity, this star completes a full rotation every nine hours.",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "hi": {
+        "title": "श्रवण नक्षत्र: सुनने वाला कान",
+        "audio": "audio/story-10-altair.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "दो साथी तारों के साथ चमकने वाला अल्टेयर गरुड़ तारामंडल का मुख्य तारा है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "वैदिक आकाश में इसे श्रवण नक्षत्र कहा जाता है, जिसका अर्थ है ध्यानपूर्वक सुनना।",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "भगवान विष्णु इस नक्षत्र के स्वामी हैं, जो ज्ञान और श्रुति परंपरा का प्रतीक है।",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "पूर्वी एशिया में यह चरवाहा नियुलांग है, जो अपने दो बच्चों को टोकरी में लिए खड़ा है।",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "यह तारा इतनी तीव्र गति से घूमता है कि यह गोल होने के बजाय चपटा हो गया है।",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "mr": {
+        "title": "श्रवण नक्षत्र आणि गुराखी",
+        "audio": "audio/story-10-altair.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 34.45,
+        "sentences": [
+          {
+            "text": "दोन छोट्या ताऱ्यांच्या मध्ये असलेला अल्टेअर हा गरुड तारकासमूहातील मुख्य तारा आहे.",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "वैदिक परंपरेत याला श्रवण नक्षत्र म्हणतात, जे ऐकणे आणि ज्ञानाचे प्रतीक आहे.",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "विष्णू भगवान या नक्षत्राचे अधिपती असून ते श्रुती ज्ञानाचे केंद्र आहे.",
+            "start": 13.8,
+            "end": 19.95
+          },
+          {
+            "text": "चिनी परंपरेत हा गुराखी नियुलांग असून तो आपल्या मुलांना सोबत घेऊन उभा आहे.",
+            "start": 20.25,
+            "end": 27.25
+          },
+          {
+            "text": "हा तारा स्वतःभोवती इतक्या वेगाने फिरतो की त्याचा आकार चपटा झाला आहे.",
+            "start": 27.55,
+            "end": 34.15
+          }
+        ]
+      },
+      "ta": {
+        "title": "திருவோணம்: விஷ்ணுவின் விண்மீன்",
+        "audio": "audio/story-10-altair.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 26.4,
+        "sentences": [
+          {
+            "text": "அக்குவிலா மண்டலத்தில் நடுநாயகமாக ஒளிரும் விண்மீன் அல்டேர் அல்லது திருவோணமாகும்.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "வேத மரபில் இது திருவோணம் எனப்பட்டு, செவிமடுத்தல் மற்றும் ஞானத்தின் வடிவமாகப் போற்றப்படுகிறது.",
+            "start": 5.1,
+            "end": 10.8
+          },
+          {
+            "text": "மகாவிஷ்ணுவின் சொந்த நட்சத்திரமான இது வாய்மொழிப் பாடல்களின் பிறப்பிடமாகும்.",
+            "start": 11.1,
+            "end": 15.45
+          },
+          {
+            "text": "கிழக்காசியாவில் இது தன் இரு குழந்தைகளைச் சுமந்து நிற்கும் இடையனாகக் கருதப்படுகிறது.",
+            "start": 15.75,
+            "end": 21.0
+          },
+          {
+            "text": "இந்நட்சத்திரம் அதிவேகமாகத் தன் அச்சில் சுழலும் வியக்கத்தக்க வானியல் அமைப்பாகும்.",
+            "start": 21.3,
+            "end": 26.1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-11-regulus",
+    "title": "Regulus: The Royal Heart of the Lion",
+    "tradition": "Vedic & Persian",
+    "constellation": "Leo",
+    "languages": {
+      "en": {
+        "title": "Regulus: The Royal Heart of the Lion",
+        "audio": "audio/story-11-regulus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Leo where Regulus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Lion's Royal Star.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "मघा: The Lion's Royal Star",
+        "audio": "audio/story-11-regulus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Leo तारामंडल की ओर देखिए जहां मघा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Lion's Royal Star का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "मघा: The Lion's Royal Star",
+        "audio": "audio/story-11-regulus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Leo तारकासमूहाकडे पाहा जिथे मघा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Lion's Royal Star दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "மகம்: The Lion's Royal Star",
+        "audio": "audio/story-11-regulus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Leo மண்டலத்தை நோக்குங்கள், அங்கு மகம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Lion's Royal Star எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-12-spica",
+    "title": "Spica: Chitra the Heavenly Jewel",
+    "tradition": "Vedic & Greek",
+    "constellation": "Virgo",
+    "languages": {
+      "en": {
+        "title": "Spica: Chitra the Heavenly Jewel",
+        "audio": "audio/story-12-spica.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Virgo where Spica shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Cosmic Pearl.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "चित्रा: The Cosmic Pearl",
+        "audio": "audio/story-12-spica.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Virgo तारामंडल की ओर देखिए जहां चित्रा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Cosmic Pearl का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "चित्रा: The Cosmic Pearl",
+        "audio": "audio/story-12-spica.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Virgo तारकासमूहाकडे पाहा जिथे चित्रा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Cosmic Pearl दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "சித்திரை: The Cosmic Pearl",
+        "audio": "audio/story-12-spica.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Virgo மண்டலத்தை நோக்குங்கள், அங்கு சித்திரை ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Cosmic Pearl எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-13-arcturus",
+    "title": "Arcturus: Svati and the Wayfarer",
+    "tradition": "Polynesian & Vedic",
+    "constellation": "Bootes",
+    "languages": {
+      "en": {
+        "title": "Arcturus: Svati and the Wayfarer",
+        "audio": "audio/story-13-arcturus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Bootes where Arcturus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Star of Gladness Hokulea.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "स्वाति: Star of Gladness Hokulea",
+        "audio": "audio/story-13-arcturus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Bootes तारामंडल की ओर देखिए जहां स्वाति जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Star of Gladness Hokulea का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "स्वाती: Star of Gladness Hokulea",
+        "audio": "audio/story-13-arcturus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Bootes तारकासमूहाकडे पाहा जिथे स्वाती तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Star of Gladness Hokulea दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "சுவாதி: Star of Gladness Hokulea",
+        "audio": "audio/story-13-arcturus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Bootes மண்டலத்தை நோக்குங்கள், அங்கு சுவாதி ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Star of Gladness Hokulea எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-14-cassiopeia",
+    "title": "Cassiopeia: The Throne in the North",
+    "tradition": "Greco-Roman",
+    "constellation": "Cassiopeia",
+    "languages": {
+      "en": {
+        "title": "Cassiopeia: The Throne in the North",
+        "audio": "audio/story-14-cassiopeia.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Cassiopeia where Cassiopeia shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Vain Queen.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "शर्मिष्ठा: The Vain Queen",
+        "audio": "audio/story-14-cassiopeia.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Cassiopeia तारामंडल की ओर देखिए जहां शर्मिष्ठा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Vain Queen का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "शर्मिष्ठा: The Vain Queen",
+        "audio": "audio/story-14-cassiopeia.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Cassiopeia तारकासमूहाकडे पाहा जिथे शर्मिष्ठा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Vain Queen दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "காசியோபியா: The Vain Queen",
+        "audio": "audio/story-14-cassiopeia.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Cassiopeia மண்டலத்தை நோக்குங்கள், அங்கு காசியோபியா ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Vain Queen எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-15-gemini",
+    "title": "Punarvasu: The Gemini Twins",
+    "tradition": "Vedic & Greek",
+    "constellation": "Gemini",
+    "languages": {
+      "en": {
+        "title": "Punarvasu: The Gemini Twins",
+        "audio": "audio/story-15-gemini.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Gemini where Gemini shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Castor and Pollux.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "पुनर्वसु: Castor and Pollux",
+        "audio": "audio/story-15-gemini.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Gemini तारामंडल की ओर देखिए जहां पुनर्वसु जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Castor and Pollux का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "पुनर्वसू: Castor and Pollux",
+        "audio": "audio/story-15-gemini.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Gemini तारकासमूहाकडे पाहा जिथे पुनर्वसू तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Castor and Pollux दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "புனர்பூசம்: Castor and Pollux",
+        "audio": "audio/story-15-gemini.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Gemini மண்டலத்தை நோக்குங்கள், அங்கு புனர்பூசம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Castor and Pollux எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-16-sagittarius",
+    "title": "Mula: Root of the Cosmic Centre",
+    "tradition": "Vedic & Aboriginal",
+    "constellation": "Sagittarius",
+    "languages": {
+      "en": {
+        "title": "Mula: Root of the Cosmic Centre",
+        "audio": "audio/story-16-sagittarius.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "Look toward Sagittarius where Sagittarius shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Heart of the Milky Way.",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 14.2,
+            "end": 20.8
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "hi": {
+        "title": "मूल: Heart of the Milky Way",
+        "audio": "audio/story-16-sagittarius.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Sagittarius तारामंडल की ओर देखिए जहां मूल जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Heart of the Milky Way का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "मूळ: Heart of the Milky Way",
+        "audio": "audio/story-16-sagittarius.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.45,
+        "sentences": [
+          {
+            "text": "आकाशातील Sagittarius तारकासमूहाकडे पाहा जिथे मूळ तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Heart of the Milky Way दर्शवतो.",
+            "start": 5.1,
+            "end": 10.8
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 11.1,
+            "end": 17.7
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 18.0,
+            "end": 23.7
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 24.0,
+            "end": 30.15
+          }
+        ]
+      },
+      "ta": {
+        "title": "மூலம்: Heart of the Milky Way",
+        "audio": "audio/story-16-sagittarius.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.05,
+        "sentences": [
+          {
+            "text": "வானில் Sagittarius மண்டலத்தை நோக்குங்கள், அங்கு மூலம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Heart of the Milky Way எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 10.35
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.65,
+            "end": 14.55
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.85,
+            "end": 19.65
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.95,
+            "end": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-17-centaurus",
+    "title": "Alpha Centauri: The Twin Physicians",
+    "tradition": "Vedic & Greek",
+    "constellation": "Centaurus",
+    "languages": {
+      "en": {
+        "title": "Alpha Centauri: The Twin Physicians",
+        "audio": "audio/story-17-centaurus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Centaurus where Centaurus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Our Nearest Stellar Neighbours.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "अश्विनी कुमार: Our Nearest Stellar Neighbours",
+        "audio": "audio/story-17-centaurus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "आकाश में Centaurus तारामंडल की ओर देखिए जहां अश्विनी कुमार जगमगा रहा है।",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Our Nearest Stellar Neighbours का प्रतिनिधित्व करता है।",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ]
+      },
+      "mr": {
+        "title": "अश्विनी कुमार: Our Nearest Stellar Neighbours",
+        "audio": "audio/story-17-centaurus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.45,
+        "sentences": [
+          {
+            "text": "आकाशातील Centaurus तारकासमूहाकडे पाहा जिथे अश्विनी कुमार तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 5.25
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Our Nearest Stellar Neighbours दर्शवतो.",
+            "start": 5.55,
+            "end": 10.8
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 11.1,
+            "end": 17.7
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 18.0,
+            "end": 23.7
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 24.0,
+            "end": 30.15
+          }
+        ]
+      },
+      "ta": {
+        "title": "அஸ்வினி: Our Nearest Stellar Neighbours",
+        "audio": "audio/story-17-centaurus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Centaurus மண்டலத்தை நோக்குங்கள், அங்கு அஸ்வினி ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Our Nearest Stellar Neighbours எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-18-cygnus",
+    "title": "Cygnus: The Swan upon the Milky Way",
+    "tradition": "Vedic & Greek",
+    "constellation": "Cygnus",
+    "languages": {
+      "en": {
+        "title": "Cygnus: The Swan upon the Milky Way",
+        "audio": "audio/story-18-cygnus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Cygnus where Cygnus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Northern Cross.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "हंस: The Northern Cross",
+        "audio": "audio/story-18-cygnus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Cygnus तारामंडल की ओर देखिए जहां हंस जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Northern Cross का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "हंस: The Northern Cross",
+        "audio": "audio/story-18-cygnus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Cygnus तारकासमूहाकडे पाहा जिथे हंस तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Northern Cross दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "அன்னம்: The Northern Cross",
+        "audio": "audio/story-18-cygnus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Cygnus மண்டலத்தை நோக்குங்கள், அங்கு அன்னம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Northern Cross எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-19-pegasus",
+    "title": "Pegasus: The Winged Steed",
+    "tradition": "Babylonian & Greek",
+    "constellation": "Pegasus",
+    "languages": {
+      "en": {
+        "title": "Pegasus: The Winged Steed",
+        "audio": "audio/story-19-pegasus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Pegasus where Pegasus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Great Square.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "अश्व: The Great Square",
+        "audio": "audio/story-19-pegasus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Pegasus तारामंडल की ओर देखिए जहां अश्व जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Great Square का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "अश्व: The Great Square",
+        "audio": "audio/story-19-pegasus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Pegasus तारकासमूहाकडे पाहा जिथे अश्व तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Great Square दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "பறக்கும் குதிரை: The Great Square",
+        "audio": "audio/story-19-pegasus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Pegasus மண்டலத்தை நோக்குங்கள், அங்கு பறக்கும் குதிரை ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Great Square எனப் போற்றப்படுகிறது.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-20-andromeda",
+    "title": "Andromeda: The Island Universe",
+    "tradition": "Arabic & Greek",
+    "constellation": "Andromeda",
+    "languages": {
+      "en": {
+        "title": "Andromeda: The Island Universe",
+        "audio": "audio/story-20-andromeda.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Andromeda where Andromeda shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Neighbor Spiral Galaxy.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "देवयानी: The Neighbor Spiral Galaxy",
+        "audio": "audio/story-20-andromeda.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Andromeda तारामंडल की ओर देखिए जहां देवयानी जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Neighbor Spiral Galaxy का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "देवयानी: The Neighbor Spiral Galaxy",
+        "audio": "audio/story-20-andromeda.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Andromeda तारकासमूहाकडे पाहा जिथे देवयानी तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Neighbor Spiral Galaxy दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "ஆண்ட்ரோமெடா: The Neighbor Spiral Galaxy",
+        "audio": "audio/story-20-andromeda.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Andromeda மண்டலத்தை நோக்குங்கள், அங்கு ஆண்ட்ரோமெடா ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Neighbor Spiral Galaxy எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-21-perseus",
+    "title": "Algol: The Blinking Demon Star",
+    "tradition": "Arabic & Greek",
+    "constellation": "Perseus",
+    "languages": {
+      "en": {
+        "title": "Algol: The Blinking Demon Star",
+        "audio": "audio/story-21-perseus.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Perseus where Perseus shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Eclipsing Binary.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "भैरव: The Eclipsing Binary",
+        "audio": "audio/story-21-perseus.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Perseus तारामंडल की ओर देखिए जहां भैरव जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Eclipsing Binary का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "भैरव: The Eclipsing Binary",
+        "audio": "audio/story-21-perseus.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Perseus तारकासमूहाकडे पाहा जिथे भैरव तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Eclipsing Binary दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "அல்கோல்: The Eclipsing Binary",
+        "audio": "audio/story-21-perseus.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Perseus மண்டலத்தை நோக்குங்கள், அங்கு அல்கோல் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Eclipsing Binary எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-22-capella",
+    "title": "Capella: The Golden Charioteer",
+    "tradition": "Vedic & Roman",
+    "constellation": "Auriga",
+    "languages": {
+      "en": {
+        "title": "Capella: The Golden Charioteer",
+        "audio": "audio/story-22-capella.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Auriga where Capella shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The She-Goat of Amalthea.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "ब्रह्महृदय: The She-Goat of Amalthea",
+        "audio": "audio/story-22-capella.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Auriga तारामंडल की ओर देखिए जहां ब्रह्महृदय जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The She-Goat of Amalthea का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "ब्रह्महृदय: The She-Goat of Amalthea",
+        "audio": "audio/story-22-capella.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Auriga तारकासमूहाकडे पाहा जिथे ब्रह्महृदय तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The She-Goat of Amalthea दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "பிரம்ம இதயம்: The She-Goat of Amalthea",
+        "audio": "audio/story-22-capella.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.05,
+        "sentences": [
+          {
+            "text": "வானில் Auriga மண்டலத்தை நோக்குங்கள், அங்கு பிரம்ம இதயம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The She-Goat of Amalthea எனப் போற்றப்படுகிறது.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.65,
+            "end": 14.55
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.85,
+            "end": 19.65
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.95,
+            "end": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-23-ashwini",
+    "title": "Ashwini: The Celestial Healers",
+    "tradition": "Vedic Lore",
+    "constellation": "Aries",
+    "languages": {
+      "en": {
+        "title": "Ashwini: The Celestial Healers",
+        "audio": "audio/story-23-ashwini.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "Look toward Aries where Ashwini shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents First Mansion of the Zodiac.",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 14.2,
+            "end": 20.8
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "hi": {
+        "title": "अश्विनी: First Mansion of the Zodiac",
+        "audio": "audio/story-23-ashwini.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Aries तारामंडल की ओर देखिए जहां अश्विनी जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा First Mansion of the Zodiac का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "अश्विनी: First Mansion of the Zodiac",
+        "audio": "audio/story-23-ashwini.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.45,
+        "sentences": [
+          {
+            "text": "आकाशातील Aries तारकासमूहाकडे पाहा जिथे अश्विनी तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा First Mansion of the Zodiac दर्शवतो.",
+            "start": 5.1,
+            "end": 10.8
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 11.1,
+            "end": 17.7
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 18.0,
+            "end": 23.7
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 24.0,
+            "end": 30.15
+          }
+        ]
+      },
+      "ta": {
+        "title": "அஸ்வினி: First Mansion of the Zodiac",
+        "audio": "audio/story-23-ashwini.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.05,
+        "sentences": [
+          {
+            "text": "வானில் Aries மண்டலத்தை நோக்குங்கள், அங்கு அஸ்வினி ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது First Mansion of the Zodiac எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 10.35
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.65,
+            "end": 14.55
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.85,
+            "end": 19.65
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.95,
+            "end": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-24-bharani",
+    "title": "Bharani: The Womb of Creation",
+    "tradition": "Vedic Lore",
+    "constellation": "Aries",
+    "languages": {
+      "en": {
+        "title": "Bharani: The Womb of Creation",
+        "audio": "audio/story-24-bharani.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Aries where Bharani shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Bearer of Destiny.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "भरणी: Bearer of Destiny",
+        "audio": "audio/story-24-bharani.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Aries तारामंडल की ओर देखिए जहां भरणी जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Bearer of Destiny का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "भरणी: Bearer of Destiny",
+        "audio": "audio/story-24-bharani.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Aries तारकासमूहाकडे पाहा जिथे भरणी तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Bearer of Destiny दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "பரணி: Bearer of Destiny",
+        "audio": "audio/story-24-bharani.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Aries மண்டலத்தை நோக்குங்கள், அங்கு பரணி ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Bearer of Destiny எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-25-pushya",
+    "title": "Pushya: The Auspicious Flower",
+    "tradition": "Vedic Lore",
+    "constellation": "Cancer",
+    "languages": {
+      "en": {
+        "title": "Pushya: The Auspicious Flower",
+        "audio": "audio/story-25-pushya.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Cancer where Pushya shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Nourishing Star.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "पुष्य: The Nourishing Star",
+        "audio": "audio/story-25-pushya.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Cancer तारामंडल की ओर देखिए जहां पुष्य जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Nourishing Star का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "पुष्य: The Nourishing Star",
+        "audio": "audio/story-25-pushya.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Cancer तारकासमूहाकडे पाहा जिथे पुष्य तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Nourishing Star दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "பூசம்: The Nourishing Star",
+        "audio": "audio/story-25-pushya.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Cancer மண்டலத்தை நோக்குங்கள், அங்கு பூசம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Nourishing Star எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-26-ashlesha",
+    "title": "Ashlesha: The Serpentine Embrace",
+    "tradition": "Vedic Lore",
+    "constellation": "Hydra",
+    "languages": {
+      "en": {
+        "title": "Ashlesha: The Serpentine Embrace",
+        "audio": "audio/story-26-ashlesha.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Hydra where Ashlesha shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Serpent Wisdom.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "आश्लेषा: The Serpent Wisdom",
+        "audio": "audio/story-26-ashlesha.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Hydra तारामंडल की ओर देखिए जहां आश्लेषा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Serpent Wisdom का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "आश्लेषा: The Serpent Wisdom",
+        "audio": "audio/story-26-ashlesha.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Hydra तारकासमूहाकडे पाहा जिथे आश्लेषा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Serpent Wisdom दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "ஆயில்யம்: The Serpent Wisdom",
+        "audio": "audio/story-26-ashlesha.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Hydra மண்டலத்தை நோக்குங்கள், அங்கு ஆயில்யம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Serpent Wisdom எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-27-magha",
+    "title": "Magha: Throne of the Ancestors",
+    "tradition": "Vedic Lore",
+    "constellation": "Leo",
+    "languages": {
+      "en": {
+        "title": "Magha: Throne of the Ancestors",
+        "audio": "audio/story-27-magha.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "Look toward Leo where Magha shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Lineage of the Sun Kings.",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 14.2,
+            "end": 20.8
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "hi": {
+        "title": "मघा: Lineage of the Sun Kings",
+        "audio": "audio/story-27-magha.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Leo तारामंडल की ओर देखिए जहां मघा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Lineage of the Sun Kings का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "मघा: Lineage of the Sun Kings",
+        "audio": "audio/story-27-magha.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.45,
+        "sentences": [
+          {
+            "text": "आकाशातील Leo तारकासमूहाकडे पाहा जिथे मघा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Lineage of the Sun Kings दर्शवतो.",
+            "start": 5.1,
+            "end": 10.8
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 11.1,
+            "end": 17.7
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 18.0,
+            "end": 23.7
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 24.0,
+            "end": 30.15
+          }
+        ]
+      },
+      "ta": {
+        "title": "மகம்: Lineage of the Sun Kings",
+        "audio": "audio/story-27-magha.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.05,
+        "sentences": [
+          {
+            "text": "வானில் Leo மண்டலத்தை நோக்குங்கள், அங்கு மகம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Lineage of the Sun Kings எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 10.35
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.65,
+            "end": 14.55
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.85,
+            "end": 19.65
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.95,
+            "end": 24.75
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-28-purvaphalguni",
+    "title": "Purva Phalguni: The Tree of Fortune",
+    "tradition": "Vedic Lore",
+    "constellation": "Leo",
+    "languages": {
+      "en": {
+        "title": "Purva Phalguni: The Tree of Fortune",
+        "audio": "audio/story-28-purvaphalguni.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Leo where Purva Phalguni shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Gift of Joy.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "पूर्वाफाल्गुनी: The Gift of Joy",
+        "audio": "audio/story-28-purvaphalguni.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Leo तारामंडल की ओर देखिए जहां पूर्वाफाल्गुनी जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Gift of Joy का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "पूर्वाफाल्गुनी: The Gift of Joy",
+        "audio": "audio/story-28-purvaphalguni.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Leo तारकासमूहाकडे पाहा जिथे पूर्वाफाल्गुनी तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Gift of Joy दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "பூரம்: The Gift of Joy",
+        "audio": "audio/story-28-purvaphalguni.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Leo மண்டலத்தை நோக்குங்கள், அங்கு பூரம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Gift of Joy எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-29-uttaraphalguni",
+    "title": "Uttara Phalguni: The Law of Friendship",
+    "tradition": "Vedic Lore",
+    "constellation": "Leo",
+    "languages": {
+      "en": {
+        "title": "Uttara Phalguni: The Law of Friendship",
+        "audio": "audio/story-29-uttaraphalguni.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Leo where Uttara Phalguni shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Golden Covenant.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "उत्तराफाल्गुनी: The Golden Covenant",
+        "audio": "audio/story-29-uttaraphalguni.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Leo तारामंडल की ओर देखिए जहां उत्तराफाल्गुनी जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Golden Covenant का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "उत्तराफाल्गुनी: The Golden Covenant",
+        "audio": "audio/story-29-uttaraphalguni.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Leo तारकासमूहाकडे पाहा जिथे उत्तराफाल्गुनी तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Golden Covenant दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "உத்திரம்: The Golden Covenant",
+        "audio": "audio/story-29-uttaraphalguni.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Leo மண்டலத்தை நோக்குங்கள், அங்கு உத்திரம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Golden Covenant எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-30-hasta",
+    "title": "Hasta: The Golden Hand of the Sun",
+    "tradition": "Vedic Lore",
+    "constellation": "Corvus",
+    "languages": {
+      "en": {
+        "title": "Hasta: The Golden Hand of the Sun",
+        "audio": "audio/story-30-hasta.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.25,
+        "sentences": [
+          {
+            "text": "Look toward Corvus where Hasta shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Caster of Divine Rays.",
+            "start": 7.3,
+            "end": 13.45
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.75,
+            "end": 20.35
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.65,
+            "end": 27.65
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.95,
+            "end": 34.95
+          }
+        ]
+      },
+      "hi": {
+        "title": "हस्त: Caster of Divine Rays",
+        "audio": "audio/story-30-hasta.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "आकाश में Corvus तारामंडल की ओर देखिए जहां हस्त जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Caster of Divine Rays का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.9
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ]
+      },
+      "mr": {
+        "title": "हस्त: Caster of Divine Rays",
+        "audio": "audio/story-30-hasta.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30.0,
+        "sentences": [
+          {
+            "text": "आकाशातील Corvus तारकासमूहाकडे पाहा जिथे हस्त तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Caster of Divine Rays दर्शवतो.",
+            "start": 5.1,
+            "end": 10.35
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.65,
+            "end": 17.25
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.55,
+            "end": 23.25
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ]
+      },
+      "ta": {
+        "title": "அஸ்தம்: Caster of Divine Rays",
+        "audio": "audio/story-30-hasta.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.6,
+        "sentences": [
+          {
+            "text": "வானில் Corvus மண்டலத்தை நோக்குங்கள், அங்கு அஸ்தம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Caster of Divine Rays எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.9
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 10.2,
+            "end": 14.1
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 14.4,
+            "end": 19.2
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.5,
+            "end": 24.3
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-31-vishakha",
+    "title": "Vishakha: The Forked Arch of Triumph",
+    "tradition": "Vedic Lore",
+    "constellation": "Libra",
+    "languages": {
+      "en": {
+        "title": "Vishakha: The Forked Arch of Triumph",
+        "audio": "audio/story-31-vishakha.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Libra where Vishakha shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents The Victorious Branch.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "विशाखा: The Victorious Branch",
+        "audio": "audio/story-31-vishakha.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Libra तारामंडल की ओर देखिए जहां विशाखा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा The Victorious Branch का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "विशाखा: The Victorious Branch",
+        "audio": "audio/story-31-vishakha.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Libra तारकासमूहाकडे पाहा जिथे विशाखा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा The Victorious Branch दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "விசாகம்: The Victorious Branch",
+        "audio": "audio/story-31-vishakha.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Libra மண்டலத்தை நோக்குங்கள், அங்கு விசாகம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது The Victorious Branch எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "story-32-anuradha",
+    "title": "Anuradha: The Lotus of Fellowship",
+    "tradition": "Vedic Lore",
+    "constellation": "Scorpius",
+    "languages": {
+      "en": {
+        "title": "Anuradha: The Lotus of Fellowship",
+        "audio": "audio/story-32-anuradha.en.mp3",
+        "needsNativeReview": false,
+        "duration": 34.8,
+        "sentences": [
+          {
+            "text": "Look toward Scorpius where Anuradha shines like a beacon of the ancient cosmos.",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "text": "In traditional sky lore, this object represents Follower of Radiance.",
+            "start": 7.3,
+            "end": 13.0
+          },
+          {
+            "text": "Its rhythmic celestial passage has marked seasonal calendars for hundreds of generations.",
+            "start": 13.3,
+            "end": 19.9
+          },
+          {
+            "text": "Modern astrophysics reveals it to be a remarkable stellar engine millions of times larger than Earth.",
+            "start": 20.2,
+            "end": 27.2
+          },
+          {
+            "text": "Keep your gaze upon its light and ponder the shared stories of humankind across the centuries.",
+            "start": 27.5,
+            "end": 34.5
+          }
+        ]
+      },
+      "hi": {
+        "title": "अनुराधा: Follower of Radiance",
+        "audio": "audio/story-32-anuradha.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "आकाश में Scorpius तारामंडल की ओर देखिए जहां अनुराधा जगमगा रहा है।",
+            "start": 0.0,
+            "end": 6.6
+          },
+          {
+            "text": "पारंपरिक कथाओं में यह तारा Follower of Radiance का प्रतिनिधित्व करता है।",
+            "start": 6.9,
+            "end": 13.5
+          },
+          {
+            "text": "इसकी चाल सदियों से हमारे पंचांग और ऋतु चक्र का मार्गदर्शन करती रही है।",
+            "start": 13.8,
+            "end": 20.8
+          },
+          {
+            "text": "आधुनिक खगोल विज्ञान इसे हमारे सूर्य से कई गुना विशाल और ऊर्जावान पाता है।",
+            "start": 21.1,
+            "end": 28.1
+          },
+          {
+            "text": "इसके प्रकाश को निहारते हुए ब्रह्मांड और मानव संस्कृति के गहरे संबंध को अनुभव कीजिए।",
+            "start": 28.4,
+            "end": 35.4
+          }
+        ]
+      },
+      "mr": {
+        "title": "अनुराधा: Follower of Radiance",
+        "audio": "audio/story-32-anuradha.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 29.55,
+        "sentences": [
+          {
+            "text": "आकाशातील Scorpius तारकासमूहाकडे पाहा जिथे अनुराधा तेजस्वीपणे तळपतो.",
+            "start": 0.0,
+            "end": 4.8
+          },
+          {
+            "text": "प्राचीन परंपरेत हा तारा Follower of Radiance दर्शवतो.",
+            "start": 5.1,
+            "end": 9.9
+          },
+          {
+            "text": "या ताऱ्याची गती शेकडो वर्षांपासून ऋतू आणि दिनदर्शिका निश्चित करत आली आहे.",
+            "start": 10.2,
+            "end": 16.8
+          },
+          {
+            "text": "आधुनिक विज्ञानानुसार हा महाकाय तारा प्रचंड ऊर्जा उत्सर्जित करत आहे.",
+            "start": 17.1,
+            "end": 22.8
+          },
+          {
+            "text": "या प्रकाशाचे दर्शन घेत मानवी संस्कृती आणि अवकाशातील बंध समजून घ्या.",
+            "start": 23.1,
+            "end": 29.25
+          }
+        ]
+      },
+      "ta": {
+        "title": "அனுஷம்: Follower of Radiance",
+        "audio": "audio/story-32-anuradha.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 24.15,
+        "sentences": [
+          {
+            "text": "வானில் Scorpius மண்டலத்தை நோக்குங்கள், அங்கு அனுஷம் ஒளிவீசுகிறது.",
+            "start": 0.0,
+            "end": 4.35
+          },
+          {
+            "text": "பாரம்பரிய வான்மரபில் இது Follower of Radiance எனப் போற்றப்படுகிறது.",
+            "start": 4.65,
+            "end": 9.45
+          },
+          {
+            "text": "காலங்காலமாகப் பருவகாலங்களையும் காலண்டரையும் கணிக்க இந்மீன் உதவியது.",
+            "start": 9.75,
+            "end": 13.65
+          },
+          {
+            "text": "நவீன வானியலின்படி இது சூரியனை விடப் பன்மடங்கு பிரம்மாண்டமான விண்மீனாகும்.",
+            "start": 13.95,
+            "end": 18.75
+          },
+          {
+            "text": "இதன் ஒளியைக் கண்டு மனிதகுலத்தின் பல்லாயிரமாண்டு வான் அறிவை உணருங்கள்.",
+            "start": 19.05,
+            "end": 23.85
+          }
+        ]
+      }
+    }
+  }
+]
