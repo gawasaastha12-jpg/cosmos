@@ -5,7 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About · Cosmic Mythology AR Explorer</title>
   <meta name="description" content="Credits, sources, astronomical methods, and cultural editorial review policy for Cosmic Mythology AR Explorer.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cosmic-ar-explorer.app/about.html">
+  <meta property="og:title" content="About · Cosmic Mythology AR Explorer">
+  <meta property="og:description" content="Credits, sources, astronomical methods, and cultural editorial review policy for Cosmic Mythology AR Explorer.">
+  <meta property="og:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About · Cosmic Mythology AR Explorer">
+  <meta name="twitter:description" content="Credits, sources, astronomical methods, and cultural editorial review policy for Cosmic Mythology AR Explorer.">
+  <meta name="twitter:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <style>
     :root {
       --bg: #04060d;
@@ -117,6 +128,7 @@
       <a href="index.html" class="nav-brand">✦ Cosmic AR</a>
       <nav class="nav-links">
         <a href="index.html">← Return to Explorer</a>
+        <a href="audio.html">Audio Book</a>
         <a href="about.html" style="color:var(--ink);font-weight:600">About</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -131,7 +143,7 @@
         <h2>1. Credits &amp; Attribution</h2>
         <p>The Explorer synthesizes observational data and cultural humanities across multiple public institutions and scholarly foundations:</p>
         <ul>
-          <li><b>Astrometry &amp; Stellar Data:</b> Bright Star Catalogue (5th Revised Ed.), ESA Hipparcos Mission (1997), and the ESA Gaia DR3 catalogue (2022) for accurate equatorial coordinates (&alpha;, &delta;), proper motions, spectral types, and parallaxes.</li>
+          <li><b>Astrometry &amp; Stellar Data:</b> Star positions (&alpha;, &delta;) and distances in this explorer are rounded, hand-entered values compiled from standard astronomical references. They are provided for visual exploration, star-hopping, and casual sky observation rather than scientific citation.</li>
           <li><b>Space Science &amp; Observatories:</b> NASA Jet Propulsion Laboratory, Space Telescope Science Institute (Hubble / JWST), European Southern Observatory (ESO VLT), European Space Agency (ESA Euclid), and ISRO (Aditya-L1).</li>
           <li><b>Cultural Research &amp; Collections:</b> Sacred Texts Archive, Tufts University Perseus Digital Library, Chinese Text Project (ctext.org), National Museum of Australia (Songlines), and historical manuscripts from the Bodleian and Louvre archives.</li>
         </ul>
@@ -169,11 +181,14 @@
             <li>Open an issue on the project repository or submit a pull request against <code>data/myth.json</code> or <code>data/citation-audit.csv</code>.</li>
           </ul>
         </div>
+      <section class="gl">
+        <h2>5. Open Source Software &amp; Font Licenses</h2>
+        <p>This software is built entirely with open-source technologies. The 3D graphics engine (Three.js) is released under the MIT License, and the typographic font families (Cormorant Garamond and Space Grotesk) are licensed under the SIL Open Font License (OFL 1.1). Full license texts and copyright notices are available in <a href="LICENSES.md" style="color:var(--a);text-decoration:underline">LICENSES.md</a>.</p>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 Cosmic Mythology AR Explorer · <a href="index.html" style="color:var(--a);text-decoration:none">Back to Sky</a> · <a href="privacy.html" style="color:var(--a);text-decoration:none">Privacy Policy</a></p>
+      <p>&copy; 2026 Cosmic Mythology AR Explorer · <a href="index.html" style="color:var(--a);text-decoration:none">Back to Sky</a> · <a href="privacy.html" style="color:var(--a);text-decoration:none">Privacy Policy</a> · <a href="LICENSES.md" style="color:var(--a);text-decoration:none">Licenses</a></p>
     </footer>
   </div>
 </body>

@@ -1,5 +1,10 @@
 {
   "excludePendingCommunityReview": true,
+  "pendingReviewTraditions": [
+    "ind",
+    "poly",
+    "amer"
+  ],
   "hideUnverified": true,
-  "note": "When excludePendingCommunityReview is true, stories from traditions marked 'pending community review' (such as Indigenous Australian, Polynesian, and Indigenous Americas oral lore) are omitted from the default public build."
+  "note": "When excludePendingCommunityReview is true, only traditions explicitly listed in pendingReviewTraditions are excluded from the public build. Nakshatras ('nak') and other traditions remain public for verified and probable stories. You can edit pendingReviewTraditions to add or remove traditions at any time."
 }

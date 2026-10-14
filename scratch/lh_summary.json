@@ -1,0 +1,61 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "score": 65,
+      "lcpMs": 5907,
+      "tbtMs": 413,
+      "cls": 0,
+      "lcpElement": "Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling,… (main#home > section.ch > div > p.sub)"
+    },
+    {
+      "run": 2,
+      "score": 61,
+      "lcpMs": 5836,
+      "tbtMs": 483,
+      "cls": 0,
+      "lcpElement": "Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling,… (main#home > section.ch > div > p.sub)"
+    },
+    {
+      "run": 3,
+      "score": 55,
+      "lcpMs": 6045,
+      "tbtMs": 822,
+      "cls": 0,
+      "lcpElement": "Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling,… (main#home > section.ch > div > p.sub)"
+    },
+    {
+      "run": 4,
+      "score": 64,
+      "lcpMs": 5911,
+      "tbtMs": 454,
+      "cls": 0,
+      "lcpElement": "Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling,… (main#home > section.ch > div > p.sub)"
+    },
+    {
+      "run": 5,
+      "score": 52,
+      "lcpMs": 5991,
+      "tbtMs": 972,
+      "cls": 0,
+      "lcpElement": "Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling,… (main#home > section.ch > div > p.sub)"
+    }
+  ],
+  "score": {
+    "min": 52,
+    "median": 61,
+    "max": 65
+  },
+  "lcp": {
+    "min": 5836,
+    "median": 5911,
+    "max": 6045
+  },
+  "tbt": {
+    "min": 413,
+    "median": 483,
+    "max": 972
+  },
+  "nonSameOriginCount": 0,
+  "nonSameOriginUrls": []
+}

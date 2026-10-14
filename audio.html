@@ -1,0 +1,2123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Celestial Audio Stories · Cosmic Mythology AR Explorer</title>
+  <meta name="description" content="Listen to ancient sky lore and celestial mythology read aloud in multiple languages with an interactive illuminated storybook reader.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cosmic-ar-explorer.app/audio.html">
+  <meta property="og:title" content="Celestial Audio Stories · Cosmic Mythology AR Explorer">
+  <meta property="og:description" content="Listen to ancient sky lore and celestial mythology read aloud in multiple languages with an interactive illuminated storybook reader.">
+  <meta property="og:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Celestial Audio Stories · Cosmic Mythology AR Explorer">
+  <meta name="twitter:description" content="Listen to ancient sky lore and celestial mythology read aloud in multiple languages with an interactive illuminated storybook reader.">
+  <meta name="twitter:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <style>
+    :root {
+      --bg: #04060e;
+      --paper: #0b1022;
+      --paper-border: rgba(150, 168, 255, 0.22);
+      --ink: #e9ecf8;
+      --mut: #8d97bd;
+      --gold: #f0b36a;
+      --sci: #5de0d0;
+      --a: #7b8cff;
+      --disp: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Space Grotesk', 'Nirmala UI', 'Noto Sans Kannada', 'Noto Sans Malayalam', 'Kartika', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 var(--sans);
+      min-height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: clamp(14px, 3vw, 36px) clamp(12px, 2.5vw, 28px);
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(20, 32, 75, 0.6) 0%, transparent 70%),
+        radial-gradient(circle at 85% 30%, rgba(240, 179, 106, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 15% 70%, rgba(93, 224, 208, 0.06) 0%, transparent 50%);
+    }
+
+    /* Top Navigation */
+    .top-bar {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(150, 168, 255, 0.15);
+    }
+    .brand {
+      font-family: var(--disp);
+      font-size: 26px;
+      font-weight: 600;
+      color: #ffe2b0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--mut);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* Book Frame & Spread Layout */
+    .book-container {
+      width: 100%;
+      max-width: 1100px;
+      perspective: 1200px;
+      margin-bottom: 28px;
+    }
+    .book-spread {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      background: var(--paper);
+      border: 1px solid var(--paper-border);
+      border-radius: 20px;
+      box-shadow: 
+        0 24px 60px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        inset 0 0 80px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      position: relative;
+    }
+    /* Central Book Spine Divider Removed */
+    .book-spread::before { display: none !important; }
+
+    /* Left Page: Illustration Plate & Chapter Navigator */
+    .page-left {
+      padding: clamp(24px, 4vw, 42px);
+      border-right: 1px solid rgba(150, 168, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(14, 20, 48, 0.5) 0%, rgba(8, 12, 28, 0.8) 100%);
+    }
+    .page-header {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(240, 179, 106, 0.2);
+      padding-bottom: 8px;
+    }
+    #folio-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+      font-weight: 700;
+    }
+    #tradition-badge {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+    .constellation-plate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(150, 168, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .constellation-plate::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 179, 106, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .plate-glyph {
+      font-size: 56px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 16px rgba(240, 179, 106, 0.5));
+      animation: floatGlyph 4s ease-in-out infinite;
+    }
+    @keyframes floatGlyph {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .plate-constellation {
+      font-family: var(--disp);
+      font-size: 26px;
+      color: #ffe2b0;
+      font-weight: 600;
+    }
+    .plate-tradition {
+      font-size: 13px;
+      color: var(--sci);
+      margin-top: 2px;
+    }
+
+    .science-callout {
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(93, 224, 208, 0.08);
+      border: 1px solid rgba(93, 224, 208, 0.25);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .science-callout b {
+      color: var(--sci);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .toc-section {
+      margin-top: auto;
+    }
+    .toc-btn {
+      all: unset;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--paper-border);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all .2s;
+    }
+    .toc-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--a);
+    }
+    .toc-menu {
+      display: none;
+      max-height: 280px;
+      overflow-y: auto;
+      margin-top: 8px;
+      border-radius: 12px;
+      background: rgba(8, 12, 28, 0.98);
+      border: 1px solid rgba(240, 179, 106, 0.35);
+      padding: 6px;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+    }
+    .toc-menu.open { display: flex; }
+    .toc-menu::-webkit-scrollbar { width: 6px; }
+    .toc-menu::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); border-radius: 4px; }
+    .toc-menu::-webkit-scrollbar-thumb { background: rgba(240, 179, 106, 0.35); border-radius: 4px; }
+    .toc-menu::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    .toc-item {
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      border: 1px solid transparent;
+      background: transparent;
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 40px;
+      box-sizing: border-box;
+      cursor: pointer;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.4;
+      color: #e2e8f0;
+      text-align: left;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .toc-item .toc-ch-num {
+      color: var(--gold);
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+    .toc-item .toc-ch-title {
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      font-weight: 500;
+    }
+    .toc-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(240, 179, 106, 0.35);
+    }
+    .toc-item:hover .toc-ch-title {
+      color: #ffffff;
+    }
+    .toc-item.active {
+      background: rgba(240, 179, 106, 0.2);
+      border-color: var(--gold);
+    }
+    .toc-item.active .toc-ch-num {
+      color: #fef08a;
+    }
+    .toc-item.active .toc-ch-title {
+      color: #ffe2b0;
+      font-weight: 700;
+    }
+
+    /* Right Page: The Story Reader */
+    .page-right {
+      padding: clamp(24px, 4vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(10, 15, 36, 0.8) 0%, rgba(6, 9, 22, 0.9) 100%);
+    }
+    .story-title-row {
+      margin-bottom: 14px;
+    }
+    .story-title {
+      font-family: var(--disp);
+      font-size: clamp(30px, 4.2vw, 46px);
+      line-height: 1.1;
+      font-weight: 500;
+      color: #fff;
+    }
+    .story-lang-bar {
+      display: flex;
+      gap: 6px;
+      margin: 12px 0 18px;
+      flex-wrap: wrap;
+    }
+    .lang-chip {
+      all: unset;
+      cursor: pointer;
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--paper-border);
+      color: var(--mut);
+      transition: all .2s;
+    }
+    .lang-chip:hover { color: var(--ink); border-color: var(--a); }
+    .lang-chip.active {
+      background: var(--gold);
+      color: #05070f;
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Manuscript Sentence Text */
+    .story-body {
+      font-family: var(--disp);
+      font-size: clamp(19px, 2.3vw, 24px);
+      line-height: 1.7;
+      color: #d8deee;
+      min-height: 240px;
+      margin-bottom: 20px;
+    }
+    .drop-cap {
+      float: left;
+      font-size: clamp(52px, 6vw, 76px);
+      line-height: 0.85;
+      padding-top: 4px;
+      padding-right: 10px;
+      padding-bottom: 2px;
+      font-family: var(--disp);
+      color: var(--gold);
+      text-shadow: 0 0 16px rgba(240, 179, 106, 0.4);
+      font-weight: 600;
+    }
+    .story-sentence {
+      cursor: pointer;
+      transition: all .25s ease;
+      padding: 2px 4px;
+      border-radius: 6px;
+      display: inline;
+    }
+    .story-sentence:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+    .story-sentence.active {
+      background: rgba(93, 224, 208, 0.16);
+      color: #fff;
+      box-shadow: 0 0 14px rgba(93, 224, 208, 0.25);
+      border-bottom: 2px solid var(--sci);
+      font-weight: 600;
+    }
+
+    /* Page Turner Controls */
+    .turn-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: auto;
+    }
+    .turn-btn {
+      all: unset;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--mut);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all .2s;
+    }
+    .turn-btn:hover:not(:disabled) {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .turn-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .page-number {
+      font-family: var(--disp);
+      font-size: 15px;
+      color: var(--gold);
+    }
+
+    /* Audio Player Ribbon (Bottom) */
+    .player-ribbon {
+      width: 100%;
+      max-width: 1100px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      background: rgba(10, 15, 34, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--paper-border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+    .player-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .ctrl-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .play-btn {
+      all: unset;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #05070f;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      transition: transform .2s, box-shadow .2s;
+      flex: none;
+    }
+    .play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(240, 179, 106, 0.6);
+    }
+    .play-btn:active { transform: scale(0.96); }
+
+    .track-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .track-meta b {
+      font-size: 15px;
+      color: #fff;
+    }
+    .track-meta small {
+      font-size: 12px;
+      color: var(--mut);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-voice {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 179, 71, 0.35);
+      color: #ffb347;
+      background: rgba(255, 179, 71, 0.1);
+    }
+
+    /* Scrubber slider */
+    .scrubber-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+    .time-txt {
+      font-size: 12px;
+      font-family: ui-monospace, Menlo, monospace;
+      color: var(--mut);
+      min-width: 42px;
+    }
+    .scrubber {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      cursor: pointer;
+    }
+    .scrubber::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(240, 179, 106, 0.8);
+    }
+
+    /* Right player utilities */
+    .util-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .speed-btn {
+      all: unset;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      border: 1px solid var(--paper-border);
+      color: var(--mut);
+      background: rgba(255, 255, 255, 0.04);
+      transition: .2s;
+    }
+    .speed-btn:hover { color: var(--ink); border-color: var(--a); }
+
+    /* Sound Bars Animation */
+    .eq-bars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      height: 20px;
+    }
+    .eq-bars i {
+      width: 3px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: height .15s ease;
+    }
+    .eq-bars.playing i:nth-child(1) { animation: eqAnim 0.7s infinite alternate ease-in-out; }
+    .eq-bars.playing i:nth-child(2) { animation: eqAnim 0.9s 0.2s infinite alternate ease-in-out; }
+    .eq-bars.playing i:nth-child(3) { animation: eqAnim 0.6s 0.4s infinite alternate ease-in-out; }
+    .eq-bars.playing i:nth-child(4) { animation: eqAnim 0.8s 0.1s infinite alternate ease-in-out; }
+    @keyframes eqAnim {
+      0% { height: 4px; }
+      100% { height: 18px; }
+    }
+
+    @media (max-width: 840px) {
+      .book-spread {
+        grid-template-columns: 1fr;
+      }
+      .book-spread::before {
+        display: none;
+      }
+      .page-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="index.html" class="brand">✦ Cosmic AR Explorer</a>
+    <nav class="nav-links">
+      <a href="index.html">← Celestial Sky</a>
+      <a href="about.html">About &amp; Sources</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="book-container">
+    <article class="book-spread" id="book-spread">
+      <!-- Left Folio: Constellation Art & Lore Overview -->
+      <section class="page-left">
+        <div class="page-header">
+          <span id="folio-label">Chapter 1 · Orion and the Celestial Deer</span>
+          <span id="tradition-badge">Vedic Lore</span>
+        </div>
+
+        <div class="constellation-plate">
+          <div class="plate-glyph" id="plate-glyph">🏹</div>
+          <div class="plate-constellation" id="plate-constellation">Orion (Mriga)</div>
+          <div class="plate-tradition" id="plate-subtitle">The Celestial Deer &amp; Hunter</div>
+        </div>
+
+        <div class="science-callout" id="science-box">
+          <b>Observational Astrophysics:</b>
+          <span id="science-text">Contains the Orion Nebula (M42) stellar nursery 1,344 light-years away, and the red supergiant Betelgeuse marking the celestial shoulder.</span>
+        </div>
+
+        <div class="toc-section">
+          <button class="toc-btn" id="btn-toc" aria-expanded="false" aria-controls="toc-menu">
+            <span>📚 Browse All Chapters (<span id="chapter-count">32</span>)</span>
+            <span id="toc-arrow">▼</span>
+          </button>
+          <div class="toc-menu" id="toc-menu" role="menu"></div>
+        </div>
+      </section>
+
+      <!-- Right Folio: Illuminated Story Reader -->
+      <section class="page-right">
+        <div>
+          <div class="story-title-row">
+            <div class="chapter-eyebrow" id="chapter-eyebrow" style="color:var(--gold);font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px">Chapter 1 of 30 · Orion and the Celestial Deer</div>
+            <h1 class="story-title" id="story-title">Orion and the Celestial Deer</h1>
+            <div class="story-lang-bar" id="lang-bar" role="tablist" aria-label="Select story language"></div>
+          </div>
+
+          <div class="story-body" id="story-body">
+            <span class="drop-cap" id="drop-cap">H</span>
+            <div id="sentence-container" style="display:inline"></div>
+          </div>
+        </div>
+
+        <div class="turn-controls">
+          <button class="turn-btn" id="btn-prev-page" title="Previous story">
+            ← Previous Chapter
+          </button>
+          <div class="page-number" id="page-indicator">Chapter 1 of 32</div>
+          <button class="turn-btn" id="btn-next-page" title="Next story">
+            Next Chapter →
+          </button>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Persistent Bottom Audio Playback Ribbon -->
+  <footer class="player-ribbon" role="region" aria-label="Audio narration controls">
+    <div class="player-row">
+      <div class="ctrl-group">
+        <button class="play-btn" id="btn-play" aria-label="Play or pause audio story">▶</button>
+        <div class="track-meta">
+          <b id="player-title">Orion and the Celestial Deer</b>
+          <small>
+            <span id="engine-mode-txt">Speech Narration</span>
+            <span class="badge-voice" id="voice-badge">Preview Voice</span>
+          </small>
+        </div>
+      </div>
+
+      <div class="util-group">
+        <div class="eq-bars" id="eq-bars">
+          <i></i><i></i><i></i><i></i>
+        </div>
+        <button class="speed-btn" id="btn-speed" title="Adjust playback speed">1.0x</button>
+      </div>
+    </div>
+
+    <div class="scrubber-box">
+      <span class="time-txt" id="cur-time">0:00</span>
+      <input type="range" class="scrubber" id="scrubber" min="0" max="100" value="0" step="0.5" aria-label="Audio progress scrubber">
+      <span class="time-txt" id="dur-time">0:36</span>
+    </div>
+  </footer>
+
+  <script>
+// Application State
+let stories = [];
+let curIdx = 0;
+let curLang = 'en';
+let curSentenceIdx = 0;
+let isPlaying = false;
+let playbackSpeed = 1.0;
+let simulatedElapsed = 0;
+let totalDuration = 30;
+let sentenceTimer = null;
+let fallbackTimer = null;
+let speechToken = 0;
+let audioCtx = null;
+
+const LANG_LABELS = {
+  en: 'English',
+  hi: 'हिन्दी',
+  mr: 'मराठी',
+  te: 'తెలుగు',
+  ta: 'தமிழ்',
+  kn: 'ಕನ್ನಡ',
+  ml: 'മലയാളം'
+};
+
+const SPEECH_CODES = {
+  en: 'en-IN',
+  hi: 'hi-IN',
+  mr: 'mr-IN',
+  te: 'te-IN',
+  ta: 'ta-IN',
+  kn: 'kn-IN',
+  ml: 'ml-IN'
+};
+
+const I18N = {
+  en: {
+    chapter: 'Chapter',
+    of: 'of',
+    scienceLabel: 'Observational Astrophysics:',
+    prevChapter: '← Previous Chapter',
+    nextChapter: 'Next Chapter →',
+    browseChapters: '📚 Browse All Chapters',
+    defaultScience: 'Explored through observational astronomy and stellar mapping.',
+    engineModeSpeech: 'Speech Narration',
+    engineModeCelestial: 'Celestial Narration',
+    voiceNative: 'Native Voice',
+    voiceDevanagari: 'Devanagari Engine',
+    voicePhonetic: 'Phonetic Voice',
+    voiceCelestial: 'Harmonic Timer',
+    traditions: {
+      'Indian & Greek': 'Indian & Greek Lore',
+      'Vedic Lore': 'Vedic Sky Lore',
+      'Greek Mythology': 'Greco-Roman Sky Lore',
+      'East Asian': 'East Asian Astronomy',
+      'Arabic': 'Arabic Sky Lore',
+      'default': 'Ancient Sky Lore'
+    }
+  },
+  hi: {
+    chapter: 'अध्याय',
+    of: 'का',
+    scienceLabel: 'खगोल भौतिकी व तारकीय विज्ञान:',
+    prevChapter: '← पिछला अध्याय',
+    nextChapter: 'अगला अध्याय →',
+    browseChapters: '📚 सभी अध्याय देखें',
+    defaultScience: 'खगोलीय वेधशाला और तारकीय नकाशानुसार वैज्ञानिक दृष्टिकोण।',
+    engineModeSpeech: 'ध्वनि वाचन',
+    engineModeCelestial: 'खगोलीय स्वर वाचन',
+    voiceNative: 'स्थानीय स्वर',
+    voiceDevanagari: 'देवनागरी इंजन',
+    voicePhonetic: 'ध्वन्यात्मक स्वर',
+    voiceCelestial: 'खगोलीय समयपाल',
+    traditions: {
+      'Indian & Greek': 'भारतीय और ग्रीक परंपरा',
+      'Vedic Lore': 'वैदिक खगोल परंपरा',
+      'Greek Mythology': 'ग्रीक खगोल परंपरा',
+      'East Asian': 'पूर्व एशियाई खगोल ज्ञान',
+      'Arabic': 'अरबी खगोल परंपरा',
+      'default': 'प्राचीन खगोल ज्ञान'
+    }
+  },
+  mr: {
+    chapter: 'प्रकरण',
+    of: 'पैकी',
+    scienceLabel: 'खगोल भौतिकी व तारकीय निरीक्षण:',
+    prevChapter: '← मागील प्रकरण',
+    nextChapter: 'पुढील प्रकरण →',
+    browseChapters: '📚 सर्व प्रकरणे पहा',
+    defaultScience: 'खगोलीय वेधशाळा आणि तारकीय नकाशांद्वारे शास्त्रीय अभ्यास व निरीक्षण.',
+    engineModeSpeech: 'मराठी वाचन',
+    engineModeCelestial: 'खगोलीय स्वर वाचन',
+    voiceNative: 'मराठी मूळ स्वर',
+    voiceDevanagari: 'देवनागरी ध्वनी इंजन',
+    voicePhonetic: 'ध्वन्यात्मक स्वर',
+    voiceCelestial: 'खगोलीय समयपाल',
+    traditions: {
+      'Indian & Greek': 'भारतीय व ग्रीक परंपरा',
+      'Vedic Lore': 'वैदिक खगोल परंपरा',
+      'Greek Mythology': 'ग्रीक खगोल परंपरा',
+      'East Asian': 'पूर्व आशियाई खगोल ज्ञान',
+      'Arabic': 'अरबी खगोल परंपरा',
+      'default': 'प्राचीन आकाशीय ज्ञान'
+    }
+  },
+  te: {
+    chapter: 'అధ్యాయం',
+    of: 'లో',
+    scienceLabel: 'ఖగోళ భౌతిక శాస్త్ర వివరణ:',
+    prevChapter: '← మునుపటి అధ్యాయం',
+    nextChapter: 'తదుపరి అధ్యాయం →',
+    browseChapters: '📚 అన్ని అధ్యాయాలు చూడండి',
+    defaultScience: 'ఖగోళ పరిశీలనలు మరియు నక్షత్ర పటాల ద్వారా సమగ్ర వైజ్ఞానిక అధ్యయనం.',
+    engineModeSpeech: 'తెలుగు శ్రవణం',
+    engineModeCelestial: 'దివ్య శ్రవణ నాదం',
+    voiceNative: 'తెలుగు సహజ స్వరం',
+    voiceDevanagari: 'భారతీయ స్వరం',
+    voicePhonetic: 'ధ్వన్యాత్మక స్వరం',
+    voiceCelestial: 'ఖగోళ కాలమానం',
+    traditions: {
+      'Indian & Greek': 'భారతీయ & గ్రీకు పురాణాలు',
+      'Vedic Lore': 'వైదిక ఖగోళ సంప్రదాయం',
+      'Greek Mythology': 'గ్రీకు పురాణ జ్ఞానం',
+      'East Asian': 'తూర్పు ఆసియా ఖగోళం',
+      'Arabic': 'అరబిక్ ఖగోళ సంప్రదాయం',
+      'default': 'పురాతన ఆకాశ జ్ఞానం'
+    }
+  },
+  ta: {
+    chapter: 'அத்தியாயம்',
+    of: 'இல்',
+    scienceLabel: 'வானியற்பியல் விளக்கம்:',
+    prevChapter: '← முந்தைய அத்தியாயம்',
+    nextChapter: 'அடுத்த அத்தியாயம் →',
+    browseChapters: '📚 அனைத்து அத்தியாயங்களும்',
+    defaultScience: 'வானியல் கண்காணிப்பு மற்றும் விண்மீன் வரைபடங்கள் மூலம் ஆய்வு.',
+    engineModeSpeech: 'ஒலி வாசிப்பு',
+    engineModeCelestial: 'வான் ஒலி வாசிப்பு',
+    voiceNative: 'தமிழ் சொந்தக் குரல்',
+    voiceDevanagari: 'பாரதிய குரல்',
+    voicePhonetic: 'ஒலிபெயர்ப்பு குரல்',
+    voiceCelestial: 'வான் நேர அளவீடு',
+    traditions: {
+      'Indian & Greek': 'இந்திய & கிரேக்க பாரம்பரியம்',
+      'Vedic Lore': 'வேத வானியல் பாரம்பரியம்',
+      'Greek Mythology': 'கிரேக்க பாரம்பரியம்',
+      'East Asian': 'கிழக்காசிய வானியல்',
+      'Arabic': 'அரேபிய வானியல்',
+      'default': 'பண்டைய விண்மீன் அறிவு'
+    }
+  },
+  kn: {
+    chapter: 'ಅಧ್ಯಾಯ',
+    of: 'ರ',
+    scienceLabel: 'ಖಗೋಳ ಭೌತಶಾಸ್ತ್ರದ ವಿವರಣೆ:',
+    prevChapter: '← ಹಿಂದಿನ ಅಧ್ಯಾಯ',
+    nextChapter: 'ಮುಂದಿನ ಅಧ್ಯಾಯ →',
+    browseChapters: '📚 ಎಲ್ಲಾ ಅಧ್ಯಾಯಗಳನ್ನು ನೋಡಿ',
+    defaultScience: 'ಖಗೋಳ ವೀಕ್ಷಣೆ ಮತ್ತು ನಕ್ಷತ್ರ ನಕ್ಷೆಗಳ ಮೂಲಕ ವೈಜ್ಞಾನಿಕ ಅಧ್ಯಯನ.',
+    engineModeSpeech: 'ಕನ್ನಡ ವಾಚನ',
+    engineModeCelestial: 'ಖಗೋಳ ದಿವ್ಯ ಶ್ರವಣ',
+    voiceNative: 'ಕನ್ನಡ ಧ್ವನಿ',
+    voiceDevanagari: 'ಭಾರತೀಯ ಧ್ವನಿ',
+    voicePhonetic: 'ಧ್ವನ್ಯಾತ್ಮಕ ಧ್ವನಿ',
+    voiceCelestial: 'ಖಗೋಳ ಕಾಲಮಾಪಕ',
+    traditions: {
+      'Indian & Greek': 'ಭಾರತೀಯ ಮತ್ತು ಗ್ರೀಕ್ ಪುರಾಣ',
+      'Vedic Lore': 'ವೈದಿಕ ಖಗೋಳ ಪರಂಪರೆ',
+      'Greek Mythology': 'ಗ್ರೀಕ್ ಪುರಾಣ ಪರಂಪರೆ',
+      'East Asian': 'ಪೂರ್ವ ಏಷ್ಯಾದ ಖಗೋಳ',
+      'Arabic': 'ಅರೇಬಿಕ್ ಖಗೋಳ ಪರಂಪರೆ',
+      'default': 'ಪ್ರಾಚೀನ ಆಕಾಶ ಜ್ಞಾನ'
+    }
+  },
+  ml: {
+    chapter: 'അദ്ധ്യായം',
+    of: '-ൽ',
+    scienceLabel: 'ജ്യോതിർഭൗതിക നിരീക്ഷണം:',
+    prevChapter: '← മുൻപത്തെ അദ്ധ്യായം',
+    nextChapter: 'അടുത്ത അദ്ധ്യായം →',
+    browseChapters: '📚 എല്ലാ അദ്ധ്യായങ്ങളും കാണുക',
+    defaultScience: 'ജ്യോതിശാസ്ത്ര നിരീക്ഷണങ്ങളിലൂടെയും നക്ഷത്ര മാപ്പുകളിലൂടെയും നടത്തിയ പഠനം.',
+    engineModeSpeech: 'മലയാള വായന',
+    engineModeCelestial: 'ആകാശ ശബ്ദ ശ്രവണം',
+    voiceNative: 'മലയാള തനത് ശബ്ദം',
+    voiceDevanagari: 'ഭാരതീയ ശബ്ദം',
+    voicePhonetic: 'ഉച്ചാരണ ശബ്ദം',
+    voiceCelestial: 'ആകാശ സമയപാലകൻ',
+    traditions: {
+      'Indian & Greek': 'ഭാരതീയ-ഗ്രീക്ക് പാരമ്പര്യം',
+      'Vedic Lore': 'വേദ ജ്യോതിഷ പാരമ്പര്യം',
+      'Greek Mythology': 'ഗ്രീക്ക് പുരാണ വിജ്ഞാനം',
+      'East Asian': 'കിഴക്കൻ ഏഷ്യൻ വാനശാസ്ത്രം',
+      'Arabic': 'അറബിക് ജ്യോതിഷ പാരമ്പര്യം',
+      'default': 'പുരാതന വാനശാസ്ത്രം'
+    }
+  }
+};
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+// Standalone fallback stories for offline use (populated dynamically by builder)
+const FALLBACK_STORIES = [
+  {
+    "id": "story-01-orion",
+    "title": "Orion and the Celestial Deer",
+    "tradition": "Indian & Greek",
+    "constellation": "Orion",
+    "languages": {
+      "en": {
+        "title": "Orion and the Celestial Deer",
+        "audio": "audio/story-01-orion.en.mp3",
+        "needsNativeReview": false,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "High in the winter sky stands Orion, the celestial hunter known across the ancient world.",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "In Indian tradition, this shape is Mriga, the golden deer leaping across the stars.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "Its red shoulder is Betelgeuse, or Ardra, the teardrop of the storm god Rudra.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "Three bright stars in the centre form the hunter's belt, or the golden arrow of the cosmos.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "Behind Orion follows Sirius, the great hound tracking the celestial path across eternity.",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ],
+        "placeholder": true
+      },
+      "hi": {
+        "title": "कालपुरुष और मृग",
+        "audio": "audio/story-01-orion.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 35.7,
+        "sentences": [
+          {
+            "text": "सर्दियों के आकाश में कालपुरुष, जिसे नक्षत्रों का महान शिकारी कहा जाता है, चमकता है।",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "भारतीय खगोल परंपरा में इसे मृग अर्थात् स्वर्णिम हिरण माना गया है।",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "इसका लाल कंधा आर्द्रा नक्षत्र है, जिसे रुद्र का आंसू और वर्षा का अग्रदूत कहा जाता है।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "इसके बीच के तीन चमकीले तारे कालपुरुष की करधनी और व्याध का बाण बनाते हैं।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "इसके पीछे व्याध तारा सिरियस अनंत आकाश में इसका पीछा करता है।",
+            "start": 28.8,
+            "end": 35.4
+          }
+        ],
+        "placeholder": true
+      },
+      "mr": {
+        "title": "मृग आणि कालपुरुष",
+        "audio": "audio/story-01-orion.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 28.65,
+        "sentences": [
+          {
+            "text": "हिवाळ्याच्या रात्री आकाशात कालपुरुष हा तेजस्वी शिकारी ठळकपणे दिसतो.",
+            "start": 0,
+            "end": 5.25
+          },
+          {
+            "text": "भारतीय परंपरेत या तारकासमूहाला मृग म्हणजेच स्वर्गीय हरण मानले जाते.",
+            "start": 5.55,
+            "end": 11.25
+          },
+          {
+            "text": "त्याचा लाल खांदा म्हणजे आर्द्रा नक्षत्र, जो रुद्र देवाचा अश्रू मानला जातो.",
+            "start": 11.55,
+            "end": 18.15
+          },
+          {
+            "text": "मधले तीन तारे कालपुरुषाचा पट्टा आणि आकाशातील बाण दर्शवतात.",
+            "start": 18.45,
+            "end": 23.7
+          },
+          {
+            "text": "त्याच्या पाठीमागे व्याध तारा अवकाशात धावताना दिसतो.",
+            "start": 24,
+            "end": 28.35
+          }
+        ],
+        "placeholder": true
+      },
+      "ta": {
+        "title": "மிருகசீரிஷமும் வேடனும்",
+        "audio": "audio/story-01-orion.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 27.75,
+        "sentences": [
+          {
+            "text": "குளிர்கால வானில் ஒளிரும் ஓரியன், பண்டைய உலகின் புகழ்பெற்ற வேடனாகக் கருதப்படுகிறது.",
+            "start": 0,
+            "end": 5.25
+          },
+          {
+            "text": "இந்திய மரபில் இது மிருகம் எனப்படும் விண்வெளி மானாகப் போற்றப்படுகிறது.",
+            "start": 5.55,
+            "end": 10.35
+          },
+          {
+            "text": "இதன் சிவப்புத் தோள்பட்டை திருவாதிரை நட்சத்திரமாகும், இது ருத்திரனின் கண்ணீர்த் துளியாகக் கூறப்படுகிறது.",
+            "start": 10.65,
+            "end": 16.35
+          },
+          {
+            "text": "நடுவில் உள்ள மூன்று விண்மீன்கள் வேடனின் கச்சையாகவும் வானம்பாய் அம்பாகவும் விளங்குகின்றன.",
+            "start": 16.65,
+            "end": 21.9
+          },
+          {
+            "text": "இதனைத் தொடர்ந்து வரும் சிரியஸ் விண்மீன் வேட்டை நாயாக வான்வழியில் பயணிக்கிறது.",
+            "start": 22.2,
+            "end": 27.45
+          }
+        ],
+        "placeholder": true
+      },
+      "te": {
+        "title": "మృగశిర మరియు కాలపురుషుడు",
+        "audio": "audio/story-01-orion.te.mp3",
+        "needsNativeReview": false,
+        "duration": 36.5,
+        "sentences": [
+          {
+            "text": "శీతాకాలపు రాత్రి ఆకాశంలో కాలపురుషుడు లేదా ఓరియన్ ఒక గొప్ప వేటగాడిలా ప్రకాశిస్తాడు.",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "భారతీయ ఖగోళ సంప్రదాయంలో ఈ నక్షత్రరాశిని బంగారు లేడి అయిన మృగంగా భావిస్తారు.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "దీని ఎరుపు భుజం ఆరుద్ర నక్షత్రం, ఇది రుద్ర దేవుని కన్నీటి బిందువుగా ప్రసిద్ధి చెందింది.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "మధ్యలోని మూడు ప్రకాశవంతమైన నక్షత్రాలు వేటగాడి నడుము పట్టీని లేదా విశ్వపు బాణాన్ని సూచిస్తాయి.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "కాలపురుషుని వెనుక లుబ్ధక నక్షత్రం (సిరియస్) నిరంతరం ఆకాశ మార్గాన్ని అనుసరిస్తుంది.",
+            "start": 29.2,
+            "end": 36.2
+          }
+        ],
+        "placeholder": true
+      },
+      "kn": {
+        "title": "ಮೃಗಶಿರ ಮತ್ತು ಕಾಲಪುರುಷ",
+        "audio": "audio/story-01-orion.kn.mp3",
+        "needsNativeReview": false,
+        "duration": 36,
+        "sentences": [
+          {
+            "text": "ಚಳಿಗಾಲದ ರಾತ್ರಿ ಆಕಾಶದಲ್ಲಿ ಕಾಲಪುರುಷ ಅಥವಾ ಒರೈಯನ್ ಪ್ರಕಾಶಮಾನವಾಗಿ ಬೆಳಗುತ್ತಾನೆ.",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "ಭಾರತೀಯ ಖಗೋಳ ಪರಂಪರೆಯಲ್ಲಿ ಈ ತಾರಾಗುಂಪನ್ನು ಚಿನ್ನದ ಜಿಂಕೆ ಮೃಗವೆಂದು ಕರೆಯಲಾಗುತ್ತದೆ.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "ಅವನ ಕೆಂಪು ಭುಜವೇ ಆರ್ದ್ರಾ ನಕ್ಷತ್ರ, ಇದು ರುದ್ರ ದೇವರ ಕಣ್ಣೀರೆಂದು ಪ್ರಸಿದ್ಧವಾಗಿದೆ.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "ಮಧ್ಯದ ಮೂರು ಪ್ರಕಾಶಮಾನ ತಾರೆಗಳು ಬೇಟೆಗಾರನ ಪಟ್ಟಿ ಮತ್ತು ಬಾಣವನ್ನು ರೂಪಿಸುತ್ತವೆ.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "ಕಾಲಪುರುಷನ ಬೆನ್ನಹಿಂದೆ ವ್ಯಾಧ ನಕ್ಷತ್ರ (ಸಿರಿಯಸ್) ಅನಂತ ಆಕಾಶದಲ್ಲಿ ಹಿಂಬಾಲಿಸುತ್ತದೆ.",
+            "start": 29.2,
+            "end": 36
+          }
+        ],
+        "placeholder": true
+      },
+      "ml": {
+        "title": "മകയിരം നക്ഷത്രവും കാളപുരുഷനും",
+        "audio": "audio/story-01-orion.ml.mp3",
+        "needsNativeReview": false,
+        "duration": 36,
+        "sentences": [
+          {
+            "text": "ശീതകാല ആകാശത്തിൽ കാളപുരുഷൻ അഥവാ ഓറിയോൺ ഒരു വേട്ടക്കാരനെപ്പോലെ തിളങ്ങിനിൽക്കുന്നു.",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "ഭാരതീയ വാനശാസ്ത്രത്തിൽ ഇതിനെ സ്വർണ്ണമാൻ ആയ 'മൃഗം' എന്ന് വിശേഷിപ്പിക്കുന്നു.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "ഇതിന്റെ ചുവന്ന തോൾഭാഗം രുദ്രന്റെ കണ്ണീർത്തുള്ളിയായ തിരുവാതിര നക്ഷത്രമാണ്.",
+            "start": 14.6,
+            "end": 21.6
+          },
+          {
+            "text": "നടുവിലുള്ള മൂന്ന് പ്രകാശമാനമായ നക്ഷത്രങ്ങൾ വേട്ടക്കാരന്റെ അരപ്പട്ടയെയും അമ്പിനെയും കുറിക്കുന്നു.",
+            "start": 21.9,
+            "end": 28.9
+          },
+          {
+            "text": "ഇതിനു പിന്നാലെ വേട്ടനായയെപ്പോലെ സദാ പിന്തുടരുന്ന അതിപ്രകാശമുള്ള നക്ഷത്രമാണ് സിറിയസ്.",
+            "start": 29.2,
+            "end": 36
+          }
+        ],
+        "placeholder": true
+      }
+    },
+    "glyph": "🏹",
+    "science": "Contains the Great Orion Nebula (M42) 1,344 light-years away and the red supergiant Betelgeuse.",
+    "subtitles": {
+      "en": "The Celestial Deer & Hunter",
+      "hi": "मृग नक्षत्र और स्वर्णिम शिकारी",
+      "mr": "मृग नक्षत्र आणि स्वर्गीय शिकारी",
+      "te": "మృగశిర నక్షత్రం మరియు వేటగాడు",
+      "ta": "மிருகசீரிஷமும் வான் வேடனும்",
+      "kn": "ಮೃಗಶಿರ ನಕ್ಷತ್ರ ಮತ್ತು ಬೇಟೆಗಾರ",
+      "ml": "മകയിരം നക്ഷത്രവും കാളപുരുഷനും"
+    },
+    "scienceLocalized": {
+      "en": "Contains the Orion Nebula (M42) stellar nursery 1,344 light-years away, and the red supergiant Betelgeuse marking the celestial shoulder.",
+      "hi": "इसमें १,३४४ प्रकाश वर्ष दूर स्थित ओरियन नेबुला (M42) तारा नर्सरी और लाल महादानव आर्द्रा तारा शामिल है।",
+      "mr": "यात १,३४४ प्रकाशवर्षे दूर असलेली मृग तेजोमेघ (M42) तारकीय नर्सरी आणि आर्द्रा (Betelgeuse) हा महाकाय लाल तारा समाविष्ट आहे.",
+      "te": "ఇందులో 1,344 కాంతి సంవత్సరాల దూరంలో ఉన్న ఓరియన్ నెబ్యులా (M42) నక్షత్ర శాల మరియు ఎరుపు రంగు ఆరుద్ర (బెటెల్‌గ్యూస్) మహాతార ఉన్నాయి.",
+      "ta": "இதில் 1,344 ஒளி ஆண்டுகள் தொலைவில் உள்ள ஓரியன் நெபுலா மற்றும் சிவப்பு விண்மீன் திருவாதிரை ஆகியவை உள்ளன.",
+      "kn": "ಇದರಲ್ಲಿ ೧,೩೪೪ ಜ್ಯೋತಿರ್ವರ್ಷ ದೂರದಲ್ಲಿರುವ ಒರೈಯನ್ ನೆಬ್ಯುಲಾ (M42) ಮತ್ತು ಕೆಂಪು ಮಹಾತಾರೆ ಬೆಟೆಲ್ಗ್ಯೂಸ್ (ಆರ್ದ್ರಾ) ಸೇರಿವೆ.",
+      "ml": "ഇതിൽ 1,344 പ്രകാശവർഷം അകലെയുള്ള ഓറിയോൺ നെബുലയും ചുവന്ന ഭീമൻ നക്ഷത്രമായ തിരുവാതിരയും (ബെറ്റൽജ്യൂസ്) ഉൾപ്പെടുന്നു."
+    }
+  },
+  {
+    "id": "story-02-saptarshi",
+    "title": "Saptarshi: The Seven Sages",
+    "tradition": "Vedic & Pan-Indian",
+    "constellation": "Ursa Major",
+    "languages": {
+      "en": {
+        "title": "Saptarshi: The Seven Sages",
+        "audio": "audio/story-02-saptarshi.en.mp3",
+        "needsNativeReview": false,
+        "duration": 35.2,
+        "sentences": [
+          {
+            "text": "Seven brilliant stars curve across the northern sky, known widely as the Big Dipper.",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "In ancient India, these are the Saptarshi, the seven revered sages of cosmic wisdom.",
+            "start": 7.3,
+            "end": 14.3
+          },
+          {
+            "text": "They circle endlessly around Dhruva, the steadfast northern pole star.",
+            "start": 14.6,
+            "end": 20.3
+          },
+          {
+            "text": "Beside sage Vashistha shines his devoted companion Arundhati, locked in an eternal dance.",
+            "start": 20.6,
+            "end": 27.6
+          },
+          {
+            "text": "For thousands of years, travellers looked to these seven lights to guide their journeys.",
+            "start": 27.9,
+            "end": 34.9
+          }
+        ],
+        "placeholder": true
+      },
+      "hi": {
+        "title": "सप्तर्षि: सात दिव्य ऋषि",
+        "audio": "audio/story-02-saptarshi.hi.mp3",
+        "needsNativeReview": true,
+        "duration": 36.1,
+        "sentences": [
+          {
+            "text": "उत्तरी आकाश में सात देदीप्यमान तारे मिलकर सप्तर्षि मंडल की रचना करते हैं।",
+            "start": 0,
+            "end": 7
+          },
+          {
+            "text": "प्राचीन भारतीय परंपरा में ये सात परम तपस्वी ऋषि माने जाते हैं।",
+            "start": 7.3,
+            "end": 13.9
+          },
+          {
+            "text": "ये ऋषि ध्रुव तारे की निरंतर परिक्रमा करते हुए ब्रह्मांडीय ज्ञान का संचरण करते हैं।",
+            "start": 14.2,
+            "end": 21.2
+          },
+          {
+            "text": "ऋषि वशिष्ठ के निकट उनकी धर्मपत्नी अरुंधती का तारा भी मंद आभा में चमकता है।",
+            "start": 21.5,
+            "end": 28.5
+          },
+          {
+            "text": "हजारों वर्षों से पथिक और नाविक इन सात तारों से अपनी दिशा तय करते रहे हैं।",
+            "start": 28.8,
+            "end": 35.8
+          }
+        ],
+        "placeholder": true
+      },
+      "mr": {
+        "title": "सप्तर्षी: सात ऋषींचे मंडल",
+        "audio": "audio/story-02-saptarshi.mr.mp3",
+        "needsNativeReview": true,
+        "duration": 30,
+        "sentences": [
+          {
+            "text": "उत्तर दिशेच्या आकाशात सात तेजस्वी तारे सप्तर्षींचे पवित्र मंडल बनवतात.",
+            "start": 0,
+            "end": 5.7
+          },
+          {
+            "text": "भारतीय संस्कृतीत हे सात महर्षी ज्ञानाचे आणि मार्गदर्शनाचे प्रतीक मानले जातात.",
+            "start": 6,
+            "end": 12.15
+          },
+          {
+            "text": "हे तारे अढळ ध्रुव ताऱ्याभोवती अविरत प्रदक्षिणा घालत असतात.",
+            "start": 12.45,
+            "end": 17.7
+          },
+          {
+            "text": "वसिष्ठ ऋषींच्या शेजारी अरुंधतीचा लहान तारा एकात्मतेचे दर्शन घडवतो.",
+            "start": 18,
+            "end": 23.25
+          },
+          {
+            "text": "प्राचीन काळापासून प्रवासी आणि दर्यावर्दी या ताऱ्यांच्या आधारे दिशा ठरवत असत.",
+            "start": 23.55,
+            "end": 29.7
+          }
+        ],
+        "placeholder": true
+      },
+      "ta": {
+        "title": "சப்தரிஷி: ஏழு முனிவர்கள்",
+        "audio": "audio/story-02-saptarshi.ta.mp3",
+        "needsNativeReview": true,
+        "duration": 25.95,
+        "sentences": [
+          {
+            "text": "வடக்கு வானில் ஏழு ஒளிமயமான விண்மீன்கள் சப்தரிஷி மண்டலமாக மிளிர்கின்றன.",
+            "start": 0,
+            "end": 4.8
+          },
+          {
+            "text": "பண்டைய பாரத மரபில் இவர்கள் உலகிற்கு நல்வழி காட்டும் ஏழு பெரும் முனிவர்கள் ஆவர்.",
+            "start": 5.1,
+            "end": 11.25
+          },
+          {
+            "text": "இவர்கள் அசையாத துருவ நட்சத்திரத்தைச் சுற்றி வலம் வருகிறார்கள்.",
+            "start": 11.55,
+            "end": 15.9
+          },
+          {
+            "text": "வசிஷ்ட முனிவருக்கு அருகே அருந்ததி நட்சத்திரம் இணைந்து காட்சியளிக்கிறது.",
+            "start": 16.2,
+            "end": 20.55
+          },
+          {
+            "text": "ஆயிரக்கணக்கான ஆண்டுகளாகப் பயணிகள் இந்த ஏழு விண்மீன்களைக் கொண்டே திசையறிந்தனர்.",
+            "start": 20.85,
+            "end": 25.65
+          }
+        ],
+        "placeholder": true
+      },
+      "te": {
+        "title": "సప్తర్షి మండలము",
+        "audio": "audio/story-02-saptarshi.te.mp3",
+        "needsNativeReview": false,
+        "duration": 35,
+        "sentences": [
+          {
+            "text": "ఉత్తర ఆకాశంలో ఏడు కాంతివంతమైన నక్షత్రాలు సప్తర్షి మండలంగా ప్రసిద్ధి చెందాయి.",
+            "start": 0,
+            "end": 6.8
+          },
+          {
+            "text": "భారతీయ ఖగోళంలో ఈ తారలు విశ్వ సంతులనాన్ని కాపాడే ఏడుగురు మహర్షులు.",
+            "start": 7.1,
+            "end": 14.1
+          },
+          {
+            "text": "ఈ నక్షత్రాలు నిరంతరం ధ్రువ నక్షత్రం చుట్టూ తిరుగుతూ సత్యం మరియు నిష్ఠను సూచిస్తాయి.",
+            "start": 14.4,
+            "end": 21.4
+          },
+          {
+            "text": "బాహ్యంగా ఉండే క్రతు మరియు పులహ నక్షత్రాలు నేరుగా ఉత్తర ధ్రువ నక్షత్రం వైపు దారి చూపుతాయి.",
+            "start": 21.7,
+            "end": 28.7
+          },
+          {
+            "text": "యుగాలుగా నావికులు మరియు యాత్రికులు ఈ నక్షత్రాల మార్గదర్శకత్వంలో ప్రయాణించారు.",
+            "start": 29,
+            "end": 35
+          }
+        ],
+        "placeholder": true
+      },
+      "kn": {
+        "title": "ಸಪ್ತರ್ಷಿ ಮಂಡಲ",
+        "audio": "audio/story-02-saptarshi.kn.mp3",
+        "needsNativeReview": false,
+        "duration": 34.5,
+        "sentences": [
+          {
+            "text": "ಉತ್ತರ ಆಕಾಶದಲ್ಲಿ ಏಳು ಪ್ರಕಾಶಮಾನ ತಾರೆಗಳು ಸಪ್ತರ್ಷಿ ಮಂಡಲವನ್ನು ರೂಪಿಸುತ್ತವೆ.",
+            "start": 0,
+            "end": 6.8
+          },
+          {
+            "text": "ಭಾರತೀಯ ಖಗೋಳದಲ್ಲಿ ಇವರು ಜಗತ್ತಿನ ಸಮತೋಲನವನ್ನು ಕಾಯುವ ಪವಿತ್ರ ಸಪ್ತರ್ಷಿಗಳು.",
+            "start": 7.1,
+            "end": 14
+          },
+          {
+            "text": "ಇವರು ಧ್ರುವ ನಕ್ಷತ್ರದ ಸುತ್ತ ನಿರಂತರ ಪ್ರದಕ್ಷಿಣೆ ಮಾಡುತ್ತಾ ಸತ್ಯ ಮತ್ತು ನಿಷ್ಠೆಯನ್ನು ಸಾರುತ್ತಾರೆ.",
+            "start": 14.3,
+            "end": 21.2
+          },
+          {
+            "text": "ಕ್ರತು ಮತ್ತು ಪುಲಹ ತಾರೆಗಳು ನೇರವಾಗಿ ಉತ್ತರ ಧ್ರುವ ನಕ್ಷತ್ರಕ್ಕೆ ದಿಕ್ಕು ತೋರಿಸುತ್ತವೆ.",
+            "start": 21.5,
+            "end": 28.2
+          },
+          {
+            "text": "ಯುಗಗಳಿಂದಲೂ ನಾವಿಕರು ಮತ್ತು ಪ್ರಯಾಣಿಕರು ಇವುಗಳ ಆಧಾರದ ಮೇಲೆ ದಿಕ್ಕು ನಿರ್ಧರಿಸಿದ್ದಾರೆ.",
+            "start": 28.5,
+            "end": 34.5
+          }
+        ],
+        "placeholder": true
+      },
+      "ml": {
+        "title": "സപ്തർഷി മണ്ഡലം",
+        "audio": "audio/story-02-saptarshi.ml.mp3",
+        "needsNativeReview": false,
+        "duration": 34.5,
+        "sentences": [
+          {
+            "text": "വടക്കൻ ആകാശത്ത് കാണുന്ന ഏഴ് തിളങ്ങുന്ന നക്ഷത്രങ്ങളാണ് സപ്തർഷി മണ്ഡലം.",
+            "start": 0,
+            "end": 6.8
+          },
+          {
+            "text": "പ്രപഞ്ച സന്തുലിതാവസ്ഥ കാത്തുസൂക്ഷിക്കുന്ന ഏഴ് മഹർഷിമാരാണ് ഇവരെന്ന് വേദങ്ങൾ പറയുന്നു.",
+            "start": 7.1,
+            "end": 14
+          },
+          {
+            "text": "അചഞ്ചലനായ ധ്രുവനക്ഷത്രത്തിന് ചുറ്റും ഈ ജ്ഞാനികൾ നിത്യം വലംവെച്ചുകൊണ്ടിരിക്കുന്നു.",
+            "start": 14.3,
+            "end": 21.2
+          },
+          {
+            "text": "ഇതിലെ രണ്ട് പ്രധാന നക്ഷത്രങ്ങൾ വടക്കൻ ദിശ കൃത്യമായി കണ്ടെത്താൻ സഹായിക്കുന്നു.",
+            "start": 21.5,
+            "end": 28.2
+          },
+          {
+            "text": "നൂറ്റാണ്ടുകളായി കടൽയാത്രക്കാരും സഞ്ചാരികളും ഈ നക്ഷത്രങ്ങളെ ആശ്രയിച്ചാണ് സഞ്ചരിച്ചത്.",
+            "start": 28.5,
+            "end": 34.5
+          }
+        ],
+        "placeholder": true
+      }
+    },
+    "glyph": "🥄",
+    "science": "The pointer stars Merak and Dubhe align directly with Polaris, the North Star.",
+    "subtitles": {
+      "en": "The Seven Enlightened Sages",
+      "hi": "सात पवित्र महर्षियों का मंडल",
+      "mr": "सात ऋषींचे पवित्र मंडल",
+      "te": "సప్తర్షి మండలము మరియు దివ్య ఋషులు",
+      "ta": "ஏழு முனிவர்களின் வான் மண்டலம்",
+      "kn": "ಸಪ್ತರ್ಷಿ ಮಂಡಲ: ಏಳು ಮಹರ್ಷಿಗಳು",
+      "ml": "സപ്തർഷി മണ്ഡലം: ഏഴ് ജ്ഞാനികൾ"
+    },
+    "scienceLocalized": {
+      "en": "The outer bowl stars Merak and Dubhe point directly to Polaris, the North Celestial Pole, guiding travelers for centuries.",
+      "hi": "सप्तर्षि के दो बाहरी तारे मेराक और दुभे सीधे उत्तर ध्रुव तारे की ओर संकेत करते हैं, जो सदियों से दिशासूचक रहे हैं।",
+      "mr": "सप्तर्षीतील क्रतू आणि पुलह हे तारे थेट उत्तर दिशेच्या ध्रुव ताऱ्याकडे अचूक दिशा दाखवतात.",
+      "te": "సప్తర్షి మండలంలోని క్రతు మరియు పులహ నక్షత్రాలు నేరుగా ఉత్తర ధ్రువ నక్షత్రం వైపు దారి చూపుతూ శతాబ్దాలుగా మార్గదర్శనం చేస్తున్నాయి.",
+      "ta": "சப்தரிஷி மண்டலத்தின் இரு நட்சத்திரங்கள் நேராக துருவ விண்மீனை நோக்கி வழிகாட்டுகின்றன.",
+      "kn": "ಸಪ್ತರ್ಷಿಯ ಹೊರಗಿನ ತಾರೆಗಳಾದ ಮೆರಾಕ್ ಮತ್ತು ದುಭೆ ನೇರವಾಗಿ ಉತ್ತರ ಧ್ರುವ ನಕ್ಷತ್ರವನ್ನು ತೋರಿಸುತ್ತವೆ.",
+      "ml": "സപ്തർഷി മണ്ഡലത്തിലെ രണ്ട് പുറം നക്ഷത്രങ്ങൾ നേരെ വടക്കൻ ധ്രുവനക്ഷത്രത്തിലേക്ക് വിരൽചൂണ്ടുന്നു."
+    }
+  }
+];
+
+// --- Web Audio Celestial Chime Generator ---
+function getAudioContext() {
+  if (!audioCtx) {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioContextClass) audioCtx = new AudioContextClass();
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume().catch(() => {});
+  }
+  return audioCtx;
+}
+
+function playCelestialChime(freq = 528) {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    osc.frequency.exponentialRampToValueAtTime(freq * 1.5, now + 0.6);
+
+    // Subtle celestial shimmer that doesn't mask the narrator voice
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.035, now + 0.05);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.75);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.8);
+  } catch (_) {}
+}
+
+// --- Indic Script to Spoken Phonetic Transliteration ---
+// Allows standard English voices (e.g. on Windows default) to articulate Indic words cleanly
+function indicToPhonetic(str) {
+  if (!str) return '';
+  const devaVowels = {'अ':'a','आ':'aa','इ':'i','ई':'ee','उ':'u','ऊ':'oo','ऋ':'ri','ए':'e','ऐ':'ai','ओ':'o','औ':'au','अं':'am','अः':'ah'};
+  const devaMatras = {'ा':'aa','ि':'i','ी':'ee','ु':'u','ू':'oo','ृ':'ri','े':'e','ै':'ai','ो':'o','ौ':'au','ं':'n','ः':'h'};
+  const devaCons = {
+    'क':'k','ख':'kh','ग':'g','घ':'gh','ङ':'ng','च':'ch','छ':'chh','ज':'j','झ':'jh','ञ':'ny',
+    'ट':'t','ठ':'th','ड':'d','ढ':'dh','ण':'n','त':'t','थ':'th','द':'d','ध':'dh','न':'n',
+    'प':'p','फ':'ph','ब':'b','भ':'bh','म':'m','य':'y','र':'r','ल':'l','व':'v','श':'sh',
+    'ष':'sh','स':'s','ह':'h','ळ':'l','क्ष':'ksh','ज्ञ':'gya'
+  };
+
+  const telVowels = {'అ':'a','ఆ':'aa','ఇ':'i','ఈ':'ee','ఉ':'u','ఊ':'oo','ఋ':'ri','ఎ':'e','ఏ':'e','ఐ':'ai','ఒ':'o','ఓ':'o','ఔ':'au','అం':'am','అః':'ah'};
+  const telMatras = {'ా':'aa','ి':'i','ీ':'ee','ు':'u','ూ':'oo','ృ':'ri','ె':'e','ే':'e','ై':'ai','ొ':'o','ో':'o','ౌ':'au','ం':'m','ః':'h'};
+  const telCons = {
+    'క':'k','ఖ':'kh','గ':'g','ఘ':'gh','ఙ':'ng','చ':'ch','ఛ':'chh','జ':'j','ఝ':'jh','ఞ':'ny',
+    'ట':'t','ఠ':'th','డ':'d','ఢ':'dh','ణ':'n','త':'t','థ':'th','ద':'d','ధ':'dh','న':'n',
+    'ప':'p','ఫ':'ph','బ':'b','భ':'bh','మ':'m','య':'y','ర':'r','ల':'l','వ':'v','శ':'sh',
+    'ష':'sh','స':'s','హ':'h','ళ':'l','క్ష':'ksh','ఱ':'r'
+  };
+
+  const tamVowels = {
+    'அ':'a','ஆ':'aa','இ':'i','ஈ':'ee','உ':'u','ஊ':'oo',
+    'எ':'e','ஏ':'ae','ஐ':'ai','ஒ':'o','ஓ':'oo','ஔ':'au','ஃ':'h'
+  };
+  const tamMatras = {
+    'ா':'aa','ி':'i','ீ':'ee','ு':'u','ூ':'oo',
+    'ெ':'e','ே':'ae','ை':'ai','ொ':'o','ோ':'oo','ௌ':'au'
+  };
+  const tamCons = {
+    'க':'k','ங':'ng','ச':'ch','ஞ':'ny','ட':'t','ண':'n',
+    'த':'th','ந':'n','ப':'p','ம':'m','ய':'y','ர':'r',
+    'ல':'l','வ':'v','ழ':'zh','ள':'l','ற':'r','ன':'n',
+    'ஜ':'j','ஷ':'sh','ஸ':'s','ஹ':'h','க்ஷ':'ksh'
+  };
+
+  const knVowels = {'ಅ':'a','ಆ':'aa','ಇ':'i','ಈ':'ee','ಉ':'u','ಊ':'oo','ಋ':'ri','ಎ':'e','ಏ':'e','ಐ':'ai','ಒ':'o','ಓ':'o','ಔ':'au'};
+  const knMatras = {'ಾ':'aa','ಿ':'i','ೀ':'ee','ು':'u','ೂ':'oo','ೃ':'ri','ೆ':'e','ೇ':'e','ೈ':'ai','ೊ':'o','ೋ':'o','ೌ':'au','ಂ':'m','ಃ':'h'};
+  const knCons = {
+    'ಕ':'k','ಖ':'kh','ಗ':'g','ಘ':'gh','ಙ':'ng','ಚ':'ch','ಛ':'chh','ಜ':'j','ಝ':'jh','ಞ':'ny',
+    'ಟ':'t','ಠ':'th','ಡ':'d','ಢ':'dh','ಣ':'n','ತ':'th','ಥ':'th','ದ':'d','ಧ':'dh','ನ':'n',
+    'ಪ':'p','ಫ':'ph','ಬ':'b','ಭ':'bh','ಮ':'m','ಯ':'y','ರ':'r','ಲ':'l','ವ':'v','ಶ':'sh',
+    'ಷ':'sh','ಸ':'s','ಹ':'h','ಳ':'l','ಕ್ಷ':'ksh','ಱ':'r'
+  };
+
+  const mlVowels = {'അ':'a','ആ':'aa','ഇ':'i','ഈ':'ee','ഉ':'u','ഊ':'oo','ഋ':'ri','എ':'e','ഏ':'e','ഐ':'ai','ഒ':'o','ഓ':'o','ഔ':'au'};
+  const mlMatras = {'ാ':'aa','ി':'i','ീ':'ee','ു':'u','ൂ':'oo','ൃ':'ri','െ':'e','േ':'e','ൈ':'ai','ൊ':'o','ോ':'o','ൌ':'au','ൗ':'au','ം':'m','ഃ':'h'};
+  const mlCons = {
+    'ക':'k','ഖ':'kh','ഗ':'g','ഘ':'gh','ങ':'ng','ച':'ch','ഛ':'chh','ജ':'j','ഝ':'jh','ഞ':'ny',
+    'ട':'t','ഠ':'th','ഡ':'d','ഢ':'dh','ണ':'n','ത':'th','ഥ':'th','ദ':'d','ധ':'dh','ന':'n',
+    'പ':'p','ഫ':'ph','ബ':'b','ഭ':'bh','മ':'m','യ':'y','ര':'r','ല':'l','വ':'v','ശ':'sh',
+    'ഷ':'sh','സ':'s','ഹ':'h','ള':'l','ഴ':'zh','റ':'r','ക്ഷ':'ksh'
+  };
+  const mlChillus = {'ൺ':'n','ൻ':'n','ർ':'r','ൽ':'l','ൾ':'l','ൿ':'k'};
+
+  let out = '';
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];
+    const next = str[i+1];
+
+    // Devanagari (Hindi, Marathi)
+    if (devaCons[ch]) {
+      if (next === '्') { out += devaCons[ch]; i++; }
+      else if (devaMatras[next]) { out += devaCons[ch] + devaMatras[next]; i++; }
+      else { out += devaCons[ch] + 'a'; }
+    } else if (devaVowels[ch]) {
+      out += devaVowels[ch];
+    } else if (devaMatras[ch]) {
+      out += devaMatras[ch];
+    }
+    // Telugu
+    else if (telCons[ch]) {
+      if (next === '్') { out += telCons[ch]; i++; }
+      else if (telMatras[next]) { out += telCons[ch] + telMatras[next]; i++; }
+      else { out += telCons[ch] + 'a'; }
+    } else if (telVowels[ch]) {
+      out += telVowels[ch];
+    } else if (telMatras[ch]) {
+      out += telMatras[ch];
+    }
+    // Tamil
+    else if (tamCons[ch]) {
+      if (next === '்') { out += tamCons[ch]; i++; }
+      else if (tamMatras[next]) { out += tamCons[ch] + tamMatras[next]; i++; }
+      else { out += tamCons[ch] + 'a'; }
+    } else if (tamVowels[ch]) {
+      out += tamVowels[ch];
+    } else if (tamMatras[ch]) {
+      out += tamMatras[ch];
+    }
+    // Kannada
+    else if (knCons[ch]) {
+      if (next === '\u0CCD') { out += knCons[ch]; i++; }
+      else if (knMatras[next]) { out += knCons[ch] + knMatras[next]; i++; }
+      else { out += knCons[ch] + 'a'; }
+    } else if (knVowels[ch]) {
+      out += knVowels[ch];
+    } else if (knMatras[ch]) {
+      out += knMatras[ch];
+    }
+    // Malayalam
+    else if (mlCons[ch]) {
+      if (next === '\u0D4D') { out += mlCons[ch]; i++; }
+      else if (mlMatras[next]) { out += mlCons[ch] + mlMatras[next]; i++; }
+      else { out += mlCons[ch] + 'a'; }
+    } else if (mlVowels[ch]) {
+      out += mlVowels[ch];
+    } else if (mlChillus[ch]) {
+      out += mlChillus[ch];
+    } else if (mlMatras[ch]) {
+      out += mlMatras[ch];
+    }
+    // Passthrough spaces, numbers, punctuation, symbols
+    else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
+// --- Voice Resolver with Tiered Fallback ---
+function resolveVoiceForLang(lang) {
+  if (!('speechSynthesis' in window)) return { mode: 'timer' };
+  const voices = window.speechSynthesis.getVoices() || [];
+
+  // Tier 1: Direct native match (e.g. kn-IN, ml-IN, mr-IN, te-IN, hi-IN, ta-IN)
+  const native = voices.find(v => {
+    const vl = (v.lang || '').toLowerCase().replace('_', '-');
+    const vn = (v.name || '').toLowerCase();
+    if (lang === 'kn') return vl.startsWith('kn') || vn.includes('kannada');
+    if (lang === 'ml') return vl.startsWith('ml') || vn.includes('malayalam');
+    if (lang === 'te') return vl.startsWith('te') || vn.includes('telugu');
+    if (lang === 'ta') return vl.startsWith('ta') || vn.includes('tamil');
+    if (lang === 'hi') return vl.startsWith('hi') || vn.includes('hindi');
+    if (lang === 'mr') return vl.startsWith('mr') || vn.includes('marathi');
+    return vl.startsWith(lang);
+  });
+  if (native) {
+    return { voice: native, mode: 'native', langCode: native.lang };
+  }
+
+  // Tier 2: Marathi uses Devanagari script; a Hindi voice synthesizes it with high fluency
+  if (lang === 'mr') {
+    const hi = voices.find(v => v.lang && v.lang.toLowerCase().replace('_', '-').startsWith('hi'));
+    if (hi) {
+      return { voice: hi, mode: 'devanagari', langCode: hi.lang };
+    }
+  }
+
+  // Tier 3: Indian English voice with phonetic syllable synthesis (great for Indic phonetics)
+  const inEn = voices.find(v => (v.lang && v.lang.toLowerCase() === 'en-in') || /india|heera|ravi|neerja|prabhat/i.test(v.name));
+  if (inEn) {
+    return { voice: inEn, mode: 'phonetic', langCode: inEn.lang };
+  }
+
+  // Tier 4: Default system voice (e.g. Microsoft David / Zira / Google US English) using phonetic transliteration
+  const def = voices.find(v => v.default) || voices[0] || null;
+  if (def) {
+    return { voice: def, mode: 'phonetic', langCode: def.lang || 'en-US' };
+  }
+
+  return { mode: 'timer' };
+}
+
+// Load Stories Data (prefer public subset)
+async function initStories() {
+  try {
+    const res = await fetch('data/audio-stories.public.json').catch(() => fetch('data/audio-stories.json'));
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        stories = data;
+      }
+    }
+  } catch (e) {
+    console.warn('Using bundled audio stories fallback:', e);
+  }
+
+  if (!stories || stories.length === 0) {
+    stories = FALLBACK_STORIES;
+  }
+
+  // Populate Table of Contents
+  $('#chapter-count').textContent = stories.length;
+  renderTOC();
+
+  // Check URL hash for direct story link
+  const hash = location.hash.replace('#', '');
+  const idx = stories.findIndex(s => s.id === hash);
+  if (idx >= 0) curIdx = idx;
+
+  renderCurrentStory();
+}
+
+window.addEventListener('hashchange', () => {
+  const hash = location.hash.replace('#', '');
+  const idx = stories.findIndex(s => s.id === hash);
+  if (idx >= 0 && idx !== curIdx) {
+    curIdx = idx;
+    if (typeof stopNarration === 'function') stopNarration();
+    renderCurrentStory();
+  }
+});
+
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    const resolved = resolveVoiceForLang(curLang);
+    const dict = I18N[curLang] || I18N.en;
+    const badge = $('#voice-badge');
+    if (badge) {
+      badge.textContent = resolved.mode === 'native' ? dict.voiceNative
+        : resolved.mode === 'devanagari' ? dict.voiceDevanagari
+        : resolved.mode === 'phonetic' ? dict.voicePhonetic
+        : dict.voiceCelestial;
+    }
+  };
+}
+
+// --- Storybook Page Rendering ---
+function renderTOC() {
+  const menu = $('#toc-menu');
+  menu.innerHTML = stories.map((s, i) => `
+    <button class="toc-item ${i === curIdx ? 'active' : ''}" data-idx="${i}">
+      <span>${s.glyph || '✦'}</span>
+      <span><b>Ch. ${i + 1}</b> · ${s.title}</span>
+    </button>
+  `).join('');
+
+  menu.onclick = e => {
+    const btn = e.target.closest('[data-idx]');
+    if (btn) {
+      curIdx = +btn.dataset.idx;
+      stopNarration();
+      location.hash = stories[curIdx].id;
+      renderCurrentStory();
+      menu.classList.remove('open');
+      $('#btn-toc').setAttribute('aria-expanded', 'false');
+      $('#toc-arrow').textContent = '▼';
+    }
+  };
+}
+
+function renderCurrentStory() {
+  const s = stories[curIdx];
+  if (!s) return;
+
+  // Update URL hash without extra history entries
+  history.replaceState(null, '', '#' + s.id);
+
+  const chNum = curIdx + 1;
+  const dict = I18N[curLang] || I18N.en;
+
+  // Ensure curLang is supported by this story
+  const availLangs = s.languages ? Object.keys(s.languages) : ['en'];
+  if (!availLangs.includes(curLang)) {
+    curLang = availLangs[0] || 'en';
+  }
+
+  // Update Language Bar
+  const langBar = $('#lang-bar');
+  langBar.innerHTML = availLangs.map(l => `
+    <button class="lang-chip ${l === curLang ? 'active' : ''}" data-lang="${l}">
+      ${LANG_LABELS[l] || l.toUpperCase()}
+    </button>
+  `).join('');
+
+  langBar.onclick = e => {
+    const chip = e.target.closest('[data-lang]');
+    if (chip && chip.dataset.lang !== curLang) {
+      curLang = chip.dataset.lang;
+      stopNarration();
+      renderCurrentStory();
+    }
+  };
+
+  // Story Content & Localized Titles
+  const langData = (s.languages && s.languages[curLang]) || (s.languages && s.languages.en) || {};
+  const localizedTitle = langData.title || (s.subtitles && s.subtitles[curLang]) || s.title;
+  const chTitle = localizedTitle;
+
+  const tradName = (dict.traditions && dict.traditions[s.tradition]) || s.tradition;
+  const localizedSubtitle = (s.subtitles && s.subtitles[curLang]) || langData.title || s.title;
+
+  $('#story-title').textContent = chTitle;
+  $('#player-title').textContent = chTitle;
+  $('#plate-glyph').textContent = s.glyph || '✦';
+  $('#plate-constellation').textContent = s.constellation || 'Constellation';
+  $('#plate-subtitle').textContent = localizedSubtitle;
+  $('#tradition-badge').textContent = tradName;
+
+  // Observational Astrophysics Callout
+  const sciBoxBold = $('#science-box b');
+  if (sciBoxBold) sciBoxBold.textContent = dict.scienceLabel;
+  
+  const localizedScience = (s.scienceLocalized && s.scienceLocalized[curLang]) || s.science || dict.defaultScience;
+  $('#science-text').textContent = localizedScience;
+
+  // Eyebrow and Page Indicator
+  const eyeEl = $('#chapter-eyebrow');
+  if (curLang === 'mr') {
+    eyeEl.textContent = `${dict.chapter} ${chNum} ${dict.of} ${stories.length} · ${chTitle}`;
+  } else if (curLang === 'ml') {
+    eyeEl.textContent = `${stories.length}${dict.of} ${dict.chapter} ${chNum} · ${chTitle}`;
+  } else if (curLang === 'ta') {
+    eyeEl.textContent = `${stories.length}-${dict.of} ${dict.chapter} ${chNum} · ${chTitle}`;
+  } else {
+    eyeEl.textContent = `${dict.chapter} ${chNum} ${dict.of} ${stories.length} · ${chTitle}`;
+  }
+
+  $('#page-indicator').textContent = `${dict.chapter} ${chNum} ${dict.of} ${stories.length}`;
+  $('#btn-prev-page').textContent = dict.prevChapter;
+  $('#btn-next-page').textContent = dict.nextChapter;
+
+  const tocBtnTxt = $('#btn-toc span:first-child');
+  if (tocBtnTxt) {
+    tocBtnTxt.innerHTML = `${dict.browseChapters} (<span id="chapter-count">${stories.length}</span>)`;
+  }
+
+  // Populate Story Sentences with click-to-seek
+  const sentences = langData.sentences || [{ text: s.story || 'Celestial story lore.', start: 0, end: 15 }];
+  totalDuration = langData.duration || (sentences[sentences.length - 1] ? sentences[sentences.length - 1].end : 30);
+  $('#dur-time').textContent = formatTime(totalDuration);
+
+  // Latin script (English) uses traditional drop-cap.
+  // Indic scripts (Kannada, Malayalam, Telugu, Marathi, Hindi, Tamil) hide drop-cap
+  // to avoid severing composite aksharas, matras, and viramas.
+  const dropCapEl = $('#drop-cap');
+  const container = $('#sentence-container');
+
+  if (curLang === 'en') {
+    dropCapEl.style.display = 'block';
+    const fullText = sentences[0] ? sentences[0].text : '';
+    const firstChar = fullText.charAt(0);
+    dropCapEl.textContent = firstChar;
+
+    container.innerHTML = sentences.map((sent, i) => {
+      let txt = sent.text;
+      if (i === 0 && txt.startsWith(firstChar)) {
+        txt = txt.slice(1);
+      }
+      return `<span class="story-sentence ${i === curSentenceIdx ? 'active' : ''}" data-sidx="${i}">${txt}</span> `;
+    }).join('');
+  } else {
+    dropCapEl.style.display = 'none';
+    container.innerHTML = sentences.map((sent, i) => `
+      <span class="story-sentence ${i === curSentenceIdx ? 'active' : ''}" data-sidx="${i}">${sent.text}</span>
+    `).join(' ');
+  }
+
+  container.onclick = e => {
+    const span = e.target.closest('[data-sidx]');
+    if (span) {
+      const idx = +span.dataset.sidx;
+      curSentenceIdx = idx;
+      highlightSentence(idx);
+      if (isPlaying) {
+        playSentenceFrom(idx);
+      } else {
+        playNarration();
+      }
+    }
+  };
+
+  // Update engine mode in ribbon
+  const resolved = resolveVoiceForLang(curLang);
+  $('#voice-badge').textContent = resolved.mode === 'native' ? dict.voiceNative
+    : resolved.mode === 'devanagari' ? dict.voiceDevanagari
+    : resolved.mode === 'phonetic' ? dict.voicePhonetic
+    : dict.voiceCelestial;
+  $('#engine-mode-txt').textContent = resolved.mode === 'timer' ? dict.engineModeCelestial : dict.engineModeSpeech;
+
+  curSentenceIdx = 0;
+  updateScrubber(0);
+}
+
+function highlightSentence(idx) {
+  $$('.story-sentence').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+  const s = stories[curIdx];
+  const langData = (s.languages && s.languages[curLang]) || {};
+  const sentences = langData.sentences || [];
+  if (sentences[idx]) {
+    updateScrubber(sentences[idx].start);
+  }
+}
+
+function updateScrubber(seconds) {
+  simulatedElapsed = seconds;
+  const pct = Math.min(100, Math.max(0, (seconds / (totalDuration || 1)) * 100));
+  $('#scrubber').value = pct;
+  $('#cur-time').textContent = formatTime(seconds);
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+}
+
+function clearPlaybackTimers() {
+  if (sentenceTimer) { clearTimeout(sentenceTimer); sentenceTimer = null; }
+  if (fallbackTimer) { clearTimeout(fallbackTimer); fallbackTimer = null; }
+}
+
+// --- Narration Engine via Web Speech & Celestial Tone Fallback ---
+function playNarration() {
+  clearPlaybackTimers();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  isPlaying = true;
+  updatePlayButton(true);
+  playSentenceFrom(curSentenceIdx);
+}
+
+function playSentenceFrom(idx) {
+  clearPlaybackTimers();
+
+  const s = stories[curIdx];
+  const langData = (s.languages && s.languages[curLang]) || {};
+  const sentences = langData.sentences || [];
+
+  if (idx >= sentences.length) {
+    stopNarration();
+    return;
+  }
+
+  curSentenceIdx = idx;
+  highlightSentence(idx);
+
+  const sent = sentences[idx];
+  const rawDuration = (sent.end - sent.start) || 4.5;
+  const sentDuration = Math.max(3.5, rawDuration) / playbackSpeed;
+
+  // Soft ambient celestial chime on sentence arrival
+  playCelestialChime(440 + (idx % 6) * 55);
+
+  const resolved = resolveVoiceForLang(curLang);
+  const dict = I18N[curLang] || I18N.en;
+
+  // Update badge in player ribbon
+  const badge = $('#voice-badge');
+  const modeTxt = $('#engine-mode-txt');
+  if (resolved.mode === 'native') {
+    badge.textContent = dict.voiceNative;
+    modeTxt.textContent = dict.engineModeSpeech;
+  } else if (resolved.mode === 'devanagari') {
+    badge.textContent = dict.voiceDevanagari;
+    modeTxt.textContent = dict.engineModeSpeech;
+  } else if (resolved.mode === 'phonetic') {
+    badge.textContent = dict.voicePhonetic;
+    modeTxt.textContent = dict.engineModeSpeech;
+  } else {
+    badge.textContent = dict.voiceCelestial;
+    modeTxt.textContent = dict.engineModeCelestial;
+  }
+
+  // If speech synthesis is not supported or resolved to timer:
+  if (!('speechSynthesis' in window) || resolved.mode === 'timer') {
+    playSentenceTimerFallback(idx, sentDuration);
+    return;
+  }
+
+  try {
+    speechToken++;
+    const curToken = speechToken;
+
+    // Cancel previous utterance
+    window.speechSynthesis.cancel();
+
+    let spokenText = sent.text;
+    // If system voice doesn't know Indic script, speak phonetic transliteration
+    if (resolved.mode === 'phonetic' && curLang !== 'en') {
+      spokenText = indicToPhonetic(sent.text);
+    }
+
+    // Delay ~60ms between cancel and speak to avoid Chromium / Windows speech IPC drop
+    setTimeout(() => {
+      if (curToken !== speechToken || !isPlaying) return;
+
+      const utter = new SpeechSynthesisUtterance(spokenText);
+      window.__activeUtterance = utter; // Retain active reference to prevent garbage collection cut-off
+      utter.rate = playbackSpeed * (curLang === 'en' ? 1.0 : 0.92);
+      utter.pitch = 1.0;
+      utter.volume = 1.0;
+      if (resolved.voice) utter.voice = resolved.voice;
+      utter.lang = resolved.langCode || SPEECH_CODES[curLang] || 'en-IN';
+
+      let handled = false;
+
+      utter.onend = () => {
+        if (handled || curToken !== speechToken) return;
+        handled = true;
+        clearPlaybackTimers();
+        window.__activeUtterance = null;
+        if (isPlaying) {
+          if (curSentenceIdx + 1 < sentences.length) {
+            sentenceTimer = setTimeout(() => {
+              if (curToken === speechToken && isPlaying) {
+                playSentenceFrom(curSentenceIdx + 1);
+              }
+            }, 350);
+          } else {
+            stopNarration();
+          }
+        }
+      };
+
+      utter.onerror = (e) => {
+        if (handled || curToken !== speechToken) return;
+        // Ignore normal cancel/interrupted events when stopping or switching
+        if (e && (e.error === 'interrupted' || e.error === 'canceled')) {
+          return;
+        }
+        console.warn('Speech synthesis note:', e ? (e.error || e) : 'error');
+        handled = true;
+        clearPlaybackTimers();
+        window.__activeUtterance = null;
+        if (isPlaying) {
+          playSentenceTimerFallback(curSentenceIdx, sentDuration);
+        }
+      };
+
+      // Watchdog timer: ensure story smoothly continues if browser engine stalls silently,
+      // but NEVER cut off an actively speaking voice!
+      const watchdogDelay = Math.max(5000, (sentDuration + 3.0) * 1000);
+      fallbackTimer = setTimeout(function checkWatchdog() {
+        if (handled || curToken !== speechToken || !isPlaying) return;
+        if (window.speechSynthesis && window.speechSynthesis.speaking) {
+          fallbackTimer = setTimeout(checkWatchdog, 1000);
+          return;
+        }
+        handled = true;
+        window.__activeUtterance = null;
+        if (curSentenceIdx + 1 < sentences.length) {
+          playSentenceFrom(curSentenceIdx + 1);
+        } else {
+          stopNarration();
+        }
+      }, watchdogDelay);
+
+      window.speechSynthesis.speak(utter);
+    }, 60);
+
+  } catch (err) {
+    console.warn('Speech invocation error, falling back to timer pacing:', err);
+    playSentenceTimerFallback(idx, sentDuration);
+  }
+}
+
+function playSentenceTimerFallback(idx, durationSec) {
+  clearPlaybackTimers();
+  const s = stories[curIdx];
+  const langData = (s.languages && s.languages[curLang]) || {};
+  const sentences = langData.sentences || [];
+
+  const dict = I18N[curLang] || I18N.en;
+  $('#voice-badge').textContent = dict.voiceCelestial;
+  $('#engine-mode-txt').textContent = dict.engineModeCelestial;
+
+  const startTime = performance.now();
+  const startSec = sentences[idx] ? sentences[idx].start : 0;
+  const endSec = sentences[idx] ? sentences[idx].end : (startSec + durationSec);
+
+  function stepProgress() {
+    if (!isPlaying || curSentenceIdx !== idx) return;
+    const elapsed = (performance.now() - startTime) / 1000;
+    const progressFrac = Math.min(1, elapsed / durationSec);
+    const currentSec = startSec + progressFrac * (endSec - startSec);
+    updateScrubber(currentSec);
+
+    if (progressFrac < 1) {
+      sentenceTimer = setTimeout(stepProgress, 100);
+    } else {
+      if (curSentenceIdx + 1 < sentences.length) {
+        playSentenceFrom(curSentenceIdx + 1);
+      } else {
+        stopNarration();
+      }
+    }
+  }
+
+  stepProgress();
+}
+
+function stopNarration() {
+  speechToken++;
+  isPlaying = false;
+  clearPlaybackTimers();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  window.__activeUtterance = null;
+  updatePlayButton(false);
+}
+
+function updatePlayButton(playing) {
+  $('#btn-play').textContent = playing ? '❚❚' : '▶';
+  $('#btn-play').setAttribute('aria-label', playing ? 'Pause narration' : 'Play narration');
+  $('#eq-bars').classList.toggle('playing', playing);
+}
+
+// --- Event Listeners ---
+$('#btn-play').onclick = () => {
+  if (isPlaying) stopNarration();
+  else playNarration();
+};
+
+$('#btn-prev-page').onclick = () => {
+  if (curIdx > 0) {
+    curIdx--;
+    stopNarration();
+    renderCurrentStory();
+  }
+};
+
+$('#btn-next-page').onclick = () => {
+  if (curIdx < stories.length - 1) {
+    curIdx++;
+    stopNarration();
+    renderCurrentStory();
+  }
+};
+
+$('#btn-toc').onclick = () => {
+  const menu = $('#toc-menu');
+  const open = menu.classList.toggle('open');
+  $('#btn-toc').setAttribute('aria-expanded', String(open));
+  $('#toc-arrow').textContent = open ? '▲' : '▼';
+};
+
+const SPEEDS = [0.8, 1.0, 1.25];
+$('#btn-speed').onclick = () => {
+  let cur = SPEEDS.indexOf(playbackSpeed);
+  playbackSpeed = SPEEDS[(cur + 1) % SPEEDS.length];
+  $('#btn-speed').textContent = `${playbackSpeed}x`;
+  if (isPlaying) {
+    playSentenceFrom(curSentenceIdx);
+  }
+};
+
+$('#scrubber').oninput = e => {
+  const pct = +e.target.value;
+  const targetSec = (pct / 100) * totalDuration;
+  updateScrubber(targetSec);
+  const s = stories[curIdx];
+  const langData = (s.languages && s.languages[curLang]) || {};
+  const sentences = langData.sentences || [];
+  const bestIdx = sentences.findIndex(sent => targetSec >= sent.start && targetSec <= sent.end);
+  if (bestIdx >= 0) {
+    curSentenceIdx = bestIdx;
+    highlightSentence(bestIdx);
+    if (isPlaying) playSentenceFrom(bestIdx);
+  }
+};
+
+// Keyboard shortcuts: Space for play/pause, Left/Right arrows for chapters
+window.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.code === 'Space') {
+    e.preventDefault();
+    $('#btn-play').click();
+  } else if (e.code === 'ArrowLeft') {
+    $('#btn-prev-page').click();
+  } else if (e.code === 'ArrowRight') {
+    $('#btn-next-page').click();
+  }
+});
+
+initStories();
+
+  </script>
+</body>
+</html>

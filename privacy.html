@@ -5,7 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Privacy Policy · Cosmic Mythology AR Explorer</title>
   <meta name="description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cosmic-ar-explorer.app/privacy.html">
+  <meta property="og:title" content="Privacy Policy · Cosmic Mythology AR Explorer">
+  <meta property="og:description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
+  <meta property="og:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy · Cosmic Mythology AR Explorer">
+  <meta name="twitter:description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
+  <meta name="twitter:image" content="https://cosmic-ar-explorer.app/assets/og-image.jpg">
+  <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <style>
     :root {
       --bg: #04060d;
@@ -113,6 +124,7 @@
       <a href="index.html" class="nav-brand">✦ Cosmic AR</a>
       <nav class="nav-links">
         <a href="index.html">← Return to Explorer</a>
+        <a href="audio.html">Audio Book</a>
         <a href="about.html">About</a>
         <a href="privacy.html" style="color:var(--ink);font-weight:600">Privacy</a>
       </nav>
@@ -150,12 +162,12 @@
       </section>
 
       <section class="gl">
-        <h2>3. Third-Party Analytics, Cookies &amp; Ads</h2>
+        <h2>3. Third-Party Requests, Self-Hosting &amp; Server Logs</h2>
         <ul>
-          <li><b>No Analytics:</b> We do not use Google Analytics, Meta Pixel, or any behavioral telemetry tracking tools.</li>
-          <li><b>No Cookies:</b> The application sets zero HTTP cookies.</li>
-          <li><b>No Advertising:</b> The application contains zero advertising networks, promotional trackers, or monetized data brokers.</li>
-          <li><b>External Links:</b> Outbound source links on sky news cards and citation audits open directly to verified academic and governmental repositories (NASA, ESA, ESO, Perseus, Sacred Texts). Those third-party websites operate under their own privacy policies.</li>
+          <li><b>100% Self-Hosted Assets (Zero Third-Party CDNs):</b> All library scripts (Three.js pinned to release r128) and all typography (Cormorant Garamond and Space Grotesk) are self-hosted directly on the origin server under <code>/vendor/</code> and <code>/assets/fonts/</code>. External calls to Google Fonts and Cloudflare CDN have been completely removed.</li>
+          <li><b>Web Speech API &amp; Cloud Voices:</b> In-browser audio story narration uses the standard W3C Web Speech API. While speech is processed on-device whenever native offline voices are available, certain operating systems (such as iOS, Android, or ChromeOS) may route speech requests through vendor cloud text-to-speech services if the user's operating system is configured to use cloud-backed voices.</li>
+          <li><b>Hosting Server Logs:</b> Standard static hosting platforms (such as Netlify, Vercel, or Cloudflare Pages) automatically log incoming HTTP request metadata (IP address, user agent, requested file, and timestamp) for network routing, security, and caching. The Cosmic Explorer application operates zero databases, sets zero cookies, and runs no analytics software to process or retain these logs.</li>
+          <li><b>External Outbound Links:</b> Astronomical news cards and citation audits contain direct links to external observatories and academic institutions (NASA, ESA, ESO, Perseus, Sacred Texts). Clicking those external links connects you directly to those third-party domains under their respective privacy policies.</li>
         </ul>
       </section>
     </main>

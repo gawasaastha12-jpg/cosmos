@@ -1,0 +1,10 @@
+{
+  "excludePendingCommunityReview": true,
+  "pendingReviewTraditions": [
+    "ind",
+    "poly",
+    "amer"
+  ],
+  "hideUnverified": true,
+  "note": "When excludePendingCommunityReview is true, only traditions explicitly listed in pendingReviewTraditions are excluded from the public build. Nakshatras ('nak') and other traditions remain public for verified and probable stories. You can edit pendingReviewTraditions to add or remove traditions at any time."
+}
