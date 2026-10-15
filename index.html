@@ -438,6 +438,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
     url: 'https://bhqblmcuopynalhmingo.supabase.co',
     anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJocWJsbWN1b3B5bmFsaG1pbmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwNzY5OTMsImV4cCI6MjEwNzY1Mjk5M30.NI1ffwj9aDcEFNuDMDF1TS9Fr5B78175_ShglaGVsQo'
   };
+  window.SAVE = window.SAVE || {};
 </script>
 <script type="module">
   import * as Astro from './js/astro.js';
@@ -3016,8 +3017,13 @@ function showAvatarPickerModal() {
 function getActiveSession() {
   try {
     const raw = localStorage.getItem('cosmos_active_session');
-    return raw ? JSON.parse(raw) : null;
+    if (raw) return JSON.parse(raw);
   } catch(e) { return null; }
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
+    const u = window.CloudSync.getCurrentUser();
+    if (u) return { user: u };
+  }
+  return null;
 }
 
 function getSaveKey() {
@@ -3088,6 +3094,36 @@ function loadCurrentProgress() {
 }
 
 SAVE = loadCurrentProgress();
+window.SAVE = SAVE;
+
+function getCurrentStargazerUser() {
+  if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
+    return SAVE.user;
+  }
+  if (typeof window.SAVE !== 'undefined' && window.SAVE && window.SAVE.user && (window.SAVE.user.callsign || window.SAVE.user.email)) {
+    return window.SAVE.user;
+  }
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
+    const u = window.CloudSync.getCurrentUser();
+    if (u && (u.callsign || u.email)) return u;
+  }
+  const sess = getActiveSession();
+  if (sess && sess.user && (sess.user.callsign || sess.user.email)) {
+    return sess.user;
+  }
+  return null;
+}
+
+window.setGlobalUser = function(u) {
+  if (typeof SAVE !== 'undefined') {
+    if (u) SAVE.user = u; else delete SAVE.user;
+  }
+  if (typeof window.SAVE !== 'undefined' && window.SAVE) {
+    if (u) window.SAVE.user = u; else delete window.SAVE.user;
+  }
+  updateNavUser();
+  if (typeof updateHUD === 'function') updateHUD();
+};
 
 function saveGame() {
   try {
@@ -3113,13 +3149,17 @@ function updateNavUser() {
   const label = document.getElementById('nav-user-label');
   const foot = document.getElementById('footer-account-link');
   const hasBackend = isCloudConfigured();
+  const currentUser = getCurrentStargazerUser();
+
   if (chip) {
     if (!hasBackend) {
       chip.style.display = 'none';
     } else {
       chip.style.display = 'inline-flex';
-      if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
-        const displayName = SAVE.user.callsign || (SAVE.user.email ? SAVE.user.email.split('@')[0] : 'Stargazer');
+      if (currentUser && (currentUser.callsign || currentUser.email)) {
+        if (typeof SAVE !== 'undefined' && SAVE) SAVE.user = currentUser;
+        if (typeof window.SAVE !== 'undefined' && window.SAVE) window.SAVE.user = currentUser;
+        const displayName = currentUser.callsign || (currentUser.email ? currentUser.email.split('@')[0] : 'Stargazer');
         if (label) label.textContent = displayName;
         chip.style.color = 'var(--sci)';
         chip.title = 'Stargazer: ' + displayName + ' (Click to manage account / log out)';
@@ -3149,7 +3189,7 @@ function updateNavUser() {
       foot.style.display = 'inline-block';
       foot.onclick = e => {
         e.preventDefault();
-        if (typeof SAVE !== 'undefined' && SAVE && SAVE.user) {
+        if (getCurrentStargazerUser()) {
           openStargazerModal();
         } else if (isCloudConfigured()) {
           openSignInModal();
@@ -3229,11 +3269,11 @@ function openSignInModal() {
 
 function openStargazerModal() {
   const d = $('#dlg');
-  if (!d || !SAVE.user) return;
-  const user = SAVE.user;
-  const m = COMPANIONS[SAVE.avatar] || COMPANIONS.owl;
-  const cardCount = (SAVE.cards || []).length;
-  const doneCount = Object.keys(SAVE.done || {}).length;
+  const user = getCurrentStargazerUser();
+  if (!d || !user) return;
+  const m = COMPANIONS[(SAVE && SAVE.avatar) || 'owl'] || COMPANIONS.owl;
+  const cardCount = ((SAVE && SAVE.cards) || []).length;
+  const doneCount = Object.keys((SAVE && SAVE.done) || {}).length;
 
   d.className = 'wide game-modal';
   d.innerHTML = `
@@ -3260,11 +3300,11 @@ function openStargazerModal() {
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:20px">
       <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
-        <div style="font-size:20px;font-weight:700;color:#ffd27a">⭐ ${SAVE.stars || 0}</div>
+        <div style="font-size:20px;font-weight:700;color:#ffd27a">⭐ ${(SAVE && SAVE.stars) || 0}</div>
         <div style="font-size:11px;color:var(--mut)">Stars Earned</div>
       </div>
       <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
-        <div style="font-size:20px;font-weight:700;color:var(--sci)">✦ ${SAVE.xp || 0}</div>
+        <div style="font-size:20px;font-weight:700;color:var(--sci)">✦ ${(SAVE && SAVE.xp) || 0}</div>
         <div style="font-size:11px;color:var(--mut)">Stardust XP</div>
       </div>
       <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
@@ -3290,12 +3330,16 @@ function openStargazerModal() {
 }
 
 async function logoutStargazer() {
-  const callsign = SAVE.user ? (SAVE.user.callsign || SAVE.user.email) : 'Stargazer';
+  const user = getCurrentStargazerUser();
+  const callsign = user ? (user.callsign || user.email) : 'Stargazer';
   if (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) {
     try { await window.CloudSync.signOut(); } catch(e){}
   }
-  localStorage.removeItem('cosmos_active_session');
+  try { localStorage.removeItem('cosmos_active_session'); } catch(e){}
+  if (typeof SAVE !== 'undefined' && SAVE) delete SAVE.user;
+  if (typeof window.SAVE !== 'undefined' && window.SAVE) delete window.SAVE.user;
   SAVE = loadCurrentProgress();
+  window.SAVE = SAVE;
   updateNavUser();
   updateHUD();
   renderTrail();

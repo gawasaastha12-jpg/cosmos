@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cosmos.vercel.app/sitemap.xml
+Sitemap: https://cosmic-explorer.org/sitemap.xml

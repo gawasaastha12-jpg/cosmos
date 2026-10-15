@@ -9,6 +9,7 @@ const MAX_KEYS = ['xp', 'stars', 'streak'];
 
 let sb = null;
 let pushTimer = null;
+let currentUser = null;
 
 export function getClient() {
   return sb;
@@ -18,11 +19,35 @@ export function isConfigured() {
   return sb !== null;
 }
 
+export function getCurrentUser() {
+  return currentUser;
+}
+
 export function initCloud(url, anonKey) {
   if (!url || !anonKey) {
     console.warn('Cloud sync not initialized: missing url or anonKey');
     return null;
   }
+
+  // Check for any authentication errors in the URL hash or query parameters
+  if (typeof window !== 'undefined' && window.location) {
+    try {
+      const hash = window.location.hash || '';
+      const search = window.location.search || '';
+      const queryStr = hash.startsWith('#') ? hash.slice(1) : (search.startsWith('?') ? search.slice(1) : '');
+      const params = new URLSearchParams(queryStr);
+      const err = params.get('error_description') || params.get('error');
+      if (err) {
+        console.warn('Supabase Auth URL error:', err);
+        setTimeout(() => {
+          if (typeof window.showToast === 'function') {
+            window.showToast('⚠️', 'Authentication', decodeURIComponent(err).replace(/\+/g, ' '));
+          }
+        }, 600);
+      }
+    } catch(e) {}
+  }
+
   // anon key is public by design; RLS protects data
   sb = createClient(url, anonKey, {
     auth: {
@@ -33,20 +58,55 @@ export function initCloud(url, anonKey) {
 
   const applySession = (session) => {
     if (typeof window === 'undefined') return;
+    const prevUserEmail = currentUser?.email;
+
     if (session?.user) {
-      if (window.SAVE) {
-        window.SAVE.user = {
-          id: session.user.id,
-          email: session.user.email,
-          callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
-          role: 'stargazer'
-        };
+      currentUser = {
+        id: session.user.id,
+        email: session.user.email,
+        callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
+        role: 'stargazer'
+      };
+
+      try {
+        localStorage.setItem('cosmos_active_session', JSON.stringify({ user: currentUser, token: session.access_token }));
+      } catch (e) {}
+
+      window.SAVE = window.SAVE || {};
+      window.SAVE.user = currentUser;
+
+      if (typeof window.setGlobalUser === 'function') {
+        window.setGlobalUser(currentUser);
+      }
+
+      // If user landed via email magic link or OAuth redirect with URL hash tokens, clean URL
+      if (window.location && window.location.hash && (window.location.hash.includes('access_token') || window.location.hash.includes('refresh_token') || window.location.hash.includes('type='))) {
+        try {
+          window.history.replaceState(window.history.state, document.title, window.location.pathname + window.location.search);
+        } catch (e) {}
+      }
+
+      if (!prevUserEmail && session.user.email) {
+        setTimeout(() => {
+          if (typeof window.showToast === 'function') {
+            window.showToast('✨', 'Welcome Stargazer!', `Connected as ${currentUser.callsign}`);
+          }
+        }, 600);
       }
     } else {
+      currentUser = null;
+      try {
+        localStorage.removeItem('cosmos_active_session');
+      } catch (e) {}
+
       if (window.SAVE) {
         delete window.SAVE.user;
       }
+      if (typeof window.setGlobalUser === 'function') {
+        window.setGlobalUser(null);
+      }
     }
+
     if (typeof window.updateNavUser === 'function') {
       window.updateNavUser();
     }
@@ -82,8 +142,13 @@ export const signInWithProvider = (provider) => { // 'github' | 'google'
 export const signOut = async () => {
   if (!sb) return Promise.resolve();
   const res = await sb.auth.signOut();
+  currentUser = null;
+  try {
+    localStorage.removeItem('cosmos_active_session');
+  } catch (e) {}
   if (typeof window !== 'undefined') {
     if (window.SAVE) delete window.SAVE.user;
+    if (typeof window.setGlobalUser === 'function') window.setGlobalUser(null);
     if (typeof window.updateNavUser === 'function') window.updateNavUser();
   }
   return res;
@@ -164,6 +229,7 @@ if (typeof window !== 'undefined') {
     initCloud,
     getClient,
     isConfigured,
+    getCurrentUser,
     signInWithEmail,
     signInWithProvider,
     signOut,
