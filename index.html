@@ -77,6 +77,13 @@ body:not(.warm) #sci h2{color:var(--sci)}
 .hub{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 dialog{margin:auto;max-width:540px;width:calc(100% - 28px);padding:24px;color:var(--ink);background:rgba(10,14,32,.96);border:1px solid var(--bd);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.85);box-sizing:border-box;overflow-x:hidden}
 dialog.wide{max-width:min(760px,95vw);width:100%}
+dialog.signin-modal{max-width:420px!important;width:min(420px,calc(100% - 32px))!important;min-height:520px!important;padding:34px 28px!important;border-radius:24px!important;background:rgba(8,12,30,.98)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 24px 70px rgba(0,0,0,.9)!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;box-sizing:border-box!important;margin:auto!important}
+dialog.signin-modal .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+dialog.signin-modal .signin-card{flex:1;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:18px;padding:26px 20px;margin:16px 0;gap:16px}
+dialog.signin-modal input[type="email"]{width:100%;box-sizing:border-box;padding:13px 18px;border-radius:99px;border:1px solid var(--bd);background:rgba(0,0,0,.35);color:var(--ink);font-size:15px}
+dialog.signin-modal #btn-cloud-magic{width:100%;background:var(--a);color:#05070f;font-weight:600;padding:13px 20px;font-size:15px;border-radius:99px;cursor:pointer;border:none;transition:transform .15s,opacity .15s}
+dialog.signin-modal #btn-cloud-magic:hover{transform:translateY(-1px);opacity:.95}
+dialog.signin-modal .signin-footer{font-size:12px;color:var(--mut);line-height:1.5;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:14px;padding:14px 16px}
 dialog::backdrop{background:rgba(2,4,10,.65);backdrop-filter:blur(6px)}
 dialog .btn:not(.btn-auto){display:block;margin-top:8px;width:100%}
 dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{display:inline-block;width:auto}
@@ -540,13 +547,13 @@ function getCurrentStargazerUser() {
 
 let page='home';
 function go(n){
-  const protectedSections = ['sci', 'myth', 'audio'];
+  const protectedSections = ['sci', 'myth', 'audio', 'play'];
   if (protectedSections.includes(n)) {
     const user = getCurrentStargazerUser();
     if (!user) {
       if (typeof openSignInModal === 'function') openSignInModal();
       if (typeof showToast === 'function') {
-        const secLabel = n === 'sci' ? 'Scientific view' : (n === 'myth' ? 'Myth & culture' : 'the Audiobook');
+        const secLabel = n === 'sci' ? 'Scientific view' : (n === 'myth' ? 'Myth & culture' : (n === 'play' ? 'Journeys' : 'the Audiobook'));
         showToast('🔒', 'Stargazer Access Required', `Please sign in with your email to unlock ${secLabel}.`);
       }
       if (page !== 'home') {
@@ -3262,23 +3269,23 @@ updateNavUser();
 function openSignInModal() {
   const d = $('#dlg');
   if (!d) return;
-  d.className = 'wide game-modal';
+  d.className = 'signin-modal';
   d.innerHTML = `
     <div class="modal-header">
       <div>
-        <h3 style="display:flex;align-items:center;gap:8px"><span>✦</span> Stargazer Cloud Sign In</h3>
-        <p style="font-size:12px;color:var(--mut);margin-top:2px">Optional Supabase Progress Mirror · Local Progress Preserved</p>
+        <h3 style="display:flex;align-items:center;gap:8px;font-size:22px;color:#ffe2b0;margin:0"><span>✦</span> Stargazer Access</h3>
+        <p style="font-size:12px;color:var(--mut);margin-top:4px">Cosmic Observatory Cloud Mirror</p>
       </div>
       <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
     </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:20px;margin:16px 0">
-      <p style="font-size:14px;color:var(--ink);margin-bottom:12px">Enter your email address to receive a secure sign-in magic link and unlock all cosmic archives:</p>
-      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-        <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" style="flex:1;min-width:200px;padding:10px 14px;border-radius:99px;border:1px solid var(--bd);background:rgba(0,0,0,.3);color:var(--ink);font-size:14px" />
-        <button class="btn" style="background:var(--a);color:#05070f;font-weight:600;padding:10px 20px" id="btn-cloud-magic">Send Magic Link</button>
+    <div class="signin-card">
+      <p style="font-size:14px;color:var(--ink);line-height:1.55;margin:0">Sign in with your email address to unlock the full Scientific View, Myth &amp; Culture archives, Journeys, and the Celestial Audiobook:</p>
+      <div style="display:flex;flex-direction:column;gap:12px;width:100%;margin-top:4px">
+        <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" autofocus />
+        <button class="btn" id="btn-cloud-magic">Send Magic Link</button>
       </div>
     </div>
-    <div style="font-size:12px;color:var(--mut);line-height:1.5;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:12px;padding:12px">
+    <div class="signin-footer">
       ✦ <b>Zero Data Loss Guarantee:</b> Your on-device progress in <code>cosmic_save_v2</code> is never overwritten. When you connect, your stars and unlocked cards merge with your cloud record automatically.
     </div>
   `;
