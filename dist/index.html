@@ -3,14 +3,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cosmic-ar-explorer.org/">
+<meta property="og:url" content="https://cosmic-explorer.org/">
 <meta property="og:title" content="Cosmic Mythology AR Explorer">
 <meta property="og:description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
-<meta property="og:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
+<meta property="og:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cosmic Mythology AR Explorer">
 <meta name="twitter:description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
-<meta name="twitter:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
+<meta name="twitter:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
 <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -259,6 +259,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
   <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
   <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    
     <a href="audio.html" style="color:var(--ink);text-decoration:none;font-weight:500">Audio Stories (Book)</a>
     <a href="about.html" style="color:var(--ink);text-decoration:none;font-weight:500">About &amp; Sources</a>
     <a href="privacy.html" style="color:var(--ink);text-decoration:none;font-weight:500">Privacy Policy</a>
@@ -432,6 +433,17 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <dialog id="dlg-audio" class="gl"></dialog>
 
 <script src="vendor/three.min.js" defer></script>
+<script type="module">
+  import * as Astro from './js/astro.js';
+  window.Astro = Astro;
+</script>
+<script type="module">
+  import * as CloudSync from './js/cloud-sync.js';
+  window.CloudSync = CloudSync;
+  if (typeof window.COSMOS_SUPABASE_CONFIG !== 'undefined' && window.COSMOS_SUPABASE_CONFIG) {
+    CloudSync.initCloud(window.COSMOS_SUPABASE_CONFIG.url, window.COSMOS_SUPABASE_CONFIG.anonKey);
+  }
+</script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 
@@ -482,11 +494,34 @@ ta:['தமிழ்','ta-IN',['மேலே பாருங்கள். வா
 kn:['ಕನ್ನಡ','kn-IN',['ಮೇಲಕ್ಕೆ ನೋಡಿ. ಆಕಾಶವು ಹತ್ತು ಸಾವಿರ ವರ್ಷಗಳಿಂದ ಕಥೆಗಳನ್ನು ಹೇಳುತ್ತಿದೆ.','ನಗರದ ದೀಪಗಳು ನಕ್ಷತ್ರಗಳನ್ನು ಮರೆಮಾಚಬಹುದು, ಆದರೆ ಇಲ್ಲಿ ಆಕಾಶವು ನಿಮ್ಮ ಬಳಿಗೇ ಬರುತ್ತದೆ.']],
 ml:['മലയാളം','ml-IN',['മുകളിലേക്ക് നോക്കൂ. ആകാശം പതിനായിരം വർഷങ്ങളായി കഥകൾ പറയുകയാണ്.','നഗര വെളിച്ചങ്ങൾ നക്ഷത്രങ്ങളെ മറച്ചേക്കാം, എന്നാൽ ഇവിടെ ആകാശം നിങ്ങളുടെ അരികിലേക്ക് എത്തുന്നു.']]};
 /* ---------- routing ---------- */
+function getActiveSession() {
+  try {
+    const raw = localStorage.getItem('cosmos_active_session');
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+
 let page='home';
-function go(n){page=n;$$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
-const cv=$('#cv');if(cv)cv.style.display=n==='home'?'block':'none';const lbs=$('#lbs');if(lbs&&n!=='home')lbs.style.display='none';
-document.body.classList.toggle('warm',n==='myth');scrollTo(0,0);if(n!=='home')stopV();fit();location.hash=n;if(n==='myth'){loadMythData();renderMyth();if(!avR&&window.THREE)initAvatar();resizeAv();}if(n==='play'){renderQ();renderFM();}if(n==='home')tryInit3D();}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(b.dataset.go)});
+function go(n){
+  page=n;
+  $$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));
+  $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
+  const cv=$('#cv');if(cv)cv.style.display=n==='home'?'block':'none';
+  const lbs=$('#lbs');if(lbs&&n!=='home')lbs.style.display='none';
+  if(n!=='home'&&window.R)R.clear();
+  document.body.classList.toggle('warm',n==='myth');
+  scrollTo(0,0);
+  if(n!=='home')stopV();
+  fit();
+  location.hash=n;
+  if(n==='myth'){loadMythData();renderMyth();if(!avR&&window.THREE)initAvatar();resizeAv();}
+  if(n==='play'){renderQ();renderFM();}
+  if(n==='home')tryInit3D();
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-go]');
+  if(b) go(b.dataset.go);
+});
 /* ---------- voice & dual-path audio engine (Task C) ---------- */
 let vTok = 0;
 const mkBars = (el) => { if (el) el.innerHTML = '<i></i>'.repeat(22); };
@@ -2006,7 +2041,43 @@ function seed(){if(!home||!pos)return;for(let i=0;i<N;i++){home.set([(Math.rando
 function gal(l,b){const d=Math.PI/180,L=122.93192*d,G=27.12825*d,B=b*d,q=L-l*d,sd=Math.sin(B)*Math.sin(G)+Math.cos(B)*Math.cos(G)*Math.cos(q),a=192.85948*d+Math.atan2(Math.cos(B)*Math.sin(q),Math.sin(B)*Math.cos(G)-Math.cos(B)*Math.sin(G)*Math.cos(q));return[((a/d/15)%24+24)%24,Math.asin(sd)/d]}const MW=[],FS=[];{const r=((s)=>()=>(s=(s*16807)%2147483647)/2147483647)(11);for(let i=0;i<1100;i++){const l=r()*360,b=(r()+r()+r()-1.5)*12;MW.push([...gal(l,b),l])}for(let i=0;i<900;i++)FS.push([r()*24,Math.asin(2*r()-1)*57.2958,r()])}function skyTex(){const w=window.innerWidth<768?1024:2048,h=w/2,c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d'),g=x.createLinearGradient(0,0,0,h);g.addColorStop(0,'#0b1a4a');g.addColorStop(.5,'#16306f');g.addColorStop(1,'#0b1a4a');x.fillStyle=g;x.fillRect(0,0,w,h);const X=ra=>((ra*15+180)%360)/360*w,Y=d=>(90-d)/180*h;MW.forEach(([ra,d,l])=>{x.fillStyle=`rgba(170,150,255,${l<70||l>290?.075:.04})`;x.beginPath();x.arc(X(ra),Y(d),26,0,7);x.fill()});x.strokeStyle='rgba(180,200,255,.16)';x.lineWidth=1;for(let i=0;i<24;i+=2){x.beginPath();x.moveTo(X(i),0);x.lineTo(X(i),h);x.stroke()}for(let d=-60;d<=60;d+=30){x.beginPath();x.moveTo(0,Y(d));x.lineTo(w,Y(d));x.stroke()}FS.forEach(([ra,d,r])=>{x.fillStyle=`rgba(255,240,215,${.3+r*.5})`;x.fillRect(X(ra),Y(d),1+r*1.6,1+r*1.6)});return new THREE.CanvasTexture(c)}
 const rd=(ra,dec,r)=>{const a=ra*Math.PI/12,d=dec*Math.PI/180;return new THREE.Vector3(r*Math.cos(d)*Math.cos(a),r*Math.sin(d),-r*Math.cos(d)*Math.sin(a))};
 let LAT=20.6,LON=79;
-const lst=()=>{const d=Date.now()/864e5+2440587.5-2451545;return(((18.697374558+24.06570982441908*d)*15+LON)%360+360)%360};
+const getAstro = () => (window.Astro || {
+  norm360: (x) => ((x % 360) + 360) % 360,
+  julianDate: (ms = Date.now()) => ms / 86400000 + 2440587.5,
+  gmstDeg: (jd = (Date.now() / 86400000 + 2440587.5)) => {
+    const d = jd - 2451545.0;
+    return (((18.697374558 + 24.06570982441908 * d) * 15 % 360) + 360) % 360;
+  },
+  lstDeg: (lon, jd) => {
+    const d = (jd || (Date.now() / 86400000 + 2440587.5)) - 2451545.0;
+    const gmst = (((18.697374558 + 24.06570982441908 * d) * 15 % 360) + 360) % 360;
+    return (((gmst + lon) % 360) + 360) % 360;
+  },
+  precessToDate: (raDeg, decDeg) => ({ ra: raDeg, dec: decDeg }),
+  altAz: (raDeg, decDeg, latDeg, lonEastDeg, jd) => {
+    const d2r = Math.PI / 180, r2d = 180 / Math.PI;
+    const d = (jd || (Date.now() / 86400000 + 2440587.5)) - 2451545.0;
+    const gmst = (((18.697374558 + 24.06570982441908 * d) * 15 % 360) + 360) % 360;
+    const lstVal = (((gmst + lonEastDeg) % 360) + 360) % 360;
+    const ha = (lstVal - raDeg) * d2r;
+    const phi = latDeg * d2r, dec = decDeg * d2r;
+    const sinAlt = Math.sin(phi) * Math.sin(dec) + Math.cos(phi) * Math.cos(dec) * Math.cos(ha);
+    const alt = Math.asin(Math.max(-1, Math.min(1, sinAlt))) * r2d;
+    const az = (Math.atan2(Math.sin(ha), Math.cos(ha) * Math.sin(phi) - Math.tan(dec) * Math.cos(phi)) + Math.PI) * r2d;
+    return { alt, az: (((az % 360) + 360) % 360) };
+  }
+});
+const lst = () => getAstro().lstDeg(LON);
+let arActive = false, arHeading = 0, arPitch = 0;
+if (typeof window !== 'undefined' && window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', (e) => {
+    if (e.alpha !== null && e.beta !== null) {
+      arActive = true;
+      arHeading = typeof e.webkitCompassHeading !== 'undefined' ? e.webkitCompassHeading : getAstro().norm360(360 - e.alpha);
+      arPitch = e.beta;
+    }
+  }, { passive: true });
+}
 function place(){const la=LAT*Math.PI/180,lo=LON*Math.PI/180;if(sceneInitialized&&pin&&globe){pin.position.set(2.02*Math.cos(la)*Math.cos(lo),2.02*Math.sin(la),-2.02*Math.cos(la)*Math.sin(lo));pin.lookAt(pin.position.clone().multiplyScalar(2));globe.rotation.set(la*.9,-Math.PI/2-lo,0);}
 const h=lst()/15;const locEl=$('#loc');if(locEl)locEl.textContent=`Latitude ${LAT.toFixed(1)}°, longitude ${LON.toFixed(1)}°. Local sidereal time ${Math.floor(h)}h ${Math.round((h%1)*60)}m, so the constellation shell around Earth is turned to match your sky.`}
 place();navigator.geolocation&&navigator.geolocation.getCurrentPosition(p=>{LAT=p.coords.latitude;LON=p.coords.longitude;place()},()=>{},{timeout:6000});
@@ -2384,13 +2455,11 @@ updatePublicBtn();
 // Check if a constellation is currently visible tonight above horizon
 function isVisibleTonight(con) {
   if (!CON[con] || !CG[con]) return true;
-  const [ra, dec] = cenOf(con);
-  const currentLST = lst() / 15;
-  const ha = ((currentLST - ra + 24) % 24) * 15;
-  const latRad = LAT * Math.PI / 180;
-  const decRad = dec * Math.PI / 180;
-  const haRad = ha * Math.PI / 180;
-  const alt = Math.asin(Math.sin(latRad) * Math.sin(decRad) + Math.cos(latRad) * Math.cos(decRad) * Math.cos(haRad)) * 180 / Math.PI;
+  const [raHours, dec] = cenOf(con);
+  const raDeg = raHours * 15;
+  const astro = getAstro();
+  const precessed = (astro.precessToDate ? astro.precessToDate(raDeg, dec) : { ra: raDeg, dec });
+  const { alt } = astro.altAz(precessed.ra, precessed.dec, LAT, LON);
   return alt > 0;
 }
 
@@ -2941,37 +3010,302 @@ function showAvatarPickerModal() {
   d.showModal();
 }
 
-// Load saved data
-try {
-  const loaded = localStorage.getItem(SAVE_KEY);
-  if (loaded) {
-    const parsed = JSON.parse(loaded);
-    if (parsed && parsed.v === 1) {
-      SAVE = Object.assign(SAVE, parsed);
-      // Daily streak check
-      const today = new Date().toISOString().slice(0,10);
-      if (SAVE.lastDay !== today) {
-        const prev = new Date();
-        prev.setDate(prev.getDate() - 1);
-        const yest = prev.toISOString().slice(0,10);
-        if (SAVE.lastDay === yest) {
-          SAVE.streak = (SAVE.streak || 1) + 1;
-        } else {
-          SAVE.streak = 1;
-        }
-        SAVE.lastDay = today;
-        SAVE.dailyDone = 0;
-        SAVE.dailyClaimed = false;
-        SAVE.lives = 3;
+// Per-user isolated storage & session management
+function getActiveSession() {
+  try {
+    const raw = localStorage.getItem('cosmos_active_session');
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+
+function getSaveKey() {
+  const sess = getActiveSession();
+  if (sess && sess.user && sess.user.email) {
+    return 'cosmos_save_user_' + sess.user.email.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  }
+  return 'cosmic_save_v2';
+}
+
+function createDefaultProgress() {
+  return {
+    v: 1,
+    xp: 0,
+    stars: 0,
+    streak: 1,
+    lastDay: new Date().toISOString().slice(0,10),
+    lives: 3,
+    done: {},
+    cards: [],
+    achievements: {},
+    dailyDone: 0,
+    dailyClaimed: false,
+    settings: { sound: false, lang: 'en', reducedMotion: false },
+    avatar: 'owl',
+    onboarded: false
+  };
+}
+
+function loadCurrentProgress() {
+  const sess = getActiveSession();
+  const key = getSaveKey();
+  let progress = createDefaultProgress();
+  try {
+    const loaded = localStorage.getItem(key);
+    if (loaded) {
+      const parsed = JSON.parse(loaded);
+      if (parsed && parsed.v === 1) progress = Object.assign(progress, parsed);
+    }
+  } catch (e) { console.warn('Storage unavailable', e); }
+
+  if (sess && sess.user) {
+    progress.user = sess.user;
+    progress.token = sess.token;
+  } else {
+    progress.user = null;
+    progress.token = null;
+  }
+
+  // Daily streak check
+  const today = new Date().toISOString().slice(0,10);
+  if (progress.lastDay !== today) {
+    const prev = new Date();
+    prev.setDate(prev.getDate() - 1);
+    const yest = prev.toISOString().slice(0,10);
+    if (progress.lastDay === yest) {
+      progress.streak = (progress.streak || 1) + 1;
+    } else {
+      progress.streak = 1;
+    }
+    progress.lastDay = today;
+    progress.dailyDone = 0;
+    progress.dailyClaimed = false;
+    progress.lives = 3;
+  }
+
+  return progress;
+}
+
+SAVE = loadCurrentProgress();
+
+function saveGame() {
+  try {
+    SAVE._ts = Date.now();
+    const key = getSaveKey();
+    localStorage.setItem(key, JSON.stringify(SAVE));
+  } catch(e){}
+  updateHUD();
+  checkAchievements();
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) {
+    window.CloudSync.schedulePush();
+  }
+}
+
+function isCloudConfigured() {
+  return (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) || (typeof BACKEND_URL !== 'undefined' && BACKEND_URL);
+}
+
+function updateNavUser() {
+  const chip = document.getElementById('nav-user-chip');
+  const label = document.getElementById('nav-user-label');
+  const foot = document.getElementById('footer-account-link');
+  const hasBackend = isCloudConfigured();
+  if (chip) {
+    if (!hasBackend) {
+      chip.style.display = 'none';
+    } else {
+      chip.style.display = 'inline-flex';
+      if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
+        const displayName = SAVE.user.callsign || (SAVE.user.email ? SAVE.user.email.split('@')[0] : 'Stargazer');
+        if (label) label.textContent = displayName;
+        chip.style.color = 'var(--sci)';
+        chip.title = 'Stargazer: ' + displayName + ' (Click to manage account / log out)';
+        chip.onclick = e => {
+          e.preventDefault();
+          openStargazerModal();
+        };
+      } else {
+        if (label) label.textContent = 'Sign In';
+        chip.style.color = 'var(--mut)';
+        chip.title = 'Stargazer Access';
+        chip.onclick = e => {
+          e.preventDefault();
+          if (isCloudConfigured()) {
+            openSignInModal();
+          } else {
+            showToast('🪐', 'Guest Stargazer', 'Accounts are not available right now. Your progress is saved on this device.');
+          }
+        };
       }
     }
   }
-} catch (e) { console.warn('Storage unavailable', e); }
+  if (foot) {
+    if (!hasBackend) {
+      foot.style.display = 'none';
+    } else {
+      foot.style.display = 'inline-block';
+      foot.onclick = e => {
+        e.preventDefault();
+        if (typeof SAVE !== 'undefined' && SAVE && SAVE.user) {
+          openStargazerModal();
+        } else if (isCloudConfigured()) {
+          openSignInModal();
+        } else {
+          showToast('🪐', 'Guest Stargazer', 'Accounts are not available right now. Your progress is saved on this device.');
+        }
+      };
+    }
+  }
+}
+updateNavUser();
 
-function saveGame() {
-  try { localStorage.setItem(SAVE_KEY, JSON.stringify(SAVE)); } catch(e){}
-  updateHUD();
-  checkAchievements();
+function openSignInModal() {
+  const d = $('#dlg');
+  if (!d) return;
+  d.className = 'wide game-modal';
+  d.innerHTML = `
+    <div class="modal-header">
+      <div>
+        <h3 style="display:flex;align-items:center;gap:8px"><span>✦</span> Stargazer Cloud Sign In</h3>
+        <p style="font-size:12px;color:var(--mut);margin-top:2px">Optional Supabase Progress Mirror · Local Progress Preserved</p>
+      </div>
+      <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
+    </div>
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:20px;margin:16px 0">
+      <p style="font-size:14px;color:var(--ink);margin-bottom:12px">Sign in with an email magic link to sync your cards and stars across devices:</p>
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" style="flex:1;min-width:200px;padding:10px 14px;border-radius:99px;border:1px solid var(--bd);background:rgba(0,0,0,.3);color:var(--ink);font-size:14px" />
+        <button class="btn" style="background:var(--a);color:#05070f;font-weight:600;padding:10px 20px" id="btn-cloud-magic">Send Magic Link</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--mut);font-size:12px">
+        <div style="flex:1;height:1px;background:var(--bd)"></div>
+        <span>OR CONTINUE WITH</span>
+        <div style="flex:1;height:1px;background:var(--bd)"></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px" id="btn-cloud-github">
+          <span>🐙</span> GitHub
+        </button>
+        <button class="btn" style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px" id="btn-cloud-google">
+          <span>🌐</span> Google
+        </button>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--mut);line-height:1.5;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:12px;padding:12px">
+      ✦ <b>Zero Data Loss Guarantee:</b> Your on-device progress in <code>cosmic_save_v2</code> is never overwritten. When you connect, your stars and unlocked cards merge with your cloud record automatically.
+    </div>
+  `;
+
+  $('#btn-cloud-magic').onclick = async () => {
+    const email = $('#cloud-email-input').value.trim();
+    if (!email) {
+      showToast('⚠️', 'Invalid Email', 'Please enter a valid email address.');
+      return;
+    }
+    if (window.CloudSync) {
+      try {
+        await window.CloudSync.signInWithEmail(email);
+        showToast('✉️', 'Magic Link Sent', 'Check your inbox for your Stargazer sign-in link.');
+        d.close();
+      } catch (err) {
+        showToast('❌', 'Sign In Error', err.message || 'Could not send magic link.');
+      }
+    }
+  };
+
+  $('#btn-cloud-github').onclick = () => {
+    if (window.CloudSync) window.CloudSync.signInWithProvider('github');
+  };
+  $('#btn-cloud-google').onclick = () => {
+    if (window.CloudSync) window.CloudSync.signInWithProvider('google');
+  };
+
+  d.showModal();
+}
+
+function openStargazerModal() {
+  const d = $('#dlg');
+  if (!d || !SAVE.user) return;
+  const user = SAVE.user;
+  const m = COMPANIONS[SAVE.avatar] || COMPANIONS.owl;
+  const cardCount = (SAVE.cards || []).length;
+  const doneCount = Object.keys(SAVE.done || {}).length;
+
+  d.className = 'wide game-modal';
+  d.innerHTML = `
+    <div class="modal-header">
+      <div>
+        <h3 style="display:flex;align-items:center;gap:8px"><span>✦</span> Stargazer Observatory Profile</h3>
+        <p style="font-size:12px;color:var(--mut);margin-top:2px">Observatory Station Session · Isolated Stargazer Progress</p>
+      </div>
+      <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
+    </div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:16px;margin:16px 0">
+      <div style="font-size:48px;background:rgba(123,140,255,.12);border:1px solid rgba(123,140,255,.3);width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center">
+        ${m.icon}
+      </div>
+      <div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px">
+          <span>${user.callsign || user.email || 'Stargazer'}</span>
+          <span style="font-size:11px;padding:2px 8px;border-radius:99px;background:rgba(93,224,208,.15);color:var(--sci);border:1px solid rgba(93,224,208,.3)">${user.role || 'stargazer'}</span>
+        </div>
+        <div style="font-size:13px;color:var(--mut);margin-top:2px">${user.email || ''}</div>
+        <div style="font-size:12px;color:var(--myth);margin-top:4px">Active Companion: ${m.name}</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:20px">
+      <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
+        <div style="font-size:20px;font-weight:700;color:#ffd27a">⭐ ${SAVE.stars || 0}</div>
+        <div style="font-size:11px;color:var(--mut)">Stars Earned</div>
+      </div>
+      <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
+        <div style="font-size:20px;font-weight:700;color:var(--sci)">✦ ${SAVE.xp || 0}</div>
+        <div style="font-size:11px;color:var(--mut)">Stardust XP</div>
+      </div>
+      <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
+        <div style="font-size:20px;font-weight:700;color:#a8c2ff">🪐 ${doneCount}/15</div>
+        <div style="font-size:11px;color:var(--mut)">Quests Cleared</div>
+      </div>
+      <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
+        <div style="font-size:20px;font-weight:700;color:var(--myth)">🃏 ${cardCount}/21</div>
+        <div style="font-size:11px;color:var(--mut)">Cards Unlocked</div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--bd);flex-wrap:wrap;gap:10px">
+      <div style="font-size:12px;color:var(--sci);display:flex;align-items:center;gap:6px">
+        <span>🟢</span> Synchronized with Cloud Database
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn" style="font-size:13px;background:rgba(255,107,139,.18);border-color:rgba(255,107,139,.4);color:#ff8b8b" onclick="logoutStargazer()">Log Out</button>
+      </div>
+    </div>
+  `;
+  d.showModal();
+}
+
+async function logoutStargazer() {
+  const callsign = SAVE.user ? (SAVE.user.callsign || SAVE.user.email) : 'Stargazer';
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) {
+    try { await window.CloudSync.signOut(); } catch(e){}
+  }
+  localStorage.removeItem('cosmos_active_session');
+  SAVE = loadCurrentProgress();
+  updateNavUser();
+  if (window.requestIdleCallback) { requestIdleCallback(() => { updateHUD(); renderTrail(); }); } else { setTimeout(() => { updateHUD(); renderTrail(); }, 150); }
+  const d = $('#dlg');
+  if (d && d.open) d.close();
+  showToast('🌌', 'Observatory Log Out', `Logged out of ${callsign}. Switched to Guest Sky.`);
+}
+
+async function syncProgressWithCloud() {
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) {
+    return await window.CloudSync.syncProgressWithCloud();
+  }
+  return { ok: false, reason: 'not-configured' };
+}
+if (typeof SAVE !== 'undefined' && SAVE && SAVE.token) {
+  syncProgressWithCloud();
 }
 
 // Web Audio synthesizer
@@ -4155,7 +4489,8 @@ function checkOnboarding() {
 }
 
 // Initial game startup
-if (window.requestIdleCallback) { requestIdleCallback(() => { updateHUD(); renderTrail(); }); } else { setTimeout(() => { updateHUD(); renderTrail(); }, 150); }
+updateHUD();
+renderTrail();
 if (page === 'play') setTimeout(checkOnboarding, 600);
 
 let XP=0,doneQ=new Set();
@@ -4211,28 +4546,15 @@ ring.scale.setScalar(1+((t/700)%1)*3);ring.material.opacity=1-((t/700)%1);
 pm.opacity=(home_?1:.28)*Math.max(0,1-p*1.4);lm.opacity=.7*Math.max(0,1-p*1.6);layer.visible=pm.opacity>.01;if(layer.visible&&!isReduced())stepParticles(t);
 if(tgt&&!drag){const dx=((tgt[1]-W.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;W.rotation.y+=dx*.06;W.rotation.x+=(tgt[0]-W.rotation.x)*.06}else if(gm&&!drag&&!tgt&&!isReduced())W.rotation.y+=.0015;{const sr=$('.gstage').getBoundingClientRect(),dy=sr.top+sr.height/2-innerHeight/2;if(PV.view==='globe'&&p>.5&&sr.height)C.setViewOffset(innerWidth,innerHeight,0,-dy,innerWidth,innerHeight);else C.clearViewOffset()}R.render(S,C);const g_=p>.88;if(g_!==gm){gm=g_;lbs.style.display=gm?'block':'none'}lbs.style.visibility=PV.view==='globe'?'visible':'hidden';if(PV.view==='plan'&&p>.6)drawPlan();if(gm&&PV.view==='globe'&&tv)Object.keys(CG).forEach((k,i)=>{tv.copy(CG[k].c).applyMatrix4(sky.matrixWorld);const z=tv.z;tv.project(C);const b=lbs.children[i];if(b){b.style.display='block';b.style.transform=`translate(${(tv.x*.5+.5)*innerWidth}px,${(-tv.y*.5+.5)*innerHeight}px) translate(-50%,-50%)`;b.style.opacity=Math.max(0,Math.min(1,(z+1.5)/3)).toFixed(2);b.style.pointerEvents=z>-1?'auto':'none'}});
 if(page==='sci'){drawSky(t);drawOrb(t)}if(page==='myth')drawMyth(t)}
-addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['home','sci','myth','play'].includes(h)&&h!==page)go(h)});
-fit(); setLang('en');
-    if (['sci','myth','play'].includes(location.hash.slice(1))) {
-      tryInit3D();
-      renderMyth();
-      renderQ();
-      go(location.hash.slice(1));
-      requestAnimationFrame(frame);
-    } else {
-      // Start Three.js scene & animation loop strictly AFTER first paint
-      const startAfterFirstPaint = () => {
-        tryInit3D();
-        renderMyth();
-        renderQ();
-        requestAnimationFrame(frame);
-      };
-      if (window.requestAnimationFrame) {
-        requestAnimationFrame(() => {
-          setTimeout(startAfterFirstPaint, 30);
-        });
-      } else {
-        setTimeout(startAfterFirstPaint, 60);
-      }
-    }
+addEventListener('hashchange',()=>{
+  const h=location.hash.slice(1);
+  if(['home','sci','myth','play'].includes(h)&&h!==page){
+    go(h);
+  }
+});
+tryInit3D();fit();renderMyth();renderQ();setLang('en');
+if(['sci','myth','play'].includes(location.hash.slice(1))){
+  go(location.hash.slice(1));
+}
+requestAnimationFrame(frame);
 </script></body></html>

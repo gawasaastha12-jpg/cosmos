@@ -14,10 +14,17 @@ const MIME = {
   '.webp': 'image/webp',
   '.mp3': 'audio/mpeg',
   '.wav': 'audio/wav',
-  '.ogg': 'audio/ogg'
+  '.ogg': 'audio/ogg',
+  '.woff2': 'font/woff2',
+  '.mjs': 'application/javascript; charset=utf-8'
 };
 
+const { handleApiRequest } = require('./api');
+
 const server = http.createServer((req, res) => {
+  if (req.url.startsWith('/api/')) {
+    return handleApiRequest(req, res);
+  }
   let reqPath = decodeURI(req.url.split('?')[0]);
   let filePath = path.join(__dirname, '..', reqPath);
 

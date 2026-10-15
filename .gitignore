@@ -4,6 +4,10 @@ audio/*.wav
 audio/*.ogg
 audio/*.aac
 
+# User credentials & local auth database
+data/users.json
+users.json
+
 # Node / OS artifacts
 node_modules/
 .DS_Store

@@ -1,106 +1,73 @@
-# Cosmic Mythology AR Explorer
+# 🌌 Cosmic Mythology AR Explorer
 
-An interactive, zero-build, static front-end web application bridging ancient celestial mythology and modern observational astrophysics across world skies.
+Real star positions (BSC5, Hipparcos, Gaia DR3) meet 165 celestial stories from 10 traditions.
+Zero-build static site: HTML5, vanilla JS (ES2020+), CSS3, Three.js r128 (self-hosted). Works offline after first load.
 
----
+## Principles
+- **Client-side astrometry**: GMST, LST, hour angle and altitude computed in the browser.
+- **Offline-first**: embedded datasets, Web Speech fallback, progress in `localStorage` (`cosmic_save_v2`).
+- **Privacy by design**: no telemetry, no third-party CDNs, cultural-heritage filter for living oral traditions.
 
-## 🌌 Overview & Architecture
+## Quick start
+```bash
+node scripts/serve.js                  # http://127.0.0.1:8000  (file:// breaks fetch)
+node scripts/validate-content.js       # content/schema checks
+SITE_URL=https://your-domain.org node scripts/build-public.js   # builds dist/ + launch audit
+node scripts/check-ci.js               # policy exclusion check
+```
+Never edit `dist/`; it is regenerated on every build.
 
-- **Zero-Build Architecture**: Runs entirely as static HTML5, Vanilla JavaScript, CSS3, WebGL (Three.js), and client-side Canvas. No bundlers (Vite/Webpack), no frameworks (React/Next), and no backend server required.
-- **Client-Side Astrometry**: Calculates Greenwich Mean Sidereal Time (GMST), Local Sidereal Time (LST), Hour Angle ($HA$), and horizon altitude strictly in the browser using device GPS and gyroscope.
-- **Offline & Fallback Ready**: Embedded dataset fallbacks allow the explorer to run completely offline without an internet connection.
-- **Audio Engine**: Dual-path narration system supporting pre-rendered native audio recordings and seamless fallback to client-side Web Speech API across multiple languages.
-
----
-
-## 🚀 Deployment Guide (Static Hosting)
-
-Because this project requires **no build step**, deployment to any modern static host takes under two minutes.
-
-### 1. Netlify
-- **Option A (Netlify Drop)**: Drag and drop the repository folder directly into [Netlify Drop](https://app.netlify.com/drop).
-- **Option B (Netlify CLI)**:
-  ```bash
-  npm install -g netlify-cli
-  netlify deploy --prod --dir .
-  ```
-- **Option C (Git Connect)**:
-  - Build command: *(leave empty)*
-  - Publish directory: `.` (root)
-
-### 2. Vercel
-- **Option A (Vercel CLI)**:
-  ```bash
-  npm install -g vercel
-  vercel --prod
-  ```
-- **Option B (Git Connect)**:
-  - Framework Preset: `Other`
-  - Build Command: *(leave empty)*
-  - Output Directory: `.` (root)
-
-### 3. Cloudflare Pages
-- Connect your GitHub/GitLab repository.
-- **Framework preset**: `None`
-- **Build command**: *(leave empty)*
-- **Build output directory**: `.`
-
-### 4. GitHub Pages
-- Go to repository **Settings** → **Pages**.
-- **Source**: `Deploy from a branch`.
-- **Branch**: `master` (or `main`) / folder: `/ (root)`.
-- Save.
-
----
-
-## 🛡️ Public Mode & Policy Configuration
-
-By default, the application runs in **Public Mode**:
-- **Verified & Probable Only**: Stories marked `unverified` are automatically hidden.
-- **Pending Review Policy**: Stories from living Indigenous oral traditions flagged `pending community review` are excluded from public builds per cultural heritage preservation ethics.
-
-### Configuration (`data/policy.json`)
-You can adjust the inclusion policy at any time without rebuilding code:
-```json
-{
-  "excludePendingCommunityReview": true,
-  "hideUnverified": true
-}
+## Architecture
+```mermaid
+graph TD
+  subgraph Browser
+    Nav[Sticky nav] --> Home[Cosmic Canvas: 3D globe + planisphere]
+    Nav --> Sci[Scientific view: orbits + lock-on]
+    Nav --> Myth[Myth & Culture: 165 tales]
+    Nav --> Play[Journeys: quests + cards]
+    Nav --> Audio[audio.html storybook]
+    Astro[js/astro.js] --> Home
+    Astro --> Sci
+    Speech[Audio engine: MP3 then Web Speech] --> Myth
+    Speech --> Audio
+    Store[(localStorage cosmic_save_v2)] --> Play
+    Store -. optional sync .-> Cloud[js/cloud-sync.js]
+  end
+  Cloud -. RLS .-> SB[(Supabase user_progress)]
+  subgraph Build
+    M[data/myth.json] --> B[build-public.js]
+    P[data/policy.json] --> B
+    A[audio-stories.json] --> B
+    B --> D[dist/]
+    D --> Audit{launch-audit.js}
+    Audit -->|pass| Host[Static host]
+    Audit -->|fail| Abort[Exit 1]
+  end
 ```
 
-### Developer Mode URL Flag
-To inspect all 165 raw stories, unverified records, and pending community items for developer auditing:
-```
-https://your-domain.com/?all=1
-```
+## Repository map
+| Path | Role |
+|---|---|
+| `index.html` | Main app: globe, planisphere, science, myth, journeys |
+| `audio.html` | Illuminated multilingual audio storybook |
+| `js/astro.js` | GMST/LST/precession/alt-az math |
+| `js/cloud-sync.js` | Supabase auth + progress sync (post-launch) |
+| `supabase/migrations/` | `user_progress` schema + RLS |
+| `data/` | `myth.json`, `myth.public.json`, `policy.json`, `audio-stories.json`, `citation-audit.csv` |
+| `scripts/` | `serve.js`, `build-public.js`, `launch-audit.js`, validators |
+| `vendor/`, `assets/fonts/` | Self-hosted Three.js, Supabase ESM, and WOFF2 fonts |
 
----
+## Sky math
+JD = ms/86400000 + 2440587.5; d = JD − 2451545.0
+GMST° = (18.697374558 + 24.06570982441908·d)·15 mod 360
+LST = GMST + λ (east-positive); HA = LST − RA
+sin(alt) = sin φ sin δ + cos φ cos δ cos HA
 
-## 📁 Repository Structure
+## Gotchas
+- `index.html` is a monolith; preserve script order.
+- Keep Pointer Events (touch + mouse) on the globe and planisphere.
+- Heritage filter strips `poly`, `ind`, `amer` stories (165 → 109) when `excludePendingCommunityReview` is true.
 
-```
-.
-├── index.html                  # Main application (Cosmic Canvas, Science, Myth, Journeys)
-├── about.html                  # Credits, sources, mathematical methods & error reporting
-├── privacy.html                # Privacy policy (zero telemetry, on-device local storage)
-├── 404.html                    # Static 404 error page
-├── data/
-│   ├── policy.json             # Public build policy configuration
-│   ├── myth.json               # 165 celestial stories across 10 global traditions
-│   ├── citation-audit.csv      # Academic citation audit with primary evidence URLs
-│   ├── audio-stories.json      # Audio story metadata, durations, and sentence timestamps
-│   └── myth.public.json        # Pre-built public distribution dataset
-├── audio/                      # Audio narration recordings
-├── scripts/
-│   ├── build-public.js         # Prunes unverified/pending stories into myth.public.json
-│   ├── generate-fallbacks.js   # Synchronizes embedded fallback data in index.html
-│   ├── check-links.js          # Validates news and citation HTTP links
-│   └── validate-content.js     # Validates JSON schema integrity
-└── README.md                   # Deployment and operational documentation
-```
-
----
-
-## 📜 License & Ethics
-- Astrometric coordinates derived from the Bright Star Catalogue (BSC5), ESA Hipparcos, and ESA Gaia DR3.
-- Traditional celestial narratives curated from classical digitized archives (Perseus, Sacred Texts, ctext.org) and museum cultural documentation.
+## Post-launch: Supabase
+Run `supabase/migrations/001_user_progress.sql`, enable Email OTP + OAuth, self-host the supabase-js ESM build,
+call `initCloud(url, anonKey)`, then `schedulePush()` after each local save.

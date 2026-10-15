@@ -3,7 +3,7 @@ const path = require('path');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf-8');
 const lines = html.split('\n');
-const line = lines[466];
+const line = lines.find(l => l.includes('const CI={')) || '';
 const m = line.match(/const CI=\{([\s\S]*?)\};/);
 if (m) {
   const ci = eval('({' + m[1] + '})');

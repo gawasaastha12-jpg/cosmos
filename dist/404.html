@@ -1,87 +1,129 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>404: Lost in the Cosmos · Cosmic Mythology AR Explorer</title>
-  <meta name="description" content="The requested celestial coordinates could not be located in this galaxy.">
-  <meta property="og:type" content="website"><meta property="og:url" content="https://cosmic-ar-explorer.org/404.html">
-  <meta property="og:title" content="404: Lost in the Cosmos · Cosmic Mythology AR Explorer">
-  <meta property="og:description" content="The requested celestial coordinates could not be located in this galaxy.">
-  <meta property="og:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="404: Lost in the Cosmos · Cosmic Mythology AR Explorer">
-  <meta name="twitter:description" content="The requested celestial coordinates could not be located in this galaxy.">
-  <meta name="twitter:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
-  <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <style>
-    :root {
-      --bg: #04060d;
-      --ink: #e9ecf8;
-      --mut: #8d97bd;
-      --a: #7b8cff;
-      --bd: rgba(150,168,255,.2);
-      --disp: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Space Grotesk', system-ui, sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; }
-    body {
-      font: 16px/1.65 var(--sans);
-      color: var(--ink);
-      background: var(--bg);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-    }
-    .card {
-      max-width: 520px;
-      background: rgba(14,19,42,.65);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--bd);
-      border-radius: 24px;
-      padding: 44px 32px;
-      box-shadow: 0 16px 50px rgba(0,0,0,.7);
-    }
-    .ico { font-size: 56px; margin-bottom: 12px; }
-    h1 {
-      font-family: var(--disp);
-      font-size: 52px;
-      color: #ffe2b0;
-      margin-bottom: 10px;
-      line-height: 1.1;
-    }
-    p { color: var(--mut); margin-bottom: 24px; font-size: 16px; }
-    .btn {
-      all: unset;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 99px;
-      background: var(--a);
-      color: #05070f;
-      font-weight: 600;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(123,140,255,.45);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>404 · Lost in the Cosmos</title>
+<style>
+:root{--bg:#04050d;--ink:#ece9ff;--glow:#ffd98a;--accent:#8ab4ff}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{
+  background:radial-gradient(ellipse at 50% 115%,#1b1544 0%,var(--bg) 62%) fixed;
+  color:var(--ink);
+  font-family:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:1.5rem;
+}
+.num{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(5.5rem,24vw,13rem);
+  line-height:1;
+  text-shadow:0 0 40px var(--accent);
+  user-select:none;
+  margin-bottom:0.75rem;
+}
+.planet{
+  position:relative;
+  width:.78em;
+  height:.78em;
+  margin:0 .03em;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.55),transparent 32%),
+             radial-gradient(circle at 36% 32%,var(--accent),#2b2f6e 68%,#0b0c24);
+  box-shadow:inset -.08em -.06em .16em rgba(0,0,0,.65),0 0 .35em var(--accent);
+}
+.planet::before{
+  content:"";
+  position:absolute;
+  left:-30%;
+  right:-30%;
+  top:44%;
+  height:15%;
+  border:.022em solid var(--glow);
+  border-radius:50%;
+  transform:rotate(-18deg);
+  opacity:.85;
+  box-shadow:0 0 .12em var(--glow);
+}
+.moon{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:.13em;
+  height:.13em;
+  margin:-.065em;
+  border-radius:50%;
+  background:var(--ink);
+  animation:orbit 7s linear infinite;
+}
+@keyframes orbit{
+  from{transform:rotate(0) translateX(.66em) rotate(0)}
+  to{transform:rotate(360deg) translateX(.66em) rotate(-360deg)}
+}
+.desc{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(1.8rem,5vw,3rem);
+  letter-spacing:0.04em;
+  color:var(--ink);
+  text-shadow:0 0 24px rgba(138,180,255,.35);
+  margin-bottom:1.5rem;
+}
+.solution{
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  font-size:clamp(0.88rem,2.2vw,1.05rem);
+  color:var(--ink);
+  background:rgba(138,180,255,.12);
+  border:1px solid rgba(138,180,255,.3);
+  padding:0.65rem 1.4rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:500;
+  transition:all .2s ease;
+}
+.solution:hover{
+  background:var(--accent);
+  color:#05070f;
+  border-color:var(--accent);
+  transform:translateY(-2px);
+  box-shadow:0 6px 24px -6px var(--accent);
+}
+.solution:focus-visible{
+  outline:2px solid var(--glow);
+  outline-offset:3px;
+}
+@media (prefers-reduced-motion:reduce){
+  .moon{animation:none}
+  .solution{transition:none}
+}
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="ico">🪐</div>
-    <h1>404 · Lost in Deep Space</h1>
-    <p>These celestial coordinates do not correspond to any known constellation, star chart, or ancient myth in our records.</p>
-    <a href="index.html" class="btn">✦ Return to Home Sky</a>
-  </div>
+  <main>
+    <h1 class="num" aria-label="Error 404">
+      <span aria-hidden="true">4</span><span class="planet" aria-hidden="true"><i class="moon"></i></span><span aria-hidden="true">4</span>
+    </h1>
+    <p class="desc">Not Found</p>
+    <a class="solution" href="index.html#home">Return to Cosmic Canvas &rarr;</a>
+  </main>
 </body>
 </html>

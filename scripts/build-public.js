@@ -260,10 +260,11 @@ function run() {
     fs.copyFileSync(path.join(ROOT_DIR, 'LICENSES.md'), path.join(DIST_DIR, 'LICENSES.md'));
   }
 
-  // Copy Assets, Vendor, Audio
+  // Copy Assets, Vendor, Audio, JS
   copyDirRecursive(path.join(ROOT_DIR, 'assets'), path.join(DIST_DIR, 'assets'));
   copyDirRecursive(path.join(ROOT_DIR, 'vendor'), path.join(DIST_DIR, 'vendor'));
   copyDirRecursive(path.join(ROOT_DIR, 'audio'), path.join(DIST_DIR, 'audio'));
+  copyDirRecursive(path.join(ROOT_DIR, 'js'), path.join(DIST_DIR, 'js'));
 
   // Sanitize dist/audio/manifest.json if poly is excluded
   const distManifestPath = path.join(DIST_DIR, 'audio', 'manifest.json');
@@ -286,7 +287,7 @@ function run() {
   fs.copyFileSync(OUT_AUDIO_PUBLIC, path.join(DIST_DIR, 'data', 'audio-stories.public.json'));
   fs.copyFileSync(OUT_AUDIO_PUBLIC, path.join(DIST_DIR, 'data', 'audio-stories.json'));
   fs.copyFileSync(POLICY_PATH, path.join(DIST_DIR, 'data', 'policy.json'));
-  fs.copyFileSync(CONFIG_PATH, path.join(DIST_DIR, 'data', 'config.json'));
+  fs.writeFileSync(path.join(DIST_DIR, 'data', 'config.json'), JSON.stringify({ siteUrl: SITE_URL }, null, 2), 'utf-8');
   console.log('Copied assets, vendor, audio, licenses, and ONLY public data files to dist/');
 
   // Helper to resolve og:url and absolute og:image in HTML
@@ -294,6 +295,7 @@ function run() {
     const pageUrl = pagePath ? `${SITE_URL}/${pagePath}` : `${SITE_URL}/`;
     const ogImageUrl = `${SITE_URL}/assets/og-image.jpg`;
 
+    html = html.replace(/https:\/\/cosmic-ar-explorer\.app/g, SITE_URL);
     html = html.replace(/<meta property="og:image" content="[^"]*">/g, `<meta property="og:image" content="${ogImageUrl}">`);
     html = html.replace(/<meta name="twitter:image" content="[^"]*">/g, `<meta name="twitter:image" content="${ogImageUrl}">`);
 
@@ -541,6 +543,24 @@ const INTRO = {};
   // E. Post-process absolute OG tags
   indexHtml = postProcessHtml(indexHtml, '');
 
+  // F. Backend URL & Account UI configuration
+  const BACKEND_URL = process.env.BACKEND_URL ? process.env.BACKEND_URL.trim() : '';
+  if (!BACKEND_URL) {
+    // Hide all login/account UI in public build
+    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*id="nav-user-chip"[^>]*>[\s\S]*?<\/a>/gi, '');
+    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*id="footer-account-link"[^>]*>[\s\S]*?<\/a>/gi, '');
+    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*>[\s\S]*?<\/a>/gi, '');
+    indexHtml = indexHtml.replace(/id="nav-user-chip"/g, 'id="nav-user-chip" style="display:none"');
+    indexHtml = indexHtml.replace(/id="footer-account-link"/g, 'id="footer-account-link" style="display:none"');
+  } else {
+    indexHtml = indexHtml.replace(/<head>/, `<head><script>window.BACKEND_URL = "${BACKEND_URL}";</script>`);
+  }
+  // Ensure no login.html links or api/auth calls remain in dist/index.html
+  indexHtml = indexHtml.replace(/href="login\.html"/gi, 'href="#" style="display:none"');
+  indexHtml = indexHtml.replace(/'login\.html[^']*'/gi, "'#'");
+  indexHtml = indexHtml.replace(/"login\.html[^"]*"/gi, '"#"');
+  indexHtml = indexHtml.replace(/\/api\/auth[^\s'"`]*/gi, '');
+
   fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml, 'utf-8');
   console.log('Generated dist/index.html with all Brief 10 sanitizations and performance enhancements.\n');
 
@@ -558,7 +578,11 @@ const INTRO = {};
   console.log('-----------------------------------------------------------------------------------------------------');
   console.log(`| TOTAL          | Across all traditions                  | ${String(totalRawStories).padStart(9)} | ${String(totalPublicStories).padStart(14)} |            |`);
   console.log('-----------------------------------------------------------------------------------------------------\n');
-  console.log(`✔ Public build successfully written to dist/`);
+  console.log(`✔ Public build successfully written to dist/\n`);
+
+  // 10. Launch Hardening Audit Check: Verify dist/ integrity per policy
+  const { runLaunchAudit } = require('./launch-audit');
+  runLaunchAudit(DIST_DIR, policy);
 }
 
 run();

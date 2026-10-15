@@ -6,14 +6,14 @@
   <title>Privacy Policy · Cosmic Mythology AR Explorer</title>
   <meta name="description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cosmic-ar-explorer.org/privacy.html">
+  <meta property="og:url" content="https://cosmic-explorer.org/privacy.html">
   <meta property="og:title" content="Privacy Policy · Cosmic Mythology AR Explorer">
   <meta property="og:description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
-  <meta property="og:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
+  <meta property="og:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy · Cosmic Mythology AR Explorer">
   <meta name="twitter:description" content="Privacy commitment: zero remote tracking, client-side only geolocation, and local on-device progress storage.">
-  <meta name="twitter:image" content="https://cosmic-ar-explorer.org/assets/og-image.jpg">
+  <meta name="twitter:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
   <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -149,15 +149,15 @@
       </section>
 
       <section class="gl">
-        <h2>2. On-Device Progress Storage (localStorage)</h2>
+        <h2>2. On-Device Progress Storage &amp; Optional Cloud Synchronization</h2>
         <div class="callout">
-          <b>Summary:</b> Gameplay state, cards, stars, and achievements are stored <b>only on your local device</b>.
+          <b>Summary:</b> Gameplay state, cards, stars, and achievements are stored <b>first on your local device</b>. Cloud synchronization is entirely optional and never blocks gameplay.
         </div>
         <ul>
-          <li>All constellation trail progression, earned stars, unlocked collectible cards, daily streak, lives, and audio playback settings are persisted directly in standard browser <code>localStorage</code> under the key <code>cosmic_save_v2</code>.</li>
-          <li>No accounts, authentication, or passwords are required.</li>
-          <li>We operate no backend database and cannot view, access, or sell any of your gameplay activity.</li>
-          <li>You can reset or erase your stored progress at any time by clicking <b>"Reset Saved Progress"</b> in the Mission Settings dialog or by clearing site cookies and storage in your browser preferences.</li>
+          <li><b>Local-First Storage:</b> By default, all constellation trail progression, earned stars, unlocked collectible cards, daily streak, lives, and audio playback settings are persisted directly in standard browser <code>localStorage</code> under the key <code>cosmic_save_v2</code>. No account or network connection is required to play offline.</li>
+          <li><b>Optional Cloud Sync (Supabase):</b> When configured with a backend, stargazers may optionally sign in using email magic links or OAuth providers (Google, GitHub) to mirror progress across multiple devices. Cloud data is protected by Row Level Security (RLS) in PostgreSQL, ensuring only your authenticated account can read or write your progress row.</li>
+          <li><b>Progress Merging:</b> When signing in on multiple devices, progress merges safely (maximum for counters, union for unlocked cards and completed quests) so no achievements are ever lost.</li>
+          <li><b>Data Control:</b> We never sell or track your gameplay. You can reset or erase your stored progress at any time by clicking <b>"Reset Saved Progress"</b> in the Mission Settings dialog or by clearing site cookies and storage in your browser preferences.</li>
         </ul>
       </section>
 
