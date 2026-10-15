@@ -511,12 +511,55 @@ ml:['മലയാളം','ml-IN',['മുകളിലേക്ക് നോക�
 function getActiveSession() {
   try {
     const raw = localStorage.getItem('cosmos_active_session');
-    return raw ? JSON.parse(raw) : null;
+    if (raw) return JSON.parse(raw);
   } catch(e) { return null; }
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
+    const u = window.CloudSync.getCurrentUser();
+    if (u) return { user: u };
+  }
+  return null;
+}
+
+function getCurrentStargazerUser() {
+  if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
+    return SAVE.user;
+  }
+  if (typeof window.SAVE !== 'undefined' && window.SAVE && window.SAVE.user && (window.SAVE.user.callsign || window.SAVE.user.email)) {
+    return window.SAVE.user;
+  }
+  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
+    const u = window.CloudSync.getCurrentUser();
+    if (u && (u.callsign || u.email)) return u;
+  }
+  const sess = getActiveSession();
+  if (sess && sess.user && (sess.user.callsign || sess.user.email)) {
+    return sess.user;
+  }
+  return null;
 }
 
 let page='home';
 function go(n){
+  const protectedSections = ['sci', 'myth', 'audio'];
+  if (protectedSections.includes(n)) {
+    const user = getCurrentStargazerUser();
+    if (!user) {
+      if (typeof openSignInModal === 'function') openSignInModal();
+      if (typeof showToast === 'function') {
+        const secLabel = n === 'sci' ? 'Scientific view' : (n === 'myth' ? 'Myth & culture' : 'the Audiobook');
+        showToast('🔒', 'Stargazer Access Required', `Please sign in with your email to unlock ${secLabel}.`);
+      }
+      if (page !== 'home') {
+        page = 'home';
+        $$('.pg').forEach(p=>p.classList.toggle('on',p.id==='home'));
+        $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go==='home'));
+        const cv=$('#cv');if(cv)cv.style.display='block';
+        fit();
+      }
+      location.hash = 'signin';
+      return;
+    }
+  }
   page=n;
   $$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));
   $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
@@ -533,6 +576,19 @@ function go(n){
   if(n==='home')tryInit3D();
 }
 document.addEventListener('click',e=>{
+  const audioLink = e.target.closest('a[href*="audio.html"]');
+  if (audioLink) {
+    const user = getCurrentStargazerUser();
+    if (!user) {
+      e.preventDefault();
+      if (typeof openSignInModal === 'function') openSignInModal();
+      if (typeof showToast === 'function') {
+        showToast('🔒', 'Stargazer Access Required', 'Please sign in with your email to access the Celestial Audiobook.');
+      }
+      location.hash = 'signin';
+      return;
+    }
+  }
   const b=e.target.closest('[data-go]');
   if(b) go(b.dataset.go);
 });
@@ -3216,23 +3272,10 @@ function openSignInModal() {
       <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
     </div>
     <div style="background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:16px;padding:20px;margin:16px 0">
-      <p style="font-size:14px;color:var(--ink);margin-bottom:12px">Sign in with an email magic link to sync your cards and stars across devices:</p>
+      <p style="font-size:14px;color:var(--ink);margin-bottom:12px">Enter your email address to receive a secure sign-in magic link and unlock all cosmic archives:</p>
       <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
         <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" style="flex:1;min-width:200px;padding:10px 14px;border-radius:99px;border:1px solid var(--bd);background:rgba(0,0,0,.3);color:var(--ink);font-size:14px" />
         <button class="btn" style="background:var(--a);color:#05070f;font-weight:600;padding:10px 20px" id="btn-cloud-magic">Send Magic Link</button>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--mut);font-size:12px">
-        <div style="flex:1;height:1px;background:var(--bd)"></div>
-        <span>OR CONTINUE WITH</span>
-        <div style="flex:1;height:1px;background:var(--bd)"></div>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button class="btn" style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px" id="btn-cloud-github">
-          <span>🐙</span> GitHub
-        </button>
-        <button class="btn" style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px" id="btn-cloud-google">
-          <span>🌐</span> Google
-        </button>
       </div>
     </div>
     <div style="font-size:12px;color:var(--mut);line-height:1.5;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:12px;padding:12px">
@@ -3255,13 +3298,6 @@ function openSignInModal() {
         showToast('❌', 'Sign In Error', err.message || 'Could not send magic link.');
       }
     }
-  };
-
-  $('#btn-cloud-github').onclick = () => {
-    if (window.CloudSync) window.CloudSync.signInWithProvider('github');
-  };
-  $('#btn-cloud-google').onclick = () => {
-    if (window.CloudSync) window.CloudSync.signInWithProvider('google');
   };
 
   d.showModal();
@@ -4598,13 +4634,20 @@ if(tgt&&!drag){const dx=((tgt[1]-W.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2
 if(page==='sci'){drawSky(t);drawOrb(t)}if(page==='myth')drawMyth(t)}
 addEventListener('hashchange',()=>{
   const h=location.hash.slice(1);
+  if (h === 'signin') {
+    if (typeof openSignInModal === 'function') openSignInModal();
+    return;
+  }
   if(['home','sci','myth','play'].includes(h)&&h!==page){
     go(h);
   }
 });
 tryInit3D();fit();renderMyth();renderQ();setLang('en');
-if(['sci','myth','play'].includes(location.hash.slice(1))){
-  go(location.hash.slice(1));
+const curH = location.hash.slice(1);
+if (curH === 'signin') {
+  setTimeout(() => { if (typeof openSignInModal === 'function') openSignInModal(); }, 350);
+} else if(['sci','myth','play'].includes(curH)){
+  go(curH);
 }
 requestAnimationFrame(frame);
 </script></body></html>

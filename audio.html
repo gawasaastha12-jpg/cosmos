@@ -4,6 +4,28 @@
   <meta charset="utf-8">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    (function guardAudioAccess() {
+      try {
+        const raw = localStorage.getItem('cosmos_active_session');
+        const sess = raw ? JSON.parse(raw) : null;
+        const hasUser = sess && sess.user && (sess.user.email || sess.user.callsign);
+        let hasSb = false;
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i) || '';
+          if (k.startsWith('sb-') && k.endsWith('-auth-token')) {
+            const val = localStorage.getItem(k);
+            if (val && val.includes('access_token')) { hasSb = true; break; }
+          }
+        }
+        if (!hasUser && !hasSb) {
+          window.location.replace('index.html#signin');
+        }
+      } catch (e) {
+        window.location.replace('index.html#signin');
+      }
+    })();
+  </script>
   <title>Celestial Audio Stories · Cosmic Mythology AR Explorer</title>
   <meta name="description" content="Listen to ancient sky lore and celestial mythology read aloud in multiple languages with an interactive illuminated storybook reader.">
   <meta property="og:type" content="website">

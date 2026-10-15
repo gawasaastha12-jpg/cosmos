@@ -65,7 +65,13 @@ function copyDirRecursive(src, dest) {
     if (entry.isDirectory()) {
       copyDirRecursive(srcPath, destPath);
     } else {
-      fs.copyFileSync(srcPath, destPath);
+      try {
+        fs.copyFileSync(srcPath, destPath);
+      } catch (err) {
+        if (err.code !== 'EPERM' && err.code !== 'EBUSY') {
+          throw err;
+        }
+      }
     }
   }
 }
