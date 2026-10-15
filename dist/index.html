@@ -3,14 +3,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cosmic-explorer.org/">
+<meta property="og:url" content="https://cosmos.vercel.app/">
 <meta property="og:title" content="Cosmic Mythology AR Explorer">
 <meta property="og:description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
-<meta property="og:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
+<meta property="og:image" content="https://cosmos.vercel.app/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cosmic Mythology AR Explorer">
 <meta name="twitter:description" content="Ancient sky-storytelling meets modern astrophysics. Explore constellations, global folklore, and observational astrometry in interactive 3D and audio.">
-<meta name="twitter:image" content="https://cosmic-explorer.org/assets/og-image.jpg">
+<meta name="twitter:image" content="https://cosmos.vercel.app/assets/og-image.jpg">
 <link rel="preload" href="assets/fonts/font_6.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -249,7 +249,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 
 </style></head><body>
 <canvas id="cv"></canvas>
-<nav class="gl" aria-label="Sections"><button data-go="home" class="on">Cosmic Canvas</button><button data-go="sci">Scientific view</button><button data-go="myth">Myth &amp; culture</button><button data-go="play">Journeys</button><a href="audio.html" style="all:unset;cursor:pointer;padding:8px 15px;border-radius:99px;color:var(--mut);white-space:nowrap;font-size:14px;transition:.25s;display:inline-flex;align-items:center;gap:5px" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--mut)'">📖 Audio Book</a></nav>
+<nav class="gl" aria-label="Sections"><button data-go="home" class="on">Cosmic Canvas</button><button data-go="sci">Scientific view</button><button data-go="myth">Myth &amp; culture</button><button data-go="play">Journeys</button><a href="audio.html" style="all:unset;cursor:pointer;padding:8px 15px;border-radius:99px;color:var(--mut);white-space:nowrap;font-size:14px;transition:.25s;display:inline-flex;align-items:center;gap:5px" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--mut)'">📖 Audio Book</a><a href="#signin" id="nav-user-chip" style="all:unset;cursor:pointer;padding:8px 15px;border-radius:99px;color:var(--mut);white-space:nowrap;font-size:14px;transition:.25s;display:none;align-items:center;gap:5px" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--mut)'" title="Stargazer Access"><span>✦</span> <span id="nav-user-label">Sign In</span></a></nav>
 
 <main id="home" class="pg on">
 <section class="ch"><div><h1><span class='w' style='--i:0'>Every</span> <span class='w' style='--i:1'>sky,</span><br><span class='w' style='--i:2'>anywhere.</span></h1><p class="sub">Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling, in any weather, at any hour.</p><p class="hint" style="color:var(--mut)">Sweep your cursor through the stars. Scroll to zoom out.</p></div></section>
@@ -259,7 +259,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
   <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
   <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
-    
+    <a href="#account" id="footer-account-link" style="color:var(--ink);text-decoration:none;font-weight:500;display:none">Stargazer Access</a>
     <a href="audio.html" style="color:var(--ink);text-decoration:none;font-weight:500">Audio Stories (Book)</a>
     <a href="about.html" style="color:var(--ink);text-decoration:none;font-weight:500">About &amp; Sources</a>
     <a href="privacy.html" style="color:var(--ink);text-decoration:none;font-weight:500">Privacy Policy</a>
@@ -433,6 +433,12 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <dialog id="dlg-audio" class="gl"></dialog>
 
 <script src="vendor/three.min.js" defer></script>
+<script>
+  window.COSMOS_SUPABASE_CONFIG = {
+    url: 'https://bhqblmcuopynalhmingo.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJocWJsbWN1b3B5bmFsaG1pbmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwNzY5OTMsImV4cCI6MjEwNzY1Mjk5M30.NI1ffwj9aDcEFNuDMDF1TS9Fr5B78175_ShglaGVsQo'
+  };
+</script>
 <script type="module">
   import * as Astro from './js/astro.js';
   window.Astro = Astro;
@@ -442,6 +448,13 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
   window.CloudSync = CloudSync;
   if (typeof window.COSMOS_SUPABASE_CONFIG !== 'undefined' && window.COSMOS_SUPABASE_CONFIG) {
     CloudSync.initCloud(window.COSMOS_SUPABASE_CONFIG.url, window.COSMOS_SUPABASE_CONFIG.anonKey);
+  }
+  if (typeof updateNavUser === 'function') {
+    updateNavUser();
+  } else {
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof updateNavUser === 'function') updateNavUser();
+    });
   }
 </script>
 <script>
@@ -3101,7 +3114,9 @@ function saveGame() {
 }
 
 function isCloudConfigured() {
-  return (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) || (typeof BACKEND_URL !== 'undefined' && BACKEND_URL);
+  return (typeof window.COSMOS_SUPABASE_CONFIG !== 'undefined' && window.COSMOS_SUPABASE_CONFIG && window.COSMOS_SUPABASE_CONFIG.url) ||
+         (typeof window.CloudSync !== 'undefined' && window.CloudSync && window.CloudSync.isConfigured()) ||
+         (typeof BACKEND_URL !== 'undefined' && BACKEND_URL);
 }
 
 function updateNavUser() {
@@ -3156,6 +3171,7 @@ function updateNavUser() {
     }
   }
 }
+window.updateNavUser = updateNavUser;
 updateNavUser();
 
 function openSignInModal() {

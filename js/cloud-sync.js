@@ -31,8 +31,35 @@ export function initCloud(url, anonKey) {
     }
   });
 
-  sb.auth.onAuthStateChange((evt) => {
-    if (evt === 'SIGNED_IN') {
+  const applySession = (session) => {
+    if (typeof window === 'undefined') return;
+    if (session?.user) {
+      if (window.SAVE) {
+        window.SAVE.user = {
+          id: session.user.id,
+          email: session.user.email,
+          callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
+          role: 'stargazer'
+        };
+      }
+    } else {
+      if (window.SAVE) {
+        delete window.SAVE.user;
+      }
+    }
+    if (typeof window.updateNavUser === 'function') {
+      window.updateNavUser();
+    }
+  };
+
+  sb.auth.getSession().then(({ data }) => {
+    applySession(data?.session);
+    if (data?.session) syncProgressWithCloud();
+  }).catch(() => {});
+
+  sb.auth.onAuthStateChange((evt, session) => {
+    applySession(session);
+    if (evt === 'SIGNED_IN' || evt === 'INITIAL_SESSION') {
       syncProgressWithCloud();
     }
   });
@@ -52,9 +79,14 @@ export const signInWithProvider = (provider) => { // 'github' | 'google'
   return sb.auth.signInWithOAuth({ provider, options: { redirectTo: origin } });
 };
 
-export const signOut = () => {
+export const signOut = async () => {
   if (!sb) return Promise.resolve();
-  return sb.auth.signOut();
+  const res = await sb.auth.signOut();
+  if (typeof window !== 'undefined') {
+    if (window.SAVE) delete window.SAVE.user;
+    if (typeof window.updateNavUser === 'function') window.updateNavUser();
+  }
+  return res;
 };
 
 export const readLocal = () => {

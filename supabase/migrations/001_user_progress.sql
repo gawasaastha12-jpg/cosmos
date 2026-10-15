@@ -9,6 +9,9 @@ create table if not exists public.user_progress (
 
 alter table public.user_progress enable row level security;
 
+-- Grant access to authenticated users (RLS policies restrict to own rows)
+grant select, insert, update, delete on table public.user_progress to authenticated;
+
 -- (select auth.uid()) is evaluated once per statement, not per row
 create policy "own row: select" on public.user_progress
   for select to authenticated using ((select auth.uid()) = user_id);

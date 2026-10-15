@@ -1,0 +1,10 @@
+{
+  "name": "cosmic-ar-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ancient Sky Lore & Observational Astrophysics Web App",
+  "scripts": {
+    "build": "node scripts/build-public.js",
+    "serve": "node scripts/serve.js"
+  }
+}

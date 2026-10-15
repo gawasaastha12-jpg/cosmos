@@ -33,8 +33,14 @@ const CONFIG_PATH = path.join(ROOT_DIR, 'data', 'config.json');
 const OUT_MYTH_PUBLIC = path.join(ROOT_DIR, 'data', 'myth.public.json');
 const OUT_AUDIO_PUBLIC = path.join(ROOT_DIR, 'data', 'audio-stories.public.json');
 
-// 1. SITE_URL: Read strictly from environment variable ONLY
-const rawSiteUrl = process.env.SITE_URL ? process.env.SITE_URL.trim() : '';
+// 1. SITE_URL: Read strictly from environment variable ONLY (with Vercel automatic fallback)
+let rawSiteUrl = (process.env.SITE_URL || '').trim();
+if (!rawSiteUrl && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+  rawSiteUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+} else if (!rawSiteUrl && process.env.VERCEL_URL) {
+  rawSiteUrl = `https://${process.env.VERCEL_URL}`;
+}
+
 if (!rawSiteUrl) {
   console.error('FATAL ERROR: SITE_URL environment variable is missing.');
   console.error('Usage: SITE_URL=https://your-domain.org node scripts/build-public.js');
@@ -545,15 +551,15 @@ const INTRO = {};
 
   // F. Backend URL & Account UI configuration
   const BACKEND_URL = process.env.BACKEND_URL ? process.env.BACKEND_URL.trim() : '';
-  if (!BACKEND_URL) {
-    // Hide all login/account UI in public build
-    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*id="nav-user-chip"[^>]*>[\s\S]*?<\/a>/gi, '');
-    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*id="footer-account-link"[^>]*>[\s\S]*?<\/a>/gi, '');
-    indexHtml = indexHtml.replace(/<a\s+href="[^"]*login\.html"[^>]*>[\s\S]*?<\/a>/gi, '');
+  const hasSupabase = indexHtml.includes('COSMOS_SUPABASE_CONFIG') || !!process.env.SUPABASE_URL;
+  if (BACKEND_URL) {
+    indexHtml = indexHtml.replace(/<head>/, `<head><script>window.BACKEND_URL = "${BACKEND_URL}";</script>`);
+  } else if (!hasSupabase) {
+    // Hide all login/account UI in public build if neither custom backend nor Supabase is configured
+    indexHtml = indexHtml.replace(/<a\s+href="[^"]*"[^>]*id="nav-user-chip"[^>]*>[\s\S]*?<\/a>/gi, '');
+    indexHtml = indexHtml.replace(/<a\s+href="[^"]*"[^>]*id="footer-account-link"[^>]*>[\s\S]*?<\/a>/gi, '');
     indexHtml = indexHtml.replace(/id="nav-user-chip"/g, 'id="nav-user-chip" style="display:none"');
     indexHtml = indexHtml.replace(/id="footer-account-link"/g, 'id="footer-account-link" style="display:none"');
-  } else {
-    indexHtml = indexHtml.replace(/<head>/, `<head><script>window.BACKEND_URL = "${BACKEND_URL}";</script>`);
   }
   // Ensure no login.html links or api/auth calls remain in dist/index.html
   indexHtml = indexHtml.replace(/href="login\.html"/gi, 'href="#" style="display:none"');
