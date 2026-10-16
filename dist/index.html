@@ -79,6 +79,10 @@ dialog{margin:auto;max-width:540px;width:calc(100% - 28px);padding:24px;color:va
 dialog.wide{max-width:min(760px,95vw);width:100%}
 dialog.signin-modal{max-width:440px!important;width:min(440px,calc(100% - 24px))!important;max-height:92vh!important;overflow-y:auto!important;overflow-x:hidden!important;padding:26px 22px!important;border-radius:22px!important;background:rgba(8,12,30,.98)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 24px 70px rgba(0,0,0,.92)!important;box-sizing:border-box!important;margin:auto!important}
 dialog.signin-modal .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.modal-close{all:unset;cursor:pointer;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;line-height:1;background:var(--a);color:#05070f;box-shadow:0 2px 10px rgba(123,140,255,.35);border:1px solid rgba(255,255,255,.2);transition:transform .18s ease,background .18s ease,box-shadow .18s ease;flex:none}
+.modal-close:hover{background:#9bb0ff;color:#05070f;transform:scale(1.08);box-shadow:0 4px 16px rgba(123,140,255,.55)}
+.modal-close:active{transform:scale(.94)}
+.modal-close:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .auth-tabs{display:flex;background:rgba(255,255,255,.05);padding:3px;border-radius:12px;border:1px solid var(--bd);margin-bottom:16px;gap:4px}
 .auth-tab{all:unset;flex:1;cursor:pointer;text-align:center;padding:8px 12px;border-radius:9px;font-size:13px;font-weight:600;color:var(--mut);transition:.2s}
 .auth-tab:hover{color:var(--ink)}
@@ -497,7 +501,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const dlg = $('#dlg');
 if (dlg) {
   dlg.addEventListener('click', ev => {
-    if (ev.target.closest('[data-x]') || ev.target.closest('.modal-close-btn') || ev.target.closest('.btn-close') || ev.target === dlg) {
+    if (ev.target.closest('[data-x]') || ev.target.closest('.modal-close') || ev.target.closest('.modal-close-btn') || ev.target.closest('.btn-close') || ev.target === dlg) {
       if (typeof stopV === 'function') stopV();
       dlg.close();
     }
