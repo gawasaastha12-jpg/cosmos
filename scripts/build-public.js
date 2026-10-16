@@ -423,6 +423,8 @@ const INTRO = {};
     const curH = location.hash.slice(1);
     if (curH === 'signin') {
       setTimeout(() => { if (typeof openSignInModal === 'function') openSignInModal(); }, 350);
+    } else if (curH === 'welcome') {
+      setTimeout(() => { if (typeof checkOnboarding === 'function') { page = 'play'; SAVE.onboarded = false; checkOnboarding(); } }, 350);
     } else if (['sci','myth','play'].includes(curH)) {
       tryInit3D();
       renderMyth();

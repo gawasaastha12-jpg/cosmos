@@ -38,7 +38,7 @@ p.sub{max-width:46ch;color:var(--mut);font-size:18px;margin-top:20px}
 .ch p{color:var(--mut)}
 .hint{margin-top:34px;font-size:13px}
 .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.btn{all:unset;cursor:pointer;padding:10px 18px;border-radius:99px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);font-size:14px;transition:.25s}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 18px;border-radius:99px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);font-size:14px;transition:.25s}
 .btn:hover,.btn.on{background:var(--a);color:#05070f;border-color:var(--a)}
 #player{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;gap:12px;align-items:center;padding:10px 16px 10px 10px;max-width:min(440px,calc(100% - 28px))}
 .play{all:unset;cursor:pointer;width:42px;height:42px;border-radius:50%;background:var(--a);color:#05070f;display:grid;place-items:center;flex:none;font-size:14px}
@@ -3387,8 +3387,8 @@ function openSignInModal() {
       <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
     </div>
     <div class="signin-card">
-      <p style="font-size:14px;color:var(--ink);line-height:1.55;margin:0">Sign in with your email address to unlock the full Scientific View, Myth &amp; Culture archives, Journeys, and the Celestial Audiobook:</p>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;box-sizing:border-box;margin-top:6px">
+      <p style="font-size:14px;color:var(--ink);line-height:1.5;margin:0;text-align:center">Sign in with your email address to unlock more benefits</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;box-sizing:border-box;margin-top:8px">
         <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" autofocus style="width:100%;text-align:center" />
         <button class="btn btn-auto" id="btn-cloud-magic">Send Magic Link</button>
       </div>
@@ -4679,7 +4679,9 @@ function checkOnboarding() {
       ❤️ You have 3 lives per run — protect your hearts!<br>
       🎴 Completed constellations unlock collectible cards.
     </div>
-    <button class="btn" id="btn-start-journey" style="width:100%;background:var(--a);color:#000;font-weight:600">Begin Journey</button>
+    <div style="display:flex;justify-content:center;width:100%;margin-top:20px">
+      <button class="btn btn-auto" id="btn-start-journey" style="width:auto;min-width:180px;max-width:240px;padding:12px 28px;background:var(--a);color:#05070f;font-weight:600;border-radius:99px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;border:none;cursor:pointer;transition:transform .15s,opacity .15s;box-shadow:0 4px 16px rgba(123,140,255,.25)">Begin Journey</button>
+    </div>
   `;
   $('#btn-start-journey').onclick = () => {
     SAVE.onboarded = true;
@@ -4753,6 +4755,14 @@ addEventListener('hashchange',()=>{
     if (typeof openSignInModal === 'function') openSignInModal();
     return;
   }
+  if (h === 'welcome') {
+    if (typeof checkOnboarding === 'function') {
+      page = 'play';
+      SAVE.onboarded = false;
+      checkOnboarding();
+    }
+    return;
+  }
   if(['home','sci','myth','play'].includes(h)&&h!==page){
     go(h);
   }
@@ -4761,6 +4771,8 @@ tryInit3D();fit();renderMyth();renderQ();setLang('en');
 const curH = location.hash.slice(1);
 if (curH === 'signin') {
   setTimeout(() => { if (typeof openSignInModal === 'function') openSignInModal(); }, 350);
+} else if (curH === 'welcome') {
+  setTimeout(() => { if (typeof checkOnboarding === 'function') { page = 'play'; SAVE.onboarded = false; checkOnboarding(); } }, 350);
 } else if(['sci','myth','play'].includes(curH)){
   go(curH);
 }
