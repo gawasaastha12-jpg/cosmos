@@ -194,6 +194,9 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 .node-btn.current:active{transform:translateY(7px);box-shadow:0 1px 0 #0e7490,0 4px 10px rgba(0,0,0,.6)}
 @keyframes duoPulse{0%,100%{box-shadow:0 8px 0 #0e7490,0 0 0 0 rgba(6,182,212,.6)}50%{box-shadow:0 8px 0 #0e7490,0 0 0 14px rgba(6,182,212,0)}}
 .node-btn.locked{background:linear-gradient(180deg,#1e293b 0%,#0f172a 100%);color:#64748b;border:2px solid #334155;box-shadow:0 6px 0 #090d16,0 10px 16px rgba(0,0,0,.4);opacity:.75;cursor:not-allowed}
+.node-btn:not(.completed):not(.current):not(.locked){background:linear-gradient(180deg,#3b82f6 0%,#1d4ed8 100%);color:#fff;border:2px solid #60a5fa;box-shadow:0 7px 0 #1e3a8a,0 12px 20px rgba(37,99,235,.35)}
+.node-btn:not(.completed):not(.current):not(.locked):hover{transform:translateY(2px);box-shadow:0 5px 0 #1e3a8a,0 8px 16px rgba(37,99,235,.45)}
+.node-btn:not(.completed):not(.current):not(.locked):active{transform:translateY(6px);box-shadow:0 1px 0 #1e3a8a,0 3px 8px rgba(37,99,235,.5)}
 .node-btn.boss{width:80px;height:80px;border-radius:24px}
 .node-btn.boss.completed{background:linear-gradient(180deg,#fbbf24 0%,#d97706 100%);border:3px solid #fef08a;box-shadow:0 8px 0 #78350f,0 16px 28px rgba(251,191,36,.4)}
 .node-btn.boss:not(.completed):not(.locked){background:linear-gradient(180deg,#ef4444 0%,#b91c1c 100%);border:3px solid #fca5a5;color:#fff;box-shadow:0 8px 0 #7f1d1d,0 16px 28px rgba(239,68,68,.4)}
@@ -3502,10 +3505,6 @@ function openSignInModal(initialMode = 'login') {
           <button type="submit" class="btn-auth-primary" id="btn-auth-submit">${isLogin ? 'Log In' : 'Create Account'}</button>
         </form>
 
-        <div class="auth-sub-option" style="margin-top:12px">
-          <button type="button" class="auth-link" id="btn-switch-otp">Or sign in with a 6-digit email code</button>
-        </div>
-
         <div class="auth-footer-guarantee">
           ✦ <b>Zero Data Loss Guarantee:</b> Your on-device progress in <code>cosmic_save_v2</code> is never overwritten. When you connect, your stars and unlocked cards merge with your cloud record automatically.
         </div>
@@ -3529,44 +3528,6 @@ function openSignInModal(initialMode = 'login') {
             <input type="email" id="reset-email" class="auth-input" placeholder="stargazer@example.com" autocomplete="email" required autofocus />
           </div>
           <button type="submit" class="btn-auth-primary" id="btn-reset-submit">Send Reset Link</button>
-        </form>
-
-        <div class="auth-sub-option" style="margin-top:18px">
-          <button type="button" class="auth-link" id="btn-back-to-login">← Back to Log In</button>
-        </div>
-      `;
-    } else if (mode === 'otp') {
-      const hasSent = !!otpPendingEmail;
-      contentHtml = `
-        <div class="modal-header">
-          <div>
-            <h3 style="display:flex;align-items:center;gap:8px;font-size:20px;color:#ffe2b0;margin:0"><span>✦</span> 6-Digit Email Code</h3>
-            <p style="font-size:12px;color:var(--mut);margin-top:3px">Passwordless sign-in with a one-time verification code</p>
-          </div>
-          ${closeBtnHtml}
-        </div>
-
-        <div class="auth-error-box" id="auth-err"></div>
-        <div class="auth-info-box" id="auth-info" ${hasSent ? 'style="display:block"' : ''}>${hasSent ? `Code sent to <b>${otpPendingEmail}</b>. Enter the 6-digit code below (check Spam/Junk if not in inbox).` : ''}</div>
-
-        <form id="auth-otp-form" onsubmit="return false;">
-          <div class="auth-form-group">
-            <label class="auth-label" for="otp-email">Email address</label>
-            <input type="email" id="otp-email" class="auth-input" value="${otpPendingEmail}" placeholder="stargazer@example.com" autocomplete="email" required ${hasSent ? 'readonly style="opacity:.8"' : 'autofocus'} />
-          </div>
-
-          ${hasSent ? `
-          <div class="auth-form-group">
-            <div class="auth-label">
-              <label for="otp-code">6-Digit Code</label>
-              <button type="button" class="auth-link" id="btn-otp-resend">Resend code</button>
-            </div>
-            <input type="text" id="otp-code" class="auth-input" placeholder="123456" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autofocus style="text-align:center;font-size:20px;letter-spacing:6px;font-family:monospace" required />
-          </div>
-          <button type="submit" class="btn-auth-primary" id="btn-otp-verify-submit">Verify & Sign In</button>
-          ` : `
-          <button type="submit" class="btn-auth-primary" id="btn-otp-send-submit">Send 6-Digit Code</button>
-          `}
         </form>
 
         <div class="auth-sub-option" style="margin-top:18px">
@@ -3670,9 +3631,6 @@ function openSignInModal(initialMode = 'login') {
     const btnBack = $('#btn-back-to-login');
     if (btnBack) btnBack.onclick = () => render('login');
 
-    const btnSwitchOtp = $('#btn-switch-otp');
-    if (btnSwitchOtp) btnSwitchOtp.onclick = () => render('otp');
-
     const form = $('#auth-form');
     if (form && mode === 'login') {
       form.onsubmit = async (e) => {
@@ -3754,69 +3712,6 @@ function openSignInModal(initialMode = 'login') {
           setBusy(btn, false);
         }
       };
-    }
-
-    const otpForm = $('#auth-otp-form');
-    if (otpForm) {
-      otpForm.onsubmit = async (e) => {
-        e.preventDefault();
-        const email = ($('#otp-email').value || '').trim();
-        if (!email) {
-          showAuthError('Please enter your email address.');
-          return;
-        }
-        if (!otpPendingEmail) {
-          const btn = $('#btn-otp-send-submit');
-          setBusy(btn, true, 'Sending code...');
-          hideAuthMsgs();
-          try {
-            if (!window.CloudSync) throw new Error('Cloud sync not configured');
-            await window.CloudSync.signInWithOtp(email);
-            otpPendingEmail = email;
-            render('otp');
-          } catch (err) {
-            showAuthError(err.message || 'Could not send verification code.');
-          } finally {
-            setBusy(btn, false);
-          }
-        } else {
-          const code = ($('#otp-code').value || '').trim();
-          if (!code || code.length < 6) {
-            showAuthError('Please enter the 6-digit verification code.');
-            return;
-          }
-          const btn = $('#btn-otp-verify-submit');
-          setBusy(btn, true, 'Verifying code...');
-          hideAuthMsgs();
-          try {
-            if (!window.CloudSync) throw new Error('Cloud sync not configured');
-            await window.CloudSync.verifyOtp(otpPendingEmail, code);
-            showToast('✨', 'Welcome Stargazer!', 'Signed in successfully.');
-            d.close();
-          } catch (err) {
-            showAuthError(err.message || 'Invalid or expired code. Please try again.');
-          } finally {
-            setBusy(btn, false);
-          }
-        }
-      };
-
-      const resendBtn = $('#btn-otp-resend');
-      if (resendBtn) {
-        resendBtn.onclick = async () => {
-          setBusy(resendBtn, true, 'Sending...');
-          hideAuthMsgs();
-          try {
-            if (!window.CloudSync) throw new Error('Cloud sync not configured');
-            await window.CloudSync.signInWithOtp(otpPendingEmail);
-            showAuthInfo(`New 6-digit code sent to ${otpPendingEmail}.`);
-          } catch (err) {
-            showAuthError(err.message || 'Could not resend code.');
-          } finally {
-            setBusy(resendBtn, false);
-          }
-        };
-      }
     }
 
     const recForm = $('#auth-recovery-form');
@@ -4179,6 +4074,7 @@ function renderTrail() {
   
   const WAVE_OFFSETS = [0, -50, -85, -50, 0, 50, 85, 50];
   const curAv = COMPANIONS[SAVE.avatar] || COMPANIONS.owl;
+  const hasCompletedOneModule = Object.keys((SAVE && SAVE.done) || {}).length >= 1 || (SAVE && SAVE.stars > 0) || (SAVE && SAVE.xp > 0);
   let html = '';
   let unlockedPrev = true;
   let foundCurrent = false;
@@ -4191,15 +4087,15 @@ function renderTrail() {
     html += `<div class="trail-section">
       <div class="trail-ch-title">
         <h3>${ch.title}</h3>
-        <span>${ch.desc}</span>
+        <span>${hasCompletedOneModule ? '<span style="color:#5de0d0;font-size:11px;padding:2px 8px;border-radius:99px;background:rgba(93,224,208,.1);border:1px solid rgba(93,224,208,.3);margin-right:6px">✦ Unlocked</span>' : ''}${ch.desc}</span>
       </div>
       <div class="trail-map">`;
     
     ch.nodes.forEach((node, nIdx) => {
       const isDone = !!SAVE.done[node.id];
       const stars = SAVE.done[node.id] || 0;
-      const isLocked = !unlockedPrev && !isDone;
-      const isCurrent = unlockedPrev && !isDone && !foundCurrent;
+      const isLocked = !hasCompletedOneModule && !unlockedPrev && !isDone;
+      const isCurrent = !isDone && (unlockedPrev || hasCompletedOneModule) && !foundCurrent;
       if (isCurrent) foundCurrent = true;
       const isBoss = node.type === 'boss';
 
@@ -4269,7 +4165,7 @@ function renderTrail() {
         html += `<div class="trail-curve-box">
           <svg width="100%" height="38" viewBox="-160 0 320 38" style="overflow:visible;pointer-events:none">
             <path d="M ${x} -10 C ${x} 19, ${nextX} 19, ${nextX} 48"
-                  stroke="${pathDone ? '#fbbf24' : 'rgba(255,255,255,0.22)'}"
+                  stroke="${pathDone ? '#fbbf24' : (hasCompletedOneModule ? 'rgba(93,224,208,0.45)' : 'rgba(255,255,255,0.22)')}"
                   stroke-width="7"
                   stroke-linecap="round"
                   fill="none"
