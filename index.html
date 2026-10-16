@@ -2097,7 +2097,7 @@ function fit(){
 }
 addEventListener('resize',fit);
 
-const RAD=2.4;
+const RAD=2.2;
 function isReduced(){return Boolean(typeof SAVE!=='undefined'&&SAVE&&SAVE.settings&&SAVE.settings.reducedMotion);}
 
 function stepParticles(t){
@@ -2107,39 +2107,92 @@ function stepParticles(t){
   const act=[];
   for(let i=0;i<N;i++){
     const k=i*3;
-    const hx=home[k]+Math.sin(t*.0004+i)*.12;
-    const hy=home[k+1]+Math.cos(t*.00035+i*1.7)*.12;
-    let tx=hx,ty=hy;
+    const hx=home[k]+Math.sin(t*.0003+i)*.08;
+    const hy=home[k+1]+Math.cos(t*.00025+i*1.7)*.08;
     const d=Math.hypot(mx-hx,my-hy);
     if(live&&d<RAD){
-      const f=d/RAD;
-      tx=mx+(hx-mx)*(.15+f*.7);
-      ty=my+(hy-my)*(.15+f*.7);
-      if(act.length<60)act.push({idx:i,d,k});
+      act.push({idx:i,d,k,hx,hy});
     }
-    pos[k]+=(tx-pos[k])*.1;
-    pos[k+1]+=(ty-pos[k+1])*.1;
+  }
+
+  // Reduced constellation group of up to 18 closest particles for the Rose
+  act.sort((a,b)=>a.d-b.d);
+  const roseCount=Math.min(18,act.length);
+  const roseSet=new Set();
+  const roseMap=new Map();
+  const rot=t*.00035;
+  const R_ROSE=1.35;
+
+  for(let rIdx=0;rIdx<roseCount;rIdx++){
+    const item=act[rIdx];
+    roseSet.add(item.idx);
+    let tx,ty;
+    if(rIdx<12){
+      // 12 outer petal perimeter points (5-lobed rose curve)
+      const theta=rot+(rIdx/12)*Math.PI*2;
+      const r=R_ROSE*(0.42+0.58*Math.pow(Math.cos(2.5*theta),2));
+      tx=mx+r*Math.cos(theta);
+      ty=my+r*Math.sin(theta);
+    } else {
+      // 6 inner rose bud whorl points
+      const j=rIdx-12;
+      const theta=rot+(j/6)*Math.PI*2+0.35;
+      const r=R_ROSE*0.38*(0.65+0.35*Math.pow(Math.cos(2.5*theta),2));
+      tx=mx+r*Math.cos(theta);
+      ty=my+r*Math.sin(theta);
+    }
+    roseMap.set(item.k,{tx,ty});
+  }
+
+  // Update positions for all N particles
+  for(let i=0;i<N;i++){
+    const k=i*3;
+    const hx=home[k]+Math.sin(t*.0003+i)*.08;
+    const hy=home[k+1]+Math.cos(t*.00025+i*1.7)*.08;
+    let tx=hx,ty=hy;
+    if(roseSet.has(i)){
+      const rTarget=roseMap.get(k);
+      if(rTarget){tx=rTarget.tx;ty=rTarget.ty;}
+      pos[k]+=(tx-pos[k])*.12;
+      pos[k+1]+=(ty-pos[k+1])*.12;
+    } else {
+      pos[k]+=(tx-pos[k])*.07;
+      pos[k+1]+=(ty-pos[k+1])*.07;
+    }
     pos[k+2]=home[k+2];
   }
   pg.attributes.position.needsUpdate=true;
 
+  // Draw delicate, clean Rose constellation lines
   let n=0;
-  if(live&&act.length>0&&lp&&lg){
-    act.sort((a,b)=>a.d-b.d);
-    const maxCursorConnections=Math.min(6,act.length);
-    for(let c=0;c<maxCursorConnections&&n<MAXL;c++){
-      const pIdx=act[c].k;
-      lp.set([mx,my,0,pos[pIdx],pos[pIdx+1],pos[pIdx+2]],n*6);
+  if(live&&roseCount>=6&&lp&&lg){
+    // 1. Outer petals outline
+    const numOuter=Math.min(12,roseCount);
+    for(let i=0;i<numOuter&&n<MAXL;i++){
+      const next=(i+1)%numOuter;
+      const p1=act[i].k,p2=act[next].k;
+      lp.set([pos[p1],pos[p1+1],pos[p1+2],pos[p2],pos[p2+1],pos[p2+2]],n*6);
       n++;
     }
-    for(let a=0;a<act.length&&n<MAXL;a++){
-      let connections=0;
-      for(let b=a+1;b<act.length&&connections<3&&n<MAXL;b++){
-        const i=act[a].k,j=act[b].k;
-        if(Math.hypot(pos[i]-pos[j],pos[i+1]-pos[j+1])<1.4){
-          lp.set([pos[i],pos[i+1],pos[i+2],pos[j],pos[j+1],pos[j+2]],n*6);
-          n++;connections++;
-        }
+    // 2. Inner bud whorl and ribs linking to petals
+    if(roseCount>12){
+      const numInner=roseCount-12;
+      for(let j=0;j<numInner&&n<MAXL;j++){
+        const next=12+((j+1)%numInner);
+        const p1=act[12+j].k,p2=act[next].k;
+        lp.set([pos[p1],pos[p1+1],pos[p1+2],pos[p2],pos[p2+1],pos[p2+2]],n*6);
+        n++;
+        // Connect bud to petal peak
+        const outIdx=(j*2)%numOuter;
+        const pOut=act[outIdx].k;
+        lp.set([pos[p1],pos[p1+1],pos[p1+2],pos[pOut],pos[pOut+1],pos[pOut+2]],n*6);
+        n++;
+      }
+      // 3. Delicate center stamen lines to cursor
+      for(let s=0;s<3&&n<MAXL;s++){
+        const pIn=act[12+(s*2)%numInner].k;
+        lp.set([mx,my,0,pos[pIn],pos[pIn+1],pos[pIn+2]],n*6);
+        n++;
       }
     }
   }
@@ -2165,18 +2218,17 @@ function init3D() {
       const c = document.createElement('canvas');
       c.width = c.height = 64;
       const x = c.getContext('2d'), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
-      g.addColorStop(0, '#ffffff');
-      g.addColorStop(.2, 'rgba(255,255,255,1)');
-      g.addColorStop(.45, 'rgba(175,210,255,.8)');
-      g.addColorStop(.7, 'rgba(110,150,255,.3)');
-      g.addColorStop(1, 'rgba(70,100,255,0)');
+      g.addColorStop(0, 'rgba(255,255,255,.85)');
+      g.addColorStop(.2, 'rgba(215,230,255,.6)');
+      g.addColorStop(.5, 'rgba(140,180,255,.22)');
+      g.addColorStop(1, 'rgba(50,80,200,0)');
       x.fillStyle = g;
       x.fillRect(0, 0, 64, 64);
       return new THREE.CanvasTexture(c);
     })();
 
     // Particle layer: star particles with interactive cursor hover effect
-    N = innerWidth < 768 ? 500 : 1200;
+    N = innerWidth < 768 ? 320 : 650;
     layer = new THREE.Group();
     layer.position.z = -10;
     C.add(layer);
@@ -2185,14 +2237,14 @@ function init3D() {
     vel = new Float32Array(N * 3);
     pg = new THREE.BufferGeometry();
     pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    pm = new THREE.PointsMaterial({size: 9.5, sizeAttenuation: false, color: 0xffffff, transparent: true, opacity: .95, map: sprite, depthWrite: false, blending: THREE.AdditiveBlending});
+    pm = new THREE.PointsMaterial({size: 6.8, sizeAttenuation: false, color: 0xe8eeff, transparent: true, opacity: .72, map: sprite, depthWrite: false, blending: THREE.AdditiveBlending});
     layer.add(new THREE.Points(pg, pm));
 
-    MAXL = 700;
+    MAXL = 300;
     lp = new Float32Array(MAXL * 6);
     lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.BufferAttribute(lp, 3));
-    lm = new THREE.LineBasicMaterial({color: 0x9fb2ff, transparent: true, opacity: .9, blending: THREE.AdditiveBlending, depthWrite: false});
+    lm = new THREE.LineBasicMaterial({color: 0xb5c9ff, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, depthWrite: false});
     layer.add(new THREE.LineSegments(lg, lm));
 
     W = new THREE.Group();
@@ -4692,7 +4744,7 @@ P+=(tp-P)*.06;const home_=page==='home';
 const p=home_?P:0,e=p*p*(3-2*p);C.position.z=(6+e*8.5)*(C.aspect<.8?1.3:1);C.rotation.y=Math.sin(t*.00008)*.05+M.x*.03;C.rotation.x=M.y*.02;
 const gs=Math.max(0,(p-.6)/.4);W.visible=gs>.01&&PV.view==='globe';W.scale.setScalar(.3+gs*.7);sky.rotation.y=lst()*Math.PI/180+Math.PI/2;
 ring.scale.setScalar(1+((t/700)%1)*3);ring.material.opacity=1-((t/700)%1);
-pm.opacity=(home_?1:.28)*Math.max(0,1-p*1.4);lm.opacity=.85*Math.max(0,1-p*1.6);layer.visible=pm.opacity>.01;if(layer.visible&&!isReduced())stepParticles(t);
+pm.opacity=(home_?.72:.2)*Math.max(0,1-p*1.4);lm.opacity=.55*Math.max(0,1-p*1.6);layer.visible=pm.opacity>.01;if(layer.visible&&!isReduced())stepParticles(t);
 if(tgt&&!drag){const dx=((tgt[1]-W.rotation.y+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;W.rotation.y+=dx*.06;W.rotation.x+=(tgt[0]-W.rotation.x)*.06}else if(gm&&!drag&&!tgt&&!isReduced())W.rotation.y+=.0015;{const sr=$('.gstage').getBoundingClientRect(),dy=sr.top+sr.height/2-innerHeight/2;if(PV.view==='globe'&&p>.5&&sr.height)C.setViewOffset(innerWidth,innerHeight,0,-dy,innerWidth,innerHeight);else C.clearViewOffset()}R.render(S,C);const g_=p>.88;if(g_!==gm){gm=g_;lbs.style.display=gm?'block':'none'}lbs.style.visibility=PV.view==='globe'?'visible':'hidden';if(PV.view==='plan'&&p>.6)drawPlan();if(gm&&PV.view==='globe'&&tv)Object.keys(CG).forEach((k,i)=>{tv.copy(CG[k].c).applyMatrix4(sky.matrixWorld);const z=tv.z;tv.project(C);const b=lbs.children[i];if(b){b.style.display='block';b.style.transform=`translate(${(tv.x*.5+.5)*innerWidth}px,${(-tv.y*.5+.5)*innerHeight}px) translate(-50%,-50%)`;b.style.opacity=Math.max(0,Math.min(1,(z+1.5)/3)).toFixed(2);b.style.pointerEvents=z>-1?'auto':'none'}});
 if(page==='sci'){drawSky(t);drawOrb(t)}if(page==='myth')drawMyth(t)}
 addEventListener('hashchange',()=>{
