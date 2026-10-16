@@ -3536,7 +3536,7 @@ function openSignInModal(initialMode = 'login') {
         </div>
 
         <div class="auth-error-box" id="auth-err"></div>
-        <div class="auth-info-box" id="auth-info" ${hasSent ? 'style="display:block"' : ''}>${hasSent ? `Code sent to <b>${otpPendingEmail}</b>. Enter the 6-digit code below.` : ''}</div>
+        <div class="auth-info-box" id="auth-info" ${hasSent ? 'style="display:block"' : ''}>${hasSent ? `Code sent to <b>${otpPendingEmail}</b>. Enter the 6-digit code below (check Spam/Junk if not in inbox).` : ''}</div>
 
         <form id="auth-otp-form" onsubmit="return false;">
           <div class="auth-form-group">
@@ -3708,7 +3708,7 @@ function openSignInModal(initialMode = 'login') {
           if (!window.CloudSync) throw new Error('Cloud sync not configured');
           const res = await window.CloudSync.signUp(email, password, { callsign: callsign || email.split('@')[0] });
           if (res && res.user && !res.session) {
-            showAuthInfo('Check your email to confirm your account before logging in.');
+            showAuthInfo('Account created! Please check your email inbox and Spam/Junk folder to confirm your account before logging in.');
           } else {
             showToast('✨', 'Welcome Stargazer!', 'Your account has been created.');
             d.close();
@@ -3736,7 +3736,7 @@ function openSignInModal(initialMode = 'login') {
         try {
           if (!window.CloudSync) throw new Error('Cloud sync not configured');
           await window.CloudSync.resetPassword(email);
-          showAuthInfo('Password reset link sent! Check your email inbox to proceed.');
+          showAuthInfo('Password reset link sent! Check your inbox and Spam/Junk folder to proceed.');
         } catch (err) {
           showAuthError(err.message || 'Could not send reset link. Please check the email.');
         } finally {

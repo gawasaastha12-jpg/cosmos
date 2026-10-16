@@ -36,7 +36,7 @@ export function formatAuthError(err) {
     return 'An account with this email already exists. Please log in instead.';
   }
   if (msg.includes('rate limit') || msg.includes('over_email_send_rate_limit') || msg.includes('too many requests')) {
-    return 'Too many requests. Please wait a moment and try again.';
+    return 'Too many requests: email rate limit exceeded on the Supabase backend. If you requested an email recently, please check your Spam or Junk folder. To sign in without emails, disable "Confirm email" in your Supabase Auth dashboard.';
   }
   if (msg.includes('failed to fetch') || msg.includes('networkerror') || msg.includes('network') || (typeof navigator !== 'undefined' && !navigator.onLine)) {
     return 'Network connection unavailable. Your progress remains safely stored on this device.';
