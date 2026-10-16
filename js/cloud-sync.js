@@ -275,7 +275,23 @@ export const signOut = async () => {
 
 export const readLocal = () => {
   try {
-    return JSON.parse(localStorage.getItem(SAVE_KEY)) || {};
+    let local = {};
+    try {
+      local = JSON.parse(localStorage.getItem(SAVE_KEY)) || {};
+    } catch {}
+
+    let userKey = null;
+    if (typeof window !== 'undefined' && typeof window.getSaveKey === 'function') {
+      try { userKey = window.getSaveKey(); } catch {}
+    }
+    if (userKey && userKey !== SAVE_KEY) {
+      try {
+        const userSave = JSON.parse(localStorage.getItem(userKey));
+        if (userSave) local = mergeProgress(local, userSave);
+      } catch {}
+    }
+
+    return local;
   } catch {
     return {};
   }
@@ -283,12 +299,20 @@ export const readLocal = () => {
 
 export const writeLocal = (obj) => {
   try {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(obj));
+    const str = JSON.stringify(obj);
+    localStorage.setItem(SAVE_KEY, str);
+    let userKey = null;
+    if (typeof window !== 'undefined' && typeof window.getSaveKey === 'function') {
+      try { userKey = window.getSaveKey(); } catch {}
+    }
+    if (userKey && userKey !== SAVE_KEY) {
+      localStorage.setItem(userKey, str);
+    }
   } catch {}
 };
 
 // Merge so neither device loses progress: max for counters, union for collections,
-// shallow merge for completion maps (done, achievements),
+// non-destructive union for completion maps (done, achievements) preserving max stars,
 // newest write wins for settings/day/avatar.
 export function mergeProgress(a = {}, b = {}) {
   const newer = (a._ts || 0) >= (b._ts || 0) ? a : b;
@@ -299,9 +323,31 @@ export function mergeProgress(a = {}, b = {}) {
   for (const k of UNION_KEYS) {
     out[k] = [...new Set([...(a[k] || []), ...(b[k] || [])])];
   }
-  out.done = Object.assign({}, a.done || {}, b.done || {});
+
+  // Preserve all completed modules and highest stars earned
+  const allDoneKeys = new Set([...Object.keys(a.done || {}), ...Object.keys(b.done || {})]);
+  out.done = {};
+  for (const k of allDoneKeys) {
+    const valA = a.done ? a.done[k] : undefined;
+    const valB = b.done ? b.done[k] : undefined;
+    if (typeof valA === 'number' || typeof valB === 'number') {
+      out.done[k] = Math.max(valA || 0, valB || 0);
+    } else {
+      out.done[k] = (valA !== undefined) ? valA : valB;
+    }
+  }
+
+  // Non-destructive achievements
   out.achievements = Object.assign({}, a.achievements || {}, b.achievements || {});
-  out._ts = Date.now();
+
+  // In one single account, once unlocked, all modules stay unlocked forever
+  out.modulesUnlocked = !!(a.modulesUnlocked || b.modulesUnlocked || Object.keys(out.done).length > 0 || out.stars > 0 || out.xp > 0);
+
+  if (a.onboarded || b.onboarded) {
+    out.onboarded = true;
+  }
+
+  out._ts = Math.max(Date.now(), a._ts || 0, b._ts || 0);
   return out;
 }
 
@@ -316,11 +362,13 @@ export async function syncProgressWithCloud() {
       .select('data').eq('user_id', uid).maybeSingle();
     if (error) throw error;
 
-    const merged = mergeProgress(readLocal(), row?.data || {});
+    const localData = readLocal();
+    const cloudData = row?.data || {};
+    const merged = mergeProgress(localData, cloudData);
     writeLocal(merged);
 
     if (typeof window !== 'undefined' && window.SAVE) {
-      window.SAVE = Object.assign(window.SAVE, merged);
+      window.SAVE = mergeProgress(window.SAVE, merged);
       if (typeof window.updateHUD === 'function') window.updateHUD();
       if (typeof window.renderTrail === 'function') window.renderTrail();
     }

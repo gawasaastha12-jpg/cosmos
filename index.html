@@ -3236,6 +3236,7 @@ function getSaveKey() {
   }
   return 'cosmic_save_v2';
 }
+window.getSaveKey = getSaveKey;
 
 function createDefaultProgress() {
   return {
@@ -3252,7 +3253,8 @@ function createDefaultProgress() {
     dailyClaimed: false,
     settings: { sound: false, lang: 'en', reducedMotion: false },
     avatar: 'owl',
-    onboarded: false
+    onboarded: false,
+    modulesUnlocked: false
   };
 }
 
@@ -3261,10 +3263,25 @@ function loadCurrentProgress() {
   const key = getSaveKey();
   let progress = createDefaultProgress();
   try {
-    const loaded = localStorage.getItem(key);
-    if (loaded) {
-      const parsed = JSON.parse(loaded);
-      if (parsed && parsed.v === 1) progress = Object.assign(progress, parsed);
+    // 1. Check base local device save (cosmic_save_v2)
+    const baseRaw = localStorage.getItem('cosmic_save_v2');
+    if (baseRaw) {
+      const parsedBase = JSON.parse(baseRaw);
+      if (parsedBase && parsedBase.v === 1) progress = Object.assign(progress, parsedBase);
+    }
+    // 2. Check user-specific key if different
+    if (key !== 'cosmic_save_v2') {
+      const userRaw = localStorage.getItem(key);
+      if (userRaw) {
+        const parsedUser = JSON.parse(userRaw);
+        if (parsedUser && parsedUser.v === 1) {
+          if (typeof window.CloudSync !== 'undefined' && typeof window.CloudSync.mergeProgress === 'function') {
+            progress = window.CloudSync.mergeProgress(progress, parsedUser);
+          } else {
+            progress = Object.assign(progress, parsedUser);
+          }
+        }
+      }
     }
   } catch (e) { console.warn('Storage unavailable', e); }
 
@@ -3274,6 +3291,10 @@ function loadCurrentProgress() {
   } else {
     progress.user = null;
     progress.token = null;
+  }
+
+  if (progress.modulesUnlocked || Object.keys(progress.done || {}).length >= 1 || progress.stars > 0 || progress.xp > 0) {
+    progress.modulesUnlocked = true;
   }
 
   // Daily streak check
@@ -3331,8 +3352,13 @@ window.setGlobalUser = function(u) {
 function saveGame() {
   try {
     SAVE._ts = Date.now();
+    if (SAVE.modulesUnlocked || Object.keys(SAVE.done || {}).length >= 1 || SAVE.stars > 0 || SAVE.xp > 0) {
+      SAVE.modulesUnlocked = true;
+    }
     const key = getSaveKey();
-    localStorage.setItem(key, JSON.stringify(SAVE));
+    const str = JSON.stringify(SAVE);
+    localStorage.setItem(key, str);
+    localStorage.setItem('cosmic_save_v2', str);
   } catch(e){}
   updateHUD();
   checkAchievements();
@@ -4064,7 +4090,8 @@ function renderTrail() {
   
   const WAVE_OFFSETS = [0, -50, -85, -50, 0, 50, 85, 50];
   const curAv = COMPANIONS[SAVE.avatar] || COMPANIONS.owl;
-  const hasCompletedOneModule = Object.keys((SAVE && SAVE.done) || {}).length >= 1 || (SAVE && SAVE.stars > 0) || (SAVE && SAVE.xp > 0);
+  const hasCompletedOneModule = !!(SAVE && SAVE.modulesUnlocked) || Object.keys((SAVE && SAVE.done) || {}).length >= 1 || (SAVE && SAVE.stars > 0) || (SAVE && SAVE.xp > 0);
+  if (hasCompletedOneModule && SAVE) SAVE.modulesUnlocked = true;
   let html = '';
   let unlockedPrev = true;
   let foundCurrent = false;
@@ -4241,6 +4268,7 @@ function handleLevelSuccess(xpGain, cardUnlock) {
     SAVE.stars = (SAVE.stars || 0) + (starsAwarded - prevStars);
   }
   SAVE.done[activeNode.id] = Math.max(prevStars, starsAwarded);
+  SAVE.modulesUnlocked = true;
   SAVE.xp = (SAVE.xp || 0) + xpGain;
   SAVE.dailyDone = (SAVE.dailyDone || 0) + 1;
 
