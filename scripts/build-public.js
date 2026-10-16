@@ -62,7 +62,13 @@ function copyDirRecursive(src, dest) {
   for (const entry of entries) {
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
+    let isDir = entry.isDirectory();
+    if (entry.isSymbolicLink()) {
+      try {
+        isDir = fs.statSync(srcPath).isDirectory();
+      } catch (e) {}
+    }
+    if (isDir) {
       copyDirRecursive(srcPath, destPath);
     } else {
       try {
@@ -412,18 +418,22 @@ const INTRO = {};
   indexHtml = indexHtml.replace(/game1\(\);game2\(\);renderFM\(\);/,
     `if (window.requestIdleCallback) { requestIdleCallback(() => { game1(); game2(); renderFM(); }); } else { setTimeout(() => { game1(); game2(); renderFM(); }, 200); }`);
 
-  indexHtml = indexHtml.replace(/tryInit3D\(\);fit\(\);renderMyth\(\);renderQ\(\);setLang\('en'\);if\(\['sci','myth','play'\]\.includes\(location\.hash\.slice\(1\)\)\)go\(location\.hash\.slice\(1\)\);requestAnimationFrame\(frame\);/,
+  indexHtml = indexHtml.replace(/tryInit3D\(\);fit\(\);renderMyth\(\);renderQ\(\);setLang\('en'\);[\s\S]*?requestAnimationFrame\(frame\);/,
     `fit(); setLang('en');
-    if (['sci','myth','play'].includes(location.hash.slice(1))) {
+    const curH = location.hash.slice(1);
+    if (curH === 'signin') {
+      setTimeout(() => { if (typeof openSignInModal === 'function') openSignInModal(); }, 350);
+    } else if (['sci','myth','play'].includes(curH)) {
       tryInit3D();
       renderMyth();
       renderQ();
-      go(location.hash.slice(1));
+      go(curH);
       requestAnimationFrame(frame);
     } else {
       // Start Three.js scene & animation loop strictly AFTER first paint
       const startAfterFirstPaint = () => {
         tryInit3D();
+        fit();
         renderMyth();
         renderQ();
         requestAnimationFrame(frame);
