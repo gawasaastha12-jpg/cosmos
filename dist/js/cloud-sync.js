@@ -23,8 +23,91 @@ export function getCurrentUser() {
   return currentUser;
 }
 
-export function initCloud(url, anonKey) {
-  if (!url || !anonKey) {
+export function formatAuthError(err) {
+  if (!err) return '';
+  const msg = (err.message || err.error_description || String(err)).toLowerCase();
+  if (msg.includes('invalid login credentials') || msg.includes('invalid grant') || msg.includes('wrong password') || msg.includes('invalid username or password')) {
+    return 'Incorrect email or password. Please try again or reset your password.';
+  }
+  if (msg.includes('email not confirmed')) {
+    return 'Please confirm your email address by checking your inbox before logging in.';
+  }
+  if (msg.includes('user already registered') || msg.includes('already exists')) {
+    return 'An account with this email already exists. Please log in instead.';
+  }
+  if (msg.includes('rate limit') || msg.includes('over_email_send_rate_limit') || msg.includes('too many requests')) {
+    return 'Too many requests. Please wait a moment and try again.';
+  }
+  if (msg.includes('failed to fetch') || msg.includes('networkerror') || msg.includes('network') || (typeof navigator !== 'undefined' && !navigator.onLine)) {
+    return 'Network connection unavailable. Your progress remains safely stored on this device.';
+  }
+  return err.message || 'An authentication error occurred. Please try again.';
+}
+
+export const applySession = (session) => {
+  if (typeof window === 'undefined') return;
+  const prevUserEmail = currentUser?.email;
+
+  if (session?.user) {
+    currentUser = {
+      id: session.user.id,
+      email: session.user.email,
+      callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
+      role: 'stargazer'
+    };
+
+    try {
+      localStorage.setItem('cosmos_active_session', JSON.stringify({ user: currentUser, token: session.access_token }));
+    } catch (e) {}
+
+    window.SAVE = window.SAVE || {};
+    window.SAVE.user = currentUser;
+
+    if (typeof window.setGlobalUser === 'function') {
+      window.setGlobalUser(currentUser);
+    }
+
+    // If user landed via email magic link or OAuth redirect with URL hash tokens, clean URL
+    if (window.location && window.location.hash && (window.location.hash.includes('access_token') || window.location.hash.includes('refresh_token') || window.location.hash.includes('type='))) {
+      try {
+        window.history.replaceState(window.history.state, document.title, window.location.pathname + window.location.search);
+      } catch (e) {}
+    }
+
+    // Close sign-in modal if open
+    if (typeof window.closeSignInModal === 'function') {
+      window.closeSignInModal();
+    }
+
+    if (!prevUserEmail && session.user.email) {
+      const signinCallsign = currentUser.callsign;
+      setTimeout(() => {
+        if (currentUser && typeof window.showToast === 'function') {
+          window.showToast('✨', 'Welcome Stargazer!', `Connected as ${signinCallsign}`);
+        }
+      }, 600);
+    }
+  } else {
+    currentUser = null;
+    try {
+      localStorage.removeItem('cosmos_active_session');
+    } catch (e) {}
+
+    if (window.SAVE) {
+      delete window.SAVE.user;
+    }
+    if (typeof window.setGlobalUser === 'function') {
+      window.setGlobalUser(null);
+    }
+  }
+
+  if (typeof window.updateNavUser === 'function') {
+    window.updateNavUser();
+  }
+};
+
+export function initCloud(url, anonKey, options = {}) {
+  if (!options.client && (!url || !anonKey)) {
     console.warn('Cloud sync not initialized: missing url or anonKey');
     return null;
   }
@@ -41,7 +124,7 @@ export function initCloud(url, anonKey) {
         console.warn('Supabase Auth URL error:', err);
         setTimeout(() => {
           if (typeof window.showToast === 'function') {
-            window.showToast('⚠️', 'Authentication', decodeURIComponent(err).replace(/\+/g, ' '));
+            window.showToast('⚠️', 'Authentication', formatAuthError({ message: decodeURIComponent(err).replace(/\+/g, ' ') }));
           }
         }, 600);
       }
@@ -49,68 +132,13 @@ export function initCloud(url, anonKey) {
   }
 
   // anon key is public by design; RLS protects data
-  sb = createClient(url, anonKey, {
+  sb = options.client || createClient(url, anonKey, {
     auth: {
       persistSession: true,
-      autoRefreshToken: true
+      autoRefreshToken: true,
+      detectSessionInUrl: true
     }
   });
-
-  const applySession = (session) => {
-    if (typeof window === 'undefined') return;
-    const prevUserEmail = currentUser?.email;
-
-    if (session?.user) {
-      currentUser = {
-        id: session.user.id,
-        email: session.user.email,
-        callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
-        role: 'stargazer'
-      };
-
-      try {
-        localStorage.setItem('cosmos_active_session', JSON.stringify({ user: currentUser, token: session.access_token }));
-      } catch (e) {}
-
-      window.SAVE = window.SAVE || {};
-      window.SAVE.user = currentUser;
-
-      if (typeof window.setGlobalUser === 'function') {
-        window.setGlobalUser(currentUser);
-      }
-
-      // If user landed via email magic link or OAuth redirect with URL hash tokens, clean URL
-      if (window.location && window.location.hash && (window.location.hash.includes('access_token') || window.location.hash.includes('refresh_token') || window.location.hash.includes('type='))) {
-        try {
-          window.history.replaceState(window.history.state, document.title, window.location.pathname + window.location.search);
-        } catch (e) {}
-      }
-
-      if (!prevUserEmail && session.user.email) {
-        setTimeout(() => {
-          if (typeof window.showToast === 'function') {
-            window.showToast('✨', 'Welcome Stargazer!', `Connected as ${currentUser.callsign}`);
-          }
-        }, 600);
-      }
-    } else {
-      currentUser = null;
-      try {
-        localStorage.removeItem('cosmos_active_session');
-      } catch (e) {}
-
-      if (window.SAVE) {
-        delete window.SAVE.user;
-      }
-      if (typeof window.setGlobalUser === 'function') {
-        window.setGlobalUser(null);
-      }
-    }
-
-    if (typeof window.updateNavUser === 'function') {
-      window.updateNavUser();
-    }
-  };
 
   sb.auth.getSession().then(({ data }) => {
     applySession(data?.session);
@@ -119,18 +147,117 @@ export function initCloud(url, anonKey) {
 
   sb.auth.onAuthStateChange((evt, session) => {
     applySession(session);
-    if (evt === 'SIGNED_IN' || evt === 'INITIAL_SESSION') {
-      syncProgressWithCloud();
+    if (evt === 'SIGNED_IN' || evt === 'INITIAL_SESSION' || evt === 'TOKEN_REFRESHED') {
+      if (session) syncProgressWithCloud();
+    } else if (evt === 'SIGNED_OUT') {
+      applySession(null);
+    } else if (evt === 'PASSWORD_RECOVERY') {
+      if (typeof window !== 'undefined' && typeof window.openPasswordRecoveryModal === 'function') {
+        window.openPasswordRecoveryModal();
+      }
     }
   });
 
   return sb;
 }
 
-export const signInWithEmail = (email) => {
-  if (!sb) return Promise.reject(new Error('Cloud sync not configured'));
+export const signInWithPassword = async (email, password) => {
+  if (!sb) throw new Error('Cloud sync not configured');
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  if (data?.session) {
+    applySession(data.session);
+  }
+  return data;
+};
+
+export const signUp = async (email, password, metadata = {}) => {
+  if (!sb) throw new Error('Cloud sync not configured');
   const origin = typeof location !== 'undefined' ? location.origin : '';
-  return sb.auth.signInWithOtp({ email, options: { emailRedirectTo: origin } });
+  const { data, error } = await sb.auth.signUp({
+    email,
+    password,
+    options: {
+      data: metadata,
+      emailRedirectTo: origin
+    }
+  });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  if (data?.session) {
+    applySession(data.session);
+  }
+  return data;
+};
+
+export const resetPassword = async (email) => {
+  if (!sb) throw new Error('Cloud sync not configured');
+  const origin = typeof location !== 'undefined' ? location.origin : '';
+  const { data, error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: origin });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  return data;
+};
+
+export const updatePassword = async (password) => {
+  if (!sb) throw new Error('Cloud sync not configured');
+  const { data, error } = await sb.auth.updateUser({ password });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  return data;
+};
+
+export const signInWithOtp = async (email) => {
+  if (!sb) throw new Error('Cloud sync not configured');
+  const origin = typeof location !== 'undefined' ? location.origin : '';
+  const { data, error } = await sb.auth.signInWithOtp({
+    email,
+    options: {
+      emailRedirectTo: origin,
+      shouldCreateUser: true
+    }
+  });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  return data;
+};
+
+export const verifyOtp = async (email, token) => {
+  if (!sb) throw new Error('Cloud sync not configured');
+  const { data, error } = await sb.auth.verifyOtp({
+    email,
+    token: (token || '').trim(),
+    type: 'email'
+  });
+  if (error) {
+    const friendly = new Error(formatAuthError(error));
+    friendly.originalError = error;
+    throw friendly;
+  }
+  if (data?.session) {
+    applySession(data.session);
+  }
+  return data;
+};
+
+export const signInWithEmail = (email) => {
+  return signInWithOtp(email);
 };
 
 export const signInWithProvider = (provider) => { // 'github' | 'google'
@@ -142,15 +269,7 @@ export const signInWithProvider = (provider) => { // 'github' | 'google'
 export const signOut = async () => {
   if (!sb) return Promise.resolve();
   const res = await sb.auth.signOut();
-  currentUser = null;
-  try {
-    localStorage.removeItem('cosmos_active_session');
-  } catch (e) {}
-  if (typeof window !== 'undefined') {
-    if (window.SAVE) delete window.SAVE.user;
-    if (typeof window.setGlobalUser === 'function') window.setGlobalUser(null);
-    if (typeof window.updateNavUser === 'function') window.updateNavUser();
-  }
+  applySession(null);
   return res;
 };
 
@@ -224,12 +343,20 @@ export function schedulePush(delay = 3000) {
 }
 
 if (typeof window !== 'undefined') {
-  window.addEventListener('online', () => syncProgressWithCloud());
+  if (typeof window.addEventListener === 'function') {
+    window.addEventListener('online', () => syncProgressWithCloud());
+  }
   window.CloudSync = {
     initCloud,
     getClient,
     isConfigured,
     getCurrentUser,
+    signInWithPassword,
+    signUp,
+    resetPassword,
+    updatePassword,
+    signInWithOtp,
+    verifyOtp,
     signInWithEmail,
     signInWithProvider,
     signOut,
@@ -237,6 +364,7 @@ if (typeof window !== 'undefined') {
     writeLocal,
     mergeProgress,
     syncProgressWithCloud,
-    schedulePush
+    schedulePush,
+    formatAuthError
   };
 }

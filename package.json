@@ -5,6 +5,7 @@
   "description": "Ancient Sky Lore & Observational Astrophysics Web App",
   "scripts": {
     "build": "node scripts/build-public.js",
-    "serve": "node scripts/serve.js"
+    "serve": "node scripts/serve.js",
+    "test": "node scripts/test-cloud-sync.js && node scripts/test-auth-flow.js"
   }
 }

@@ -77,13 +77,38 @@ body:not(.warm) #sci h2{color:var(--sci)}
 .hub{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 dialog{margin:auto;max-width:540px;width:calc(100% - 28px);padding:24px;color:var(--ink);background:rgba(10,14,32,.96);border:1px solid var(--bd);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.85);box-sizing:border-box;overflow-x:hidden}
 dialog.wide{max-width:min(760px,95vw);width:100%}
-dialog.signin-modal{max-width:420px!important;width:min(420px,calc(100% - 32px))!important;min-height:520px!important;padding:34px 28px!important;border-radius:24px!important;background:rgba(8,12,30,.98)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 24px 70px rgba(0,0,0,.9)!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;box-sizing:border-box!important;margin:auto!important}
-dialog.signin-modal .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-dialog.signin-modal .signin-card{box-sizing:border-box!important;width:100%!important;max-width:100%!important;flex:1;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:18px;padding:26px 20px;margin:16px 0;gap:16px;overflow:hidden}
-dialog.signin-modal input[type="email"]{width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding:13px 18px;border-radius:99px;border:1px solid var(--bd);background:rgba(0,0,0,.35);color:var(--ink);font-size:15px}
-dialog.signin-modal #btn-cloud-magic{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;min-width:200px!important;max-width:260px!important;box-sizing:border-box!important;background:var(--a);color:#05070f;font-weight:600;padding:12px 28px!important;font-size:15px;border-radius:99px;cursor:pointer;border:none;margin:6px auto 0!important;text-align:center;align-self:center!important;transition:transform .15s,opacity .15s,box-shadow .15s;box-shadow:0 4px 16px rgba(123,140,255,.25)}
-dialog.signin-modal #btn-cloud-magic:hover{transform:translateY(-1px);opacity:.95;box-shadow:0 6px 22px rgba(123,140,255,.4)}
-dialog.signin-modal .signin-footer{box-sizing:border-box!important;width:100%!important;max-width:100%!important;font-size:12px;color:var(--mut);line-height:1.5;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:14px;padding:14px 16px}
+dialog.signin-modal{max-width:440px!important;width:min(440px,calc(100% - 24px))!important;max-height:92vh!important;overflow-y:auto!important;overflow-x:hidden!important;padding:26px 22px!important;border-radius:22px!important;background:rgba(8,12,30,.98)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 24px 70px rgba(0,0,0,.92)!important;box-sizing:border-box!important;margin:auto!important}
+dialog.signin-modal .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.auth-tabs{display:flex;background:rgba(255,255,255,.05);padding:3px;border-radius:12px;border:1px solid var(--bd);margin-bottom:16px;gap:4px}
+.auth-tab{all:unset;flex:1;cursor:pointer;text-align:center;padding:8px 12px;border-radius:9px;font-size:13px;font-weight:600;color:var(--mut);transition:.2s}
+.auth-tab:hover{color:var(--ink)}
+.auth-tab.active{background:var(--a);color:#05070f;box-shadow:0 2px 10px rgba(123,140,255,.3)}
+.auth-form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;text-align:left}
+.auth-label{font-size:12px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.auth-input{width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding:10px 14px;border-radius:10px;border:1px solid var(--bd);background:rgba(0,0,0,.35);color:var(--ink);font-size:14px;outline:none;transition:border-color .2s}
+.auth-input:focus{border-color:var(--a)}
+.auth-pw-wrap{position:relative;display:flex;align-items:center;width:100%}
+.auth-pw-wrap .auth-input{padding-right:42px!important}
+.auth-pw-toggle{position:absolute;right:8px;background:none;border:none;cursor:pointer;color:var(--mut);padding:4px 6px;font-size:14px;border-radius:6px;transition:color .2s}
+.auth-pw-toggle:hover{color:var(--ink)}
+.auth-hint{font-size:11px;color:var(--mut);margin-top:2px}
+.auth-error-box{display:none;background:rgba(255,107,139,.14);border:1px solid rgba(255,107,139,.35);border-radius:10px;padding:9px 12px;font-size:13px;color:#ff9dae;margin-bottom:12px;text-align:left;line-height:1.4}
+.auth-info-box{display:none;background:rgba(93,224,208,.12);border:1px solid rgba(93,224,208,.35);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--sci);margin-bottom:12px;text-align:left;line-height:1.4}
+.btn-auth-primary{display:block;width:100%;box-sizing:border-box;background:var(--a);color:#05070f;font-weight:700;font-size:14px;padding:11px 16px;border-radius:99px;border:none;cursor:pointer;text-align:center;transition:transform .15s,opacity .15s,box-shadow .15s;margin-top:8px}
+.btn-auth-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 16px rgba(123,140,255,.35)}
+.btn-auth-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.auth-link{color:var(--sci);font-size:12px;text-decoration:none;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
+.auth-link:hover{text-decoration:underline}
+.auth-divider{display:flex;align-items:center;margin:16px 0 12px;color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+.auth-divider span{padding:0 10px}
+.auth-oauth-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.auth-oauth-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer;font-size:13px;font-weight:500;transition:.2s}
+.auth-oauth-btn:hover{background:rgba(255,255,255,.1);border-color:var(--a)}
+.auth-sub-option{margin-top:14px;text-align:center;font-size:12px;color:var(--mut)}
+.auth-footer-guarantee{box-sizing:border-box!important;width:100%!important;font-size:11px;color:var(--mut);line-height:1.4;background:rgba(93,224,208,.05);border:1px solid rgba(93,224,208,.2);border-radius:12px;padding:10px 12px;margin-top:16px}
+.nav-signout-btn{all:unset;cursor:pointer;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:rgba(255,107,139,.18);border:1px solid rgba(255,107,139,.35);color:#ff9dae;transition:.2s;margin-left:6px;display:inline-flex;align-items:center}
+.nav-signout-btn:hover{background:rgba(255,107,139,.3);color:#fff}
 dialog::backdrop{background:rgba(2,4,10,.65);backdrop-filter:blur(6px)}
 dialog .btn:not(.btn-auto){display:block;margin-top:8px;width:100%}
 dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{display:inline-block;width:auto}
@@ -3317,7 +3342,6 @@ function isCloudConfigured() {
 
 function updateNavUser() {
   const chip = document.getElementById('nav-user-chip');
-  const label = document.getElementById('nav-user-label');
   const foot = document.getElementById('footer-account-link');
   const hasBackend = isCloudConfigured();
   const currentUser = getCurrentStargazerUser();
@@ -3327,25 +3351,31 @@ function updateNavUser() {
       chip.style.display = 'none';
     } else {
       chip.style.display = 'inline-flex';
-      if (currentUser && (currentUser.callsign || currentUser.email)) {
+      if (currentUser && (currentUser.email || currentUser.callsign)) {
         if (typeof SAVE !== 'undefined' && SAVE) SAVE.user = currentUser;
         if (typeof window.SAVE !== 'undefined' && window.SAVE) window.SAVE.user = currentUser;
-        const displayName = currentUser.callsign || (currentUser.email ? currentUser.email.split('@')[0] : 'Stargazer');
-        if (label) label.textContent = displayName;
+        const displayLabel = currentUser.email || currentUser.callsign;
+        chip.innerHTML = `<span>✦</span> <span id="nav-user-label" style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${displayLabel}</span> <button class="nav-signout-btn" id="btn-nav-signout" title="Sign out of account">Sign out</button>`;
         chip.style.color = 'var(--sci)';
-        chip.title = 'Stargazer: ' + displayName + ' (Click to manage account / log out)';
+        chip.title = 'Connected: ' + displayLabel + ' (Click to manage account)';
         chip.onclick = e => {
+          if (e.target && e.target.id === 'btn-nav-signout') {
+            e.preventDefault();
+            e.stopPropagation();
+            logoutStargazer();
+            return;
+          }
           e.preventDefault();
           openStargazerModal();
         };
       } else {
-        if (label) label.textContent = 'Sign In';
+        chip.innerHTML = `<span>✦</span> <span id="nav-user-label">Sign In</span>`;
         chip.style.color = 'var(--mut)';
         chip.title = 'Stargazer Access';
         chip.onclick = e => {
           e.preventDefault();
           if (isCloudConfigured()) {
-            openSignInModal();
+            openSignInModal('login');
           } else {
             showToast('🪐', 'Guest Stargazer', 'Accounts are not available right now. Your progress is saved on this device.');
           }
@@ -3358,12 +3388,17 @@ function updateNavUser() {
       foot.style.display = 'none';
     } else {
       foot.style.display = 'inline-block';
+      if (currentUser && (currentUser.email || currentUser.callsign)) {
+        foot.textContent = `✦ ${currentUser.email || currentUser.callsign} (Profile)`;
+      } else {
+        foot.textContent = 'Stargazer Access';
+      }
       foot.onclick = e => {
         e.preventDefault();
         if (getCurrentStargazerUser()) {
           openStargazerModal();
         } else if (isCloudConfigured()) {
-          openSignInModal();
+          openSignInModal('login');
         } else {
           showToast('🪐', 'Guest Stargazer', 'Accounts are not available right now. Your progress is saved on this device.');
         }
@@ -3374,47 +3409,455 @@ function updateNavUser() {
 window.updateNavUser = updateNavUser;
 updateNavUser();
 
-function openSignInModal() {
+window.closeSignInModal = function() {
+  const d = $('#dlg');
+  if (d && d.open && d.classList.contains('signin-modal')) {
+    d.close();
+  }
+};
+
+window.openPasswordRecoveryModal = function() {
+  openSignInModal('recovery');
+};
+
+function openSignInModal(initialMode = 'login') {
   const d = $('#dlg');
   if (!d) return;
-  d.className = 'signin-modal';
-  d.innerHTML = `
-    <div class="modal-header">
-      <div>
-        <h3 style="display:flex;align-items:center;gap:8px;font-size:22px;color:#ffe2b0;margin:0"><span>✦</span> Stargazer Access</h3>
-        <p style="font-size:12px;color:var(--mut);margin-top:4px">Cosmic Observatory Cloud Mirror</p>
-      </div>
-      <button class="modal-close" onclick="$('#dlg').close()" aria-label="Close modal">✕</button>
-    </div>
-    <div class="signin-card">
-      <p style="font-size:14px;color:var(--ink);line-height:1.5;margin:0;text-align:center">Sign in with your email address to unlock more benefits</p>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;box-sizing:border-box;margin-top:8px">
-        <input type="email" id="cloud-email-input" placeholder="stargazer@example.com" autofocus style="width:100%;text-align:center" />
-        <button class="btn btn-auto" id="btn-cloud-magic">Send Magic Link</button>
-      </div>
-    </div>
-    <div class="signin-footer">
-      ✦ <b>Zero Data Loss Guarantee:</b> Your on-device progress in <code>cosmic_save_v2</code> is never overwritten. When you connect, your stars and unlocked cards merge with your cloud record automatically.
-    </div>
-  `;
 
-  $('#btn-cloud-magic').onclick = async () => {
-    const email = $('#cloud-email-input').value.trim();
-    if (!email) {
-      showToast('⚠️', 'Invalid Email', 'Please enter a valid email address.');
-      return;
+  if (!isCloudConfigured()) {
+    showToast('🪐', 'Guest Stargazer', 'Accounts are not available right now. Your progress is saved on this device.');
+    return;
+  }
+
+  d.className = 'signin-modal';
+
+  let currentMode = initialMode;
+  let otpPendingEmail = '';
+
+  const render = (mode = currentMode) => {
+    currentMode = mode;
+    let contentHtml = '';
+
+    const closeBtnHtml = `<button class="modal-close" onclick="closeSignInModal()" aria-label="Close modal">✕</button>`;
+
+    if (mode === 'login' || mode === 'register') {
+      const isLogin = mode === 'login';
+      contentHtml = `
+        <div class="modal-header">
+          <div>
+            <h3 style="display:flex;align-items:center;gap:8px;font-size:20px;color:#ffe2b0;margin:0"><span>✦</span> Stargazer Access</h3>
+            <p style="font-size:12px;color:var(--mut);margin-top:3px">${isLogin ? 'Log in to sync your discoveries across devices' : 'Create an account to preserve your celestial journey'}</p>
+          </div>
+          ${closeBtnHtml}
+        </div>
+
+        <div class="auth-tabs" role="tablist">
+          <button type="button" class="auth-tab ${isLogin ? 'active' : ''}" id="tab-login">Log in</button>
+          <button type="button" class="auth-tab ${!isLogin ? 'active' : ''}" id="tab-register">Create account</button>
+        </div>
+
+        <div class="auth-error-box" id="auth-err"></div>
+        <div class="auth-info-box" id="auth-info"></div>
+
+        <form id="auth-form" onsubmit="return false;">
+          <div class="auth-form-group">
+            <label class="auth-label" for="auth-email">Email address</label>
+            <input type="email" id="auth-email" class="auth-input" placeholder="stargazer@example.com" autocomplete="email" required autofocus />
+          </div>
+
+          ${!isLogin ? `
+          <div class="auth-form-group">
+            <label class="auth-label" for="auth-callsign">Explorer Callsign <span style="font-weight:normal;color:var(--mut)">(optional)</span></label>
+            <input type="text" id="auth-callsign" class="auth-input" placeholder="e.g. Orion Seeker" maxlength="32" />
+          </div>
+          ` : ''}
+
+          <div class="auth-form-group">
+            <div class="auth-label">
+              <label for="auth-password">Password</label>
+              ${isLogin ? `<button type="button" class="auth-link" id="btn-forgot-pw">Forgot password?</button>` : ''}
+            </div>
+            <div class="auth-pw-wrap">
+              <input type="password" id="auth-password" class="auth-input" placeholder="${isLogin ? 'Your password' : 'Min 8 characters'}" minlength="8" autocomplete="${isLogin ? 'current-password' : 'new-password'}" required />
+              <button type="button" class="auth-pw-toggle" id="btn-toggle-pw" aria-label="Toggle password visibility">👁️</button>
+            </div>
+            ${!isLogin ? `<div class="auth-hint">Must be at least 8 characters.</div>` : ''}
+          </div>
+
+          <button type="submit" class="btn-auth-primary" id="btn-auth-submit">${isLogin ? 'Log In' : 'Create Account'}</button>
+        </form>
+
+        <div class="auth-sub-option">
+          <button type="button" class="auth-link" id="btn-switch-otp">Or sign in with a 6-digit email code</button>
+        </div>
+
+        <div class="auth-divider"><span>or continue with</span></div>
+
+        <div class="auth-oauth-row">
+          <button type="button" class="auth-oauth-btn" id="btn-oauth-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </button>
+          <button type="button" class="auth-oauth-btn" id="btn-oauth-google">
+            <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.8s.2-2.1.4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/></svg>
+            Google
+          </button>
+        </div>
+
+        <div class="auth-footer-guarantee">
+          ✦ <b>Zero Data Loss Guarantee:</b> Your on-device progress in <code>cosmic_save_v2</code> is never overwritten. When you connect, your stars and unlocked cards merge with your cloud record automatically.
+        </div>
+      `;
+    } else if (mode === 'forgot') {
+      contentHtml = `
+        <div class="modal-header">
+          <div>
+            <h3 style="display:flex;align-items:center;gap:8px;font-size:20px;color:#ffe2b0;margin:0"><span>✦</span> Reset Password</h3>
+            <p style="font-size:12px;color:var(--mut);margin-top:3px">We will send a secure password reset link to your email</p>
+          </div>
+          ${closeBtnHtml}
+        </div>
+
+        <div class="auth-error-box" id="auth-err"></div>
+        <div class="auth-info-box" id="auth-info"></div>
+
+        <form id="auth-reset-form" onsubmit="return false;">
+          <div class="auth-form-group">
+            <label class="auth-label" for="reset-email">Email address</label>
+            <input type="email" id="reset-email" class="auth-input" placeholder="stargazer@example.com" autocomplete="email" required autofocus />
+          </div>
+          <button type="submit" class="btn-auth-primary" id="btn-reset-submit">Send Reset Link</button>
+        </form>
+
+        <div class="auth-sub-option" style="margin-top:18px">
+          <button type="button" class="auth-link" id="btn-back-to-login">← Back to Log In</button>
+        </div>
+      `;
+    } else if (mode === 'otp') {
+      const hasSent = !!otpPendingEmail;
+      contentHtml = `
+        <div class="modal-header">
+          <div>
+            <h3 style="display:flex;align-items:center;gap:8px;font-size:20px;color:#ffe2b0;margin:0"><span>✦</span> 6-Digit Email Code</h3>
+            <p style="font-size:12px;color:var(--mut);margin-top:3px">Passwordless sign-in with a one-time verification code</p>
+          </div>
+          ${closeBtnHtml}
+        </div>
+
+        <div class="auth-error-box" id="auth-err"></div>
+        <div class="auth-info-box" id="auth-info" ${hasSent ? 'style="display:block"' : ''}>${hasSent ? `Code sent to <b>${otpPendingEmail}</b>. Enter the 6-digit code below.` : ''}</div>
+
+        <form id="auth-otp-form" onsubmit="return false;">
+          <div class="auth-form-group">
+            <label class="auth-label" for="otp-email">Email address</label>
+            <input type="email" id="otp-email" class="auth-input" value="${otpPendingEmail}" placeholder="stargazer@example.com" autocomplete="email" required ${hasSent ? 'readonly style="opacity:.8"' : 'autofocus'} />
+          </div>
+
+          ${hasSent ? `
+          <div class="auth-form-group">
+            <div class="auth-label">
+              <label for="otp-code">6-Digit Code</label>
+              <button type="button" class="auth-link" id="btn-otp-resend">Resend code</button>
+            </div>
+            <input type="text" id="otp-code" class="auth-input" placeholder="123456" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autofocus style="text-align:center;font-size:20px;letter-spacing:6px;font-family:monospace" required />
+          </div>
+          <button type="submit" class="btn-auth-primary" id="btn-otp-verify-submit">Verify & Sign In</button>
+          ` : `
+          <button type="submit" class="btn-auth-primary" id="btn-otp-send-submit">Send 6-Digit Code</button>
+          `}
+        </form>
+
+        <div class="auth-sub-option" style="margin-top:18px">
+          <button type="button" class="auth-link" id="btn-back-to-login">← Back to Log In</button>
+        </div>
+      `;
+    } else if (mode === 'recovery') {
+      contentHtml = `
+        <div class="modal-header">
+          <div>
+            <h3 style="display:flex;align-items:center;gap:8px;font-size:20px;color:#ffe2b0;margin:0"><span>✦</span> Set New Password</h3>
+            <p style="font-size:12px;color:var(--mut);margin-top:3px">Choose a new password for your Stargazer account</p>
+          </div>
+          ${closeBtnHtml}
+        </div>
+
+        <div class="auth-error-box" id="auth-err"></div>
+        <div class="auth-info-box" id="auth-info"></div>
+
+        <form id="auth-recovery-form" onsubmit="return false;">
+          <div class="auth-form-group">
+            <label class="auth-label" for="recovery-password">New Password</label>
+            <div class="auth-pw-wrap">
+              <input type="password" id="recovery-password" class="auth-input" placeholder="Min 8 characters" minlength="8" autocomplete="new-password" required autofocus />
+              <button type="button" class="auth-pw-toggle" id="btn-toggle-pw" aria-label="Toggle password visibility">👁️</button>
+            </div>
+            <div class="auth-hint">Must be at least 8 characters.</div>
+          </div>
+          <button type="submit" class="btn-auth-primary" id="btn-recovery-submit">Update Password</button>
+        </form>
+      `;
     }
-    if (window.CloudSync) {
-      try {
-        await window.CloudSync.signInWithEmail(email);
-        showToast('✉️', 'Magic Link Sent', 'Check your inbox for your Stargazer sign-in link.');
-        d.close();
-      } catch (err) {
-        showToast('❌', 'Sign In Error', err.message || 'Could not send magic link.');
-      }
+
+    d.innerHTML = contentHtml;
+    attachHandlers(mode);
+  };
+
+  const showAuthError = (msg) => {
+    const errBox = $('#auth-err');
+    if (errBox) {
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+    }
+    const infoBox = $('#auth-info');
+    if (infoBox) infoBox.style.display = 'none';
+  };
+
+  const showAuthInfo = (msg) => {
+    const infoBox = $('#auth-info');
+    if (infoBox) {
+      infoBox.textContent = msg;
+      infoBox.style.display = 'block';
+    }
+    const errBox = $('#auth-err');
+    if (errBox) errBox.style.display = 'none';
+  };
+
+  const hideAuthMsgs = () => {
+    const errBox = $('#auth-err');
+    if (errBox) errBox.style.display = 'none';
+    const infoBox = $('#auth-info');
+    if (infoBox) infoBox.style.display = 'none';
+  };
+
+  const setBusy = (btn, isBusy, text = 'Please wait...') => {
+    if (!btn) return;
+    btn.disabled = isBusy;
+    if (isBusy) {
+      btn.dataset.origText = btn.textContent;
+      btn.textContent = text;
+    } else {
+      btn.textContent = btn.dataset.origText || btn.textContent;
     }
   };
 
+  const attachHandlers = (mode) => {
+    const toggleBtn = $('#btn-toggle-pw');
+    if (toggleBtn) {
+      toggleBtn.onclick = () => {
+        const pwInput = $('#auth-password') || $('#recovery-password');
+        if (!pwInput) return;
+        if (pwInput.type === 'password') {
+          pwInput.type = 'text';
+          toggleBtn.textContent = '🙈';
+        } else {
+          pwInput.type = 'password';
+          toggleBtn.textContent = '👁️';
+        }
+      };
+    }
+
+    const tabLogin = $('#tab-login');
+    if (tabLogin) tabLogin.onclick = () => render('login');
+
+    const tabReg = $('#tab-register');
+    if (tabReg) tabReg.onclick = () => render('register');
+
+    const btnForgot = $('#btn-forgot-pw');
+    if (btnForgot) btnForgot.onclick = () => render('forgot');
+
+    const btnBack = $('#btn-back-to-login');
+    if (btnBack) btnBack.onclick = () => render('login');
+
+    const btnSwitchOtp = $('#btn-switch-otp');
+    if (btnSwitchOtp) btnSwitchOtp.onclick = () => render('otp');
+
+    const form = $('#auth-form');
+    if (form && mode === 'login') {
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        const email = ($('#auth-email').value || '').trim();
+        const password = $('#auth-password').value || '';
+        if (!email || !password) {
+          showAuthError('Please enter both your email and password.');
+          return;
+        }
+        const btn = $('#btn-auth-submit');
+        setBusy(btn, true, 'Signing in...');
+        hideAuthMsgs();
+        try {
+          if (!window.CloudSync) throw new Error('Cloud sync not configured');
+          await window.CloudSync.signInWithPassword(email, password);
+          d.close();
+        } catch (err) {
+          showAuthError(err.message || 'Login failed. Please check your credentials.');
+        } finally {
+          setBusy(btn, false);
+        }
+      };
+    }
+
+    if (form && mode === 'register') {
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        const email = ($('#auth-email').value || '').trim();
+        const password = $('#auth-password').value || '';
+        const callsign = ($('#auth-callsign') ? $('#auth-callsign').value : '').trim();
+        if (!email) {
+          showAuthError('Please enter a valid email address.');
+          return;
+        }
+        if (password.length < 8) {
+          showAuthError('Password must be at least 8 characters long.');
+          return;
+        }
+        const btn = $('#btn-auth-submit');
+        setBusy(btn, true, 'Creating account...');
+        hideAuthMsgs();
+        try {
+          if (!window.CloudSync) throw new Error('Cloud sync not configured');
+          const res = await window.CloudSync.signUp(email, password, { callsign: callsign || email.split('@')[0] });
+          if (res && res.user && !res.session) {
+            showAuthInfo('Check your email to confirm your account before logging in.');
+          } else {
+            showToast('✨', 'Welcome Stargazer!', 'Your account has been created.');
+            d.close();
+          }
+        } catch (err) {
+          showAuthError(err.message || 'Could not create account. Please try again.');
+        } finally {
+          setBusy(btn, false);
+        }
+      };
+    }
+
+    const resetForm = $('#auth-reset-form');
+    if (resetForm) {
+      resetForm.onsubmit = async (e) => {
+        e.preventDefault();
+        const email = ($('#reset-email').value || '').trim();
+        if (!email) {
+          showAuthError('Please enter your email address.');
+          return;
+        }
+        const btn = $('#btn-reset-submit');
+        setBusy(btn, true, 'Sending link...');
+        hideAuthMsgs();
+        try {
+          if (!window.CloudSync) throw new Error('Cloud sync not configured');
+          await window.CloudSync.resetPassword(email);
+          showAuthInfo('Password reset link sent! Check your email inbox to proceed.');
+        } catch (err) {
+          showAuthError(err.message || 'Could not send reset link. Please check the email.');
+        } finally {
+          setBusy(btn, false);
+        }
+      };
+    }
+
+    const otpForm = $('#auth-otp-form');
+    if (otpForm) {
+      otpForm.onsubmit = async (e) => {
+        e.preventDefault();
+        const email = ($('#otp-email').value || '').trim();
+        if (!email) {
+          showAuthError('Please enter your email address.');
+          return;
+        }
+        if (!otpPendingEmail) {
+          const btn = $('#btn-otp-send-submit');
+          setBusy(btn, true, 'Sending code...');
+          hideAuthMsgs();
+          try {
+            if (!window.CloudSync) throw new Error('Cloud sync not configured');
+            await window.CloudSync.signInWithOtp(email);
+            otpPendingEmail = email;
+            render('otp');
+          } catch (err) {
+            showAuthError(err.message || 'Could not send verification code.');
+          } finally {
+            setBusy(btn, false);
+          }
+        } else {
+          const code = ($('#otp-code').value || '').trim();
+          if (!code || code.length < 6) {
+            showAuthError('Please enter the 6-digit verification code.');
+            return;
+          }
+          const btn = $('#btn-otp-verify-submit');
+          setBusy(btn, true, 'Verifying code...');
+          hideAuthMsgs();
+          try {
+            if (!window.CloudSync) throw new Error('Cloud sync not configured');
+            await window.CloudSync.verifyOtp(otpPendingEmail, code);
+            showToast('✨', 'Welcome Stargazer!', 'Signed in successfully.');
+            d.close();
+          } catch (err) {
+            showAuthError(err.message || 'Invalid or expired code. Please try again.');
+          } finally {
+            setBusy(btn, false);
+          }
+        }
+      };
+
+      const resendBtn = $('#btn-otp-resend');
+      if (resendBtn) {
+        resendBtn.onclick = async () => {
+          setBusy(resendBtn, true, 'Sending...');
+          hideAuthMsgs();
+          try {
+            if (!window.CloudSync) throw new Error('Cloud sync not configured');
+            await window.CloudSync.signInWithOtp(otpPendingEmail);
+            showAuthInfo(`New 6-digit code sent to ${otpPendingEmail}.`);
+          } catch (err) {
+            showAuthError(err.message || 'Could not resend code.');
+          } finally {
+            setBusy(resendBtn, false);
+          }
+        };
+      }
+    }
+
+    const recForm = $('#auth-recovery-form');
+    if (recForm) {
+      recForm.onsubmit = async (e) => {
+        e.preventDefault();
+        const password = $('#recovery-password').value || '';
+        if (password.length < 8) {
+          showAuthError('Password must be at least 8 characters long.');
+          return;
+        }
+        const btn = $('#btn-recovery-submit');
+        setBusy(btn, true, 'Updating password...');
+        hideAuthMsgs();
+        try {
+          if (!window.CloudSync) throw new Error('Cloud sync not configured');
+          await window.CloudSync.updatePassword(password);
+          showToast('✨', 'Password Updated', 'Your password has been reset successfully.');
+          d.close();
+        } catch (err) {
+          showAuthError(err.message || 'Could not update password. Please try again.');
+        } finally {
+          setBusy(btn, false);
+        }
+      };
+    }
+
+    const btnGithub = $('#btn-oauth-github');
+    if (btnGithub) {
+      btnGithub.onclick = () => {
+        if (window.CloudSync) window.CloudSync.signInWithProvider('github').catch(e => showAuthError(e.message));
+      };
+    }
+
+    const btnGoogle = $('#btn-oauth-google');
+    if (btnGoogle) {
+      btnGoogle.onclick = () => {
+        if (window.CloudSync) window.CloudSync.signInWithProvider('google').catch(e => showAuthError(e.message));
+      };
+    }
+  };
+
+  render(initialMode);
   d.showModal();
 }
 
@@ -3496,7 +3939,7 @@ async function logoutStargazer() {
   renderTrail();
   const d = $('#dlg');
   if (d && d.open) d.close();
-  showToast('🌌', 'Observatory Log Out', `Logged out of ${callsign}. Switched to Guest Sky.`);
+  showToast('🌌', 'Observatory Log Out', `Logged out of ${callsign}. Progress saved on this device.`);
 }
 
 async function syncProgressWithCloud() {
