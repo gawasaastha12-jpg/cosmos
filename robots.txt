@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cosmic-explorer.org/sitemap.xml
+Sitemap: https://cosmic-ar-explorer.org/sitemap.xml

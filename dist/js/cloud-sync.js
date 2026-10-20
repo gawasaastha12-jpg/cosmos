@@ -52,7 +52,11 @@ export const applySession = (session) => {
     currentUser = {
       id: session.user.id,
       email: session.user.email,
-      callsign: session.user.user_metadata?.callsign || (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
+      callsign: session.user.user_metadata?.callsign ||
+                session.user.user_metadata?.full_name ||
+                session.user.user_metadata?.name ||
+                (session.user.email ? session.user.email.split('@')[0] : 'Stargazer'),
+      avatar: session.user.user_metadata?.avatar_url || null,
       role: 'stargazer'
     };
 
@@ -67,11 +71,19 @@ export const applySession = (session) => {
       window.setGlobalUser(currentUser);
     }
 
-    // If user landed via email magic link or OAuth redirect with URL hash tokens, clean URL
-    if (window.location && window.location.hash && (window.location.hash.includes('access_token') || window.location.hash.includes('refresh_token') || window.location.hash.includes('type='))) {
-      try {
-        window.history.replaceState(window.history.state, document.title, window.location.pathname + window.location.search);
-      } catch (e) {}
+    // If user landed via email magic link or OAuth redirect with URL hash tokens or PKCE code, clean URL
+    if (typeof window !== 'undefined' && window.location) {
+      if (window.location.hash && (window.location.hash.includes('access_token') || window.location.hash.includes('refresh_token') || window.location.hash.includes('type='))) {
+        try {
+          window.history.replaceState(window.history.state, document.title, window.location.pathname + window.location.search);
+        } catch (e) {}
+      }
+      if (window.location.search && window.location.search.includes('code=')) {
+        try {
+          const cleanSearch = window.location.search.replace(/([?&])code=[^&]+(&|$)/, '$1').replace(/[?&]$/, '');
+          window.history.replaceState(window.history.state, document.title, window.location.pathname + cleanSearch + window.location.hash);
+        } catch (e) {}
+      }
     }
 
     // Close sign-in modal if open
@@ -260,10 +272,14 @@ export const signInWithEmail = (email) => {
   return signInWithOtp(email);
 };
 
-export const signInWithProvider = (provider) => { // 'github' | 'google'
+export const signInWithProvider = (provider = 'google', redirectTo) => { // 'github' | 'google'
   if (!sb) return Promise.reject(new Error('Cloud sync not configured'));
-  const origin = typeof location !== 'undefined' ? location.origin : '';
-  return sb.auth.signInWithOAuth({ provider, options: { redirectTo: origin } });
+  const targetUrl = redirectTo || (typeof location !== 'undefined' ? (location.origin + location.pathname) : '');
+  return sb.auth.signInWithOAuth({ provider, options: { redirectTo: targetUrl } });
+};
+
+export const signInWithGoogle = (redirectTo) => {
+  return signInWithProvider('google', redirectTo);
 };
 
 export const signOut = async () => {
@@ -407,6 +423,7 @@ if (typeof window !== 'undefined') {
     verifyOtp,
     signInWithEmail,
     signInWithProvider,
+    signInWithGoogle,
     signOut,
     readLocal,
     writeLocal,
