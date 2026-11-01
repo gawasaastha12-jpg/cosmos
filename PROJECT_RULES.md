@@ -12,4 +12,6 @@ Obey these permanent rules on every task:
 8. **After each change, verify in the browser agent and show screenshots at 360px and 1440px widths.**
 9. **If something is unclear or risky, stop and ask instead of guessing.**
 10. **Run `node scripts/validate-content.js`, `npm test` (or `npm.cmd test` on Windows) and a build with `SITE_URL` set before declaring any task done.**
+11. **After ANY edit to index.html or audio.html, run `npm.cmd run build` with SITE_URL set plus the build-guard test. If a transform stops matching, fix the transform in the same commit.**
+12. **This machine runs Windows and PowerShell: use npm.cmd instead of npm, and use forward slashes in script paths.**
 
