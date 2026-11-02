@@ -198,7 +198,14 @@ function run() {
     });
   }
 
-  const publicMythData = { ...rawMythData, traditions: publicTraditions };
+  const publicMythData = {
+    ...rawMythData,
+    metadata: {
+      ...rawMythData.metadata,
+      totalStories: totalPublicStories
+    },
+    traditions: publicTraditions
+  };
   fs.writeFileSync(OUT_MYTH_PUBLIC, JSON.stringify(publicMythData, null, 2), 'utf-8');
   console.log(`Wrote root ${path.relative(ROOT_DIR, OUT_MYTH_PUBLIC)} (${totalPublicStories} stories)`);
 

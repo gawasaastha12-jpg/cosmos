@@ -6,7 +6,11 @@
   "scripts": {
     "build": "node scripts/build-public.js",
     "serve": "node scripts/serve.js",
-    "test": "node scripts/test-cloud-sync.js && node scripts/test-auth-flow.js",
-    "test:build": "node scripts/test-build-guard.js"
+    "validate": "node scripts/validate-content.js",
+    "test:astro": "node scripts/test-astro.js",
+    "test": "node scripts/test-cloud-sync.js && node scripts/test-auth-flow.mjs",
+    "test:build": "node scripts/test-build-guard.js",
+    "audit": "node scripts/test-audit-negative.js",
+    "check": "npm run validate && npm run test:astro && npm test && npm run test:build"
   }
 }
