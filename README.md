@@ -5,7 +5,7 @@ Zero-build static site: HTML5, vanilla JS (ES2020+), CSS3, Three.js r128 (self-h
 
 **Live Deployment:** [https://cosmos-one-opal.vercel.app](https://cosmos-one-opal.vercel.app)
 
-The public site serves **109 stories across 7 verified traditions**. 3 living oral traditions (Polynesian, Indigenous Australian, and Indigenous Americas — 56 stories total) are held back in `data/myth.json` pending community review under `data/policy.json`.
+The public site serves **109 stories across 7 verified traditions**. 3 living oral traditions (Polynesian, Indigenous Australian, and Indigenous Americas — 36 stories, 12 each) are held back in `data/myth.json` pending community review under `data/policy.json`, and a further 20 stories in the public traditions are omitted as unverified.
 
 ![Cosmic Mythology AR Explorer - Home Canvas](docs/screenshots/home.png)
 
@@ -13,7 +13,7 @@ The public site serves **109 stories across 7 verified traditions**. 3 living or
 - **Client-side astrometry**: GMST, LST, hour angle and altitude computed in the browser via `js/astro.js`.
 - **Local-first persistence**: local progress in `localStorage` (`cosmic_save_v2`), synced to cloud via Supabase.
 - **Privacy by design**: no telemetry, no third-party CDNs, cultural-heritage filter for living oral traditions.
-- **Supabase Cloud Sync (Live)**: Email password, magic link OTP, and OAuth redirects with non-destructive merge logic and Row-Level Security on `public.user_progress`.
+- **Supabase Cloud Sync (Live)**: Email and password (log in, create account, password reset) and Google OAuth, with non-destructive merge logic and Row-Level Security on `public.user_progress`.
 
 ## Quick start
 ```bash
@@ -81,8 +81,8 @@ sin(alt) = sin φ sin δ + cos φ cos δ cos HA
 ## Gotchas
 - `index.html` is a monolith; preserve script order.
 - Keep Pointer Events (touch + mouse) on the globe and planisphere.
-- Heritage filter strips `poly`, `ind`, `amer` stories (165 → 109) when `excludePendingCommunityReview` is true.
+- Heritage filter strips `poly`, `ind`, `amer` traditions (36 stories) and 20 unverified stories (165 → 109) when `excludePendingCommunityReview` is true.
 - `scripts/build-public.js` fails loudly if any expected transform does not match. Run `npm run test:build` after editing HTML.
 
 ## Cloud Sync & Auth
-Supabase authentication and data syncing are live. Sessions are persisted in `localStorage['cosmos_active_session']` and progress is mirrored to PostgreSQL `public.user_progress` using non-destructive merge resolution (`mergeProgress`).
+Supabase authentication and data syncing are live. The modal renders Google OAuth and email/password authentication (sign in, account registration, and password recovery). Sessions are persisted in `localStorage['cosmos_active_session']` and progress is mirrored to PostgreSQL `public.user_progress` using non-destructive merge resolution (`mergeProgress`).
