@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/build-public.js",
     "serve": "node scripts/serve.js",
-    "test": "node scripts/test-cloud-sync.js && node scripts/test-auth-flow.js"
+    "test": "node scripts/test-cloud-sync.js && node scripts/test-auth-flow.js",
+    "test:build": "node scripts/test-build-guard.js"
   }
 }

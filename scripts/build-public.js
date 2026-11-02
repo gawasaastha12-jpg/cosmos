@@ -18,13 +18,14 @@
  *    - Moves large inline myth data into lazy-loaded JSON
  *    - Removes dead window.R.clear() call
  * 4. Retains full root files for local developer auditing.
+ * 5. Fails loudly with exit code 1 if any expected replacement matches nothing.
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
-const DIST_DIR = path.join(ROOT_DIR, 'dist');
+const DIST_DIR = process.env.DIST_DIR ? path.resolve(process.env.DIST_DIR) : path.join(ROOT_DIR, 'dist');
 const AUDIT_PATH = path.join(ROOT_DIR, 'data', 'citation-audit.csv');
 const MYTH_PATH = path.join(ROOT_DIR, 'data', 'myth.json');
 const AUDIO_PATH = path.join(ROOT_DIR, 'data', 'audio-stories.json');
@@ -80,6 +81,22 @@ function copyDirRecursive(src, dest) {
       }
     }
   }
+}
+
+// Guard helper: asserts that pattern matches content, otherwise fails loudly naming the transform
+function applyExpectedTransform(content, pattern, replacement, transformName) {
+  let matched = false;
+  if (typeof pattern === 'string') {
+    matched = content.includes(pattern);
+  } else if (pattern instanceof RegExp) {
+    matched = pattern.test(content);
+    if (pattern.global) pattern.lastIndex = 0;
+  }
+  if (!matched) {
+    console.error(`FATAL BUILD ERROR: Required transform "${transformName}" failed to match any content.`);
+    process.exit(1);
+  }
+  return content.replace(pattern, replacement);
 }
 
 function run() {
@@ -288,7 +305,7 @@ function run() {
   const distManifestPath = path.join(DIST_DIR, 'audio', 'manifest.json');
   if (fs.existsSync(distManifestPath) && excludePoly) {
     let manifestStr = fs.readFileSync(distManifestPath, 'utf-8');
-    manifestStr = manifestStr.replace(/Star of Gladness Hokulea/g, 'Star of Gladness Arcturus');
+    manifestStr = applyExpectedTransform(manifestStr, /Star of Gladness Hokulea/g, 'Star of Gladness Arcturus', 'audio-manifest: hokulea-to-arcturus');
     fs.writeFileSync(distManifestPath, manifestStr, 'utf-8');
   }
 
@@ -296,7 +313,7 @@ function run() {
   const distFontsCss = path.join(DIST_DIR, 'assets', 'fonts', 'fonts.css');
   if (fs.existsSync(distFontsCss)) {
     let fontsCssStr = fs.readFileSync(distFontsCss, 'utf-8');
-    fontsCssStr = fontsCssStr.replace(/font-display:\s*swap;/g, 'font-display: optional;');
+    fontsCssStr = applyExpectedTransform(fontsCssStr, /font-display:\s*swap;/g, 'font-display: optional;', 'fonts-css: optional-font-display');
     fs.writeFileSync(distFontsCss, fontsCssStr, 'utf-8');
   }
 
@@ -309,18 +326,20 @@ function run() {
   console.log('Copied assets, vendor, audio, licenses, and ONLY public data files to dist/');
 
   // Helper to resolve og:url and absolute og:image in HTML
-  function postProcessHtml(html, pagePath = '') {
+  function postProcessHtml(html, pagePath = '', filename = 'HTML') {
+    if (filename === '404.html') return html;
+
     const pageUrl = pagePath ? `${SITE_URL}/${pagePath}` : `${SITE_URL}/`;
     const ogImageUrl = `${SITE_URL}/assets/og-image.jpg`;
 
-    html = html.replace(/https:\/\/cosmic-ar-explorer\.app/g, SITE_URL);
-    html = html.replace(/<meta property="og:image" content="[^"]*">/g, `<meta property="og:image" content="${ogImageUrl}">`);
-    html = html.replace(/<meta name="twitter:image" content="[^"]*">/g, `<meta name="twitter:image" content="${ogImageUrl}">`);
+    html = applyExpectedTransform(html, /https:\/\/cosmic-ar-explorer\.app/g, SITE_URL, `${filename}: site-url-domain`);
+    html = applyExpectedTransform(html, /<meta property="og:image" content="[^"]*">/g, `<meta property="og:image" content="${ogImageUrl}">`, `${filename}: og-image`);
+    html = applyExpectedTransform(html, /<meta name="twitter:image" content="[^"]*">/g, `<meta name="twitter:image" content="${ogImageUrl}">`, `${filename}: twitter-image`);
 
     if (html.includes('<meta property="og:url"')) {
-      html = html.replace(/<meta property="og:url" content="[^"]*">/g, `<meta property="og:url" content="${pageUrl}">`);
+      html = applyExpectedTransform(html, /<meta property="og:url" content="[^"]*">/g, `<meta property="og:url" content="${pageUrl}">`, `${filename}: og-url`);
     } else {
-      html = html.replace(/<meta property="og:type" content="[^"]*">/, `$&<meta property="og:url" content="${pageUrl}">`);
+      html = applyExpectedTransform(html, /<meta property="og:type" content="[^"]*">/, `$&<meta property="og:url" content="${pageUrl}">`, `${filename}: og-url-inject`);
     }
 
     return html;
@@ -338,7 +357,7 @@ function run() {
     const src = path.join(ROOT_DIR, item.file);
     if (fs.existsSync(src)) {
       let content = fs.readFileSync(src, 'utf-8');
-      content = postProcessHtml(content, item.path);
+      content = postProcessHtml(content, item.path, item.file);
       fs.writeFileSync(path.join(DIST_DIR, item.file), content, 'utf-8');
     }
   }
@@ -355,33 +374,31 @@ const INTRO = {};
 /* --- END EMBEDDED MYTH FALLBACK DATA --- */`;
 
   const fallbackPattern = /\/\* --- BEGIN EMBEDDED MYTH FALLBACK DATA --- \*\/[\s\S]*?\/\* --- END EMBEDDED MYTH FALLBACK DATA --- \*\//;
-  if (fallbackPattern.test(indexHtml)) {
-    indexHtml = indexHtml.replace(fallbackPattern, publicFallbackSnippet);
-  }
+  indexHtml = applyExpectedTransform(indexHtml, fallbackPattern, publicFallbackSnippet, 'index: embedded-myth-fallback');
 
   // Ensure vendor/three.min.js does not block HTML parsing and first paint
-  indexHtml = indexHtml.replace(/<script src="vendor\/three\.min\.js"><\/script>/, '<script src="vendor/three.min.js" defer></script>');
+  indexHtml = applyExpectedTransform(indexHtml, /<script src="vendor\/three\.min\.js"><\/script>/, '<script src="vendor/three.min.js" defer></script>', 'index: defer-three-script');
 
   // --- REQUIREMENT 3: REMOVE DEAD window.R.clear() CALL ---
-  indexHtml = indexHtml.replace(/if\(lbs&&n!=='home'\)lbs\.style\.display='none';if\(n!=='home'&&window\.R\)R\.clear\(\);/g, "if(lbs&&n!=='home')lbs.style.display='none';");
+  indexHtml = applyExpectedTransform(indexHtml, /if\(lbs&&n!=='home'\)lbs\.style\.display='none';\s*if\(n!=='home'&&window\.R\)R\.clear\(\);/g, "if(lbs&&n!=='home')lbs.style.display='none';", 'index: remove-dead-R-clear');
 
   // --- REQUIREMENT 3: HERO HEADLINE AND SUBTITLE VISIBLE IMMEDIATELY (TRANSFORM-ONLY, NO OPACITY:0 START) ---
-  indexHtml = indexHtml.replace(/\.w\{display:inline-block;opacity:0;transform:translateY\(\.5em\) rotateX\(40deg\);filter:blur\(10px\);animation:rise 1\.1s cubic-bezier\(\.2,\.7,\.2,1\) forwards;animation-delay:calc\(var\(--i\)\*\.16s \+ \.2s\)\}/,
-    '.w{display:inline-block;opacity:1;transform:translateY(.35em);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.08s)}');
-  indexHtml = indexHtml.replace(/@keyframes rise\{to\{opacity:1;transform:none;filter:none\}\}/,
-    '@keyframes rise{to{transform:none}}');
-  indexHtml = indexHtml.replace(/\.sub,\.hint\{opacity:0;animation:fade 1\.2s 1\.1s forwards\}@keyframes fade\{to\{opacity:1\}\}/,
-    '.sub,.hint{opacity:1}');
+  indexHtml = applyExpectedTransform(indexHtml, /\.w\{display:inline-block;opacity:0;transform:translateY\(\.5em\) rotateX\(40deg\);filter:blur\(10px\);animation:rise 1\.1s cubic-bezier\(\.2,\.7,\.2,1\) forwards;animation-delay:calc\(var\(--i\)\*\.16s \+ \.2s\)\}/,
+    '.w{display:inline-block;opacity:1;transform:translateY(.35em);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.08s)}', 'index: hero-headline-w');
+  indexHtml = applyExpectedTransform(indexHtml, /@keyframes rise\{to\{opacity:1;transform:none;filter:none\}\}/,
+    '@keyframes rise{to{transform:none}}', 'index: hero-rise-keyframes');
+  indexHtml = applyExpectedTransform(indexHtml, /\.sub,\.hint\{opacity:0;animation:fade 1\.2s 1\.1s forwards\}@keyframes fade\{to\{opacity:1\}\}/,
+    '.sub,.hint{opacity:1}', 'index: hero-sub-hint');
 
   // --- REQUIREMENT 3: REMOVE LEGACY EARTH TEXTURE AND LAND POLYGONS ---
   // Remove LAND array definition and earthTex() function entirely from dist/
-  indexHtml = indexHtml.replace(/const LAND=\[\[\[-168,66\][\s\S]*?\]\]\];function earthTex\(\)\{[\s\S]*?return new THREE\.CanvasTexture\(c\)\}/, '/* Legacy LAND & earthTex removed for performance */');
+  indexHtml = applyExpectedTransform(indexHtml, /const LAND=\[\[\[-168,66\][\s\S]*?\]\]\];\s*function earthTex\(\)\{[\s\S]*?return new THREE\.CanvasTexture\(c\)\}/, '/* Legacy LAND & earthTex removed for performance */', 'index: remove-land-polygons-and-earthTex');
   // Update globe creation to use a lightweight basic material without heavy canvas texturing
-  indexHtml = indexHtml.replace(/globe\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(1\.98, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: earthTex\(\)\}\)\)\);/,
-    'globe.add(new THREE.Mesh(new THREE.SphereGeometry(1.98, 32, 24), new THREE.MeshBasicMaterial({color: 0x0a1a4a})));');
+  indexHtml = applyExpectedTransform(indexHtml, /globe\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(1\.98, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: earthTex\(\)\}\)\)\);/,
+    'globe.add(new THREE.Mesh(new THREE.SphereGeometry(1.98, 32, 24), new THREE.MeshBasicMaterial({color: 0x0a1a4a})));', 'index: globe-material-no-earthTex');
 
   // --- REQUIREMENT 3: PAINT CELESTIAL-SPHERE TEXTURE AFTER FIRST PAINT WITH requestIdleCallback (1024x512 on < 768px) ---
-  indexHtml = indexHtml.replace(/sky\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(3\.3, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: skyTex\(\)\}\)\)\);/,
+  indexHtml = applyExpectedTransform(indexHtml, /sky\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(3\.3, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: skyTex\(\)\}\)\)\);/,
     `const skyMat = new THREE.MeshBasicMaterial({color: 0x040818});
   sky.add(new THREE.Mesh(new THREE.SphereGeometry(3.3, 48, 32), skyMat));
   const scheduleSkyTex = () => {
@@ -394,14 +411,14 @@ const INTRO = {};
     requestIdleCallback(scheduleSkyTex, { timeout: 2500 });
   } else {
     setTimeout(scheduleSkyTex, 100);
-  }`);
+  }`, 'index: sky-texture-idle-schedule');
 
   // In skyTex(), ensure screens under 768px use 1024x512
-  indexHtml = indexHtml.replace(/function skyTex\(\)\{const w=innerWidth<768\?1024:2048,h=w\/2,c=document\.createElement\('canvas'\);/,
-    'function skyTex(){const w=window.innerWidth<768?1024:2048,h=w/2,c=document.createElement(\'canvas\');');
+  indexHtml = applyExpectedTransform(indexHtml, /function skyTex\(\)\{const w=innerWidth<768\?1024:2048,h=w\/2,c=document\.createElement\('canvas'\);/,
+    'function skyTex(){const w=window.innerWidth<768?1024:2048,h=w/2,c=document.createElement(\'canvas\');', 'index: skyTex-responsive-width');
 
   // --- REQUIREMENT 3: START THREE.JS SCENE AFTER FIRST PAINT ---
-  indexHtml = indexHtml.replace(/function tryInit3D\(\)\s*\{\s*if\s*\(page === 'home' && !sceneInitialized && window\.THREE\)\s*\{\s*init3D\(\);\s*\}\s*\}\s*if\s*\(document\.readyState === 'loading'\)\s*\{\s*window\.addEventListener\('DOMContentLoaded', tryInit3D\);\s*\}\s*else\s*\{\s*tryInit3D\(\);\s*\}/,
+  indexHtml = applyExpectedTransform(indexHtml, /function tryInit3D\(\)\s*\{\s*if\s*\(page === 'home' && !sceneInitialized && window\.THREE\)\s*\{\s*init3D\(\);\s*\}\s*\}\s*if\s*\(document\.readyState === 'loading'\)\s*\{\s*window\.addEventListener\('DOMContentLoaded', tryInit3D\);\s*\}\s*else\s*\{\s*tryInit3D\(\);\s*\}/,
     `function tryInit3D() {
   if (page === 'home' && !sceneInitialized) {
     if (window.THREE) {
@@ -410,15 +427,15 @@ const INTRO = {};
       setTimeout(tryInit3D, 40);
     }
   }
-}`);
+}`, 'index: tryInit3D-definition');
 
-  indexHtml = indexHtml.replace(/updateHUD\(\);\s*renderTrail\(\);/,
-    `if (window.requestIdleCallback) { requestIdleCallback(() => { updateHUD(); renderTrail(); }); } else { setTimeout(() => { updateHUD(); renderTrail(); }, 150); }`);
+  indexHtml = applyExpectedTransform(indexHtml, /updateHUD\(\);\s*renderTrail\(\);/,
+    `if (window.requestIdleCallback) { requestIdleCallback(() => { updateHUD(); renderTrail(); }); } else { setTimeout(() => { updateHUD(); renderTrail(); }, 150); }`, 'index: updateHUD-renderTrail-idle');
 
-  indexHtml = indexHtml.replace(/game1\(\);game2\(\);renderFM\(\);/,
-    `if (window.requestIdleCallback) { requestIdleCallback(() => { game1(); game2(); renderFM(); }); } else { setTimeout(() => { game1(); game2(); renderFM(); }, 200); }`);
+  indexHtml = applyExpectedTransform(indexHtml, /game1\(\);game2\(\);renderFM\(\);/,
+    `if (window.requestIdleCallback) { requestIdleCallback(() => { game1(); game2(); renderFM(); }); } else { setTimeout(() => { game1(); game2(); renderFM(); }, 200); }`, 'index: game1-game2-idle');
 
-  indexHtml = indexHtml.replace(/tryInit3D\(\);fit\(\);renderMyth\(\);renderQ\(\);setLang\('en'\);[\s\S]*?requestAnimationFrame\(frame\);/,
+  indexHtml = applyExpectedTransform(indexHtml, /tryInit3D\(\);fit\(\);renderMyth\(\);renderQ\(\);setLang\('en'\);[\s\S]*?requestAnimationFrame\(frame\);/,
     `fit(); setLang('en');
     const curH = location.hash.slice(1);
     if (curH === 'signin') {
@@ -447,43 +464,43 @@ const INTRO = {};
       } else {
         setTimeout(startAfterFirstPaint, 60);
       }
-    }`);
+    }`, 'index: start-after-first-paint');
 
   // --- REQUIREMENT 1: REMOVE OR HIDE EXCLUDED-TRADITION CONTENT (DRIVEN BY policy.json) ---
   if (policy.excludePendingCommunityReview) {
     // A. Constellation Info (CI)
     if (excludePoly) {
       // Scorpius: remove Māui's fishhook
-      indexHtml = indexHtml.replace(/Vrishchika · Jyeshtha is Antares · Māui’s fishhook/, 'Vrishchika · Jyeshtha is Antares');
+      indexHtml = applyExpectedTransform(indexHtml, /Vrishchika · Jyeshtha is Antares · Māui’s fishhook/, 'Vrishchika · Jyeshtha is Antares', 'heritage: ci-scorpius-maui');
       // Bootes: remove zenith star of Hawaiʻi / Hōkūleʻa
-      indexHtml = indexHtml.replace(/Arcturus is the brightest star of the northern sky and the zenith star of Hawaiʻi, called Hōkūleʻa\. Follow the handle of the Big Dipper to find it\./,
-        'Arcturus is the brightest star of the northern sky and the jewel of Bootes. Follow the handle of the Big Dipper to find it.');
+      indexHtml = applyExpectedTransform(indexHtml, /Arcturus is the brightest star of the northern sky and the zenith star of Hawaiʻi, called Hōkūleʻa\. Follow the handle of the Big Dipper to find it\./,
+        'Arcturus is the brightest star of the northern sky and the jewel of Bootes. Follow the handle of the Big Dipper to find it.', 'heritage: ci-bootes-hokulea');
       // Taurus: remove Matariki
-      indexHtml = indexHtml.replace(/Krittika and Matariki \(Pleiades\)/, 'Krittika (Pleiades)');
+      indexHtml = applyExpectedTransform(indexHtml, /Krittika and Matariki \(Pleiades\)/, 'Krittika (Pleiades)', 'heritage: ci-taurus-matariki');
     }
     if (excludePoly || excludeInd) {
       // Crux: remove Te Punga and Emu's head
-      indexHtml = indexHtml.replace(/Trishanku · Te Punga · the Emu’s head/, 'Trishanku · The Southern Cross');
+      indexHtml = applyExpectedTransform(indexHtml, /Trishanku · Te Punga · the Emu’s head/, 'Trishanku · The Southern Cross', 'heritage: ci-crux-te-punga-emu');
     }
 
     // B. Quiz Questions (QZ & QCt)
     if (excludePoly) {
       // Q[2]: Navigator's Anchor (Te Punga / Māori) -> Southern Cross
-      indexHtml = indexHtml.replace(/\['Navigator\\'s Anchor',40,'Which pattern is Te Punga, the Māori anchor\?',\['Scorpius','Cassiopeia','Southern Cross'\],2,'Crux points south, so it anchors voyages\.'\],/,
-        "['Southern Cross',40,'Which constellation acts as a celestial compass in the southern hemisphere?',['Scorpius','Cassiopeia','Southern Cross'],2,'Crux points south, guiding navigators across the southern oceans.'],");
+      indexHtml = applyExpectedTransform(indexHtml, /\['Navigator\\'s Anchor',40,'Which pattern is Te Punga, the Māori anchor\?',\['Scorpius','Cassiopeia','Southern Cross'\],2,'Crux points south, so it anchors voyages\.'\],/,
+        "['Southern Cross',40,'Which constellation acts as a celestial compass in the southern hemisphere?',['Scorpius','Cassiopeia','Southern Cross'],2,'Crux points south, guiding navigators across the southern oceans.'],", 'heritage: quiz-navigator-anchor');
       // Q[8]: Zenith Star (Hōkūleʻa / Hawaiʻi) -> Zenith Star Arcturus
-      indexHtml = indexHtml.replace(/\['Zenith Star',40,'Which star is Hōkūleʻa, the zenith star of Hawaiʻi\?',\['Arcturus','Vega','Sirius'\],0,'Follow the arc of the Big Dipper handle to Arcturus\.'\],/,
-        "['Zenith Star',40,'Which bright orange giant star can you locate by following the arc of the Big Dipper?',['Arcturus','Vega','Sirius'],0,'Follow the arc of the Big Dipper handle to Arcturus.'],");
+      indexHtml = applyExpectedTransform(indexHtml, /\['Zenith Star',40,'Which star is Hōkūleʻa, the zenith star of Hawaiʻi\?',\['Arcturus','Vega','Sirius'\],0,'Follow the arc of the Big Dipper handle to Arcturus\.'\],/,
+        "['Zenith Star',40,'Which bright orange giant star can you locate by following the arc of the Big Dipper?',['Arcturus','Vega','Sirius'],0,'Follow the arc of the Big Dipper handle to Arcturus.'],", 'heritage: quiz-zenith-star-hokulea');
       // Q[28]: Krittika explanation (Matariki)
-      indexHtml = indexHtml.replace(/'Krittika is the Pleiades, also called Matariki and Subaru\.'/,
-        "'Krittika is the Pleiades open cluster, also known as the flame-bearers and Subaru.'");
+      indexHtml = applyExpectedTransform(indexHtml, /'Krittika is the Pleiades, also called Matariki and Subaru\.'/,
+        "'Krittika is the Pleiades open cluster, also known as the flame-bearers and Subaru.'", 'heritage: quiz-krittika-explanation');
       // Q[30]: Matariki question -> Subaru Cluster
-      indexHtml = indexHtml.replace(/\['Matariki',40,'Matariki marks the Māori new year\. Which cluster is it\?',\['Pleiades','Hyades','Beehive'\],0,'The Pleiades rise before dawn in midwinter\.'\],/,
-        "['Subaru Cluster',40,'In East Asian sky tradition, the Pleiades cluster is known as…',['Subaru','Krittika','Shen'],0,'Subaru signifies unity and gathering in Japanese tradition.'],");
+      indexHtml = applyExpectedTransform(indexHtml, /\['Matariki',40,'Matariki marks the Māori new year\. Which cluster is it\?',\['Pleiades','Hyades','Beehive'\],0,'The Pleiades rise before dawn in midwinter\.'\],/,
+        "['Subaru Cluster',40,'In East Asian sky tradition, the Pleiades cluster is known as…',['Subaru','Krittika','Shen'],0,'Subaru signifies unity and gathering in Japanese tradition.'],", 'heritage: quiz-matariki-cluster');
 
       // QCt category mapping keys
-      indexHtml = indexHtml.replace(/'Navigator\\'s Anchor':('Culture'|'Sky navigation')/, "'Southern Cross':$1");
-      indexHtml = indexHtml.replace(/'Matariki':('Culture'|'Myth and lore')/, "'Subaru Cluster':$1");
+      indexHtml = applyExpectedTransform(indexHtml, /'Navigator\\'s Anchor':('Culture'|'Sky navigation')/, "'Southern Cross':$1", 'heritage: qct-navigator-anchor');
+      indexHtml = applyExpectedTransform(indexHtml, /'Matariki':('Culture'|'Myth and lore')/, "'Subaru Cluster':$1", 'heritage: qct-matariki');
     }
 
     // C. Match-pair Items
@@ -496,76 +513,74 @@ const INTRO = {};
       ['Weaver Girl', 'East Asian'],
       ['Al-Sufi', 'Arabic astronomy']
     ];`;
-      indexHtml = indexHtml.replace(oldPairsRegex, newPairsCode);
+      indexHtml = applyExpectedTransform(indexHtml, oldPairsRegex, newPairsCode, 'heritage: match-pairs-excluded-traditions');
     }
 
     // D. Collection-card lore & Companions
     if (excludeInd) {
       // COMPANIONS.fox quote: remove Emu
-      indexHtml = indexHtml.replace(/'The dark dust lanes in the Milky Way form the great celestial Emu!'/,
-        "'Ancient skywatchers wove timeless lore across constellations and stars!'");
+      indexHtml = applyExpectedTransform(indexHtml, /'The dark dust lanes in the Milky Way form the great celestial Emu!'/,
+        "'Ancient skywatchers wove timeless lore across constellations and stars!'", 'heritage: fox-lore-milky-way-emu');
     }
     if (excludePoly) {
       // CHAPTER_MASCOTS.ch3 quote: remove Polynesian wayfinders
-      indexHtml = indexHtml.replace(/"Polynesian wayfinders read ocean swells and rising stars!"/,
-        '"Ancient skywatchers tracked constellations to keep time across seasons!"');
+      indexHtml = applyExpectedTransform(indexHtml, /"Polynesian wayfinders read ocean swells and rising stars!"/,
+        '"Ancient skywatchers tracked constellations to keep time across seasons!"', 'heritage: ch3-mascot-polynesian-wayfinders');
     }
 
     // E. Chapter 3 Header and Trail Nodes
     if (excludePoly || excludeInd) {
       // Chapter 3 description
-      indexHtml = indexHtml.replace(/desc: 'Nakshatras, Polynesian wayfinding, and Aboriginal Australian songlines\.'/,
-        "desc: 'Nakshatras, classical constellations, and ancient celestial traditions.'");
+      indexHtml = applyExpectedTransform(indexHtml, /desc: 'Nakshatras, Polynesian wayfinding, and Aboriginal Australian songlines\.'/,
+        "desc: 'Nakshatras, classical constellations, and ancient celestial traditions.'", 'heritage: ch3-trail-description');
       // Node c3_1: Navigator Anchor -> Southern Cross
-      indexHtml = indexHtml.replace(/\{ id: 'c3_1', name: 'Navigator Anchor', type: 'quiz', qIdx: 2, desc: 'Te Punga and Polynesian wayfinding' \}/,
-        "{ id: 'c3_1', name: 'Southern Cross', type: 'quiz', qIdx: 2, desc: 'Crux as a celestial compass' }");
+      indexHtml = applyExpectedTransform(indexHtml, /\{ id: 'c3_1', name: 'Navigator Anchor', type: 'quiz', qIdx: 2, desc: 'Te Punga and Polynesian wayfinding' \}/,
+        "{ id: 'c3_1', name: 'Southern Cross', type: 'quiz', qIdx: 2, desc: 'Crux as a celestial compass' }", 'heritage: trail-node-c3_1');
       // Node c3_4: Zenith Star Hōkūleʻa -> Zenith Star Arcturus
-      indexHtml = indexHtml.replace(/\{ id: 'c3_4', name: 'Zenith Star Hōkūleʻa', type: 'quiz', qIdx: 8, desc: 'Arcturus and voyage to Hawaiʻi' \}/,
-        "{ id: 'c3_4', name: 'Zenith Star Arcturus', type: 'quiz', qIdx: 8, desc: 'Follow the arc to Arcturus' }");
+      indexHtml = applyExpectedTransform(indexHtml, /\{ id: 'c3_4', name: 'Zenith Star Hōkūleʻa', type: 'quiz', qIdx: 8, desc: 'Arcturus and voyage to Hawaiʻi' \}/,
+        "{ id: 'c3_4', name: 'Zenith Star Arcturus', type: 'quiz', qIdx: 8, desc: 'Follow the arc to Arcturus' }", 'heritage: trail-node-c3_4');
       // Node c3_6: Emu in the Sky -> Weaver Girl (Qixi)
-      indexHtml = indexHtml.replace(/\{ id: 'c3_6', name: 'Listen: Emu in the Sky', type: 'listen', taleKey: 'emu', desc: 'Dark dust lanes in the Milky Way' \}/,
-        "{ id: 'c3_6', name: 'Listen: Weaver Girl', type: 'listen', taleKey: 'qixi', desc: 'The celestial bridge of magpies' }");
+      indexHtml = applyExpectedTransform(indexHtml, /\{ id: 'c3_6', name: 'Listen: Emu in the Sky', type: 'listen', taleKey: 'emu', desc: 'Dark dust lanes in the Milky Way' \}/,
+        "{ id: 'c3_6', name: 'Listen: Weaver Girl', type: 'listen', taleKey: 'qixi', desc: 'The celestial bridge of magpies' }", 'heritage: trail-node-c3_6');
       // Node c5_3: Krittika and Matariki -> Krittika and the Pleiades cluster
-      indexHtml = indexHtml.replace(/\{ id: 'c5_3', name: 'Find the Pleiades', type: 'field', fmIdx: 2, desc: 'Krittika and Matariki cluster' \}/,
-        "{ id: 'c5_3', name: 'Find the Pleiades', type: 'field', fmIdx: 2, desc: 'Krittika and the Pleiades cluster' }");
+      indexHtml = applyExpectedTransform(indexHtml, /\{ id: 'c5_3', name: 'Find the Pleiades', type: 'field', fmIdx: 2, desc: 'Krittika and Matariki cluster' \}/,
+        "{ id: 'c5_3', name: 'Find the Pleiades', type: 'field', fmIdx: 2, desc: 'Krittika and the Pleiades cluster' }", 'heritage: trail-node-c5_3');
       // FM[2] Field Mission: Pleiades description
-      indexHtml = indexHtml.replace(/called Krittika in India and Matariki in Māori tradition\./,
-        "called Krittika in India and the Pleiades in the West.");
-      indexHtml = indexHtml.replace(/A tiny dipper-shaped cluster: Krittika, Matariki, Subaru\./,
-        "A tiny dipper-shaped cluster: Krittika and Subaru in Taurus.");
+      indexHtml = applyExpectedTransform(indexHtml, /A tiny dipper-shaped cluster: Krittika, Matariki, Subaru\./,
+        "A tiny dipper-shaped cluster: Krittika and Subaru in Taurus.", 'heritage: fm2-field-mission-pleiades');
       // Search keyword tokens
-      indexHtml = indexHtml.replace(/\|\| t\.includes\('punga'\) \|\| t\.includes\('anchor'\) \|\| t\.includes\('boat'\) \|\| t\.includes\('navigat'\) \|\| t\.includes\('wayfind'\)/,
-        "|| t.includes('anchor') || t.includes('boat') || t.includes('navigat')");
-      indexHtml = indexHtml.replace(/\|\| t\.includes\('emu'\) /, "");
-      indexHtml = indexHtml.replace(/\|\| t\.includes\('djulpan'\)/, "");
+      indexHtml = applyExpectedTransform(indexHtml, /\|\| t\.includes\('punga'\) \|\| t\.includes\('anchor'\) \|\| t\.includes\('boat'\) \|\| t\.includes\('navigat'\) \|\| t\.includes\('wayfind'\)/,
+        "|| t.includes('anchor') || t.includes('boat') || t.includes('navigat')", 'heritage: search-token-punga-wayfind');
+      indexHtml = applyExpectedTransform(indexHtml, /\|\| t\.includes\('emu'\) /, "", 'heritage: search-token-emu');
+      indexHtml = applyExpectedTransform(indexHtml, /\|\| t\.includes\('djulpan'\)/, "", 'heritage: search-token-djulpan');
 
       // UNVERIFIED_STORIES cleanup for excluded traditions
-      indexHtml = indexHtml.replace(/"poly_ka_lupe",\s*"poly_tamarereti",\s*"poly_aa_sirius",\s*"poly_manaiakalani",\s*/g, '');
-      indexHtml = indexHtml.replace(/"ind_tagai",\s*"ind_bunjil",\s*"ind_waiyungari",\s*"ind_kulkun",\s*"ind_yowie",\s*/g, '');
-      indexHtml = indexHtml.replace(/"am_navajo_nahookos",\s*"am_lakota_race",\s*"am_ojibwe_fisher",\s*"am_inca_machacuay",\s*"am_pawnee_morning_star",\s*/g, '');
+      indexHtml = applyExpectedTransform(indexHtml, /"poly_ka_lupe",\s*"poly_tamarereti",\s*"poly_aa_sirius",\s*"poly_manaiakalani",\s*/g, '', 'heritage: unverified-stories-poly');
+      indexHtml = applyExpectedTransform(indexHtml, /"ind_tagai",\s*"ind_bunjil",\s*"ind_waiyungari",\s*"ind_kulkun",\s*"ind_yowie",\s*/g, '', 'heritage: unverified-stories-ind');
+      indexHtml = applyExpectedTransform(indexHtml, /"am_navajo_nahookos",\s*"am_lakota_race",\s*"am_ojibwe_fisher",\s*"am_inca_machacuay",\s*"am_pawnee_morning_star",\s*/g, '', 'heritage: unverified-stories-amer');
     }
 
     // F. TALES Audio Player entries
     if (excludePoly) {
-      indexHtml = indexHtml.replace(/matariki:\['Matariki',\{en:\['Matariki is the Pleiades, a cluster that rises just before dawn in midwinter\.','For the Māori it marks the new year, a time to remember those who passed, celebrate the harvest and plan ahead\.'\]\}\],/, '');
-      indexHtml = indexHtml.replace(/wayfinders:\['Star navigators',\{en:\['Before compasses, Polynesian navigators memorised where stars rise and set along the horizon\.','Steering by a chain of rising stars, they crossed thousands of kilometres of open ocean\.'\]\}\],/, '');
+      indexHtml = applyExpectedTransform(indexHtml, /matariki:\['Matariki',\{en:\['Matariki is the Pleiades, a cluster that rises just before dawn in midwinter\.','For the Māori it marks the new year, a time to remember those who passed, celebrate the harvest and plan ahead\.'\]\}\],/, '', 'heritage: tales-matariki');
+      indexHtml = applyExpectedTransform(indexHtml, /wayfinders:\['Star navigators',\{en:\['Before compasses, Polynesian navigators memorised where stars rise and set along the horizon\.','Steering by a chain of rising stars, they crossed thousands of kilometres of open ocean\.'\]\}\],/, '', 'heritage: tales-wayfinders');
     }
     if (excludeInd) {
-      indexHtml = indexHtml.replace(/,emu:\['Emu in the Sky',\{en:\['Look for the dark shapes in the Milky Way, not only the bright stars\.','Many Aboriginal peoples see an emu there, with its head in the Coalsack beside the Southern Cross\.','Its changing posture through the year tells when to collect emu eggs\.'\]\}\]/, '');
+      indexHtml = applyExpectedTransform(indexHtml, /,emu:\['Emu in the Sky',\{en:\['Look for the dark shapes in the Milky Way, not only the bright stars\.','Many Aboriginal peoples see an emu there, with its head in the Coalsack beside the Southern Cross\.','Its changing posture through the year tells when to collect emu eggs\.'\]\}\]/, '', 'heritage: tales-emu');
     }
   }
 
   // B. Remove "?all=1" footer link from dist
-  indexHtml = indexHtml.replace(/<a\s+href="[^"]*\?all=1"[^>]*>[\s\S]*?<\/a>/gi, '');
+  indexHtml = applyExpectedTransform(indexHtml, /<a\s+href="[^"]*\?all=1"[^>]*>[\s\S]*?<\/a>/gi, '', 'dist: footer-dev-all1-link');
 
   // C. Remove Dev Mode toggle button from dist
-  indexHtml = indexHtml.replace(/<button[^>]*id="btn-public-toggle"[^>]*>[\s\S]*?<\/button>/gi, '');
+  indexHtml = applyExpectedTransform(indexHtml, /<button[^>]*id="btn-public-toggle"[^>]*>[\s\S]*?<\/button>/gi, '', 'dist: btn-public-toggle');
 
   // D. Force isPublicBuild to true unconditionally in dist
-  indexHtml = indexHtml.replace(/let\s+isPublicBuild\s*=\s*urlParams\.get\('all'\)\s*!==\s*'1';/g, 'let isPublicBuild = true;');
+  indexHtml = applyExpectedTransform(indexHtml, /let\s+isPublicBuild\s*=\s*urlParams\.get\('all'\)\s*!==\s*'1';/g, 'let isPublicBuild = true;', 'dist: isPublicBuild-force-true');
 
   // E. Post-process absolute OG tags
-  indexHtml = postProcessHtml(indexHtml, '');
+  indexHtml = postProcessHtml(indexHtml, '', 'index.html');
 
   // F. Backend URL & Account UI configuration
   const BACKEND_URL = process.env.BACKEND_URL ? process.env.BACKEND_URL.trim() : '';
@@ -579,11 +594,19 @@ const INTRO = {};
     indexHtml = indexHtml.replace(/id="nav-user-chip"/g, 'id="nav-user-chip" style="display:none"');
     indexHtml = indexHtml.replace(/id="footer-account-link"/g, 'id="footer-account-link" style="display:none"');
   }
-  // Ensure no login.html links or api/auth calls remain in dist/index.html
-  indexHtml = indexHtml.replace(/href="login\.html"/gi, 'href="#" style="display:none"');
-  indexHtml = indexHtml.replace(/'login\.html[^']*'/gi, "'#'");
-  indexHtml = indexHtml.replace(/"login\.html[^"]*"/gi, '"#"');
-  indexHtml = indexHtml.replace(/\/api\/auth[^\s'"`]*/gi, '');
+  // Ensure no login.html links or api/auth calls remain in dist/index.html (defensive sanitization)
+  if (/href="login\.html"/i.test(indexHtml)) {
+    indexHtml = indexHtml.replace(/href="login\.html"/gi, 'href="#" style="display:none"');
+  }
+  if (/'login\.html[^']*'/i.test(indexHtml)) {
+    indexHtml = indexHtml.replace(/'login\.html[^']*'/gi, "'#'");
+  }
+  if (/"login\.html[^"]*"/i.test(indexHtml)) {
+    indexHtml = indexHtml.replace(/"login\.html[^"]*"/gi, '"#"');
+  }
+  if (/\/api\/auth/i.test(indexHtml)) {
+    indexHtml = indexHtml.replace(/\/api\/auth[^\s'"`]*/gi, '');
+  }
 
   fs.writeFileSync(path.join(DIST_DIR, 'index.html'), indexHtml, 'utf-8');
   console.log('Generated dist/index.html with all Brief 10 sanitizations and performance enhancements.\n');
