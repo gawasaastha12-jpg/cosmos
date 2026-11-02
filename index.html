@@ -583,26 +583,6 @@ function getCurrentStargazerUser() {
 
 let page='home';
 function go(n){
-  const protectedSections = ['sci', 'myth', 'audio', 'play'];
-  if (protectedSections.includes(n)) {
-    const user = getCurrentStargazerUser();
-    if (!user) {
-      if (typeof openSignInModal === 'function') openSignInModal();
-      if (typeof showToast === 'function') {
-        const secLabel = n === 'sci' ? 'Scientific view' : (n === 'myth' ? 'Myth & culture' : (n === 'play' ? 'Journeys' : 'the Audiobook'));
-        showToast('🔒', 'Stargazer Access Required', `Please sign in with your email to unlock ${secLabel}.`);
-      }
-      if (page !== 'home') {
-        page = 'home';
-        $$('.pg').forEach(p=>p.classList.toggle('on',p.id==='home'));
-        $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go==='home'));
-        const cv=$('#cv');if(cv)cv.style.display='block';
-        fit();
-      }
-      location.hash = 'signin';
-      return;
-    }
-  }
   page=n;
   $$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));
   $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
@@ -619,19 +599,6 @@ function go(n){
   if(n==='home')tryInit3D();
 }
 document.addEventListener('click',e=>{
-  const audioLink = e.target.closest('a[href*="audio.html"]');
-  if (audioLink) {
-    const user = getCurrentStargazerUser();
-    if (!user) {
-      e.preventDefault();
-      if (typeof openSignInModal === 'function') openSignInModal();
-      if (typeof showToast === 'function') {
-        showToast('🔒', 'Stargazer Access Required', 'Please sign in with your email to access the Celestial Audiobook.');
-      }
-      location.hash = 'signin';
-      return;
-    }
-  }
   const b=e.target.closest('[data-go]');
   if(b) go(b.dataset.go);
 });
