@@ -3291,24 +3291,6 @@ function loadCurrentProgress() {
 SAVE = loadCurrentProgress();
 window.SAVE = SAVE;
 
-function getCurrentStargazerUser() {
-  if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
-    return SAVE.user;
-  }
-  if (typeof window.SAVE !== 'undefined' && window.SAVE && window.SAVE.user && (window.SAVE.user.callsign || window.SAVE.user.email)) {
-    return window.SAVE.user;
-  }
-  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
-    const u = window.CloudSync.getCurrentUser();
-    if (u && (u.callsign || u.email)) return u;
-  }
-  const sess = getActiveSession();
-  if (sess && sess.user && (sess.user.callsign || sess.user.email)) {
-    return sess.user;
-  }
-  return null;
-}
-
 window.setGlobalUser = function(u) {
   if (typeof SAVE !== 'undefined') {
     if (u) SAVE.user = u; else delete SAVE.user;
