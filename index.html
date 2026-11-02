@@ -656,6 +656,7 @@ class CosmicAudioEngine {
     });
     this.audioEl.addEventListener('ended', () => {
       this.stopPlayback();
+      maybeShowGuestPrompt();
     });
     this.audioEl.addEventListener('error', (e) => {
       console.warn('Audio element error, falling back to Web Speech synthesis:', e);
@@ -1691,6 +1692,7 @@ class CosmicAudioEngine {
 
     this.isPlaying = true;
     this.updatePlayButtons(true);
+    maybeShowGuestPrompt();
     this.startBarPulse();
 
     // Ignore any track with placeholder: true and use device speech directly
@@ -1991,6 +1993,7 @@ function narrate(lines, lang, cap, btn, bars) {
   if (audioPlayer) {
     audioPlayer.openForStory(lines[0] || 'Sky Tale', 'Orion');
   }
+  maybeShowGuestPrompt();
 }
 
 let sceneInitialized = false;
@@ -3884,6 +3887,63 @@ function showToast(icon, title, msg) {
   }
 }
 
+function maybeShowGuestPrompt() {
+  if (getCurrentStargazerUser()) return;
+  try {
+    if (localStorage.getItem('cosmos_guest_prompt_dismissed')) return;
+  } catch(e) { return; }
+  if (document.getElementById('guest-signin-prompt')) return;
+
+  const prompt = document.createElement('div');
+  prompt.id = 'guest-signin-prompt';
+  prompt.className = 'toast-msg guest-prompt';
+  prompt.setAttribute('role', 'alert');
+  prompt.style.pointerEvents = 'auto';
+  prompt.style.display = 'flex';
+  prompt.style.alignItems = 'center';
+  prompt.style.gap = '12px';
+  prompt.style.padding = '14px 18px';
+  prompt.style.borderRadius = '14px';
+  prompt.style.background = 'rgba(10, 16, 36, 0.96)';
+  prompt.style.border = '1px solid var(--a)';
+  prompt.style.boxShadow = '0 12px 36px rgba(0,0,0,0.7)';
+  prompt.style.color = 'var(--ink)';
+  prompt.style.maxWidth = 'min(440px, calc(100vw - 32px))';
+
+  prompt.innerHTML = `
+    <span style="font-size:20px;flex:none">✨</span>
+    <div style="flex:1;font-size:13px;line-height:1.4">Sign in to keep your progress on every device.</div>
+    <div style="display:flex;align-items:center;gap:6px;flex:none">
+      <button type="button" class="btn" id="guest-prompt-signin" style="padding:5px 12px;font-size:12px;background:var(--a);color:#05070f;font-weight:600">Sign In</button>
+      <button type="button" class="btn" id="guest-prompt-dismiss" style="padding:5px 8px;font-size:12px;background:none;border:none;color:var(--mut);cursor:pointer" aria-label="Dismiss">✕</button>
+    </div>
+  `;
+
+  const box = document.getElementById('toasts') || document.body;
+  box.appendChild(prompt);
+
+  const dismiss = () => {
+    try { localStorage.setItem('cosmos_guest_prompt_dismissed', '1'); } catch(e){}
+    prompt.style.opacity = '0';
+    prompt.style.transition = 'opacity .3s';
+    setTimeout(() => prompt.remove(), 300);
+  };
+
+  const signinBtn = prompt.querySelector('#guest-prompt-signin');
+  if (signinBtn) {
+    signinBtn.onclick = () => {
+      dismiss();
+      if (typeof openSignInModal === 'function') openSignInModal('login');
+    };
+  }
+
+  const dismissBtn = prompt.querySelector('#guest-prompt-dismiss');
+  if (dismissBtn) {
+    dismissBtn.onclick = dismiss;
+  }
+}
+window.maybeShowGuestPrompt = maybeShowGuestPrompt;
+
 // Ranks
 const RANKS = [
   [0, 'Cadet', '✦'],
@@ -4262,6 +4322,7 @@ function handleLevelSuccess(xpGain, cardUnlock) {
   saveGame();
   renderTrail();
   showVictoryModal(xpGain, starsAwarded, cardUnlock);
+  maybeShowGuestPrompt();
 }
 
 // Victory & Summary Modal
@@ -4293,7 +4354,12 @@ function showVictoryModal(xp, stars, card) {
       <button class="btn btn-auto" data-x style="flex:1">Close</button>
     </div>
   `;
-  $('#btn-next-trail').onclick = () => d.close();
+  const onVictoryDismiss = () => { d.close(); maybeShowGuestPrompt(); };
+  $('#btn-next-trail').onclick = onVictoryDismiss;
+  const vCloseBtn = d.querySelector('.btn-close');
+  if (vCloseBtn) vCloseBtn.onclick = onVictoryDismiss;
+  const vReturnBtn = d.querySelector('[data-x]');
+  if (vReturnBtn) vReturnBtn.onclick = onVictoryDismiss;
   d.showModal();
 }
 
