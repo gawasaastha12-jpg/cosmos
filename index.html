@@ -583,26 +583,6 @@ function getCurrentStargazerUser() {
 
 let page='home';
 function go(n){
-  const protectedSections = ['sci', 'myth', 'audio', 'play'];
-  if (protectedSections.includes(n)) {
-    const user = getCurrentStargazerUser();
-    if (!user) {
-      if (typeof openSignInModal === 'function') openSignInModal();
-      if (typeof showToast === 'function') {
-        const secLabel = n === 'sci' ? 'Scientific view' : (n === 'myth' ? 'Myth & culture' : (n === 'play' ? 'Journeys' : 'the Audiobook'));
-        showToast('🔒', 'Stargazer Access Required', `Please sign in with your email to unlock ${secLabel}.`);
-      }
-      if (page !== 'home') {
-        page = 'home';
-        $$('.pg').forEach(p=>p.classList.toggle('on',p.id==='home'));
-        $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go==='home'));
-        const cv=$('#cv');if(cv)cv.style.display='block';
-        fit();
-      }
-      location.hash = 'signin';
-      return;
-    }
-  }
   page=n;
   $$('.pg').forEach(p=>p.classList.toggle('on',p.id===n));
   $$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===n));
@@ -619,19 +599,6 @@ function go(n){
   if(n==='home')tryInit3D();
 }
 document.addEventListener('click',e=>{
-  const audioLink = e.target.closest('a[href*="audio.html"]');
-  if (audioLink) {
-    const user = getCurrentStargazerUser();
-    if (!user) {
-      e.preventDefault();
-      if (typeof openSignInModal === 'function') openSignInModal();
-      if (typeof showToast === 'function') {
-        showToast('🔒', 'Stargazer Access Required', 'Please sign in with your email to access the Celestial Audiobook.');
-      }
-      location.hash = 'signin';
-      return;
-    }
-  }
   const b=e.target.closest('[data-go]');
   if(b) go(b.dataset.go);
 });
@@ -689,6 +656,7 @@ class CosmicAudioEngine {
     });
     this.audioEl.addEventListener('ended', () => {
       this.stopPlayback();
+      maybeShowGuestPrompt();
     });
     this.audioEl.addEventListener('error', (e) => {
       console.warn('Audio element error, falling back to Web Speech synthesis:', e);
@@ -1734,6 +1702,7 @@ class CosmicAudioEngine {
 
     this.isPlaying = true;
     this.updatePlayButtons(true);
+    maybeShowGuestPrompt();
     this.startBarPulse();
 
     // Ignore any track with placeholder: true and use device speech directly
@@ -2034,6 +2003,7 @@ function narrate(lines, lang, cap, btn, bars) {
   if (audioPlayer) {
     audioPlayer.openForStory(lines[0] || 'Sky Tale', 'Orion');
   }
+  maybeShowGuestPrompt();
 }
 
 let sceneInitialized = false;
@@ -3368,24 +3338,6 @@ function loadCurrentProgress() {
 SAVE = loadCurrentProgress();
 window.SAVE = SAVE;
 
-function getCurrentStargazerUser() {
-  if (typeof SAVE !== 'undefined' && SAVE && SAVE.user && (SAVE.user.callsign || SAVE.user.email)) {
-    return SAVE.user;
-  }
-  if (typeof window.SAVE !== 'undefined' && window.SAVE && window.SAVE.user && (window.SAVE.user.callsign || window.SAVE.user.email)) {
-    return window.SAVE.user;
-  }
-  if (typeof window.CloudSync !== 'undefined' && window.CloudSync && typeof window.CloudSync.getCurrentUser === 'function') {
-    const u = window.CloudSync.getCurrentUser();
-    if (u && (u.callsign || u.email)) return u;
-  }
-  const sess = getActiveSession();
-  if (sess && sess.user && (sess.user.callsign || sess.user.email)) {
-    return sess.user;
-  }
-  return null;
-}
-
 window.setGlobalUser = function(u) {
   if (typeof SAVE !== 'undefined') {
     if (u) SAVE.user = u; else delete SAVE.user;
@@ -3979,6 +3931,63 @@ function showToast(icon, title, msg) {
   }
 }
 
+function maybeShowGuestPrompt() {
+  if (getCurrentStargazerUser()) return;
+  try {
+    if (localStorage.getItem('cosmos_guest_prompt_dismissed')) return;
+  } catch(e) { return; }
+  if (document.getElementById('guest-signin-prompt')) return;
+
+  const prompt = document.createElement('div');
+  prompt.id = 'guest-signin-prompt';
+  prompt.className = 'toast-msg guest-prompt';
+  prompt.setAttribute('role', 'alert');
+  prompt.style.pointerEvents = 'auto';
+  prompt.style.display = 'flex';
+  prompt.style.alignItems = 'center';
+  prompt.style.gap = '12px';
+  prompt.style.padding = '14px 18px';
+  prompt.style.borderRadius = '14px';
+  prompt.style.background = 'rgba(10, 16, 36, 0.96)';
+  prompt.style.border = '1px solid var(--a)';
+  prompt.style.boxShadow = '0 12px 36px rgba(0,0,0,0.7)';
+  prompt.style.color = 'var(--ink)';
+  prompt.style.maxWidth = 'min(440px, calc(100vw - 32px))';
+
+  prompt.innerHTML = `
+    <span style="font-size:20px;flex:none">✨</span>
+    <div style="flex:1;font-size:13px;line-height:1.4">Sign in to keep your progress on every device.</div>
+    <div style="display:flex;align-items:center;gap:6px;flex:none">
+      <button type="button" class="btn" id="guest-prompt-signin" style="padding:5px 12px;font-size:12px;background:var(--a);color:#05070f;font-weight:600">Sign In</button>
+      <button type="button" class="btn" id="guest-prompt-dismiss" style="padding:5px 8px;font-size:12px;background:none;border:none;color:var(--mut);cursor:pointer" aria-label="Dismiss">✕</button>
+    </div>
+  `;
+
+  const box = document.getElementById('toasts') || document.body;
+  box.appendChild(prompt);
+
+  const dismiss = () => {
+    try { localStorage.setItem('cosmos_guest_prompt_dismissed', '1'); } catch(e){}
+    prompt.style.opacity = '0';
+    prompt.style.transition = 'opacity .3s';
+    setTimeout(() => prompt.remove(), 300);
+  };
+
+  const signinBtn = prompt.querySelector('#guest-prompt-signin');
+  if (signinBtn) {
+    signinBtn.onclick = () => {
+      dismiss();
+      if (typeof openSignInModal === 'function') openSignInModal('login');
+    };
+  }
+
+  const dismissBtn = prompt.querySelector('#guest-prompt-dismiss');
+  if (dismissBtn) {
+    dismissBtn.onclick = dismiss;
+  }
+}
+window.maybeShowGuestPrompt = maybeShowGuestPrompt;
+
 // Ranks
 const RANKS = [
   [0, 'Cadet', '✦'],
@@ -4373,6 +4382,7 @@ function handleLevelSuccess(xpGain, cardUnlock) {
   saveGame();
   renderTrail();
   showVictoryModal(xpGain, starsAwarded, cardUnlock);
+  maybeShowGuestPrompt();
 }
 
 // Victory & Summary Modal
@@ -4404,7 +4414,12 @@ function showVictoryModal(xp, stars, card) {
       <button class="btn btn-auto" data-x style="flex:1">Close</button>
     </div>
   `;
-  $('#btn-next-trail').onclick = () => d.close();
+  const onVictoryDismiss = () => { d.close(); maybeShowGuestPrompt(); };
+  $('#btn-next-trail').onclick = onVictoryDismiss;
+  const vCloseBtn = d.querySelector('.btn-close');
+  if (vCloseBtn) vCloseBtn.onclick = onVictoryDismiss;
+  const vReturnBtn = d.querySelector('[data-x]');
+  if (vReturnBtn) vReturnBtn.onclick = onVictoryDismiss;
   d.showModal();
 }
 
