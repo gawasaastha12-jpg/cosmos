@@ -316,14 +316,6 @@ function run() {
     fs.writeFileSync(distManifestPath, manifestStr, 'utf-8');
   }
 
-  // Optimize font-display in dist/assets/fonts/fonts.css to eliminate layout shifts (CLS = 0)
-  const distFontsCss = path.join(DIST_DIR, 'assets', 'fonts', 'fonts.css');
-  if (fs.existsSync(distFontsCss)) {
-    let fontsCssStr = fs.readFileSync(distFontsCss, 'utf-8');
-    fontsCssStr = applyExpectedTransform(fontsCssStr, /font-display:\s*swap;/g, 'font-display: optional;', 'fonts-css: optional-font-display');
-    fs.writeFileSync(distFontsCss, fontsCssStr, 'utf-8');
-  }
-
   // Copy ONLY public data sets into dist/data/
   fs.copyFileSync(OUT_MYTH_PUBLIC, path.join(DIST_DIR, 'data', 'myth.public.json'));
   fs.copyFileSync(OUT_AUDIO_PUBLIC, path.join(DIST_DIR, 'data', 'audio-stories.public.json'));
@@ -382,96 +374,6 @@ const INTRO = {};
 
   const fallbackPattern = /\/\* --- BEGIN EMBEDDED MYTH FALLBACK DATA --- \*\/[\s\S]*?\/\* --- END EMBEDDED MYTH FALLBACK DATA --- \*\//;
   indexHtml = applyExpectedTransform(indexHtml, fallbackPattern, publicFallbackSnippet, 'index: embedded-myth-fallback');
-
-  // Ensure vendor/three.min.js does not block HTML parsing and first paint
-  indexHtml = applyExpectedTransform(indexHtml, /<script src="vendor\/three\.min\.js"><\/script>/, '<script src="vendor/three.min.js" defer></script>', 'index: defer-three-script');
-
-  // --- REQUIREMENT 3: REMOVE DEAD window.R.clear() CALL ---
-  indexHtml = applyExpectedTransform(indexHtml, /if\(lbs&&n!=='home'\)lbs\.style\.display='none';\s*if\(n!=='home'&&window\.R\)R\.clear\(\);/g, "if(lbs&&n!=='home')lbs.style.display='none';", 'index: remove-dead-R-clear');
-
-  // --- REQUIREMENT 3: HERO HEADLINE AND SUBTITLE VISIBLE IMMEDIATELY (TRANSFORM-ONLY, NO OPACITY:0 START) ---
-  indexHtml = applyExpectedTransform(indexHtml, /\.w\{display:inline-block;opacity:0;transform:translateY\(\.5em\) rotateX\(40deg\);filter:blur\(10px\);animation:rise 1\.1s cubic-bezier\(\.2,\.7,\.2,1\) forwards;animation-delay:calc\(var\(--i\)\*\.16s \+ \.2s\)\}/,
-    '.w{display:inline-block;opacity:1;transform:translateY(.35em);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.08s)}', 'index: hero-headline-w');
-  indexHtml = applyExpectedTransform(indexHtml, /@keyframes rise\{to\{opacity:1;transform:none;filter:none\}\}/,
-    '@keyframes rise{to{transform:none}}', 'index: hero-rise-keyframes');
-  indexHtml = applyExpectedTransform(indexHtml, /\.sub,\.hint\{opacity:0;animation:fade 1\.2s 1\.1s forwards\}@keyframes fade\{to\{opacity:1\}\}/,
-    '.sub,.hint{opacity:1}', 'index: hero-sub-hint');
-
-  // --- REQUIREMENT 3: REMOVE LEGACY EARTH TEXTURE AND LAND POLYGONS ---
-  // Remove LAND array definition and earthTex() function entirely from dist/
-  indexHtml = applyExpectedTransform(indexHtml, /const LAND=\[\[\[-168,66\][\s\S]*?\]\]\];\s*function earthTex\(\)\{[\s\S]*?return new THREE\.CanvasTexture\(c\)\}/, '/* Legacy LAND & earthTex removed for performance */', 'index: remove-land-polygons-and-earthTex');
-  // Update globe creation to use a lightweight basic material without heavy canvas texturing
-  indexHtml = applyExpectedTransform(indexHtml, /globe\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(1\.98, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: earthTex\(\)\}\)\)\);/,
-    'globe.add(new THREE.Mesh(new THREE.SphereGeometry(1.98, 32, 24), new THREE.MeshBasicMaterial({color: 0x0a1a4a})));', 'index: globe-material-no-earthTex');
-
-  // --- REQUIREMENT 3: PAINT CELESTIAL-SPHERE TEXTURE AFTER FIRST PAINT WITH requestIdleCallback (1024x512 on < 768px) ---
-  indexHtml = applyExpectedTransform(indexHtml, /sky\.add\(new THREE\.Mesh\(new THREE\.SphereGeometry\(3\.3, 64, 48\), new THREE\.MeshBasicMaterial\(\{map: skyTex\(\)\}\)\)\);/,
-    `const skyMat = new THREE.MeshBasicMaterial({color: 0x040818});
-  sky.add(new THREE.Mesh(new THREE.SphereGeometry(3.3, 48, 32), skyMat));
-  const scheduleSkyTex = () => {
-    const tex = skyTex();
-    skyMat.map = tex;
-    skyMat.color.setHex(0xffffff);
-    skyMat.needsUpdate = true;
-  };
-  if (window.requestIdleCallback) {
-    requestIdleCallback(scheduleSkyTex, { timeout: 2500 });
-  } else {
-    setTimeout(scheduleSkyTex, 100);
-  }`, 'index: sky-texture-idle-schedule');
-
-  // In skyTex(), ensure screens under 768px use 1024x512
-  indexHtml = applyExpectedTransform(indexHtml, /function skyTex\(\)\{const w=innerWidth<768\?1024:2048,h=w\/2,c=document\.createElement\('canvas'\);/,
-    'function skyTex(){const w=window.innerWidth<768?1024:2048,h=w/2,c=document.createElement(\'canvas\');', 'index: skyTex-responsive-width');
-
-  // --- REQUIREMENT 3: START THREE.JS SCENE AFTER FIRST PAINT ---
-  indexHtml = applyExpectedTransform(indexHtml, /function tryInit3D\(\)\s*\{\s*if\s*\(page === 'home' && !sceneInitialized && window\.THREE\)\s*\{\s*init3D\(\);\s*\}\s*\}\s*if\s*\(document\.readyState === 'loading'\)\s*\{\s*window\.addEventListener\('DOMContentLoaded', tryInit3D\);\s*\}\s*else\s*\{\s*tryInit3D\(\);\s*\}/,
-    `function tryInit3D() {
-  if (page === 'home' && !sceneInitialized) {
-    if (window.THREE) {
-      init3D();
-    } else {
-      setTimeout(tryInit3D, 40);
-    }
-  }
-}`, 'index: tryInit3D-definition');
-
-  indexHtml = applyExpectedTransform(indexHtml, /updateHUD\(\);\s*renderTrail\(\);/,
-    `if (window.requestIdleCallback) { requestIdleCallback(() => { updateHUD(); renderTrail(); }); } else { setTimeout(() => { updateHUD(); renderTrail(); }, 150); }`, 'index: updateHUD-renderTrail-idle');
-
-  indexHtml = applyExpectedTransform(indexHtml, /game1\(\);game2\(\);renderFM\(\);/,
-    `if (window.requestIdleCallback) { requestIdleCallback(() => { game1(); game2(); renderFM(); }); } else { setTimeout(() => { game1(); game2(); renderFM(); }, 200); }`, 'index: game1-game2-idle');
-
-  indexHtml = applyExpectedTransform(indexHtml, /tryInit3D\(\);fit\(\);renderMyth\(\);renderQ\(\);setLang\('en'\);[\s\S]*?requestAnimationFrame\(frame\);/,
-    `fit(); setLang('en');
-    const curH = location.hash.slice(1);
-    if (curH === 'signin') {
-      setTimeout(() => { if (typeof openSignInModal === 'function') openSignInModal(); }, 350);
-    } else if (curH === 'welcome') {
-      setTimeout(() => { if (typeof checkOnboarding === 'function') { page = 'play'; SAVE.onboarded = false; checkOnboarding(); } }, 350);
-    } else if (['sci','myth','play'].includes(curH)) {
-      tryInit3D();
-      renderMyth();
-      renderQ();
-      go(curH);
-      requestAnimationFrame(frame);
-    } else {
-      // Start Three.js scene & animation loop strictly AFTER first paint
-      const startAfterFirstPaint = () => {
-        tryInit3D();
-        fit();
-        renderMyth();
-        renderQ();
-        requestAnimationFrame(frame);
-      };
-      if (window.requestAnimationFrame) {
-        requestAnimationFrame(() => {
-          setTimeout(startAfterFirstPaint, 30);
-        });
-      } else {
-        setTimeout(startAfterFirstPaint, 60);
-      }
-    }`, 'index: start-after-first-paint');
 
   // --- REQUIREMENT 1: REMOVE OR HIDE EXCLUDED-TRADITION CONTENT (DRIVEN BY policy.json) ---
   if (policy.excludePendingCommunityReview) {
