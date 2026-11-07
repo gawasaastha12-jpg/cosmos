@@ -19,11 +19,11 @@ const MIME = {
   '.mjs': 'application/javascript; charset=utf-8'
 };
 
-const { handleApiRequest } = require('./api');
-
 const server = http.createServer((req, res) => {
   if (req.url.startsWith('/api/')) {
-    return handleApiRequest(req, res);
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Legacy API removed' }));
+    return;
   }
   let reqPath = decodeURI(req.url.split('?')[0]);
   let filePath = path.join(__dirname, '..', reqPath);

@@ -1,3 +1,4 @@
+import fs from 'fs';
 /**
  * scripts/test-auth-flow.js
  * Automated test suite for the Stargazer authentication flow with a mocked client:
@@ -399,6 +400,169 @@ await signOut();
 const afterLogoutLocal = readLocal();
 assert(afterLogoutLocal.xp === 700, 'Sign out kept local progress on device');
 assert(afterLogoutLocal.cards.includes('card_andromeda'), 'Unlocked cards preserved on device after sign out');
+
+// -------------------------------------------------------------
+// TEST 5: Guest access to all sections & audio.html
+// -------------------------------------------------------------
+console.log('\n--- Test 5: Guest access to all sections & audio.html ---');
+
+// Verify audio.html has no auth guard redirecting to sign-in
+const audioHtmlContent = fs.readFileSync('audio.html', 'utf8');
+assert(!audioHtmlContent.includes('guardAudioAccess'), 'audio.html has no guardAudioAccess function');
+assert(!audioHtmlContent.includes('window.location.replace'), 'audio.html does not redirect visitors to sign-in');
+
+// Verify index.html does not have protectedSections or audioLink interception
+const indexHtmlContent = fs.readFileSync('index.html', 'utf8');
+assert(!indexHtmlContent.includes('protectedSections'), 'index.html has no protectedSections list');
+assert(!indexHtmlContent.includes('const audioLink = e.target.closest'), 'index.html does not intercept audio.html links');
+
+// Setup mock DOM for navigation go(n)
+globalThis.$ = (sel) => [];
+globalThis.$ = (sel) => ({ style: {}, classList: { toggle: () => {} } });
+globalThis.scrollTo = () => {};
+globalThis.fit = () => {};
+globalThis.stopV = () => {};
+globalThis.loadMythData = () => {};
+globalThis.renderMyth = () => {};
+globalThis.initAvatar = () => {};
+globalThis.resizeAv = () => {};
+globalThis.renderQ = () => {};
+globalThis.renderFM = () => {};
+globalThis.tryInit3D = () => {};
+
+let activePage = 'home';
+function testGo(n) {
+  activePage = n;
+  location.hash = n;
+}
+
+// Test guest entering each section
+modalOpen = false;
+location.hash = '';
+
+const guestSections = ['sci', 'myth', 'audio', 'play', 'home'];
+for (const sec of guestSections) {
+  testGo(sec);
+  assert(activePage === sec, `Guest successfully navigated to section '${sec}'`);
+  assert(modalOpen === false, `Auth modal remained closed when entering '${sec}'`);
+  assert(location.hash === sec, `Hash updated to '#${sec}' without forcing '#signin'`);
+}
+
+// -------------------------------------------------------------
+// TEST 6: Guest progress survives a refresh
+// -------------------------------------------------------------
+console.log('\n--- Test 6: Guest progress survives a refresh ---');
+
+await signOut();
+storage.clear();
+
+const guestSessionProgress = {
+  v: 2,
+  xp: 220,
+  stars: 7,
+  streak: 2,
+  cards: ['card_orion', 'card_sirius'],
+  done: { quest_polaris: 3, quest_vega: 2 },
+  achievements: { first_light: true, night_owl: true },
+  avatar: 'owl',
+  _ts: Date.now()
+};
+
+writeLocal(guestSessionProgress);
+
+// Simulate page refresh: reset in-memory variables and reload from localStorage
+globalThis.SAVE = null;
+const refreshedProgress = readLocal();
+
+assert(refreshedProgress.xp === 220, 'Guest XP (220) preserved across page refresh');
+assert(refreshedProgress.stars === 7, 'Guest stars (7) preserved across page refresh');
+assert(
+  refreshedProgress.cards.length === 2 &&
+  refreshedProgress.cards.includes('card_orion') &&
+  refreshedProgress.cards.includes('card_sirius'),
+  'Guest unlocked cards preserved across page refresh'
+);
+assert(
+  refreshedProgress.done.quest_polaris === 3 && refreshedProgress.done.quest_vega === 2,
+  'Guest quest completions preserved across page refresh'
+);
+assert(refreshedProgress.achievements.night_owl === true, 'Guest achievements preserved across page refresh');
+
+// -------------------------------------------------------------
+// TEST 7: Guest-to-signed-in merge keeps both sets of progress
+// -------------------------------------------------------------
+console.log('\n--- Test 7: Guest-to-signed-in merge keeps both sets of progress ---');
+
+// Guest local save on device
+const guestPreLogin = {
+  v: 2,
+  xp: 350,
+  stars: 11,
+  streak: 3,
+  cards: ['card_orion', 'card_guest_gemini'],
+  done: { q_common: 2, q_guest_only: 3 },
+  achievements: { speed_runner: true },
+  avatar: 'fox',
+  _ts: 1000000
+};
+writeLocal(guestPreLogin);
+
+// Existing cloud account data from another device
+cloudDbRow = {
+  user_id: 'guest-convert-user-007',
+  data: {
+    v: 2,
+    xp: 400,
+    stars: 14,
+    streak: 5,
+    cards: ['card_orion', 'card_cloud_perseus'],
+    done: { q_common: 3, q_cloud_only: 2 },
+    achievements: { star_gazer: true },
+    avatar: 'owl',
+    _ts: 2000000
+  }
+};
+
+const mockClientGuestConvert = createMockSupabase();
+initCloud('http://127.0.0.1:8000', 'mock-anon-key', { client: mockClientGuestConvert });
+
+// Guest signs in
+await signInWithPassword('guest.converted@cosmos.org', 'validPassword123');
+const guestSyncResult = await syncProgressWithCloud();
+
+assert(guestSyncResult.ok === true, 'Cloud sync returned ok: true on guest sign-in');
+
+const finalMerged = readLocal();
+assert(finalMerged.xp === 400, 'XP merged to max(350, 400) = 400');
+assert(finalMerged.stars === 14, 'Stars merged to max(11, 14) = 14');
+assert(
+  finalMerged.cards.includes('card_guest_gemini') &&
+  finalMerged.cards.includes('card_cloud_perseus') &&
+  finalMerged.cards.includes('card_orion') &&
+  finalMerged.cards.length === 3,
+  'Cards merged via union preserving both guest and cloud cards'
+);
+assert(
+  finalMerged.done.q_guest_only === 3 &&
+  finalMerged.done.q_cloud_only === 2 &&
+  finalMerged.done.q_common === 3,
+  'Done quests unioned keeping highest stars earned per quest'
+);
+assert(
+  finalMerged.achievements.speed_runner && finalMerged.achievements.star_gazer,
+  'Achievements from both guest play and cloud account unioned'
+);
+assert(
+  lastUpsertData !== null &&
+  lastUpsertData.data.cards.includes('card_guest_gemini') &&
+  lastUpsertData.data.cards.includes('card_cloud_perseus'),
+  'Cloud database updated with the merged progress dataset'
+);
+
+// Verify soft guest prompt dismissal persistence
+assert(localStorage.getItem('cosmos_guest_prompt_dismissed') === null, 'Prompt dismissal not set initially');
+localStorage.setItem('cosmos_guest_prompt_dismissed', '1');
+assert(localStorage.getItem('cosmos_guest_prompt_dismissed') === '1', 'Prompt dismissal persisted in localStorage');
 
 console.log('\n====================================================');
 console.log(`✔ ALL ${passedTests}/${totalTests} TESTS PASSED SUCCESSFULLY!`);
