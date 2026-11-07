@@ -475,7 +475,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <dialog id="dlg"></dialog>
 <dialog id="dlg-audio" class="gl"></dialog>
 
-<script src="vendor/three.min.js" defer></script>
+<!-- Three.js loaded lazily on demand -->
 <script>
   window.COSMOS_SUPABASE_CONFIG = {
     url: 'https://bhqblmcuopynalhmingo.supabase.co',
@@ -2216,6 +2216,66 @@ function stepParticles(t){
   }
 }
 
+
+let threeLoadPromise = null;
+let threeLoadError = null;
+
+function ensureThreeLoaded() {
+  if (window.THREE) return Promise.resolve(window.THREE);
+  if (threeLoadError) return Promise.reject(threeLoadError);
+  if (threeLoadPromise) return threeLoadPromise;
+
+  threeLoadPromise = new Promise((resolve, reject) => {
+    // Fast WebGL check
+    try {
+      const testC = document.createElement('canvas');
+      const gl = testC.getContext('webgl') || testC.getContext('experimental-webgl');
+      if (!gl) {
+        const err = new Error('WebGL is not supported or is disabled in your browser.');
+        threeLoadError = err;
+        return reject(err);
+      }
+    } catch (e) {
+      const err = new Error('WebGL detection failed.');
+      threeLoadError = err;
+      return reject(err);
+    }
+
+    const s = document.createElement('script');
+    s.src = 'vendor/three.min.js';
+    s.async = true;
+    s.onload = () => {
+      if (window.THREE) {
+        resolve(window.THREE);
+      } else {
+        const err = new Error('3D engine failed to initialize.');
+        threeLoadError = err;
+        reject(err);
+      }
+    };
+    s.onerror = () => {
+      const err = new Error('Could not load 3D engine (network error or offline).');
+      threeLoadError = err;
+      reject(err);
+    };
+    document.head.appendChild(s);
+  });
+
+  return threeLoadPromise;
+}
+
+function showGlobeError(message) {
+  const dz = $('#dz');
+  if (dz) {
+    dz.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:360px;padding:24px;text-align:center;color:var(--ink)">
+      <div style="font-size:32px;margin-bottom:8px">🪐</div>
+      <b style="font-size:15px;margin-bottom:6px">3D Globe Unavailable</b>
+      <p style="font-size:13px;color:var(--mut);max-width:320px;line-height:1.4;margin-bottom:14px">${message || 'The 3D celestial sphere could not be loaded.'}</p>
+      <button class="btn" style="font-size:12px;padding:6px 14px" onclick="PV.view='plan';document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('on',b.dataset.view==='plan'));if(typeof setView==='function')setView()">Back to Star Chart</button>
+    </div>`;
+  }
+}
+
 function init3D() {
   if (sceneInitialized || !window.THREE) return;
   const cv = $('#cv');
@@ -2330,12 +2390,13 @@ function init3D() {
   }
 }
 
-function tryInit3D() {
+async function tryInit3D() {
   if (page === 'home' && !sceneInitialized) {
-    if (window.THREE) {
+    try {
+      await ensureThreeLoaded();
       init3D();
-    } else {
-      setTimeout(tryInit3D, 40);
+    } catch (err) {
+      console.warn('Three.js lazy initialization deferred/failed:', err.message);
     }
   }
 }
@@ -2386,8 +2447,14 @@ function resizeAv() {
     avC.updateProjectionMatrix();
   }
 }
-function initAvatar() {
-  if (avR || !avCv || !window.THREE) return;
+async function initAvatar() {
+  if (avR || !avCv) return;
+  try {
+    await ensureThreeLoaded();
+  } catch (err) {
+    console.warn('3D Mascot Avatar disabled:', err.message);
+    return;
+  }
   if (!avG) avG = new THREE.Group();
   avR = new THREE.WebGLRenderer({canvas:avCv, antialias:true, alpha:true});
   avR.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -2653,7 +2720,7 @@ updatePublicBtn();
 
 // Check if a constellation is currently visible tonight above horizon
 function isVisibleTonight(con) {
-  if (!CON[con] || !CG[con]) return true;
+  if (!CON[con]) return true;
   const [raHours, dec] = cenOf(con);
   const raDeg = raHours * 15;
   const astro = getAstro();
@@ -5165,11 +5232,11 @@ const TALES={intro:['Intro',{en:LANG.en[2],hi:LANG.hi[2],mr:LANG.mr[2],te:LANG.t
 $('#lg').onclick=e=>{const b=e.target.closest('[data-l]');if(b)setLang(b.dataset.l)};
 $('#ap').onclick=()=>{if($('#ap').textContent==='❚❚')return stopV();narrate(lines(),TALES[tale][1][lang]?LANG[lang][1]:'en-IN',$('#ac'),$('#ap'),$('#ab'))};
 const lbs=$('#lbs'),dz=$('#dz');lbs.innerHTML=Object.keys(CON).map(k=>`<button class='lb' data-k='${k}'>${k}</button>`).join('');$('#cl').innerHTML=Object.keys(CON).map(k=>`<button class='cc' data-k='${k}'>${miniSvg(k)}<span>${k}</span></button>`).join('');{const ciCap=$('#ci .cap');if(ciCap&&!selC)ciCap.textContent=`${Object.keys(CON).length} constellations are drawn from real sky coordinates. Tap one to read its story.`;}
-function pick(k){selC=k;$$('[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===k));const i=CI[k],ss=[...new Set(edges(k).flat())];$('#ci').innerHTML=`<h3>${k}</h3><p class='cap'>${i[0]}</p><p style='margin:8px 0'><b>${i[1]}</b></p><p style='color:var(--mut);font-size:14px'>${i[2]}</p><div class='tbl' style='max-height:170px;margin-top:10px'>${ss.map(n=>`<button data-st='${n}'>${n}<span>${ST[n].ly} ly · ${ST[n].sp}</span></button>`).join('')}</div><div class='row'><button class='btn' data-myth='${k}'>Read the stories</button></div>`;Object.entries(CG).forEach(([n,o])=>o.m.opacity=n===k?1:.35);const c=CG[k].c.clone().applyMatrix4(sky.matrix);tgt=[Math.atan2(c.y,Math.hypot(c.x,c.z)),Math.atan2(-c.x,c.z)]}
+function pick(k){selC=k;$$('[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===k));const i=CI[k],ss=[...new Set(edges(k).flat())];$('#ci').innerHTML=`<h3>${k}</h3><p class='cap'>${i[0]}</p><p style='margin:8px 0'><b>${i[1]}</b></p><p style='color:var(--mut);font-size:14px'>${i[2]}</p><div class='tbl' style='max-height:170px;margin-top:10px'>${ss.map(n=>`<button data-st='${n}'>${n}<span>${ST[n].ly} ly · ${ST[n].sp}</span></button>`).join('')}</div><div class='row'><button class='btn' data-myth='${k}'>Read the stories</button></div>`;if(CG&&Object.keys(CG).length>0){Object.entries(CG).forEach(([n,o])=>{if(o&&o.m)o.m.opacity=n===k?1:.35});}if(CG&&CG[k]&&CG[k].c&&sky){const c=CG[k].c.clone().applyMatrix4(sky.matrix);tgt=[Math.atan2(c.y,Math.hypot(c.x,c.z)),Math.atan2(-c.x,c.z)]}}
 document.addEventListener('click',e=>{const k=e.target.closest('[data-k]');if(k)return pick(k.dataset.k);const s=e.target.closest('[data-st]');if(s){sel=s.dataset.st;go('sci');readout();return}const m=e.target.closest('[data-myth]');if(m){for(const[c,v]of Object.entries(MY)){const i=v[1].findIndex(x=>x[3]===m.dataset.myth);if(i>=0){cat=c;cur=i;go('myth');renderMyth();return}}}});
 dz.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};tgt=null;dz.setPointerCapture(e.pointerId);dz.style.cursor='grabbing'});dz.addEventListener('pointermove',e=>{if(!drag)return;W.rotation.y+=(e.clientX-drag.x)*.006;W.rotation.x=Math.max(-1.3,Math.min(1.3,W.rotation.x+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY}});['pointerup','pointercancel'].forEach(t=>dz.addEventListener(t,()=>{drag=null;dz.style.cursor='grab'}));
 const PV={view:'plan',pole:'s',rot:-lst()*Math.PI/180,cen:{}};let pdrag=null;const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-function cenOf(k){const v=CG[k].c,a=Math.atan2(-v.z,v.x)*12/Math.PI;return[(a+24)%24,Math.asin(v.y/v.length())*57.2958]}
+function cenOf(k){const E=edges(k),ns=[...new Set(E.flat())];if(!ns.length)return[0,0];let sx=0,sy=0,sz=0;for(const n of ns){const s=ST[n];if(!s)continue;const a=s.ra*Math.PI/12,d=s.dec*Math.PI/180,cd=Math.cos(d);sx+=cd*Math.cos(a);sy+=Math.sin(d);sz+=-cd*Math.sin(a)}const len=Math.hypot(sx,sy,sz)||1,a=Math.atan2(-sz,sx)*12/Math.PI;return[((a+24)%24),Math.asin(sy/len)*57.29577951308232]}
 function drawPlan(){const c=$('#pl'),dp=Math.min(devicePixelRatio,2),sz=Math.round(c.clientWidth*dp);if(!sz)return;if(c.width!==sz){c.width=sz;c.height=sz}const x=c.getContext('2d'),w=sz,cx=w/2,R=w/2-4*dp,k=R/450,sg=PV.pole==='s'?-1:1;x.clearRect(0,0,w,w);
 const P=(ra,d)=>{const r=R*.93*((PV.pole==='s'?d+90:90-d)/120);if(r>R*.93||r<0)return null;const a=ra*Math.PI/12+PV.rot;return[cx+sg*r*Math.sin(a),cx-r*Math.cos(a)]};
 x.save();x.beginPath();x.arc(cx,cx,R,0,7);x.clip();const g=x.createRadialGradient(cx,cx,0,cx,cx,R);g.addColorStop(0,'#10245a');g.addColorStop(1,'#1d3680');x.fillStyle=g;x.fillRect(0,0,w,w);
@@ -5182,7 +5249,7 @@ x.textAlign='center';x.font=`italic ${14*dp}px Cormorant Garamond,Georgia,serif`
 x.fillStyle='rgba(6,12,40,.92)';x.beginPath();x.arc(cx,cx,R,0,7);x.arc(cx,cx,R*.93,0,7,true);x.fill();x.font=`${11*dp}px Space Grotesk,sans-serif`;x.fillStyle='#f0d9a8';MON.forEach((m,i)=>{const a=((18.75+i*2+1)%24)*Math.PI/12+PV.rot;x.fillText(m,cx+sg*R*.965*Math.sin(a),cx-R*.965*Math.cos(a)+4*dp)});x.fillStyle='#9fb4ff';for(let i=0;i<24;i+=2){const a=i*Math.PI/12+PV.rot;x.fillText(i+'h',cx+sg*R*.885*Math.sin(a),cx-R*.885*Math.cos(a)+4*dp)}x.restore();
 x.strokeStyle='rgba(130,170,255,.8)';x.lineWidth=2*dp;x.shadowColor='#6fa0ff';x.shadowBlur=28*dp;x.beginPath();x.arc(cx,cx,R,0,7);x.stroke();x.shadowBlur=0}
 function setView(){$('#pl').style.display=PV.view==='plan'?'block':'none';dz.style.display=PV.view==='globe'?'block':'none'}
-document.addEventListener('click',e=>{const v=e.target.closest('[data-view]');if(v){PV.view=v.dataset.view;$$('[data-view]').forEach(b=>b.classList.toggle('on',b===v));setView()}const q=e.target.closest('[data-pole]');if(q){PV.pole=q.dataset.pole;$$('[data-pole]').forEach(b=>b.classList.toggle('on',b===q))}if(e.target.closest('[data-tonight]'))PV.rot=-lst()*Math.PI/180});
+document.addEventListener('click',e=>{const v=e.target.closest('[data-view]');if(v){PV.view=v.dataset.view;$$('[data-view]').forEach(b=>b.classList.toggle('on',b===v));if(PV.view==='globe'){ensureThreeLoaded().then(()=>{if(!sceneInitialized)init3D();setView()}).catch(err=>{showGlobeError(err.message);setView()})}else{setView()}}const q=e.target.closest('[data-pole]');if(q){PV.pole=q.dataset.pole;$$('[data-pole]').forEach(b=>b.classList.toggle('on',b===q))}if(e.target.closest('[data-tonight]'))PV.rot=-lst()*Math.PI/180});
 const pc=$('#pl');pc.addEventListener('pointerdown',e=>{pdrag={x:e.clientX,m:0};pc.setPointerCapture(e.pointerId)});pc.addEventListener('pointermove',e=>{if(!pdrag)return;const dx=e.clientX-pdrag.x;pdrag.m+=Math.abs(dx);PV.rot+=dx*.006*(PV.pole==='s'?-1:1);pdrag.x=e.clientX});pc.addEventListener('pointercancel',()=>pdrag=null);pc.addEventListener('pointerup',e=>{if(pdrag&&pdrag.m<4){const r=pc.getBoundingClientRect(),f=pc.width/r.width,px=(e.clientX-r.left)*f,py=(e.clientY-r.top)*f;let best=null,bd=1e9;Object.entries(PV.cen).forEach(([k,p])=>{const d=Math.hypot(p[0]-px,p[1]-py);if(d<bd){bd=d;best=k}});if(best&&bd<70*f)pick(best)}pdrag=null});
 function miniSvg(k,w,h){w=w||64;h=h||46;const E=edges(k),ns=[...new Set(E.flat())],r0=ST[ns[0]].ra,cs=Math.cos(ns.reduce((a,n)=>a+ST[n].dec,0)/ns.length*Math.PI/180),X=n=>-(((ST[n].ra-r0+12)%24+24)%24-12)*15*cs,Y=n=>ST[n].dec,xs=ns.map(X),ys=ns.map(Y),a=Math.min(...xs),b=Math.max(...xs),c=Math.min(...ys),d=Math.max(...ys),sc=Math.min((w-10)/((b-a)||1),(h-10)/((d-c)||1)),P=n=>[(w-(b-a)*sc)/2+(X(n)-a)*sc,(h-(d-c)*sc)/2+(d-Y(n))*sc];
 return `<svg viewBox='0 0 ${w} ${h}' width='${w}' height='${h}' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round'>`+E.map(([p,q])=>{const A=P(p),B=P(q);return `<line x1='${A[0].toFixed(1)}' y1='${A[1].toFixed(1)}' x2='${B[0].toFixed(1)}' y2='${B[1].toFixed(1)}'/>`}).join('')+ns.map(n=>{const A=P(n);return `<circle cx='${A[0].toFixed(1)}' cy='${A[1].toFixed(1)}' r='1.7' fill='currentColor' stroke='none'/>`}).join('')+'</svg>'}
@@ -5238,13 +5305,22 @@ fit(); setLang('en');
       go(curH);
       requestAnimationFrame(frame);
     } else {
-      // Start Three.js scene & animation loop strictly AFTER first paint
+      // Start planisphere rendering & UI strictly AFTER first paint; load 3D on interaction or 4s timeout
       const startAfterFirstPaint = () => {
-        tryInit3D();
         fit();
         renderMyth();
         renderQ();
         requestAnimationFrame(frame);
+        
+        let loaded = false;
+        const trigger3D = () => {
+          if (loaded) return;
+          loaded = true;
+          ['scroll', 'keydown', 'pointerdown', 'touchstart'].forEach(ev => window.removeEventListener(ev, trigger3D, { passive: true }));
+          tryInit3D();
+        };
+        ['scroll', 'keydown', 'pointerdown', 'touchstart'].forEach(ev => window.addEventListener(ev, trigger3D, { passive: true, once: true }));
+        setTimeout(trigger3D, 4000);
       };
       if (window.requestAnimationFrame) {
         requestAnimationFrame(() => {
