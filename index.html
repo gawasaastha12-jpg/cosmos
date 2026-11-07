@@ -297,7 +297,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 <main id="home" class="pg on">
 <section class="ch"><div><h1><span class='w' style='--i:0'>Every</span> <span class='w' style='--i:1'>sky,</span><br><span class='w' style='--i:2'>anywhere.</span></h1><p class="sub">Ancient sky-storytelling meets modern astrophysics, projected onto any ceiling, in any weather, at any hour.</p><p class="hint" style="color:var(--mut)">Sweep your cursor through the stars. Scroll to zoom out.</p></div></section>
 <section class="ch r"><div class="gl card"><h2>Clouds and city glow can't reach this sky.</h2><p>Over 80% of people live under light-polluted skies. The Explorer places real constellations around you using your device's GPS and gyroscope, so a ceiling at noon works as well as a hilltop at midnight.</p></div></section>
-<section class="ch"><div class="gl card"><h2>Your sky, right now.</h2><p id="loc">Reading your position and local sidereal time…</p><div class="row"><button class='btn cta' style='--d:0' data-go='sci'><i class='ic-sci'></i>Open the science</button><button class='btn cta' style='--d:1' data-go='myth'><span class='ic-snd'><b></b><b></b><b></b></span>Hear the stories</button><button class='btn cta' style='--d:2' data-go='play'><span class='ic-go'>✦</span>Start a journey</button></div></div></section><section class='ch' id='gs'><div class='gtop'><div class='gl pan' id='gp'><h3>The sky sphere</h3><p class='cap'>Drag the chart to turn it and tap a constellation for its story. Switch to the 3D globe for a spinning view.</p><div class='tabs' style='margin-top:12px'><button class='btn on' data-view='plan'>Star chart</button><button class='btn' data-view='globe'>3D globe</button></div><div class='tabs'><button class='btn' data-pole='n'>North sky</button><button class='btn on' data-pole='s'>South sky</button><button class='btn' data-tonight='1'>Set to tonight</button></div><div id='cl'></div></div><div class='gl pan' id='ci'><h3>Choose a constellation</h3><p class='cap'>Twenty-one constellations are drawn from real sky coordinates. Tap one to read its story.</p></div></div><div class='gstage'><div id='dz' style='display:none' aria-label='Drag to rotate the globe'></div><canvas id='pl' aria-label='Star chart planisphere'></canvas></div></section><div id='lbs'></div>
+<section class="ch"><div class="gl card"><h2>Your sky, right now.</h2><p id="loc">Reading your position and local sidereal time…</p><div class="row"><button class='btn cta' style='--d:0' data-go='sci'><i class='ic-sci'></i>Open the science</button><button class='btn cta' style='--d:1' data-go='myth'><span class='ic-snd'><b></b><b></b><b></b></span>Hear the stories</button><button class='btn cta' style='--d:2' data-go='play'><span class='ic-go'>✦</span>Start a journey</button></div></div></section><section class='ch' id='gs'><div class='gtop'><div class='gl pan' id='gp'><h3>The sky sphere</h3><p class='cap'>Drag the chart to turn it and tap a constellation for its story. Switch to the 3D globe for a spinning view.</p><div class='tabs' style='margin-top:12px'><button class='btn on' data-view='plan'>Star chart</button><button class='btn' data-view='globe'>3D globe</button></div><div class='tabs'><button class='btn' data-pole='n'>North sky</button><button class='btn on' data-pole='s'>South sky</button><button class='btn' data-tonight='1'>Set to tonight</button></div><div id='cl'></div></div><div class='gl pan' id='ci'><h3>Choose a constellation</h3><p class='cap'>34 constellations are drawn from real sky coordinates. Tap one to read its story.</p></div></div><div class='gstage'><div id='dz' style='display:none' aria-label='Drag to rotate the globe'></div><canvas id='pl' aria-label='Star chart planisphere'></canvas></div></section><div id='lbs'></div>
 
 <footer class="gl site-footer" role="contentinfo" style="margin:48px auto 20px;max-width:1080px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut)">
   <div>✦ <b>Cosmic AR Explorer</b> · Ancient Sky Lore &amp; Observational Astrophysics</div>
@@ -331,7 +331,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
 
 <!-- Search & Filter Bar -->
 <div class="gl pan" style="padding:12px 16px;margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-  <input id="myth-sq" placeholder="Search 160+ celestial stories, gods, stars, and legends..." style="flex:1;min-width:240px;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);font:inherit" aria-label="Search stories">
+  <input id="myth-sq" placeholder="Search celestial stories, gods, stars, and legends..." style="flex:1;min-width:240px;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.05);color:var(--ink);font:inherit" aria-label="Search stories">
   <select id="myth-reg-filter" style="padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(10,14,32,.9);color:var(--ink);font:inherit" aria-label="Filter by Region">
     <option value="all">All Global Regions</option>
     <option value="South Asia">South Asia</option>
@@ -419,7 +419,7 @@ dialog .btn.btn-auto,dialog .modal-actions .btn,dialog .modal-header .btn{displa
   </div>
   <div class="hud-actions">
     <button class="hud-btn" id="btn-avatar-picker" title="Choose Your Companion Avatar"><span id="g-avatar-ico">🦉</span> <b id="g-avatar-name">Cosmo</b></button>
-    <button class="hud-btn" id="btn-book" title="Constellation Collection Book">📖 Book (<b id="g-book-cnt">0/21</b>)</button>
+    <button class="hud-btn" id="btn-book" title="Constellation Collection Book">📖 Book (<b id="g-book-cnt">0/3</b>)</button>
     <button class="hud-btn" id="btn-achieve" title="Achievements">🏆 <b id="g-ach-cnt">0/22</b></button>
     <button class="hud-btn" id="btn-settings" title="Audio and Gameplay Settings">⚙️</button>
   </div>
@@ -1505,6 +1505,16 @@ class CosmicAudioEngine {
       if (match) return match;
     }
     return null;
+  }
+
+  getStoryFor(titleOrKey, conKey) {
+    if (!this.stories || this.stories.length === 0) return null;
+    const t = (titleOrKey || '').toLowerCase();
+    const c = (conKey || '').toLowerCase();
+    return this.stories.find(s => 
+      (s.title && s.title.toLowerCase().includes(t)) ||
+      (c && s.constellation && s.constellation.toLowerCase() === c)
+    ) || this.stories[0];
   }
 
   async openForStory(titleOrKey, conKey) {
@@ -2723,6 +2733,28 @@ function renderMyth() {
     $('#mu').textContent = 'Community Sky Use: ' + tradMeta.use;
   }
 
+  // Compute dynamic story search placeholder
+  const totalMythStories = entries.reduce((acc, [k, v]) => {
+    const sList = v[1] || [];
+    if (isPublicBuild) {
+      return acc + sList.filter(s => !(s[5] && s[5].id && UNVERIFIED_STORIES.has(s[5].id))).length;
+    }
+    return acc + sList.length;
+  }, 0);
+  if ($('#myth-sq') && !mythSearchQ) {
+    $('#myth-sq').placeholder = `Search ${totalMythStories} celestial stories, gods, stars, and legends...`;
+  }
+
+  // Compute available languages for this specific story
+  let audioLangsCount = 7;
+  if (window.audioPlayer && window.audioPlayer.stories && window.audioPlayer.stories.length > 0) {
+    const matchedAudio = window.audioPlayer.getStoryFor ? window.audioPlayer.getStoryFor(m[0], conName) : null;
+    if (matchedAudio && matchedAudio.languages) {
+      audioLangsCount = Object.keys(matchedAudio.languages).length;
+    }
+  }
+  const listenLabel = `🎧 Listen (${audioLangsCount} ${audioLangsCount === 1 ? 'lang' : 'langs'})`;
+
   // Render Story Detail with clearly separated science block and citation
   $('#ms').innerHTML = `
     <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(240,179,106,.15);border:1px solid rgba(240,179,106,.3);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700;color:var(--myth);margin-bottom:10px">
@@ -2731,7 +2763,7 @@ function renderMyth() {
     <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
         <h3 style="margin:0">${m[0]}</h3>
-        <button class="btn" id="btn-myth-listen" style="font-size:12px;padding:4px 12px;background:rgba(93,224,208,.15);border-color:var(--a);color:var(--a)">🎧 Listen (4 langs)</button>
+        <button class="btn" id="btn-myth-listen" style="font-size:12px;padding:4px 12px;background:rgba(93,224,208,.15);border-color:var(--a);color:var(--a)">${listenLabel}</button>
       </div>
       <span style="font-size:13px;color:var(--mut)">${meta.region || 'World Tradition'} · <b style="color:#ffe2b0">${conName}</b></span>
     </div>
@@ -2764,6 +2796,18 @@ function renderMyth() {
         window.audioPlayer.openForStory(m[0], conName);
       }
     };
+    if (window.audioPlayer && window.audioPlayer.ensureLoaded) {
+      window.audioPlayer.ensureLoaded().then(() => {
+        const btn = $('#btn-myth-listen');
+        if (btn && window.audioPlayer && window.audioPlayer.getStoryFor) {
+          const matchedAudio = window.audioPlayer.getStoryFor(m[0], conName);
+          if (matchedAudio && matchedAudio.languages) {
+            const count = Object.keys(matchedAudio.languages).length;
+            btn.textContent = `🎧 Listen (${count} ${count === 1 ? 'lang' : 'langs'})`;
+          }
+        }
+      });
+    }
   }
 
   // Populate Related Stories
@@ -3787,7 +3831,7 @@ function openStargazerModal() {
         <div style="font-size:11px;color:var(--mut)">Quests Cleared</div>
       </div>
       <div style="text-align:center;padding:12px 8px;background:rgba(255,255,255,.02);border:1px solid var(--bd);border-radius:12px">
-        <div style="font-size:20px;font-weight:700;color:var(--myth)">🃏 ${cardCount}/21</div>
+        <div style="font-size:20px;font-weight:700;color:var(--myth)">🃏 ${cardCount}/${(typeof getEarnableCards === 'function') ? (getEarnableCards().length || 3) : 3}</div>
         <div style="font-size:11px;color:var(--mut)">Cards Unlocked</div>
       </div>
     </div>
@@ -3962,6 +4006,21 @@ function getRank(xp) {
   return r;
 }
 
+function getEarnableCards() {
+  const cards = new Set();
+  try {
+    if (typeof CHAPTERS !== 'undefined' && Array.isArray(CHAPTERS)) {
+      CHAPTERS.forEach(ch => {
+        (ch.nodes || []).forEach(n => {
+          if (n.type === 'connect' && n.con) cards.add(n.con);
+          if (n.cardUnlock) cards.add(n.cardUnlock);
+        });
+      });
+    }
+  } catch (e) {}
+  return Array.from(cards);
+}
+
 function updateHUD() {
   const xp = SAVE.xp || 0;
   const rank = getRank(xp);
@@ -3976,7 +4035,8 @@ function updateHUD() {
   if ($('#g-stars')) $('#g-stars').textContent = SAVE.stars || 0;
   if ($('#g-streak')) $('#g-streak').textContent = SAVE.streak || 1;
   if ($('#g-lives')) $('#g-lives').textContent = SAVE.lives;
-  if ($('#g-book-cnt')) $('#g-book-cnt').textContent = `${(SAVE.cards || []).length}/21`;
+  const earnableCardsTotal = (typeof getEarnableCards === 'function') ? (getEarnableCards().length || 3) : 3;
+  if ($('#g-book-cnt')) $('#g-book-cnt').textContent = `${(SAVE.cards || []).length}/${earnableCardsTotal}`;
   
   const curAv = COMPANIONS[SAVE.avatar] || COMPANIONS.owl;
   if ($('#g-avatar-ico')) $('#g-avatar-ico').textContent = curAv.icon;
@@ -4025,7 +4085,7 @@ const ACHIEVEMENTS = [
   { id: 'streak_7', name: 'Seven-Day Alignment', desc: 'Achieve a 7-day stargazing streak.', icon: '⚡', check: s => s.streak >= 7 },
   { id: 'boss_slayer', name: 'Chapter Champion', desc: 'Conquer your first Chapter Boss trial.', icon: '🏆', check: s => s.bossWins >= 1 },
   { id: 'cartographer_5', name: 'Stellar Archivist', desc: 'Unlock 5 constellation cards in the Book.', icon: '📖', check: s => s.cards.length >= 5 },
-  { id: 'cartographer_all', name: 'Master Cartographer', desc: 'Collect all 21 celestial cards.', icon: '🎴', check: s => s.cards.length >= 21 },
+  { id: 'cartographer_all', name: 'Master Cartographer', get desc() { const n = (typeof getEarnableCards === 'function') ? (getEarnableCards().length || 3) : 3; return `Collect all ${n} celestial cards.`; }, icon: '🎴', check: s => (s.cards || []).length >= ((typeof getEarnableCards === 'function') ? (getEarnableCards().length || 3) : 3) },
   { id: 'draw_orion', name: 'Hunter of the Stars', desc: 'Connect all edges of Orion.', icon: '🏹', check: s => s.cards.includes('Orion') },
   { id: 'draw_crux', name: 'Southern Cross Finder', desc: 'Connect all edges of Crux.', icon: '⚓', check: s => s.cards.includes('Crux') },
   { id: 'order_master', name: 'Chronologer', desc: 'Complete an Order It sequence perfectly.', icon: '⏳', check: s => s.orderDone >= 1 },
@@ -4050,7 +4110,7 @@ function checkAchievements() {
 }
 
 /* 5 CHAPTERS OF CONSTELLATION TRAIL */
-const CHAPTERS = [
+var CHAPTERS = [
   {
     id: 'ch1',
     title: 'Chapter 1: Constellations & Asterisms',
@@ -5096,7 +5156,7 @@ let lang='en';$('#lg').innerHTML=Object.entries(LANG).map(([k,v])=>`<button clas
 const TALES={intro:['Intro',{en:LANG.en[2],hi:LANG.hi[2],mr:LANG.mr[2],te:LANG.te[2],ta:LANG.ta[2],kn:LANG.kn[2],ml:LANG.ml[2]}],sapta:['Saptarshi',{en:['The Saptarshi are the seven stars of the Big Dipper.','They circle Dhruva, the pole star, a symbol of unwavering devotion.'],hi:['सप्तऋषि सात तारों का समूह है।','कहा जाता है कि वे ध्रुव तारे के चारों ओर घूमते हैं, जो अटल भक्ति का प्रतीक है।'],mr:['सप्तर्षी म्हणजे सात तारे.','ते ध्रुवताऱ्याभोवती फिरतात, ज्याला अढळ निष्ठेचे प्रतीक मानले जाते.'],ta:['சப்தரிஷி என்பது ஏழு விண்மீன்கள்.','அவை துருவ நட்சத்திரத்தைச் சுற்றி வருவதாகக் கூறப்படுகிறது.'],kn:['ಸಪ್ತರ್ಷಿ ಮಂಡಲವು ಏಳು ಪ್ರಕಾಶಮಾನ ನಕ್ಷತ್ರಗಳ ಸಮೂಹವಾಗಿದೆ.','ಇವು ಅಚಲ ನಿಷ್ಠೆಯ ಸಂಕೇತವಾದ ಧ್ರುವ ನಕ್ಷತ್ರದ ಸುತ್ತ ನಿರಂತರ ಪ್ರದಕ್ಷಿಣೆ ಮಾಡುತ್ತವೆ.'],ml:['സപ്തർഷി മണ്ഡലം വടക്കൻ ആകാശത്തിലെ ഏഴ് പ്രകാശമാനമായ നക്ഷത്രങ്ങളാണ്.','അചഞ്ചല ഭക്തിയുടെ പ്രതീകമായ ധ്രുവനക്ഷത്രത്തിന് ചുറ്റും ഈ ജ്ഞാനികൾ സദാ വലംവെക്കുന്നു.']}],orion:['Orion',{en:['Orion was a hunter who boasted that no beast could defeat him.','The gods sent a scorpion, and it stung him.','Both were set in the sky on opposite sides, so Orion sets as Scorpius rises.']}],matariki:['Matariki',{en:['Matariki is the Pleiades, a cluster that rises just before dawn in midwinter.','For the Māori it marks the new year, a time to remember those who passed, celebrate the harvest and plan ahead.']}],rohini:['Rohini',{en:['Rohini is the red star Aldebaran in the bull Taurus.','In the Puranas the moon god loved Rohini above his other wives, so the Moon lingers near her.'],hi:['रोहिणी वृषभ राशि का लाल तारा एल्डेबरन है।','कहा जाता है कि चंद्रमा अपनी सभी पत्नियों में रोहिणी को सबसे अधिक चाहता है, इसलिए वह उसके पास ठहरता है।']}],qixi:['Weaver Girl and Cowherd',{en:['Vega is Zhinü, the weaver, and Altair is Niulang, the cowherd.','The Milky Way keeps them apart, and once a year magpies form a bridge so they can meet.']}],wayfinders:['Star navigators',{en:['Before compasses, Polynesian navigators memorised where stars rise and set along the horizon.','Steering by a chain of rising stars, they crossed thousands of kilometres of open ocean.']}],callisto:['Callisto the bear',{en:['Callisto was turned into a bear by a jealous goddess.','Zeus placed her in the sky as the Great Bear, where she circles the pole forever.']}],alsufi:['Book of Fixed Stars',{en:['In 964 CE the Persian astronomer Al-Sufi catalogued the stars and compared Greek and Arabic traditions.','His book holds the earliest known description of the Andromeda Galaxy.']}],emu:['Emu in the Sky',{en:['Look for the dark shapes in the Milky Way, not only the bright stars.','Many Aboriginal peoples see an emu there, with its head in the Coalsack beside the Southern Cross.','Its changing posture through the year tells when to collect emu eggs.']}]};let tale='intro';$('#tg').innerHTML=Object.entries(TALES).map(([k,v])=>`<button class='btn' data-t='${k}'>${v[0]}</button>`).join('');$('#tg').onclick=e=>{const b=e.target.closest('[data-t]');if(b){tale=b.dataset.t;setLang(lang)}};const lines=()=>TALES[tale][1][lang]||TALES[tale][1].en;function setLang(k){lang=k;stopV();$$('#lg .btn').forEach(b=>b.classList.toggle('on',b.dataset.l===k));$$('#tg .btn').forEach(b=>b.classList.toggle('on',b.dataset.t===tale));$('#ac').textContent=lines().join(' ')+(TALES[tale][1][k]?'':'  (This story is in English only for now.)')}
 $('#lg').onclick=e=>{const b=e.target.closest('[data-l]');if(b)setLang(b.dataset.l)};
 $('#ap').onclick=()=>{if($('#ap').textContent==='❚❚')return stopV();narrate(lines(),TALES[tale][1][lang]?LANG[lang][1]:'en-IN',$('#ac'),$('#ap'),$('#ab'))};
-const lbs=$('#lbs'),dz=$('#dz');lbs.innerHTML=Object.keys(CON).map(k=>`<button class='lb' data-k='${k}'>${k}</button>`).join('');$('#cl').innerHTML=Object.keys(CON).map(k=>`<button class='cc' data-k='${k}'>${miniSvg(k)}<span>${k}</span></button>`).join('');
+const lbs=$('#lbs'),dz=$('#dz');lbs.innerHTML=Object.keys(CON).map(k=>`<button class='lb' data-k='${k}'>${k}</button>`).join('');$('#cl').innerHTML=Object.keys(CON).map(k=>`<button class='cc' data-k='${k}'>${miniSvg(k)}<span>${k}</span></button>`).join('');{const ciCap=$('#ci .cap');if(ciCap&&!selC)ciCap.textContent=`${Object.keys(CON).length} constellations are drawn from real sky coordinates. Tap one to read its story.`;}
 function pick(k){selC=k;$$('[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===k));const i=CI[k],ss=[...new Set(edges(k).flat())];$('#ci').innerHTML=`<h3>${k}</h3><p class='cap'>${i[0]}</p><p style='margin:8px 0'><b>${i[1]}</b></p><p style='color:var(--mut);font-size:14px'>${i[2]}</p><div class='tbl' style='max-height:170px;margin-top:10px'>${ss.map(n=>`<button data-st='${n}'>${n}<span>${ST[n].ly} ly · ${ST[n].sp}</span></button>`).join('')}</div><div class='row'><button class='btn' data-myth='${k}'>Read the stories</button></div>`;Object.entries(CG).forEach(([n,o])=>o.m.opacity=n===k?1:.35);const c=CG[k].c.clone().applyMatrix4(sky.matrix);tgt=[Math.atan2(c.y,Math.hypot(c.x,c.z)),Math.atan2(-c.x,c.z)]}
 document.addEventListener('click',e=>{const k=e.target.closest('[data-k]');if(k)return pick(k.dataset.k);const s=e.target.closest('[data-st]');if(s){sel=s.dataset.st;go('sci');readout();return}const m=e.target.closest('[data-myth]');if(m){for(const[c,v]of Object.entries(MY)){const i=v[1].findIndex(x=>x[3]===m.dataset.myth);if(i>=0){cat=c;cur=i;go('myth');renderMyth();return}}}});
 dz.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};tgt=null;dz.setPointerCapture(e.pointerId);dz.style.cursor='grabbing'});dz.addEventListener('pointermove',e=>{if(!drag)return;W.rotation.y+=(e.clientX-drag.x)*.006;W.rotation.x=Math.max(-1.3,Math.min(1.3,W.rotation.x+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY}});['pointerup','pointercancel'].forEach(t=>dz.addEventListener(t,()=>{drag=null;dz.style.cursor='grab'}));
